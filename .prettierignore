@@ -1,0 +1,6 @@
+/.tsdoc
+/dist
+/etc
+/test/__tmp__
+/package.json
+/pnpm-lock.yaml

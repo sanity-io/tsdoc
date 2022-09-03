@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.settings",
+  "include": ["**/*.ts"],
+  "exclude": ["./dist"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./dist",
+    "jsx": "react"
+  }
+}

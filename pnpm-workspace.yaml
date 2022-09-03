@@ -1,0 +1,4 @@
+packages:
+  - .
+  - playground/**
+  - test/__tmp__/**

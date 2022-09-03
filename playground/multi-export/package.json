@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "type": "module",
+  "name": "multi-export",
+  "version": "1.0.0",
+  "license": "MIT",
+  "types": "./dist/exports/index.d.ts",
+  "source": "./src/index.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "exports": {
+    ".": {
+      "types": "./dist/exports/index.d.ts",
+      "source": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./extra": {
+      "types": "./dist/exports/extra.d.ts",
+      "source": "./src/extra.ts",
+      "import": "./dist/extra.js",
+      "require": "./dist/extra.cjs",
+      "default": "./dist/extra.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "extra": [
+        "./dist/exports/extra.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && pkg build --strict && pkg --strict",
+    "etl": "rimraf etc && sanity-tsdoc etl"
+  },
+  "devDependencies": {
+    "@sanity/tsdoc": "workspace:0.0.0"
+  }
+}

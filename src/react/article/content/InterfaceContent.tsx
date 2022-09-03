@@ -1,0 +1,156 @@
+import {
+  APICallSignature,
+  APIConstructSignature,
+  APIIndexSignature,
+  APIInterface,
+  APIMethodSignature,
+  APIPropertySignature,
+  SanityArrayItem,
+} from '@sanity/tsdoc'
+import {Card, Code} from '@sanity/ui'
+import {ReactElement, useMemo} from 'react'
+import {_compileInterfaceDefinition} from '../../app/lib/_compile'
+import {
+  CommentDeprecatedCallout,
+  CommentExampleBlocks,
+  CommentRemarks,
+  CommentSummary,
+} from '../../comment'
+import {_fontSize} from '../../helpers'
+import {H} from '../../typography'
+import {Members} from '../members'
+import {_getMembers} from '../members/helpers'
+
+function useMembers(data: APIInterface) {
+  return useMemo(() => {
+    const members = _getMembers(data) as APIInterface['members']
+
+    const ret: {
+      callSignatures: SanityArrayItem<APICallSignature>[]
+      constructSignatures: SanityArrayItem<APIConstructSignature>[]
+      indexSignatures: SanityArrayItem<APIIndexSignature>[]
+      methodSignatures: SanityArrayItem<APIMethodSignature>[]
+      propertySignatures: SanityArrayItem<APIPropertySignature>[]
+    } = {
+      callSignatures: [],
+      constructSignatures: [],
+      indexSignatures: [],
+      methodSignatures: [],
+      propertySignatures: [],
+    }
+
+    for (const m of members) {
+      if (m._type === 'api.callSignature') {
+        ret.callSignatures.push(m)
+      } else if (m._type === 'api.constructSignature') {
+        ret.constructSignatures.push(m)
+      } else if (m._type === 'api.indexSignature') {
+        ret.indexSignatures.push(m)
+      } else if (m._type === 'api.methodSignature') {
+        ret.methodSignatures.push(m)
+      } else if (m._type === 'api.propertySignature') {
+        ret.propertySignatures.push(m)
+      } else {
+        // eslint-disable-next-line
+        console.log('WARN: unknown member type:', (m as any)._type)
+      }
+    }
+
+    return ret
+  }, [data])
+}
+
+export function InterfaceContent(props: {
+  data: APIInterface
+  fontSize?: number
+  level?: number
+}): ReactElement {
+  const {data, fontSize = 2, level = 1} = props
+  const {comment} = data
+
+  const {
+    callSignatures,
+    constructSignatures,
+    indexSignatures,
+    methodSignatures,
+    propertySignatures,
+  } = useMembers(data)
+
+  return (
+    <>
+      {comment && <CommentDeprecatedCallout data={comment} />}
+      {comment && <CommentSummary data={comment} />}
+
+      <H fontSize={fontSize} level={level}>
+        Signature
+      </H>
+
+      <Card border overflow="auto" padding={3} radius={2}>
+        <Code language="typescript" size={_fontSize(fontSize, [0, 0, 1])}>
+          {_compileInterfaceDefinition(data)}
+        </Code>
+      </Card>
+
+      {constructSignatures.length > 0 && (
+        <>
+          <H fontSize={fontSize} level={level}>
+            Construct signatures
+          </H>
+          <Card border overflow="auto" padding={3} radius={2}>
+            <Members
+              data={constructSignatures}
+              fontSize={fontSize}
+              level={level + 1}
+              member={data}
+            />
+          </Card>
+        </>
+      )}
+
+      {callSignatures.length > 0 && (
+        <>
+          <H fontSize={fontSize} level={level}>
+            Call signatures
+          </H>
+          <Card border overflow="auto" padding={3} radius={2}>
+            <Members data={callSignatures} fontSize={fontSize} level={level + 1} member={data} />
+          </Card>
+        </>
+      )}
+
+      {indexSignatures.length > 0 && (
+        <>
+          <H fontSize={fontSize} level={level}>
+            Index signatures
+          </H>
+          <Card border overflow="auto" padding={3} radius={2}>
+            <Members data={indexSignatures} fontSize={fontSize} level={level + 1} member={data} />
+          </Card>
+        </>
+      )}
+
+      {methodSignatures.length > 0 && (
+        <>
+          <H fontSize={fontSize} level={level}>
+            Call signatures
+          </H>
+          <Card border overflow="auto" padding={3} radius={2}>
+            <Members data={methodSignatures} fontSize={fontSize} level={level + 1} member={data} />
+          </Card>
+        </>
+      )}
+
+      {propertySignatures.length > 0 && (
+        <>
+          <H fontSize={fontSize} level={level}>
+            Properties
+          </H>
+          <Members data={propertySignatures} fontSize={fontSize} level={level + 1} member={data} />
+        </>
+      )}
+
+      {comment && <CommentRemarks data={comment} fontSize={fontSize} level={level} />}
+      {comment && <CommentExampleBlocks data={comment} fontSize={fontSize} level={level + 1} />}
+    </>
+  )
+}

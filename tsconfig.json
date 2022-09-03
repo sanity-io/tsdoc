@@ -1,0 +1,28 @@
+{
+  "extends": "./tsconfig.settings",
+  "include": [
+    "./exports",
+    "./package.config.ts",
+    "./package.json",
+    "./src",
+    "./test",
+    "./tsdoc.config.ts",
+    "./typings"
+  ],
+  "exclude": ["./test/__tmp__"],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": ".",
+    "outDir": "./dist",
+
+    "paths": {
+      "@sanity/tsdoc/runtime": ["./exports/runtime.ts"],
+      "@sanity/tsdoc/react": ["./exports/react.ts"],
+      "@sanity/tsdoc": ["./exports/index.ts"]
+    },
+
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "resolveJsonModule": true
+  }
+}

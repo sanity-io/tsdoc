@@ -1,0 +1,12 @@
+*.cpuprofile
+*.local
+*.log
+
+.DS_Store
+.eslintcache
+.idea
+.tsdoc
+.vscode
+dist
+etc
+node_modules
