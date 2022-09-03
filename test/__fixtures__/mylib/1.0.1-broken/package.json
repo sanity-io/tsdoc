@@ -1,0 +1,21 @@
+{
+  "name": "mylib",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./lib/cjs/index.d.ts",
+  "module": "./lib/esm/index.d.ts",
+  "types": "./lib/dts/src/index.d.ts",
+  "scripts": {
+    "build": "yarn build:cjs && yarn build:esm && tsc --build -f tsconfig.build.json",
+    "build:cjs": "tsc --project tsconfig.lib.json --outDir lib/cjs/ --rootDir src/",
+    "build:esm": "tsc --project tsconfig.lib.json --outDir lib/esm/ --rootDir src/",
+    "prebuild": "rimraf lib/"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.18",
+    "@types/styled-components": "^5.1.26",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.5",
+    "typescript": "^4.8.2"
+  }
+}

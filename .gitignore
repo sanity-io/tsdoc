@@ -1,0 +1,17 @@
+.DS_Store
+/*.log
+/.tsdoc
+/.vscode
+/etc
+/dist
+/lerna-debug.log
+/local_registry.log
+/node_modules
+/package-lock.json
+/yarn-error.log
+
+# Created by verdaccio
+/storage
+
+# Legacy exports
+/react.js

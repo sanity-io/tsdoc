@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.settings",
+  "include": ["./src", "./typings"],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": ".",
+    "outDir": "./dist/types",
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@sanity/tsdoc/react": ["./src/react.ts"],
+      "@sanity/tsdoc": ["./src/tsdoc.ts"]
+    }
+  }
+}

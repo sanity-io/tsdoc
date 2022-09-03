@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.settings",
+  "include": ["./src"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./lib/dts",
+    "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "multi-export": ["./index"],
+      "multi-export/extra": ["./extra"]
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.settings",
+  "include": ["./package.json", "./src", "./test"],
+  "exclude": ["./test/__fixtures__"],
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": ".",
+    "outDir": "./dist/types",
+    "jsx": "react-jsx",
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@sanity/tsdoc": ["./src/tsdoc.ts"],
+      "@sanity/tsdoc/react": ["./src/react.ts"]
+    }
+  }
+}
