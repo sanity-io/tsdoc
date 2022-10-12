@@ -245,13 +245,13 @@ function MemberLink(props: {
 
   const params: TSDocAppParams = useMemo(
     () => ({
-      exportPath: data.export.path,
+      exportPath: data.export?.path || namespace?.export.path || '.',
       memberName: data.name,
       packageName,
       packageScope,
       releaseVersion,
     }),
-    [data, packageName, packageScope, releaseVersion]
+    [data, namespace, packageName, packageScope, releaseVersion]
   )
 
   const linkProps = useMemberLink({params})

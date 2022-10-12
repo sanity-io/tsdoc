@@ -35,6 +35,7 @@ export function TypeAliasContent(props: {
       )}
 
       {comment && <CommentRemarks data={comment} fontSize={fontSize} level={level} />}
+
       {comment && <CommentExampleBlocks data={comment} fontSize={fontSize} level={level} />}
     </>
   )

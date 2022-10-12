@@ -2,7 +2,6 @@ import {PortableText as BasePortableText, PortableTextProps} from '@portabletext
 import {PortableTextNode} from '@sanity/tsdoc'
 import {Box, Card, Code, Text} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
-import styled from 'styled-components'
 import {_fontSize, _space} from '../helpers'
 import {H, P} from '../typography'
 
@@ -12,16 +11,6 @@ const CODE_LANGUAGES: Record<string, string> = {
   ts: 'typescript',
 }
 
-const Root = styled.div`
-  & :first-child {
-    margin-top: 0;
-  }
-
-  & :last-child {
-    margin-bottom: 0;
-  }
-`
-
 export function PortableText(props: {
   fontSize?: number
   blocks: PortableTextNode[]
@@ -30,11 +19,7 @@ export function PortableText(props: {
   const {blocks, fontSize = 2, level = 1} = props
   const components = useMemo(() => buildComponents({fontSize, level}), [fontSize, level])
 
-  return (
-    <Root data-ui="CommentContent">
-      <BasePortableText components={components} value={blocks} />
-    </Root>
-  )
+  return <BasePortableText components={components} value={blocks} />
 }
 
 function buildComponents(opts: {fontSize: number; level: number}): PortableTextProps['components'] {
@@ -46,7 +31,7 @@ function buildComponents(opts: {fontSize: number; level: number}): PortableTextP
     return (
       <Card
         border
-        marginY={_space(fontSize, [4, 4, 5])}
+        marginY={_space(fontSize, [2, 2, 3])}
         overflow="auto"
         padding={3}
         radius={2}
