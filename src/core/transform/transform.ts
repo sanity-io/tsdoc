@@ -27,6 +27,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
     exports: [],
     members: [],
     package: opts.currPackageDoc || undefined,
+    release: undefined,
     symbolNames: [],
     symbols: [],
   }
@@ -65,7 +66,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
     }
 
     const ctx: TransformContext = {
-      apiPackage: apiPackage,
+      apiPackage,
       scope: packageScope,
       name: packageName,
       version: releaseVersion,
@@ -81,6 +82,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
     ctx.package = packageDoc
 
     ctx.release = {
+      exports: [],
       ...ctx.release,
       _type: 'api.release',
       _id: releaseId,
@@ -91,6 +93,12 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
     exportDoc.release._ref = ctx.release._id
 
     state.exports.push(exportDoc)
+
+    ctx.release.exports.push({
+      _type: 'reference',
+      _key: exportDoc._id,
+      _ref: exportDoc._id,
+    })
 
     ctx.package.latestRelease = {_type: 'reference', _ref: ctx.release._id}
 
