@@ -11,8 +11,10 @@ export interface TSDocAppParams {
 
 /** @public */
 export interface TSDocExportData {
+  isLatest: boolean
   name: string
   package: {name: string; scope: string | null}
+  path: string
   release: {version: string}
   members: SanityArrayItem<APIMember>[]
 }

@@ -32,7 +32,7 @@ export function ReferenceArticle(props: {
     if (data._type === 'api.class') {
       return (
         <>
-          <SyntaxText $syntax="builtin">class </SyntaxText>
+          <SyntaxText $syntax="keyword">class </SyntaxText>
           <SyntaxText $syntax="className">{data.name}</SyntaxText>
         </>
       )
@@ -41,7 +41,7 @@ export function ReferenceArticle(props: {
     if (data._type === 'api.enum') {
       return (
         <>
-          <SyntaxText $syntax="builtin">enum </SyntaxText>
+          <SyntaxText $syntax="keyword">enum </SyntaxText>
           <SyntaxText $syntax="className">{data.name}</SyntaxText>
         </>
       )
@@ -59,7 +59,7 @@ export function ReferenceArticle(props: {
     if (data._type === 'api.interface') {
       return (
         <>
-          <SyntaxText $syntax="builtin">interface </SyntaxText>
+          <SyntaxText $syntax="keyword">interface </SyntaxText>
           <SyntaxText $syntax="className">{data.name}</SyntaxText>
         </>
       )
@@ -68,7 +68,7 @@ export function ReferenceArticle(props: {
     if (data._type === 'api.namespace') {
       return (
         <>
-          <SyntaxText $syntax="builtin">namespace </SyntaxText>
+          <SyntaxText $syntax="keyword">namespace </SyntaxText>
           <SyntaxText $syntax="className">{data.name}</SyntaxText>
         </>
       )
@@ -77,7 +77,7 @@ export function ReferenceArticle(props: {
     if (data._type === 'api.typeAlias') {
       return (
         <>
-          <SyntaxText $syntax="builtin">type </SyntaxText>
+          <SyntaxText $syntax="keyword">type </SyntaxText>
           <SyntaxText $syntax="className">{data.name}</SyntaxText>
         </>
       )

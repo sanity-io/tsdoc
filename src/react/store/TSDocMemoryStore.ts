@@ -12,6 +12,7 @@ import {TSDocStore} from './types'
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
+/** @beta */
 export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStore {
   const query = async (q: string, params: Record<string, unknown>) => {
     const tree = parse(q)

@@ -27,11 +27,13 @@ async function _loadDocs(files: string[]) {
     const pkg = packageDocs.find((p) => p.scope === _pkgDoc.scope && p.name === _pkgDoc.name)
 
     if (pkg) {
-      if (_pkgDoc.latestRelease)
+      if (_pkgDoc.latestRelease) {
+        pkg.latestRelease = _pkgDoc.latestRelease
         pkg.releases.push({
           ..._pkgDoc.latestRelease,
           _key: _pkgDoc.latestRelease._ref,
         })
+      }
     } else {
       packageDocs.push({
         ..._pkgDoc,

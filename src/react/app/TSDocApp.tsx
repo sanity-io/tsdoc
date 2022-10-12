@@ -1,14 +1,16 @@
 import {Card, Flex} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {ReactElement, useCallback, useMemo} from 'react'
 import styled from 'styled-components'
 import {TSDocStore} from '../store'
 import {TSDocAppParams} from '../types'
+import {parsePath} from './helpers'
 import {TSDocDetail} from './TSDocDetail'
 import {TSDocNav} from './TSDocNav'
 import {TSDocProvider} from './TSDocProvider'
 
 /** @beta */
 export interface TSDocAppProps {
+  basePath?: string
   onPathChange: (value: string, replace?: boolean) => void
   path: string
   store: TSDocStore
@@ -33,31 +35,19 @@ const Root = styled(Card)({
  * @beta
  * */
 export function TSDocApp(props: TSDocAppProps): ReactElement {
-  const {onPathChange, path, store} = props
+  const {basePath = '', onPathChange, path, store} = props
 
-  const params: TSDocAppParams | null = useMemo(() => {
-    const segments = path.split('/').filter(Boolean)
+  const params: TSDocAppParams | null = useMemo(() => parsePath(path, {basePath}), [basePath, path])
 
-    if (segments.length === 0) return null
-
-    const hasScope = segments[0].slice(0, 1) === '@'
-    const packageScope = (hasScope && segments.shift()) || null
-    const packageName = segments[0]
-    const releaseVersion = segments[1]
-    const exportPath = segments[2] === 'index' ? '.' : segments[2]
-    const memberName = segments[3]
-
-    return {
-      exportPath,
-      memberName,
-      packageName,
-      packageScope,
-      releaseVersion,
-    }
-  }, [path])
+  const handlePathChange = useCallback(
+    (nextPath: string, replace?: boolean) => {
+      onPathChange(`${basePath}${nextPath}`, replace)
+    },
+    [basePath, onPathChange]
+  )
 
   return (
-    <TSDocProvider onPathChange={onPathChange} params={params} path={path} store={store}>
+    <TSDocProvider onPathChange={handlePathChange} params={params} path={path} store={store}>
       <Root height="fill">
         <Flex height="fill">
           <TSDocNav />

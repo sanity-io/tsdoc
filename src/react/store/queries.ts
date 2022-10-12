@@ -4,8 +4,10 @@ import groq from 'groq'
 export const EXPORTS_QUERY = groq`
 *[_type == "api.export"]{
   name,
+  path,
   package->{name,scope},
   release->{version},
+  "isLatest": release->_id == package->latestRelease._ref,
   "members": *[_type in $memberTypes && references(^._id)] | order(name asc) {
     "_key": _id,
     _type,

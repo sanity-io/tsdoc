@@ -1,21 +1,24 @@
 import {DotIcon} from '@sanity/icons'
 import {APIMember, APINamespace, SanityArrayItem} from '@sanity/tsdoc'
-import {Box, Button, Card, Flex, Stack, Text} from '@sanity/ui'
+import {Box, Button, Card, Flex, Menu, MenuButton, MenuItem, Stack, Text} from '@sanity/ui'
 import {Fragment, ReactElement, ReactNode, useMemo, useState} from 'react'
 import {ReleaseTag} from '../components/ReleaseTag'
 import {UnformattedCode} from '../components/UnformattedCode'
 import {_fontSize} from '../helpers'
 import {TSDocAppParams, TSDocExportData} from '../types'
 import {useMemberLink} from './useMemberLink'
+import {useTSDoc} from './useTSDoc'
 
 /** @beta */
 export function TSDocExportNavigation(props: {
-  data: TSDocExportData
   fontSize?: number
-  path: string
+  name: string
+
+  versions: TSDocExportData[]
 }): ReactElement {
-  const {path, data: exp, fontSize = 2} = props
+  const {fontSize = 2, name, versions} = props
   const [expanded, setExpanded] = useState(false)
+  const exp = versions.find((v) => v.isLatest) || versions[0]
 
   // special react members
   const reactComponents = exp.members.filter(
@@ -52,12 +55,30 @@ export function TSDocExportNavigation(props: {
         </Card>
 
         <Box flex="none" hidden={!expanded}>
-          <Button
-            disabled
-            fontSize={_fontSize(fontSize, [0, 0, 1])}
-            mode="bleed"
-            padding={2}
-            text={<UnformattedCode>{`v${exp.release.version}`}</UnformattedCode>}
+          <MenuButton
+            button={
+              <Button
+                // disabled
+                fontSize={_fontSize(fontSize, [0, 0, 1])}
+                mode="bleed"
+                padding={2}
+                text={<UnformattedCode>{`v${exp.release.version}`}</UnformattedCode>}
+              />
+            }
+            id={`${name}-version-menu`}
+            menu={
+              <Menu>
+                {versions.map((v) => (
+                  <MenuItem
+                    key={v.release.version}
+                    padding={2}
+                    selected={v === exp}
+                    text={v.release.version}
+                  />
+                ))}
+              </Menu>
+            }
+            placement="right"
           />
         </Box>
       </Flex>
@@ -69,7 +90,6 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={reactComponents}
-              path={path}
               renderMemberName={(mem) => `<${mem.name} />`}
               title="React components"
             />
@@ -80,20 +100,13 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={reactHooks}
-              path={path}
               renderMemberName={(mem) => `${mem.name}()`}
               title="React hooks"
             />
           )}
 
           {classes.length > 0 && (
-            <MemberNavigation
-              export={exp}
-              fontSize={fontSize}
-              members={classes}
-              path={path}
-              title="Classes"
-            />
+            <MemberNavigation export={exp} fontSize={fontSize} members={classes} title="Classes" />
           )}
 
           {enums.length > 0 && (
@@ -101,7 +114,6 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={classes}
-              path={path}
               title="Enumerations"
             />
           )}
@@ -111,7 +123,6 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={functions}
-              path={path}
               renderMemberName={(mem) => `${mem.name}()`}
               title="Functions"
             />
@@ -122,7 +133,6 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={interfaces}
-              path={path}
               title="Interfaces"
             />
           )}
@@ -132,7 +142,6 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={namespaces}
-              path={path}
               title="Namespaces"
             />
           )}
@@ -142,7 +151,6 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={typeAliases}
-              path={path}
               title="Type aliases"
             />
           )}
@@ -152,7 +160,6 @@ export function TSDocExportNavigation(props: {
               export={exp}
               fontSize={fontSize}
               members={variables}
-              path={path}
               title="Variables"
             />
           )}
@@ -163,7 +170,6 @@ export function TSDocExportNavigation(props: {
 }
 
 function NavigationList(props: {
-  currentPath: string
   fontSize?: number
   members: SanityArrayItem<APIMember>[]
   packageName: string
@@ -171,15 +177,7 @@ function NavigationList(props: {
   renderMemberName?: (data: APIMember) => ReactNode
   releaseVersion: string
 }) {
-  const {
-    currentPath,
-    fontSize,
-    members,
-    packageName,
-    packageScope,
-    releaseVersion,
-    renderMemberName,
-  } = props
+  const {fontSize, members, packageName, packageScope, releaseVersion, renderMemberName} = props
 
   return (
     <>
@@ -190,7 +188,6 @@ function NavigationList(props: {
               {mem.members.map((namespaceMember) => {
                 return (
                   <MemberLink
-                    currentPath={currentPath}
                     data={namespaceMember}
                     fontSize={fontSize}
                     key={namespaceMember._key}
@@ -208,7 +205,6 @@ function NavigationList(props: {
 
         return (
           <MemberLink
-            currentPath={currentPath}
             data={mem}
             fontSize={fontSize}
             key={mem._key}
@@ -224,7 +220,6 @@ function NavigationList(props: {
 }
 
 function MemberLink(props: {
-  currentPath: string
   data: APIMember
   fontSize?: number
   namespace?: APINamespace
@@ -234,7 +229,6 @@ function MemberLink(props: {
   renderMemberName?: (data: APIMember) => ReactNode
 }) {
   const {
-    currentPath,
     data,
     fontSize = 2,
     namespace,
@@ -243,6 +237,8 @@ function MemberLink(props: {
     releaseVersion,
     renderMemberName,
   } = props
+
+  const {path: currentPath} = useTSDoc()
 
   const params: TSDocAppParams = useMemo(
     () => ({
@@ -287,11 +283,11 @@ function MemberNavigation(props: {
   export: TSDocExportData
   fontSize?: number
   members: SanityArrayItem<APIMember>[]
-  path: string
+
   renderMemberName?: (data: APIMember) => ReactNode
   title: ReactNode
 }) {
-  const {path, export: exp, fontSize = 2, members, renderMemberName, title} = props
+  const {export: exp, fontSize = 2, members, renderMemberName, title} = props
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -312,7 +308,6 @@ function MemberNavigation(props: {
       <Stack paddingLeft={3} space={1}>
         {expanded && (
           <NavigationList
-            currentPath={path}
             fontSize={fontSize}
             members={members}
             packageName={exp.package.name}

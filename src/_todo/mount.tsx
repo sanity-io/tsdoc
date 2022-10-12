@@ -1,4 +1,5 @@
-import {TSDocApp} from '@sanity/tsdoc/react'
+import {APIMember} from '@sanity/tsdoc'
+import {TSDocApp, TSDocAppParams, createTSDocMemoryStore, parsePath} from '@sanity/tsdoc/react'
 import {ThemeColorSchemeKey, ThemeProvider, usePrefersDark} from '@sanity/ui'
 import {createBrowserHistory} from 'history'
 import {StrictMode, useEffect, useMemo, useState} from 'react'
@@ -9,8 +10,7 @@ import javascript from 'refractor/lang/javascript'
 import json from 'refractor/lang/json'
 import jsx from 'refractor/lang/jsx'
 import typescript from 'refractor/lang/typescript'
-import {createTSDocMemoryStore} from '../react/store/TSDocMemoryStore'
-import {sanityTheme} from '../react/theme'
+import {sanityTheme} from './theme'
 
 // @ts-expect-error TODO
 import docs from '$docs'
@@ -25,8 +25,12 @@ function Root() {
   const store = useMemo(() => createTSDocMemoryStore({docs}), [docs])
   const history = useMemo(() => createBrowserHistory(), [])
   const scheme: ThemeColorSchemeKey = usePrefersDark() ? 'dark' : 'light'
-
   const [path, setPath] = useState<string>(() => history.location.pathname)
+  const basePath = '/docs'
+  const params: TSDocAppParams | null = useMemo(() => parsePath(path, {basePath}), [basePath, path])
+  const [member, setMember] = useState<
+    (APIMember & {members: {exportPath: string; releaseVersion: string}}) | null
+  >(null)
 
   // Listen to history changes
   useEffect(() => history.listen((update) => setPath(update.location.pathname)), [history])
@@ -34,9 +38,19 @@ function Root() {
   // Push history state
   useEffect(() => history.push({pathname: path || ''}), [path, history])
 
+  useEffect(() => {
+    if (params) store.member.get(params).then(setMember)
+  }, [params, store])
+
+  useEffect(() => {
+    if (member) {
+      document.title = `${member.name} | ${member.export.name}@${member.release.version}`
+    }
+  }, [member])
+
   return (
     <ThemeProvider scheme={scheme} theme={sanityTheme}>
-      <TSDocApp onPathChange={setPath} path={path} store={store} />
+      <TSDocApp basePath={basePath} onPathChange={setPath} path={path} store={store} />
     </ThemeProvider>
   )
 }
