@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import {TSDocAppParams} from '../types'
 import {useTSDoc} from './useTSDoc'
 
-/** @public */
+/** @beta */
 export function useMember(props: {params: TSDocAppParams | null}): {
   data: APIMember | null
   error: Error | null

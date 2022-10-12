@@ -7,7 +7,7 @@ import {TSDocDetail} from './TSDocDetail'
 import {TSDocNav} from './TSDocNav'
 import {TSDocProvider} from './TSDocProvider'
 
-/** @public */
+/** @beta */
 export interface TSDocAppProps {
   onPathChange: (value: string, replace?: boolean) => void
   path: string
@@ -30,7 +30,7 @@ const Root = styled(Card)({
  * <TSDocApp path={path} onPathChange={setPath} store={store} />
  * ```
  *
- * @public
+ * @beta
  * */
 export function TSDocApp(props: TSDocAppProps): ReactElement {
   const {onPathChange, path, store} = props

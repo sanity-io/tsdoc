@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import {TSDocAppParams} from '../types'
 import {useTSDoc} from './useTSDoc'
 
-/** @public */
+/** @beta */
 export function usePackage(props: {params: TSDocAppParams | null}): {
   data: APIPackage | null
   error: Error | null

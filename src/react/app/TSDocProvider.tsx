@@ -3,7 +3,7 @@ import {TSDocStore} from '../store'
 import {TSDocAppParams} from '../types'
 import {TSDocContext, TSDocContextValue} from './TSDocContext'
 
-/** @public */
+/** @beta */
 export interface TSDocProviderProps {
   children: ReactNode
   onPathChange: (nextPath: string, replace?: boolean) => void
@@ -12,7 +12,7 @@ export interface TSDocProviderProps {
   store: TSDocStore
 }
 
-/** @public */
+/** @beta */
 export function TSDocProvider(props: TSDocProviderProps): ReactElement {
   const {children, onPathChange, path, params, store} = props
 

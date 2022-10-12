@@ -5,12 +5,13 @@ import {ReactElement, useCallback, useMemo, useState} from 'react'
 import {UnformattedCode} from '../components/UnformattedCode'
 import {TSDocAppParams} from '../types'
 import {useMemberLink} from './useMemberLink'
-import {useSymbolSearch} from './useSearch'
+import {useSymbolSearch} from './useSymbolSearch'
 
 interface TSDocSearchOption extends BaseAutocompleteOption {
   symbol: APISymbol & {_id: string; members: {exportPath: string; releaseVersion: string}[]}
 }
 
+/** @beta */
 export function TSDocSearch(): ReactElement {
   const [query, setQuery] = useState<string | null>(null)
   const {data} = useSymbolSearch({query})

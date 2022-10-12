@@ -8,6 +8,7 @@ import {_fontSize} from '../helpers'
 import {TSDocAppParams, TSDocExportData} from '../types'
 import {useMemberLink} from './useMemberLink'
 
+/** @beta */
 export function TSDocExportNavigation(props: {
   data: TSDocExportData
   fontSize?: number

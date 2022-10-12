@@ -5,7 +5,7 @@ import {TSDocSearch} from './TSDocSearch'
 import {useExports} from './useExports'
 import {useTSDoc} from './useTSDoc'
 
-/** @public */
+/** @beta */
 export function TSDocNav(): ReactElement {
   const {path} = useTSDoc()
   const exports = useExports()

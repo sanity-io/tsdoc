@@ -1,7 +1,7 @@
 import {useContext} from 'react'
 import {TSDocContext, TSDocContextValue} from './TSDocContext'
 
-/** @public */
+/** @beta */
 export function useTSDoc(): TSDocContextValue {
   const tsdoc = useContext(TSDocContext)
 

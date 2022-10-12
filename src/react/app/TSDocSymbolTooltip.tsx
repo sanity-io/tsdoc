@@ -1,37 +1,21 @@
-import {APIMember} from '@sanity/tsdoc'
 import {Tooltip, TooltipProps} from '@sanity/ui'
-import {ReactElement, useEffect, useMemo, useState} from 'react'
+import {ReactElement, useMemo} from 'react'
 import {ReferenceTooltipContent} from '../article'
-import {useTSDoc} from './useTSDoc'
+import {useSymbol} from './useSymbol'
 
-/** @public */
+/** @beta */
 export function TSDocSymbolTooltip(
   props: Omit<TooltipProps, 'content'> & {fontSize?: number; name: string}
 ): ReactElement {
   const {fontSize = 2, name, ...restProps} = props
-  const {params, store} = useTSDoc()
-  const {packageName, packageScope = null} = params || {}
-  const [data, setData] = useState<APIMember[] | null>(null)
-
-  useEffect(() => {
-    if (!packageName) return
-
-    store.symbol
-      .get({
-        packageName,
-        packageScope,
-        name,
-      })
-      .then((symbol) => {
-        setData(symbol?.members || null)
-      })
-  }, [name, packageName, packageScope, store])
+  const symbol = useSymbol({name})
+  const symbolMembers = symbol?.data?.members
 
   const content = useMemo(() => {
-    if (!data || data.length === 0) return null
+    if (!symbolMembers || symbolMembers.length === 0) return null
 
-    return <ReferenceTooltipContent data={data[0]} fontSize={fontSize} />
-  }, [data, fontSize])
+    return <ReferenceTooltipContent data={symbolMembers[0]} fontSize={fontSize} />
+  }, [fontSize, symbolMembers])
 
   return <Tooltip {...restProps} content={content} />
 }

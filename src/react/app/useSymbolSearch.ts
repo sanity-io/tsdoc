@@ -2,6 +2,7 @@ import {APISymbol} from '@sanity/tsdoc'
 import {useEffect, useState} from 'react'
 import {useTSDoc} from './useTSDoc'
 
+/** @beta */
 export function useSymbolSearch(props: {query: string | null}): {
   data: (APISymbol & {_id: string; members: {exportPath: string; releaseVersion: string}[]})[]
 } {

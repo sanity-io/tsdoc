@@ -2,7 +2,7 @@ import {createContext} from 'react'
 import {TSDocStore} from '../store'
 import {TSDocAppParams} from '../types'
 
-/** @public */
+/** @beta */
 export interface TSDocContextValue {
   path: string
   params: TSDocAppParams | null

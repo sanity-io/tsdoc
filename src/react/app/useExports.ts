@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import {TSDocExportData} from '../types'
 import {useTSDoc} from './useTSDoc'
 
-/** @public */
+/** @beta */
 export function useExports(): {data: TSDocExportData[] | null; error: Error | null} {
   const {store} = useTSDoc()
 
