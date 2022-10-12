@@ -5,7 +5,7 @@ import {TestClass} from './class'
  *
  * @remarks
  *
- * ### Testing
+ * # Testing
  *
  * This is a paragraph.
  *
