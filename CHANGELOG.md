@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.8](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-10-13)
+
+### Bug Fixes
+
+- improve rendering ([4cb6621](https://github.com/sanity-io/tsdoc/commit/4cb6621ca63138cf71058c07a32e890eb2c24036))
+- remove debugging delay ([6513095](https://github.com/sanity-io/tsdoc/commit/65130953817d8612c26f4a5139890caf56b37fd4))
+
 ## [1.0.0-alpha.7](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-10-13)
 
 ### Features
