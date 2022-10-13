@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.7](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2022-10-13)
+
+### Features
+
+- sanity sync ([3566dff](https://github.com/sanity-io/tsdoc/commit/3566dffc2cfa9b80365f5785b34833e14b2d9002))
+
 ## [1.0.0-alpha.6](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-10-13)
 
 ### Bug Fixes
