@@ -2,11 +2,11 @@ import {APIDocument} from '@sanity/tsdoc'
 import {parse, evaluate} from 'groq-js'
 import {API_MEMBER_TYPES} from './constants'
 import {
-  EXPORTS_QUERY,
-  MEMBER_QUERY,
-  PACKAGE_QUERY,
-  SYMBOL_SEARCH_QUERY,
-  SYMBOL_QUERY,
+  API_EXPORTS_QUERY,
+  API_MEMBER_QUERY,
+  API_PACKAGE_QUERY,
+  API_SYMBOL_SEARCH_QUERY,
+  API_SYMBOL_QUERY,
 } from './queries'
 import {TSDocStore} from './types'
 
@@ -28,17 +28,17 @@ export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStor
   return {
     exports: {
       async get() {
-        await delay(0)
+        await delay(3000)
 
-        return query(EXPORTS_QUERY, {memberTypes: API_MEMBER_TYPES})
+        return query(API_EXPORTS_QUERY, {memberTypes: API_MEMBER_TYPES})
       },
     },
 
     member: {
       async get(params) {
-        await delay(0)
+        await delay(3000)
 
-        return query(MEMBER_QUERY, {
+        return query(API_MEMBER_QUERY, {
           ...params,
           memberTypes: API_MEMBER_TYPES,
         })
@@ -47,9 +47,9 @@ export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStor
 
     package: {
       async get(params) {
-        await delay(0)
+        await delay(3000)
 
-        return query(PACKAGE_QUERY, {
+        return query(API_PACKAGE_QUERY, {
           ...params,
           memberTypes: API_MEMBER_TYPES,
         })
@@ -58,16 +58,16 @@ export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStor
 
     symbol: {
       async get(options) {
-        return query(SYMBOL_QUERY, {
+        return query(API_SYMBOL_QUERY, {
           ...options,
           memberTypes: API_MEMBER_TYPES,
         })
       },
 
       async search(q) {
-        await delay(0)
+        await delay(3000)
 
-        return query(SYMBOL_SEARCH_QUERY, {
+        return query(API_SYMBOL_SEARCH_QUERY, {
           memberTypes: API_MEMBER_TYPES,
           query: `*${q}*`,
         })

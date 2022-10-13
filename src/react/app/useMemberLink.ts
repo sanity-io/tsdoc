@@ -1,4 +1,4 @@
-import {MouseEvent, useCallback} from 'react'
+import {MouseEvent, useCallback, useMemo} from 'react'
 import {TSDocAppParams} from '../types'
 import {_getPath} from './lib/_getPath'
 import {useTSDoc} from './useTSDoc'
@@ -9,18 +9,25 @@ export function useMemberLink(props: {params: TSDocAppParams | null}): {
   onClick: (event: MouseEvent) => void
 } {
   const {params} = props
-  const {onPathChange} = useTSDoc()
-  const href = params ? _getPath(params) : null
+  const {basePath, onPathChange} = useTSDoc()
+
+  const path = params && _getPath(params)
+
+  const href = useMemo(() => {
+    if (!path) return basePath || '/'
+
+    return `${basePath}${path}`
+  }, [basePath, path])
 
   const onClick = useCallback(
     (event: MouseEvent) => {
-      if (!href) return
+      if (!path) return
 
       event.preventDefault()
 
-      onPathChange(href)
+      onPathChange(path)
     },
-    [href, onPathChange]
+    [onPathChange, path]
   )
 
   return {href: href || '/', onClick}

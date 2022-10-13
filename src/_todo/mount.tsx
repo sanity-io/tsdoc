@@ -26,7 +26,7 @@ function Root() {
   const history = useMemo(() => createBrowserHistory(), [])
   const scheme: ThemeColorSchemeKey = usePrefersDark() ? 'dark' : 'light'
   const [path, setPath] = useState<string>(() => history.location.pathname)
-  const basePath = '/docs'
+  const basePath = undefined
   const params: TSDocAppParams | null = useMemo(() => parsePath(path, {basePath}), [basePath, path])
   const [member, setMember] = useState<
     (APIMember & {members: {exportPath: string; releaseVersion: string}}) | null

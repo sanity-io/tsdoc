@@ -7,20 +7,34 @@ import {useTSDoc} from './useTSDoc'
 export function useMember(props: {params: TSDocAppParams | null}): {
   data: APIMember | null
   error: Error | null
+  loading: boolean
 } {
   const {params} = props
   const {store} = useTSDoc()
 
   const [data, setData] = useState<APIMember | null>(null)
   const [error, setError] = useState<Error | null>(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if (!params) {
-      return
+    async function run() {
+      if (!params) return
+
+      try {
+        setLoading(true)
+        setData(null)
+        setData(await store.member.get(params))
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err)
+        }
+      }
+
+      setLoading(false)
     }
 
-    store.member.get(params).then(setData, setError)
+    run()
   }, [params, store])
 
-  return {data, error}
+  return {data, error, loading}
 }

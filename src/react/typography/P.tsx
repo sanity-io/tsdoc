@@ -6,7 +6,7 @@ export function P(props: {children?: ReactNode; fontSize?: number}): ReactElemen
   const {children, fontSize = 2} = props
 
   return (
-    <Box marginY={_space(fontSize, [2, 2, 3])}>
+    <Box marginY={_space(fontSize, [1, 1, 2])}>
       <Text as="p" muted size={_fontSize(fontSize, [2, 2, 3])}>
         {children}
       </Text>

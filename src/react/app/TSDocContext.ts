@@ -4,6 +4,7 @@ import {TSDocAppParams} from '../types'
 
 /** @beta */
 export interface TSDocContextValue {
+  basePath: string
   path: string
   params: TSDocAppParams | null
   onPathChange: (nextPath: string, replace?: boolean) => void

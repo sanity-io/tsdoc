@@ -1,6 +1,7 @@
 export * from './TSDocApp'
 export {type TSDocContextValue} from './TSDocContext'
 export * from './TSDocDetail'
+export * from './TSDocMemberTitle'
 export * from './TSDocNav'
 export * from './TSDocPackageListNavigation'
 export * from './TSDocProvider'

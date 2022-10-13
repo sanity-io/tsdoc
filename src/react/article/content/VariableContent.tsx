@@ -63,12 +63,8 @@ export function VariableContent(props: {
             </Label>
           </Box>
 
-          <Text
-            muted
-            size={_fontSize(fontSize, [1, 1, 2])}
-            style={{fontFamily: 'SF Mono', whiteSpace: 'pre'}}
-          >
-            <CodeSnippet data={type} />
+          <Text muted size={_fontSize(fontSize, [1, 1, 2])}>
+            <CodeSnippet data={type} fontSize={fontSize - 1} />
           </Text>
         </Card>
       )}

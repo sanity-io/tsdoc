@@ -1,9 +1,9 @@
 import {APIFunction} from '@sanity/tsdoc'
 import {Card} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
-import {useMemberLink} from '../../app'
+import {TSDocSymbolPreview, useMemberLink} from '../../app'
 import {CommentDeprecatedCallout, CommentExampleBlocks, CommentRemarks} from '../../comment'
-import {_fontSize} from '../../helpers'
+import {TSDocAppParams} from '../../types'
 import {H, P} from '../../typography'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
@@ -47,15 +47,20 @@ export function FunctionContent(props: {
     [name, parameters, typeParameters]
   )
 
-  const propsTypeLinkParams = useMemo(
+  const propsTypeLinkParams: TSDocAppParams | null = useMemo(
     () =>
-      propsType && {
-        exportPath: propsType.export?.path,
-        packageName: propsType.package?.name,
-        packageScope: propsType.package?.scope || null,
-        memberName: propsType.name,
-        releaseVersion: propsType.release?.version,
-      },
+      propsType?.export?.path &&
+      propsType?.package?.name &&
+      propsType?.name &&
+      propsType.release?.version
+        ? {
+            exportPath: propsType.export.path,
+            packageName: propsType.package.name,
+            packageScope: propsType.package.scope || null,
+            memberName: propsType.name,
+            releaseVersion: propsType.release.version,
+          }
+        : null,
     [propsType]
   )
 
@@ -72,7 +77,7 @@ export function FunctionContent(props: {
       </H>
 
       <Card border padding={3} radius={2} overflow="auto" tone="inherit">
-        <TSDocCode prefix={codePrefix} size={_fontSize(fontSize, [0, 0, 1])} tokens={returnType} />
+        <TSDocCode fontSize={fontSize - 1} prefix={codePrefix} tokens={returnType} />
       </Card>
 
       {propsType && propsTypeLinkParams && propsTypeMembers && (
@@ -92,13 +97,16 @@ export function FunctionContent(props: {
           </P>
 
           {propsTypeMembers.length > 0 && (
-            <Members data={propsTypeMembers} fontSize={fontSize} member={data} />
+            <Members data={propsTypeMembers} fontSize={fontSize - 1} member={data} />
           )}
 
           {propsTypeMembers.length === 0 && (
-            <P fontSize={fontSize}>
-              <em>No members.</em>
-            </P>
+            <>
+              <TSDocSymbolPreview name={propsType.name} />
+              <P fontSize={fontSize}>
+                <em>No members.</em>
+              </P>
+            </>
           )}
         </>
       )}

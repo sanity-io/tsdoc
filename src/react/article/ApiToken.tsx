@@ -4,8 +4,12 @@ import {useMemberLink} from '../app'
 import {TSDocAppParams} from '../types'
 import {ReferenceTooltip} from './tooltip/ReferenceTooltip'
 
-export function ApiToken(props: {deindent?: boolean; token: APIToken}): ReactElement {
-  const {deindent, token} = props
+export function ApiToken(props: {
+  deindent?: boolean
+  fontSize?: number
+  token: APIToken
+}): ReactElement {
+  const {deindent, fontSize = 2, token} = props
   const text = token.text.replace(/History_2/g, 'History').replace(/React_2/g, 'React')
 
   const params: TSDocAppParams | null = useMemo(
@@ -29,7 +33,7 @@ export function ApiToken(props: {deindent?: boolean; token: APIToken}): ReactEle
   }
 
   return (
-    <ReferenceTooltip member={token.member}>
+    <ReferenceTooltip fontSize={fontSize} member={token.member}>
       <a {...linkProps}>{text}</a>
     </ReferenceTooltip>
   )

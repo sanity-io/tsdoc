@@ -1,7 +1,6 @@
 import {APIMember} from '@sanity/tsdoc'
-import {Box, Code, Tooltip} from '@sanity/ui'
+import {Box, Text, Tooltip} from '@sanity/ui'
 import {ReactElement} from 'react'
-import styled from 'styled-components'
 import {_fontSize} from '../../helpers'
 import {ClassTooltipContent} from './content/ClassTooltipContent'
 import {EnumTooltipContent} from './content/EnumTooltipContent'
@@ -10,24 +9,20 @@ import {InterfaceTooltipContent} from './content/InterfaceTooltipContent'
 import {TypeAliasTooltipContent} from './content/TypeAliasTooltipContent'
 import {VariableTooltipContent} from './content/VariableTooltipContent'
 
-const StyledTooltipChild = styled.span`
-  a,
-  a:visited {
-    code {
-      border-bottom: 1px dashed;
-    }
-  }
-`
-
 export function ReferenceTooltip(props: {
   children?: React.ReactElement
+  fontSize?: number
   member: APIMember
 }): ReactElement {
-  const {children, member} = props
+  const {children, fontSize, member} = props
 
   return (
-    <Tooltip content={<ReferenceTooltipContent data={member} />} placement="top" portal>
-      <StyledTooltipChild>{children}</StyledTooltipChild>
+    <Tooltip
+      content={<ReferenceTooltipContent data={member} fontSize={fontSize} />}
+      placement="top"
+      portal
+    >
+      {children}
     </Tooltip>
   )
 }
@@ -61,7 +56,9 @@ export function ReferenceTooltipContent(props: {data: APIMember; fontSize?: numb
 
   return (
     <Box padding={3}>
-      <Code size={_fontSize(fontSize, [0, 0, 1])}>Unknown type: {data._type}</Code>
+      <Text size={_fontSize(fontSize, [1, 1, 2])}>
+        Unknown type: <code>{data._type}</code>
+      </Text>
     </Box>
   )
 }

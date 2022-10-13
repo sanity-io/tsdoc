@@ -37,7 +37,7 @@ async function _loadDocs(files: string[]) {
     } else {
       packageDocs.push({
         ..._pkgDoc,
-        releases: [..._pkgDoc.releases],
+        releases: [...(_pkgDoc.releases || [])],
       })
     }
   }

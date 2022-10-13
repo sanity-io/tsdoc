@@ -12,15 +12,8 @@ export function H(props: {
 
   return (
     <Box
-      marginTop={
-        marginTop ||
-        _space(fontSize, [Math.max(6 - level, 4), Math.max(7 - level, 4), Math.max(6 - level, 4)])
-      }
-      marginBottom={_space(fontSize, [
-        Math.max(3 - level, 3),
-        Math.max(3 - level, 3),
-        Math.max(4 - level, 3),
-      ])}
+      marginTop={marginTop || _space(fontSize, [1, 2, 3])}
+      marginBottom={_space(fontSize, [1, 1, 2])}
     >
       <Heading
         as={`h${level}` as 'h1'}

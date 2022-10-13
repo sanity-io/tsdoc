@@ -27,7 +27,7 @@ export function Members(props: {
   const {data, fontSize = 2, level, member} = props
 
   return (
-    <Stack space={_space(fontSize, [2, 2, 2])}>
+    <Stack marginTop={_space(fontSize, [1, 1, 2])} space={_space(fontSize, [0, 0, 1])}>
       {data.map(
         (m) =>
           m && <Member data={m} fontSize={fontSize} key={m._key} level={level} member={member} />
@@ -183,7 +183,7 @@ function ApiCallSignatureMember(props: {
             <Code
               as={`h${level}` as any}
               language="ts"
-              size={_fontSize(fontSize, [0, 0, 1])}
+              size={_fontSize(fontSize, [1, 1, 2])}
               style={{fontWeight: 700, whiteSpace: 'nowrap'}}
             >
               {data.parameters?.map((p) => p.name).join(', ')}
@@ -213,8 +213,9 @@ function ApiCallSignatureMember(props: {
               {data.parameters.map((p) => (
                 <TSDocCode
                   deindent
+                  fontSize={fontSize}
                   key={p._key}
-                  size={_fontSize(fontSize, [0, 0, 1])}
+                  // size={_fontSize(fontSize, [1,1,2])}
                   prefix={`${p.name}: `}
                   tokens={p.type}
                 />
@@ -227,7 +228,7 @@ function ApiCallSignatureMember(props: {
           <Stack marginTop={4} space={3}>
             <Label size={_fontSize(fontSize, [1, 1, 2])}>Return type</Label>
 
-            <TSDocCode deindent size={_fontSize(fontSize, [0, 0, 1])} tokens={data.returnType} />
+            <TSDocCode deindent fontSize={fontSize} tokens={data.returnType} />
           </Stack>
         )}
       </Box>
@@ -253,7 +254,7 @@ function ApiContructorMember(props: {
           <Code
             as={`h${level}` as any}
             language="ts"
-            size={_fontSize(fontSize, [0, 0, 1])}
+            size={_fontSize(fontSize, [1, 1, 2])}
             style={{fontWeight: 700, whiteSpace: 'nowrap'}}
           >
             {title}
@@ -261,7 +262,7 @@ function ApiContructorMember(props: {
         </Box>
 
         <Box flex="none">
-          <Code size={_fontSize(fontSize, [0, 0, 1])}>
+          <Code size={_fontSize(fontSize, [1, 1, 2])}>
             <ReleaseTag $tag={`@${data.releaseTag || 'public'}`}>
               {`@${data.releaseTag || 'public'}`}
             </ReleaseTag>
@@ -278,7 +279,7 @@ function ApiContructorMember(props: {
       {/* Parameters */}
       {parameters && parameters.length > 0 && (
         <Card borderTop overflow="auto" padding={3} tone="inherit">
-          <Label muted size={_fontSize(fontSize, [0, 0, 1])}>
+          <Label muted size={_fontSize(fontSize, [1, 1, 2])}>
             Parameters
           </Label>
 
@@ -286,9 +287,9 @@ function ApiContructorMember(props: {
             {data.parameters.map((param) => (
               <TSDocCode
                 deindent
+                fontSize={fontSize}
                 key={param._key}
                 prefix={`${param.name}: `}
-                size={_fontSize(fontSize, [0, 0, 1])}
                 tokens={param.type}
               />
             ))}
@@ -324,13 +325,13 @@ function ApiMethodMember(props: {
     <Card border overflow="auto" radius={2} tone={comment?.deprecated ? 'critical' : 'inherit'}>
       <Flex align="center" padding={3}>
         <Box flex={1}>
-          <Code as="h3" language="ts" size={_fontSize(fontSize, [0, 0, 1])}>
+          <Code as="h3" language="ts" size={_fontSize(fontSize, [1, 1, 2])}>
             {title}
           </Code>
         </Box>
 
         <Box flex="none">
-          <Code size={_fontSize(fontSize, [0, 0, 1])}>
+          <Code size={_fontSize(fontSize, [1, 1, 2])}>
             <ReleaseTag $tag={`@${data.releaseTag || 'public'}`}>
               {`@${data.releaseTag || 'public'}`}
             </ReleaseTag>
@@ -348,7 +349,7 @@ function ApiMethodMember(props: {
       {data.parameters && data.parameters.length > 0 && (
         <Card borderTop padding={3} tone="inherit">
           <Box marginBottom={3}>
-            <Label muted size={_fontSize(fontSize, [0, 0, 1])}>
+            <Label muted size={_fontSize(fontSize, [1, 1, 2])}>
               Parameters
             </Label>
           </Box>
@@ -357,9 +358,9 @@ function ApiMethodMember(props: {
             {data.parameters.map((param) => (
               <TSDocCode
                 deindent
+                fontSize={fontSize}
                 key={param._key}
                 prefix={`${param.name}: `}
-                size={_fontSize(fontSize, [0, 0, 1])}
                 tokens={param.type}
               />
             ))}
@@ -371,12 +372,12 @@ function ApiMethodMember(props: {
       {data.returnType && data.returnType.length > 0 && (
         <Card borderTop padding={3} tone="inherit">
           <Box marginBottom={3}>
-            <Label muted size={_fontSize(fontSize, [0, 0, 1])}>
+            <Label muted size={_fontSize(fontSize, [1, 1, 2])}>
               Returns
             </Label>
           </Box>
 
-          <TSDocCode deindent size={_fontSize(fontSize, [0, 0, 1])} tokens={data.returnType} />
+          <TSDocCode deindent fontSize={fontSize} tokens={data.returnType} />
         </Card>
       )}
 
@@ -426,7 +427,7 @@ function ApiMethodSignatureMember(props: {
           </Box>
 
           <Box flex="none">
-            <Code size={_fontSize(fontSize, [0, 0, 1])}>
+            <Code size={_fontSize(fontSize, [1, 1, 2])}>
               <ReleaseTag $tag={`@${data.releaseTag || 'public'}`}>
                 {`@${data.releaseTag || 'public'}`}
               </ReleaseTag>
@@ -458,9 +459,9 @@ function ApiMethodSignatureMember(props: {
             {data.parameters.map((param) => (
               <TSDocCode
                 deindent
+                fontSize={fontSize}
                 key={param._key}
                 prefix={`${param.name}: `}
-                size={_fontSize(fontSize, [0, 0, 1])}
                 tokens={param.type}
               />
             ))}
@@ -493,14 +494,14 @@ function ApiPropertyMember(props: {
         <Flex align="flex-start">
           <Box flex={1}>
             <TSDocCode
+              fontSize={fontSize}
               prefix={`${isStatic ? 'static ' : ''}${name}${isOptional ? '?' : ''}: `}
-              size={_fontSize(fontSize, [0, 0, 1])}
               tokens={type}
             />
           </Box>
 
           <Box flex="none">
-            <Code size={_fontSize(fontSize, [0, 0, 1])}>
+            <Code size={_fontSize(fontSize, [1, 1, 2])}>
               <ReleaseTag $tag={`@${data.releaseTag || 'public'}`}>
                 {`@${data.releaseTag || 'public'}`}
               </ReleaseTag>
@@ -540,14 +541,14 @@ function ApiPropertySignature(props: {
         <Box flex={1}>
           <TSDocCode
             deindent
-            size={_fontSize(fontSize, [0, 0, 1])}
+            fontSize={fontSize}
             prefix={`${name}${isOptional ? '?' : ''}: `}
             tokens={type}
           />
         </Box>
 
         <Box flex="none">
-          <Code size={_fontSize(fontSize, [0, 0, 1])}>
+          <Code size={_fontSize(fontSize, [1, 1, 2])}>
             <ReleaseTag $tag={`@${data.releaseTag || 'public'}`}>
               {`@${data.releaseTag || 'public'}`}
             </ReleaseTag>

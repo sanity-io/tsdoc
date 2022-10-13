@@ -1,7 +1,8 @@
 import {APIToken, SanityArrayItem} from '@sanity/tsdoc'
-import {Box, Code, CodeProps} from '@sanity/ui'
+import {Box, Code} from '@sanity/ui'
 import {ReactElement} from 'react'
 import styled from 'styled-components'
+import {_fontSize} from '../helpers'
 import {CodeSnippet} from './CodeSnippet'
 
 const Root = styled(Box)`
@@ -29,12 +30,12 @@ const Root = styled(Box)`
 
 export function TSDocCode(props: {
   deindent?: boolean
+  fontSize?: number
   prefix?: string
-  size?: CodeProps['size']
   suffix?: string
   tokens: SanityArrayItem<APIToken>[]
 }): ReactElement {
-  const {deindent, prefix = '', size, suffix = '', tokens} = props
+  const {deindent, fontSize = 2, prefix = '', suffix = '', tokens} = props
 
   const code = (prefix + tokens.map((t) => t.text).join('') + suffix)
     .replace(/History_2/g, 'History')
@@ -42,11 +43,17 @@ export function TSDocCode(props: {
 
   return (
     <Root>
-      <Code size={size}>
-        <CodeSnippet data={tokens} deindent={deindent} prefix={prefix} suffix={suffix} />
+      <Code size={_fontSize(fontSize, [1, 1, 2])}>
+        <CodeSnippet
+          data={tokens}
+          deindent={deindent}
+          fontSize={fontSize - 1}
+          prefix={prefix}
+          suffix={suffix}
+        />
       </Code>
 
-      <Code language="typescript" size={size}>
+      <Code language="typescript" size={_fontSize(fontSize, [1, 1, 2])}>
         {deindent ? code.replace(/\n\s\s/g, '\n') : code}
       </Code>
     </Root>

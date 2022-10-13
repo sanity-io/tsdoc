@@ -6,18 +6,35 @@ import {useTSDoc} from './useTSDoc'
 export function useSymbol(props: {name: string}): {
   data: (APISymbol & {members: APIMember[]}) | null
   error: Error | null
+  loading: boolean
 } {
   const {name} = props
   const {params, store} = useTSDoc()
   const {packageName, packageScope = null} = params || {}
+
   const [data, setData] = useState<(APISymbol & {members: APIMember[]}) | null>(null)
   const [error, setError] = useState<Error | null>(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    if (!packageName) return
+    async function run() {
+      if (!packageName) return
 
-    store.symbol.get({packageName, packageScope, name}).then(setData).catch(setError)
+      try {
+        setLoading(true)
+        setData(null)
+        setData(await store.symbol.get({packageName, packageScope, name}))
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err)
+        }
+      }
+
+      setLoading(false)
+    }
+
+    run()
   }, [name, packageName, packageScope, store])
 
-  return {data, error}
+  return {data, error, loading}
 }

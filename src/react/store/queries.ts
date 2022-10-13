@@ -1,7 +1,7 @@
 import groq from 'groq'
 
 /** @internal */
-export const EXPORTS_QUERY = groq`
+export const API_EXPORTS_QUERY = groq`
 *[_type == "api.export"]{
   name,
   path,
@@ -313,7 +313,7 @@ type[]{
 `
 
 /** @internal */
-export const API_SYMBOL_PROJECTION = groq`
+export const API_MEMBER_PROJECTION = groq`
 _type == 'api.class' => {
   ${API_CLASS_PROJECTION}
 },
@@ -344,7 +344,7 @@ _type == 'api.variable' => {
 `
 
 /** @internal */
-export const MEMBER_QUERY = groq`
+export const API_MEMBER_QUERY = groq`
 *[
   _type in $memberTypes
   && export->path == $exportPath
@@ -353,12 +353,12 @@ export const MEMBER_QUERY = groq`
   && release->version == $releaseVersion
   && name == $memberName
 ]{
-  ${API_SYMBOL_PROJECTION}
+  ${API_MEMBER_PROJECTION}
 }[0]
 `
 
 /** @internal */
-export const SYMBOL_SEARCH_QUERY = groq`
+export const API_SYMBOL_SEARCH_QUERY = groq`
 *[
   _type == 'api.symbol'
   && name match $query
@@ -382,7 +382,7 @@ export const SYMBOL_SEARCH_QUERY = groq`
 `
 
 /** @internal */
-export const PACKAGE_QUERY = groq`
+export const API_PACKAGE_QUERY = groq`
 *[
   _type == 'api.package'
   && scope == $packageScope
@@ -391,7 +391,7 @@ export const PACKAGE_QUERY = groq`
 `
 
 /** @internal */
-export const SYMBOL_QUERY = groq`
+export const API_SYMBOL_QUERY = groq`
 *[
   _type == 'api.symbol'
   && name == $name
@@ -406,6 +406,6 @@ export const SYMBOL_QUERY = groq`
     && name == $name
     && package->scope == $packageScope
     && package->name == $packageName
-  ]{${API_SYMBOL_PROJECTION}}
+  ]{${API_MEMBER_PROJECTION}}
 }[0]
 `

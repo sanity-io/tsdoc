@@ -47,11 +47,29 @@ export function TSDocApp(props: TSDocAppProps): ReactElement {
   )
 
   return (
-    <TSDocProvider onPathChange={handlePathChange} params={params} path={path} store={store}>
+    <TSDocProvider
+      basePath={basePath}
+      onPathChange={handlePathChange}
+      params={params}
+      path={path}
+      store={store}
+    >
       <Root height="fill">
         <Flex height="fill">
-          <TSDocNav />
-          {params && <TSDocDetail />}
+          <Card
+            borderRight
+            display={['none', 'none', 'block']}
+            overflow="auto"
+            style={{width: 400}}
+          >
+            <TSDocNav />
+          </Card>
+
+          {params && (
+            <Card flex={1} overflow="auto">
+              <TSDocDetail fontSize={2} />
+            </Card>
+          )}
         </Flex>
       </Root>
     </TSDocProvider>

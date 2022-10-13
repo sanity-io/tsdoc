@@ -1,6 +1,7 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Box, Card, Code, Container, Text} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {ReactElement} from 'react'
+import {TSDocMemberTitle} from '../app'
 import {CommentSummary} from '../comment'
 import {SyntaxText} from '../components/ColoredCode'
 import {ReleaseTag} from '../components/ReleaseTag'
@@ -18,80 +19,13 @@ export function ReferenceArticle(props: {
 
   const isType = ['api.interface', 'api.namespace', 'api.typeAlias'].includes(data._type)
 
-  const title = useMemo(() => {
-    if ('isReactComponentType' in data && data.isReactComponentType) {
-      return (
-        <>
-          <UnformattedCode>{`<`}</UnformattedCode>
-          <SyntaxText $syntax="className">{data.name}</SyntaxText>
-          <UnformattedCode>{` />`}</UnformattedCode>
-        </>
-      )
-    }
-
-    if (data._type === 'api.class') {
-      return (
-        <>
-          <SyntaxText $syntax="keyword">class </SyntaxText>
-          <SyntaxText $syntax="className">{data.name}</SyntaxText>
-        </>
-      )
-    }
-
-    if (data._type === 'api.enum') {
-      return (
-        <>
-          <SyntaxText $syntax="keyword">enum </SyntaxText>
-          <SyntaxText $syntax="className">{data.name}</SyntaxText>
-        </>
-      )
-    }
-
-    if (data._type === 'api.function') {
-      return (
-        <>
-          <SyntaxText $syntax="keyword">function </SyntaxText>
-          <SyntaxText $syntax="function">{data.name}()</SyntaxText>
-        </>
-      )
-    }
-
-    if (data._type === 'api.interface') {
-      return (
-        <>
-          <SyntaxText $syntax="keyword">interface </SyntaxText>
-          <SyntaxText $syntax="className">{data.name}</SyntaxText>
-        </>
-      )
-    }
-
-    if (data._type === 'api.namespace') {
-      return (
-        <>
-          <SyntaxText $syntax="keyword">namespace </SyntaxText>
-          <SyntaxText $syntax="className">{data.name}</SyntaxText>
-        </>
-      )
-    }
-
-    if (data._type === 'api.typeAlias') {
-      return (
-        <>
-          <SyntaxText $syntax="keyword">type </SyntaxText>
-          <SyntaxText $syntax="className">{data.name}</SyntaxText>
-        </>
-      )
-    }
-
-    if (data._type === 'api.variable') {
-      return <UnformattedCode>{data.name}</UnformattedCode>
-    }
-
-    return null
-  }, [data])
-
   return (
-    <Box as="article" data-ui="ReferenceArticle" paddingX={[4, 4, 5, 6]} paddingY={[5, 5, 6, 7]}>
+    <Box
+      as="article"
+      data-ui="ReferenceArticle"
+      paddingX={_space(fontSize, [4, 4, 4, 5])}
+      paddingY={_space(fontSize, [5, 5, 5, 4])}
+    >
       <Container width={1}>
         <Text as="p" size={_fontSize(fontSize, [0, 0, 1])}>
           <UnformattedCode>{data.export.name} </UnformattedCode>
@@ -104,7 +38,7 @@ export function ReferenceArticle(props: {
         </Text>
 
         <H fontSize={fontSize} level={1} marginTop={_space(fontSize, [3, 3, 3])}>
-          <span style={{whiteSpace: 'nowrap'}}>{title}</span>
+          <TSDocMemberTitle data={data} />
         </H>
 
         {data.comment && <CommentSummary data={data.comment} fontSize={fontSize + 1} />}

@@ -1,4 +1,4 @@
-import {Card, Stack} from '@sanity/ui'
+import {Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {TSDocExportData} from '../types'
 import {TSDocExportNavigation} from './TSDocPackageListNavigation'
@@ -16,11 +16,14 @@ export function TSDocNav(): ReactElement {
       packageScope: string | null
       packageName: string
       name: string
-      // path: string
       versions: TSDocExportData[]
     }[] = []
 
     for (const exp of data) {
+      if (exp.members.length === 0) {
+        continue // skip
+      }
+
       const item = _exports.find(
         (e) =>
           e.packageScope === exp.package.scope &&
@@ -35,7 +38,6 @@ export function TSDocNav(): ReactElement {
           packageScope: exp.package.scope,
           packageName: exp.package.name,
           name: exp.name,
-          // path: exp.path,
           versions: [exp],
         })
       }
@@ -45,18 +47,16 @@ export function TSDocNav(): ReactElement {
   }, [data])
 
   return (
-    <Card borderRight display={['none', 'none', 'block']} overflow="auto" style={{width: 400}}>
-      <Stack padding={3} space={4}>
-        <TSDocSearch />
+    <Stack padding={3} space={4}>
+      <TSDocSearch />
 
-        {exports && (
-          <Stack space={1}>
-            {exports.map((exp) => (
-              <TSDocExportNavigation key={exp.name} name={exp.name} versions={exp.versions} />
-            ))}
-          </Stack>
-        )}
-      </Stack>
-    </Card>
+      {exports && (
+        <Stack space={1}>
+          {exports.map((exp) => (
+            <TSDocExportNavigation key={exp.name} name={exp.name} versions={exp.versions} />
+          ))}
+        </Stack>
+      )}
+    </Stack>
   )
 }
