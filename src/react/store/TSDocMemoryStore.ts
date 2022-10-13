@@ -28,7 +28,7 @@ export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStor
   return {
     exports: {
       async get() {
-        await delay(3000)
+        await delay(0)
 
         return query(API_EXPORTS_QUERY, {memberTypes: API_MEMBER_TYPES})
       },
@@ -36,7 +36,7 @@ export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStor
 
     member: {
       async get(params) {
-        await delay(3000)
+        await delay(0)
 
         return query(API_MEMBER_QUERY, {
           ...params,
@@ -47,7 +47,7 @@ export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStor
 
     package: {
       async get(params) {
-        await delay(3000)
+        await delay(0)
 
         return query(API_PACKAGE_QUERY, {
           ...params,
@@ -65,7 +65,7 @@ export function createTSDocMemoryStore({docs}: {docs: APIDocument[]}): TSDocStor
       },
 
       async search(q) {
-        await delay(3000)
+        await delay(0)
 
         return query(API_SYMBOL_SEARCH_QUERY, {
           memberTypes: API_MEMBER_TYPES,
