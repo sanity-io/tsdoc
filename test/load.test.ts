@@ -15,6 +15,9 @@ describe('load', () => {
 
     const docs = transform(results, {package: {version: '1.0.0'}})
 
-    await load(docs, {fs: {path: path.resolve(project.cwd, 'etc/1.0.0.json')}})
+    await load(docs, {
+      cwd: project.cwd,
+      fs: {path: path.resolve(project.cwd, 'etc/1.0.0.json')},
+    })
   })
 })

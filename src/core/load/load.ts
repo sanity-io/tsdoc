@@ -1,4 +1,5 @@
 import path from 'path'
+import createSanityClient, {SanityDocument} from '@sanity/client'
 import mkdirp from 'mkdirp'
 import {APIDocument} from '../types'
 import {writeFile} from './helpers'
@@ -8,8 +9,13 @@ import {writeFile} from './helpers'
  */
 export async function load(
   transformed: APIDocument[],
-  opts: {fs?: {path: string}} = {}
+  opts: {
+    cwd: string
+    fs?: {path: string}
+    sanity?: {projectId?: string; dataset?: string; token?: string}
+  }
 ): Promise<void> {
+  // Write to file system
   if (opts.fs) {
     const dirPath = path.dirname(opts.fs.path)
 
@@ -17,5 +23,27 @@ export async function load(
     await writeFile(opts.fs.path, JSON.stringify(transformed, null, 2) + '\n')
   }
 
-  // @todo: Write to Sanity
+  // Write to Sanity
+  if (opts.sanity) {
+    await _loadToSanity(opts.sanity, transformed)
+  }
+}
+
+async function _loadToSanity(
+  sanity: {projectId?: string; dataset?: string; token?: string},
+  docs: APIDocument[]
+): Promise<void> {
+  const client = createSanityClient({
+    ...sanity,
+    apiVersion: '2022-10-01',
+    useCdn: false,
+  })
+
+  let tx = client.transaction()
+
+  for (const doc of docs) {
+    tx = tx.createOrReplace(doc as SanityDocument)
+  }
+
+  await tx.commit()
 }

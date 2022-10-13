@@ -1,10 +1,32 @@
+/* eslint-disable no-console */
+
 import path from 'path'
-import {_printExtractMessages, extract, load, transform} from '@sanity/tsdoc'
+import createSanityClient from '@sanity/client'
+import {
+  APIPackageDocument,
+  SanityTSDocConfigOptions,
+  _loadConfig,
+  _printExtractMessages,
+  extract,
+  load,
+  transform,
+} from '@sanity/tsdoc'
 import chalk from 'chalk'
 import mkdirp from 'mkdirp'
 import pkgUp from 'pkg-up'
-import {_loadConfig} from '../core/config'
 import {readJSONFile} from './helpers'
+
+async function _fetchPackageDocsFromSanity(
+  sanity: NonNullable<SanityTSDocConfigOptions['sanity']>
+) {
+  const client = createSanityClient({
+    ...sanity,
+    apiVersion: '2022-10-01',
+    useCdn: false,
+  })
+
+  return await client.fetch('*[_type == "api.package"]')
+}
 
 export async function etlCommand(options: {
   cwd: string
@@ -35,6 +57,12 @@ export async function etlCommand(options: {
 
   const config = await _loadConfig({packagePath})
 
+  let pkgDocs: APIPackageDocument[] = []
+
+  if (config?.sanity) {
+    pkgDocs = await _fetchPackageDocsFromSanity(config.sanity)
+  }
+
   const results = await extract({
     customTags: config?.extract?.customTags,
     packagePath,
@@ -63,19 +91,52 @@ export async function etlCommand(options: {
     process.exit(1)
   }
 
+  const currPackageDoc = pkgDocs.find((p) => {
+    const n = [p.scope, p.name].filter(Boolean).join('/')
+
+    return n == pkg.name
+  })
+
+  if (currPackageDoc) {
+    delete currPackageDoc._createdAt
+    delete currPackageDoc._updatedAt
+  }
+
+  // TODO: load api docs of dependencies
+
   const docs = transform(results, {
+    currPackageDoc,
     package: {version: pkg.version},
   })
 
   await mkdirp(path.dirname(jsonPath))
 
-  await load(docs, {fs: {path: jsonPath}})
+  if (config?.sanity && !config.sanity.token) {
+    console.warn(
+      // prettier-ignore
+      `${chalk.gray('ignore')} no token provided, skipped writing to sanity (${config.sanity.projectId}:${config.sanity.dataset})`
+    )
 
-  // eslint-disable-next-line no-console
+    return
+  }
+
+  await load(docs, {
+    cwd,
+    fs: {path: jsonPath},
+    sanity: config?.sanity,
+  })
+
   console.log('')
-
-  // eslint-disable-next-line no-console
   console.log(
-    `${chalk.green('success')} wrote documents to ${path.relative(packagePath, jsonPath)}`
+    // prettier-ignore
+    `${chalk.green('success')} wrote ${docs.length} documents to ${path.relative(cwd, jsonPath)}`
   )
+
+  if (config?.sanity?.token) {
+    console.log('')
+    console.log(
+      // prettier-ignore
+      `${chalk.green('success')} wrote ${docs.length} documents to Sanity (${config.sanity.projectId}:${config.sanity.dataset})`
+    )
+  }
 }
