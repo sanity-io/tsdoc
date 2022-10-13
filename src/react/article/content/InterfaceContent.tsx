@@ -145,7 +145,13 @@ export function InterfaceContent(props: {
           <H fontSize={fontSize} level={level}>
             Properties
           </H>
-          <Members data={propertySignatures} fontSize={fontSize} level={level + 1} member={data} />
+
+          <Members
+            data={propertySignatures}
+            fontSize={fontSize - 1}
+            level={level + 1}
+            member={data}
+          />
         </>
       )}
 

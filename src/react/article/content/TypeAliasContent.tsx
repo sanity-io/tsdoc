@@ -26,7 +26,7 @@ export function TypeAliasContent(props: {
 
           <Card border overflow="auto" padding={3} radius={2} tone="inherit">
             <TSDocCode
-              fontSize={fontSize}
+              fontSize={fontSize - 1}
               prefix={`type ${name}${_compileTypeParameters(typeParameters)} = `}
               tokens={type}
             />

@@ -1,9 +1,6 @@
-import {Card, Flex, Spinner, Stack, Text} from '@sanity/ui'
+import {Flex, Spinner, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {ReferenceArticle} from '../article'
-import {TSDocSymbol} from './TSDocSymbol'
-import {TSDocSymbolPreview} from './TSDocSymbolPreview'
-import {TSDocSymbolTooltip} from './TSDocSymbolTooltip'
 import {useMember} from './useMember'
 import {usePackage} from './usePackage'
 import {useTSDoc} from './useTSDoc'
@@ -45,41 +42,5 @@ export function TSDocDetail(props: {fontSize?: number}): ReactElement {
     )
   }
 
-  return (
-    <>
-      <Card padding={[4, 5, 6]} tone="positive">
-        <Stack space={5}>
-          <Flex>
-            <Text>
-              Symbol:{' '}
-              <TSDocSymbolTooltip fontSize={fontSize - 2} name={member.data.name} portal>
-                <code>{member.data.name}</code>
-              </TSDocSymbolTooltip>
-            </Text>
-          </Flex>
-
-          <Flex>
-            <TSDocSymbol
-              border
-              fontSize={fontSize}
-              name={member.data.name}
-              padding={2}
-              radius={2}
-              tone="inherit"
-            />
-          </Flex>
-
-          <TSDocSymbolPreview
-            border
-            fontSize={fontSize}
-            name={member.data.name}
-            radius={2}
-            tone="inherit"
-          />
-        </Stack>
-      </Card>
-
-      <ReferenceArticle data={member.data} fontSize={fontSize} />
-    </>
-  )
+  return <ReferenceArticle data={member.data} fontSize={fontSize} />
 }
