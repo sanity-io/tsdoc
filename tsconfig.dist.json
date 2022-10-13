@@ -6,12 +6,6 @@
     "rootDir": ".",
     "outDir": "./dist",
 
-    "paths": {
-      "@sanity/tsdoc/runtime": ["./exports/runtime.ts"],
-      "@sanity/tsdoc/react": ["./exports/react.ts"],
-      "@sanity/tsdoc": ["./exports/index.ts"]
-    },
-
     "jsx": "react-jsx",
     "emitDeclarationOnly": true,
     "resolveJsonModule": true
