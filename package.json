@@ -242,7 +242,7 @@
     "sanity": "^3",
     "styled-components": "^5.2"
   },
-  "packageManager": "pnpm@7.27.1",
+  "packageManager": "pnpm@7.28.0",
   "engines": {
     "node": ">=14.0.0"
   },
