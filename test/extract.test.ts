@@ -11,15 +11,15 @@ describe('extract', () => {
     await project.install()
     await project.run('build')
 
-    const results = await extract({
+    const {results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
       tsconfig: 'tsconfig.dist.json',
     })
 
-    const result = results[0]
+    const result = results[0]!
 
-    expect(result.messages[result.messages.length - 1].text).toEqual(
+    expect(result.messages[result.messages.length - 1]?.text).toEqual(
       `Writing: ${path.resolve(result.tempDirPath, 'api.json')}`
     )
   })
@@ -30,7 +30,7 @@ describe('extract', () => {
     await project.install()
     await project.run('build')
 
-    const results = await extract({
+    const {results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
       tsconfig: 'tsconfig.dist.json',
@@ -38,9 +38,9 @@ describe('extract', () => {
 
     expect(results.length).toBe(2)
 
-    const result = results[0]
+    const result = results[0]!
 
-    expect(result.messages[result.messages.length - 1].text).toEqual(
+    expect(result.messages[result.messages.length - 1]?.text).toEqual(
       `Writing: ${path.resolve(result.tempDirPath, 'api.json')}`
     )
   })

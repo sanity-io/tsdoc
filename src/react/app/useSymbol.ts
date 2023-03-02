@@ -3,14 +3,23 @@ import {useEffect, useState} from 'react'
 import {useTSDoc} from './useTSDoc'
 
 /** @beta */
-export function useSymbol(props: {name: string}): {
+export interface UseSymbolProps {
+  name: string
+  packageScope?: string | null
+  packageName?: string
+  releaseVersion?: string
+}
+
+/** @beta */
+export function useSymbol(props: UseSymbolProps): {
   data: (APISymbol & {members: APIMember[]}) | null
   error: Error | null
   loading: boolean
 } {
-  const {name} = props
+  const {name, packageName: packageNameProp, packageScope: packageScopeProp} = props
   const {params, store} = useTSDoc()
-  const {packageName, packageScope = null} = params || {}
+  const packageScope = packageScopeProp ?? params?.packageScope
+  const packageName = packageNameProp ?? params?.packageName
 
   const [data, setData] = useState<(APISymbol & {members: APIMember[]}) | null>(null)
   const [error, setError] = useState<Error | null>(null)
@@ -23,7 +32,13 @@ export function useSymbol(props: {name: string}): {
       try {
         setLoading(true)
         setData(null)
-        setData(await store.symbol.get({packageName, packageScope, name}))
+        setData(
+          await store.symbol.get({
+            packageName,
+            packageScope,
+            name,
+          })
+        )
       } catch (err) {
         if (err instanceof Error) {
           setError(err)

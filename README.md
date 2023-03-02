@@ -1,47 +1,21 @@
+
+
 # @sanity/tsdoc
 
-- 📚 Extract TSDoc and API reference from a TypeScript package
-- 📦 Store as neatly structured content in your Sanity backend
-- 💅 Render API reference using React components
-
-## Installation
+Generate API reference docs from TypeScript projects and store in a Sanity-friendly JSON format. Render a static frontend, or as React components.
 
 ```sh
-npm i @sanity/tsdoc
+npm install @sanity/tsdoc
 ```
 
-## Using the CLI
+![](https://img.shields.io/npm/v/@sanity/tsdoc?style=flat)
+![](https://img.shields.io/npm/l/@sanity/tsdoc.svg?style=flat)
 
-```sh
-# Extract API reference to etc/<name>/<version>.json using the `etl` command
-sanity-tsdoc etl
-```
+## Documentation
 
-## Using the Node.js API
+- [Generate API documentation as JSON and store in Sanity or local filesystem](docs/generate-api-docs.md)
+- []
 
-```ts
-import {extract, transform, load} from '@sanity/tsdoc'
+## License
 
-// Extract API information
-// `packagePath` is a path to a directory containing a `package.json` file
-const result = await extract({
-  packagePath: __dirname,
-  tsconfig: 'tsconfig.dist.json',
-})
-
-// Transform the result of `extract` (`@microsoft/api-extractor`) to sanity-formatted documents
-const docs = transform(result, {
-  package: {
-    scope: null,
-    name: 'mylib',
-    version: '1.0.0',
-  },
-})
-
-// Write file containing sanity-formatted documents
-await load(docs, {
-  fs: {
-    path: path.resolve(__dirname, 'etc/1.0.0.json'),
-  },
-})
-```
+[MIT](https://github.com/sanity-io/tsdoc/blob/main/LICENSE) © [Sanity.io](https://www.sanity.io/)

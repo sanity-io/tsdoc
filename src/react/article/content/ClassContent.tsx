@@ -1,8 +1,8 @@
 import {APIClass, APIConstructor, APIMethod, APIProperty, SanityArrayItem} from '@sanity/tsdoc'
 import {Box} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
-import {CommentDeprecatedCallout, CommentRemarks} from '../../comment'
-import {H} from '../../typography/H'
+import {CommentRemarks} from '../../comment'
+import {H} from '../../lib/ui'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
 
@@ -43,26 +43,16 @@ function useMembers(data: APIClass) {
   }, [data])
 }
 
-export function ClassContent(props: {
-  data: APIClass
-  fontSize?: number
-  level?: number
-}): ReactElement {
-  const {data, fontSize, level = 1} = props
+export function ClassContent(props: {data: APIClass}): ReactElement {
+  const {data} = props
   const {comment} = data
   const {constructors, methods, properties, staticMethods} = useMembers(data)
 
   return (
     <>
-      {comment?.deprecated?.content && (
-        <Box marginTop={4}>
-          <CommentDeprecatedCallout data={comment} fontSize={fontSize} level={level + 1} />
-        </Box>
-      )}
-
       {comment?.remarks?.content && (
         <Box marginTop={6}>
-          <CommentRemarks data={comment} fontSize={fontSize} level={level + 1} />
+          <CommentRemarks data={comment} />
         </Box>
       )}
 
@@ -70,38 +60,29 @@ export function ClassContent(props: {
 
       {constructors.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level + 1}>
-            Constructor
-          </H>
-
-          <Members data={constructors} fontSize={fontSize} level={level + 1} member={data} />
+          <H size={[-1, 0, 1, 2]}>Constructor</H>
+          <Members data={constructors} member={data} />
         </>
       )}
 
       {properties.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level + 1}>
-            Properties
-          </H>
-          <Members data={properties} fontSize={fontSize} level={level + 1} member={data} />
+          <H size={[-1, 0, 1, 2]}>Properties</H>
+          <Members data={properties} member={data} />
         </>
       )}
 
       {staticMethods.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level + 1}>
-            Static methods
-          </H>
-          <Members data={staticMethods} fontSize={fontSize} level={level + 1} member={data} />
+          <H size={[-1, 0, 1, 2]}>Static methods</H>
+          <Members data={staticMethods} member={data} />
         </>
       )}
 
       {methods.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level + 1}>
-            Methods
-          </H>
-          <Members data={methods} fontSize={fontSize} level={level + 1} member={data} />
+          <H size={[-1, 0, 1, 2]}>Methods</H>
+          <Members data={methods} member={data} />
         </>
       )}
     </>

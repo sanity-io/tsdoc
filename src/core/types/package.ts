@@ -6,4 +6,5 @@ export interface APIPackage {
   scope?: string
   name: string
   latestRelease: APIRelease
+  releases: APIRelease[]
 }

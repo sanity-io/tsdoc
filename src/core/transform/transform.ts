@@ -1,3 +1,4 @@
+import path from 'path'
 import {ExtractResult} from '../extract'
 import {
   APIDocument,
@@ -12,6 +13,34 @@ import {transformExportMember} from './transformExportMember'
 import {_transformPackage} from './transformPackage'
 import {TransformContext, TransformOpts} from './types'
 
+function formatReleaseId(
+  packageScope: string | undefined,
+  packageName: string,
+  releaseVersion: string
+) {
+  return [packageScope, packageName, releaseVersion]
+    .filter(Boolean)
+    .join('_')
+    .replace(/@/g, '')
+    .replace(/\./g, '-')
+    .replace(/\//g, '_')
+}
+
+function formatExportId(
+  packageScope: string | undefined,
+  packageName: string,
+  releaseVersion: string,
+  exportPath: string
+) {
+  const prefix = [packageScope, packageName, releaseVersion].filter(Boolean).join('_')
+
+  return path
+    .join(prefix, exportPath === '.' ? './_main' : exportPath)
+    .replace(/@/g, '')
+    .replace(/\./g, '-')
+    .replace(/\//g, '_')
+}
+
 /** @public */
 export function transform(extractResults: ExtractResult[], opts: TransformOpts): APIDocument[] {
   const {version: releaseVersion} = opts.package
@@ -21,14 +50,14 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
     members: (SerializedAPIMember & {_id: string})[]
     package?: APIPackageDocument
     release?: APIReleaseDocument
-    symbolNames: string[]
+    memberNames: string[]
     symbols: APISymbolDocument[]
   } = {
     exports: [],
     members: [],
     package: opts.currPackageDoc || undefined,
     release: undefined,
-    symbolNames: [],
+    memberNames: [],
     symbols: [],
   }
 
@@ -42,26 +71,17 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
 
     const [packageScope, packageName] = _parsePackageName(apiPackage.name)
 
-    const releaseId = [packageScope, packageName, releaseVersion]
-      .filter(Boolean)
-      .join('_')
-      .replace(/@/g, '')
-      .replace(/\./g, '-')
-      .replace(/\//g, '_')
+    const releaseId = formatReleaseId(packageScope, packageName, releaseVersion)
 
-    const exportId = [packageScope, packageName, releaseVersion, exportPath || '_main']
-      .filter(Boolean)
-      .join('_')
-      .replace(/@/g, '')
-      .replace(/\./g, '-')
-      .replace(/\//g, '_')
+    const exportId = formatExportId(packageScope, packageName, releaseVersion, exportPath)
 
     const exportDoc: APIExportDocument = {
       _id: exportId,
       _type: 'api.export',
       package: {_type: 'reference', _ref: ''},
       release: {_type: 'reference', _ref: ''},
-      name: [packageScope, packageName, exportPath].filter(Boolean).join('/'),
+      members: [],
+      name: resolveExportId(packageScope, packageName, exportPath),
       path: exportPath || '.',
     }
 
@@ -83,6 +103,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
 
     ctx.release = {
       exports: [],
+      memberNames: [],
       ...ctx.release,
       _type: 'api.release',
       _id: releaseId,
@@ -108,10 +129,16 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
       _ref: ctx.release._id,
     })
 
-    for (const member of apiPackage.members[0].members) {
+    for (const member of apiPackage.members[0]?.members || []) {
       const memberDoc = transformExportMember(ctx, member)
 
       state.members.push(memberDoc)
+
+      exportDoc.members.push({
+        _key: memberDoc._id,
+        _type: 'reference',
+        _ref: memberDoc._id,
+      })
 
       const symbolDoc: APISymbolDocument = {
         _type: 'api.symbol',
@@ -123,6 +150,10 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
       const hasSymbol = state.symbols.some((s) => s.name === symbolDoc.name)
 
       if (!hasSymbol) state.symbols.push(symbolDoc)
+
+      if (!ctx.release.memberNames.includes(symbolDoc.name)) {
+        ctx.release.memberNames.push(symbolDoc.name)
+      }
     }
 
     // keep these references
@@ -145,25 +176,35 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
   return result
 }
 
+function resolveExportId(
+  packageScope: string | undefined,
+  packageName: string,
+  exportPath: string | undefined
+) {
+  const packageId = [packageScope, packageName].filter(Boolean).join('/')
+
+  return path.join(packageId, exportPath || '.')
+}
+
 function _removeNonExistingRefs(source: Record<string, unknown>, docs: APIDocument[]) {
   for (const [key, value] of Object.entries(source)) {
     if (_isRecord(value)) {
-      if (value._ref === '$$unknown$$') {
+      if (value['_ref'] === '$$unknown$$') {
         const doc = docs.find((d) => {
-          return 'name' in d && d.name === source.text
+          return 'name' in d && d.name === source['text']
         })
 
         if (!doc) {
           delete source[key]
         }
 
-        value._ref = doc?._id
+        value['_ref'] = doc?._id
 
         continue
       }
 
-      if (value._type === 'reference') {
-        const exists = docs.some((d) => d._id === value._ref)
+      if (value['_type'] === 'reference') {
+        const exists = docs.some((d) => d._id === value['_ref'])
 
         if (!exists) {
           delete source[key]

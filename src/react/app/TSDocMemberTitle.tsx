@@ -6,13 +6,16 @@ import {UnformattedCode} from '../components/UnformattedCode'
 /** @beta */
 export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
   const {data} = props
+  const isDeprecated = Boolean(data.comment?.deprecated)
 
   if ('isReactComponentType' in data && data.isReactComponentType) {
     return (
       <>
         <UnformattedCode>{`<`}</UnformattedCode>
-        <SyntaxText $syntax="className">{data.name}</SyntaxText>
-        <UnformattedCode>{` />`}</UnformattedCode>
+        <SyntaxText $deprecated={isDeprecated} $syntax="className">
+          {data.name}
+        </SyntaxText>
+        <UnformattedCode $deprecated={isDeprecated}>{` />`}</UnformattedCode>
       </>
     )
   }
@@ -21,7 +24,9 @@ export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
     return (
       <>
         {/* <SyntaxText $syntax="keyword">class </SyntaxText> */}
-        <SyntaxText $syntax="className">{data.name}</SyntaxText>
+        <SyntaxText $deprecated={isDeprecated} $syntax="className">
+          {data.name}
+        </SyntaxText>
       </>
     )
   }
@@ -30,7 +35,9 @@ export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
     return (
       <>
         {/* <SyntaxText $syntax="keyword">enum </SyntaxText> */}
-        <SyntaxText $syntax="className">{data.name}</SyntaxText>
+        <SyntaxText $deprecated={isDeprecated} $syntax="className">
+          {data.name}
+        </SyntaxText>
       </>
     )
   }
@@ -39,8 +46,10 @@ export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
     return (
       <>
         {/* <SyntaxText $syntax="keyword">function </SyntaxText> */}
-        <SyntaxText $syntax="function">{data.name}</SyntaxText>
-        <UnformattedCode>()</UnformattedCode>
+        <SyntaxText $deprecated={isDeprecated} $syntax="function">
+          {data.name}
+        </SyntaxText>
+        <UnformattedCode $deprecated={isDeprecated}>()</UnformattedCode>
       </>
     )
   }
@@ -49,7 +58,9 @@ export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
     return (
       <>
         {/* <SyntaxText $syntax="keyword">interface </SyntaxText> */}
-        <SyntaxText $syntax="className">{data.name}</SyntaxText>
+        <SyntaxText $deprecated={isDeprecated} $syntax="className">
+          {data.name}
+        </SyntaxText>
       </>
     )
   }
@@ -58,7 +69,9 @@ export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
     return (
       <>
         {/* <SyntaxText $syntax="keyword">namespace </SyntaxText> */}
-        <SyntaxText $syntax="className">{data.name}</SyntaxText>
+        <SyntaxText $deprecated={isDeprecated} $syntax="className">
+          {data.name}
+        </SyntaxText>
       </>
     )
   }
@@ -67,13 +80,15 @@ export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
     return (
       <>
         {/* <SyntaxText $syntax="keyword">type </SyntaxText> */}
-        <SyntaxText $syntax="className">{data.name}</SyntaxText>
+        <SyntaxText $deprecated={isDeprecated} $syntax="className">
+          {data.name}
+        </SyntaxText>
       </>
     )
   }
 
   if (data._type === 'api.variable') {
-    return <UnformattedCode>{data.name}</UnformattedCode>
+    return <UnformattedCode $deprecated={isDeprecated}>{data.name}</UnformattedCode>
   }
 
   return <>Uknown</>

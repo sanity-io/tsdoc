@@ -2,31 +2,22 @@ import {APITypeAlias} from '@sanity/tsdoc'
 import {Card} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {_compileTypeParameters} from '../../app/lib/_compile'
-import {CommentDeprecatedCallout, CommentExampleBlocks, CommentRemarks} from '../../comment'
-import {H} from '../../typography'
+import {CommentExampleBlocks, CommentRemarks} from '../../comment'
+import {H} from '../../lib/ui'
 import {TSDocCode} from '../TSDocCode'
 
-export function TypeAliasContent(props: {
-  data: APITypeAlias
-  fontSize?: number
-  level?: number
-}): ReactElement {
-  const {data, fontSize = 2, level = 1} = props
+export function TypeAliasContent(props: {data: APITypeAlias}): ReactElement {
+  const {data} = props
   const {comment, name, type, typeParameters = []} = data
 
   return (
     <>
-      {comment && <CommentDeprecatedCallout data={comment} fontSize={fontSize} level={level} />}
-
       {type && (
         <>
-          <H fontSize={fontSize} level={level}>
-            Signature
-          </H>
+          <H size={[-1, 0, 1, 2]}>Signature</H>
 
-          <Card border overflow="auto" padding={3} radius={2} tone="inherit">
+          <Card border overflow="auto" padding={3} radius={3} tone="inherit">
             <TSDocCode
-              fontSize={fontSize - 1}
               prefix={`type ${name}${_compileTypeParameters(typeParameters)} = `}
               tokens={type}
             />
@@ -34,9 +25,9 @@ export function TypeAliasContent(props: {
         </>
       )}
 
-      {comment && <CommentRemarks data={comment} fontSize={fontSize} level={level} />}
+      {comment && <CommentRemarks data={comment} />}
 
-      {comment && <CommentExampleBlocks data={comment} fontSize={fontSize} level={level} />}
+      {comment && <CommentExampleBlocks data={comment} />}
     </>
   )
 }

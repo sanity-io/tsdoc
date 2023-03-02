@@ -1,20 +1,17 @@
 import {APIToken} from '@sanity/tsdoc'
+import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {ReactElement, useMemo} from 'react'
 import {useMemberLink} from '../app'
-import {TSDocAppParams} from '../types'
-import {ReferenceTooltip} from './tooltip/ReferenceTooltip'
+import {Size} from '../lib/ui'
+import {ReferenceTooltip} from '../tooltip'
 
-export function ApiToken(props: {
-  deindent?: boolean
-  fontSize?: number
-  token: APIToken
-}): ReactElement {
-  const {deindent, fontSize = 2, token} = props
+export function ApiToken(props: {deindent?: boolean; token: APIToken}): ReactElement {
+  const {deindent, token} = props
   const text = token.text.replace(/History_2/g, 'History').replace(/React_2/g, 'React')
 
   const params: TSDocAppParams | null = useMemo(
     () =>
-      token.member
+      token.member && token.member.export
         ? {
             exportPath: token.member.export.path,
             memberName: token.member.name,
@@ -33,8 +30,10 @@ export function ApiToken(props: {
   }
 
   return (
-    <ReferenceTooltip fontSize={fontSize} member={token.member}>
-      <a {...linkProps}>{text}</a>
-    </ReferenceTooltip>
+    <Size delta={-1}>
+      <ReferenceTooltip member={token.member}>
+        <a {...linkProps}>{text}</a>
+      </ReferenceTooltip>
+    </Size>
   )
 }

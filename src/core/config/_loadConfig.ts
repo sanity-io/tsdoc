@@ -17,7 +17,7 @@ export async function _loadConfig(options: {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const {register} = require('esbuild-register/dist/node')
 
-  const eslintOptions: TransformOptions = {
+  const esbuildOptions: TransformOptions = {
     // eslint options
     jsx: 'automatic',
     jsxFactory: 'createElement',
@@ -26,7 +26,7 @@ export async function _loadConfig(options: {
     logLevel: 'silent',
   }
 
-  const {unregister} = register(eslintOptions)
+  const {unregister} = globalThis.__DEV__ ? {unregister: () => undefined} : register(esbuildOptions)
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const config = require(configPath)

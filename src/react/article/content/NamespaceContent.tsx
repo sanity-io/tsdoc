@@ -1,8 +1,8 @@
 import {APINamespace} from '@sanity/tsdoc'
 import {Stack} from '@sanity/ui'
 import {ReactElement} from 'react'
-import {CommentDeprecatedCallout, CommentExampleBlocks, CommentRemarks} from '../../comment'
-import {H} from '../../typography'
+import {CommentExampleBlocks, CommentRemarks} from '../../comment'
+import {H} from '../../lib/ui'
 import {Members} from '../members'
 
 export function NamespaceContent(props: {
@@ -10,20 +10,18 @@ export function NamespaceContent(props: {
   fontSize?: number
   level?: number
 }): ReactElement {
-  const {data, fontSize = 2, level = 1} = props
-  const {comment} = data
+  const {data} = props
+  const {comment, members} = data
 
   return (
     <Stack>
-      {comment && <CommentDeprecatedCallout data={comment} fontSize={fontSize} />}
-
       <Stack marginTop={6} space={4}>
-        <H level={level}>Members</H>
-        <Members data={data.members} fontSize={fontSize} member={data} level={level} />
+        <H>Members</H>
+        <Members data={members} member={data} />
       </Stack>
 
-      {comment && <CommentRemarks data={comment} fontSize={fontSize} level={level} />}
-      {comment && <CommentExampleBlocks data={comment} fontSize={fontSize} level={level} />}
+      {comment && <CommentRemarks data={comment} />}
+      {comment && <CommentExampleBlocks data={comment} />}
     </Stack>
   )
 }

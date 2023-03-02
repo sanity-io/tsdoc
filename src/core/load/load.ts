@@ -1,5 +1,5 @@
 import path from 'path'
-import createSanityClient, {SanityDocument} from '@sanity/client'
+import {SanityDocument, createClient} from '@sanity/client'
 import mkdirp from 'mkdirp'
 import {APIDocument} from '../types'
 import {writeFile} from './helpers'
@@ -24,7 +24,7 @@ export async function load(
   }
 
   // Write to Sanity
-  if (opts.sanity) {
+  if (opts.sanity && opts.sanity.token) {
     await _loadToSanity(opts.sanity, transformed)
   }
 }
@@ -33,9 +33,10 @@ async function _loadToSanity(
   sanity: {projectId?: string; dataset?: string; token?: string},
   docs: APIDocument[]
 ): Promise<void> {
-  const client = createSanityClient({
+  const client = createClient({
     ...sanity,
     apiVersion: '2022-10-01',
+    token: sanity.token,
     useCdn: false,
   })
 

@@ -1,7 +1,16 @@
 import path from 'path'
 import {Extractor, ExtractorConfig, ExtractorMessage} from '@microsoft/api-extractor'
 import {ApiPackage} from '@microsoft/api-extractor-model'
-import {PkgConfigOptions, _getExtractMessagesConfig} from '@sanity/pkg-utils'
+import {
+  PackageJSON,
+  PkgConfigOptions,
+  createLogger,
+  getExtractMessagesConfig,
+  getPkgExtMap,
+  loadConfig,
+  loadPkgWithReporting,
+  parseExports,
+} from '@sanity/pkg-utils'
 import {createApiExtractorConfig} from './apiExtractorConfig'
 import {createTempDir} from './helpers'
 import {createTSDocConfig} from './tsDocConfig'
@@ -12,57 +21,15 @@ import {TSDocCustomTag} from './types'
  */
 export interface ExtractResult {
   apiPackage?: ApiPackage
-  exportPath?: string
+  exportPath: string
   messages: ExtractorMessage[]
   succeeded: boolean
   tempDirPath: string
   typesPath: string
 }
 
-function _resolveExports(options: {pkg: any}) {
-  const {pkg} = options
-
-  const exports: {type: 'export'; path?: string; typesPath: string}[] = []
-  const types = pkg.typesVersions?.['*']
-
-  if (pkg.exports) {
-    for (const [exportPath] of Object.entries(pkg.exports)) {
-      const isRoot = exportPath === '.'
-      const subPath = isRoot ? undefined : path.relative('root', path.join('root', exportPath))
-      const typesPath = subPath ? types?.[subPath]?.[0] : pkg.types
-
-      if (!typesPath) {
-        throw new Error(`[${pkg.name}] missing types path`)
-      }
-
-      exports.push({
-        type: 'export',
-        path: subPath,
-        typesPath,
-      })
-    }
-  } else {
-    const typesPath = pkg.types
-
-    if (!typesPath) {
-      throw new Error(`[${pkg.name}] missing types path`)
-    }
-
-    exports.push({
-      type: 'export',
-      path: undefined,
-      typesPath,
-    })
-  }
-
-  return exports
-}
-
 /**
  * Extract API information
- *
- * @template
- * Testing this.
  *
  * @public
  */
@@ -71,29 +38,36 @@ export async function extract(options: {
   packagePath: string
   rules?: NonNullable<PkgConfigOptions['extract']>['rules']
   tsconfig?: string
-}): Promise<ExtractResult[]> {
+}): Promise<{pkg: PackageJSON; results: ExtractResult[]}> {
   const {customTags, packagePath, rules, tsconfig: tsconfigPath} = options
   const tempDir = await createTempDir()
   const tempDirPath = tempDir.path
   const packageJsonFullPath = path.resolve(packagePath, 'package.json')
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const pkg = require(packageJsonFullPath)
+  // pkg utils
+  const config = await loadConfig({cwd: packagePath})
+  const logger = createLogger()
+  const pkg = await loadPkgWithReporting({cwd: packagePath, logger})
 
-  if (!pkg.types) {
-    throw new Error(`package is missing \`types\` property (name=${pkg.name})`)
-  }
-
-  const exports = _resolveExports({pkg})
+  // const exports = _resolveExports({pkg})
+  const exports = parseExports({
+    extMap: getPkgExtMap({legacyExports: config?.legacyExports ?? false}),
+    pkg,
+    strict: true,
+  })
 
   try {
     const results: ExtractResult[] = []
 
     for (const exp of exports) {
+      if (!exp.types) {
+        continue
+      }
+
       const result = await _doExtract({
         customTags,
-        rules,
-        mainEntryPointFilePath: exp.typesPath,
+        rules: rules ?? config?.extract?.rules,
+        mainEntryPointFilePath: exp.types,
         packagePath,
         tempDirPath,
         tsconfigPath,
@@ -101,9 +75,9 @@ export async function extract(options: {
       })
 
       results.push({
-        exportPath: exp.path,
+        exportPath: exp._path,
         tempDirPath,
-        typesPath: exp.typesPath,
+        typesPath: exp.types,
         ...result,
       })
     }
@@ -111,7 +85,7 @@ export async function extract(options: {
     // Clean up temporary directory
     tempDir.cleanup()
 
-    return results
+    return {pkg, results}
   } catch (err) {
     // Clean up temporary directory
     tempDir.cleanup()
@@ -145,7 +119,7 @@ async function _doExtract(options: {
   const extractorConfig: ExtractorConfig = ExtractorConfig.prepare({
     configObject: createApiExtractorConfig({
       mainEntryPointFilePath,
-      messagesConfig: _getExtractMessagesConfig({rules}),
+      messagesConfig: getExtractMessagesConfig({rules}),
       packagePath,
       tempDirPath,
       tsconfigPath,
@@ -177,6 +151,5 @@ async function _doExtract(options: {
     apiPackage,
     messages,
     succeeded: extractorResult.succeeded,
-    // tempDirPath,
   }
 }

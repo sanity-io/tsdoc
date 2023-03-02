@@ -1,28 +1,62 @@
-import {ReactElement, ReactNode, useMemo} from 'react'
-import {TSDocStore} from '../store'
-import {TSDocAppParams} from '../types'
+import {TSDocAppParams, TSDocStore} from '@sanity/tsdoc/store'
+import {ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef} from 'react'
+import {compilePath} from './lib/compilePath'
 import {TSDocContext, TSDocContextValue} from './TSDocContext'
+
+const EMPTY_PARAMS: TSDocAppParams = {
+  exportPath: null,
+  memberName: null,
+  packageName: null,
+  packageScope: null,
+  releaseVersion: null,
+}
 
 /** @beta */
 export interface TSDocProviderProps {
   basePath?: string
   children: ReactNode
   onPathChange: (nextPath: string, replace?: boolean) => void
-  params: TSDocAppParams | null
+  params?: TSDocAppParams
   path: string
   store: TSDocStore
 }
 
 /** @beta */
 export function TSDocProvider(props: TSDocProviderProps): ReactElement {
-  const {basePath = '', children, onPathChange, path: fullPath, params, store} = props
+  const {
+    basePath = '',
+    children,
+    onPathChange,
+    path: fullPath,
+    params = EMPTY_PARAMS,
+    store,
+  } = props
 
   const path = _consumeBasePath(basePath, fullPath)
 
-  const tsdoc: TSDocContextValue = useMemo(
-    () => ({basePath, onPathChange, params, path, store}),
-    [basePath, onPathChange, params, path, store]
+  const paramsRef = useRef(params)
+
+  const updateParams = useCallback(
+    (fn: (params: TSDocAppParams) => TSDocAppParams) => {
+      const nextParams = fn(paramsRef.current || EMPTY_PARAMS)
+
+      paramsRef.current = nextParams
+
+      const nextPath = compilePath(nextParams)
+
+      onPathChange(nextPath)
+    },
+    [onPathChange]
   )
+
+  const tsdoc: TSDocContextValue = useMemo(
+    () => ({basePath, onPathChange, params, path, store, updateParams}),
+    [basePath, onPathChange, params, path, store, updateParams]
+  )
+
+  useEffect(() => {
+    paramsRef.current = params
+  }, [params])
 
   return <TSDocContext.Provider value={tsdoc}>{children}</TSDocContext.Provider>
 }

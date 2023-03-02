@@ -1,19 +1,22 @@
 import {Flex, Spinner, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
-import {ReferenceArticle} from '../article'
+import {TSDocArticle} from '../article'
 import {useMember} from './useMember'
 import {usePackage} from './usePackage'
 import {useTSDoc} from './useTSDoc'
 
 /** @beta */
-export function TSDocDetail(props: {fontSize?: number}): ReactElement {
-  const {fontSize = 2} = props
+export function TSDocDetail(): ReactElement {
   const {params} = useTSDoc()
   const member = useMember({params})
   const pkg = usePackage({params})
 
-  if (!params) {
-    return <Flex align="center" height="fill" justify="center" />
+  if (!params.memberName) {
+    return (
+      <Flex align="center" height="fill" justify="center">
+        <Text muted>Select an API member</Text>
+      </Flex>
+    )
   }
 
   if (pkg.loading || member.loading) {
@@ -27,8 +30,8 @@ export function TSDocDetail(props: {fontSize?: number}): ReactElement {
   if (!pkg.data) {
     return (
       <Flex align="center" height="fill" justify="center">
-        <Text>
-          Package not found: {[params?.packageScope, params?.packageName].filter(Boolean).join('/')}
+        <Text muted>
+          Package not found: {[params.packageScope, params.packageName].filter(Boolean).join('/')}
         </Text>
       </Flex>
     )
@@ -42,5 +45,5 @@ export function TSDocDetail(props: {fontSize?: number}): ReactElement {
     )
   }
 
-  return <ReferenceArticle data={member.data} fontSize={fontSize} />
+  return <TSDocArticle data={member.data} />
 }

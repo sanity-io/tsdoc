@@ -19,12 +19,12 @@ describe('transform', () => {
     await project.install()
     await project.run('build')
 
-    const result = await extract({
+    const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
     })
 
-    const docs = transform(result, {package: {version: '1.0.0'}})
+    const docs = transform(results, {package: {version: pkg.version}})
 
     expect(docs).toMatchSnapshot()
   })
@@ -35,12 +35,12 @@ describe('transform', () => {
     await project.install()
     await project.run('build')
 
-    const result = await extract({
+    const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
     })
 
-    const docs = transform(result, {package: {version: '1.0.0'}})
+    const docs = transform(results, {package: {version: pkg.version}})
     const symbolDocs = docs.filter((d) => d._type === 'api.symbol')
 
     expect(symbolDocs.length).toBe(7)
@@ -52,12 +52,12 @@ describe('transform', () => {
     await project.install()
     await project.run('build')
 
-    const result = await extract({
+    const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
     })
 
-    const docs = transform(result, {package: {version: '1.0.0'}})
+    const docs = transform(results, {package: {version: pkg.version}})
     const classDoc = docs.find((d) => d._type === 'api.class')
 
     expect(classDoc).toMatchSnapshot()
@@ -69,12 +69,12 @@ describe('transform', () => {
     await project.install()
     await project.run('build')
 
-    const result = await extract({
+    const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
     })
 
-    const docs = transform(result, {package: {version: '1.0.0'}})
+    const docs = transform(results, {package: {version: pkg.version}})
     const interfaceDoc = docs.find((d) => d._type === 'api.interface' && d.name === 'Resolver')
 
     expect(interfaceDoc).toMatchSnapshot()
@@ -86,7 +86,7 @@ describe('transform', () => {
     await project.install()
     await project.run('build')
 
-    const results = await extract({
+    const {pkg: _pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
       tsconfig: 'tsconfig.dist.json',
@@ -96,7 +96,7 @@ describe('transform', () => {
       _printExtractMessages(project.cwd, result.messages)
     }
 
-    const docs = transform(results, {package: {version: '1.0.0'}})
+    const docs = transform(results, {package: {version: _pkg.version}})
 
     // Assert package document
     const pkg = docs.find((d) => d._type === 'api.package') as unknown as APIPackageDocument
@@ -111,7 +111,7 @@ describe('transform', () => {
     // Assert export documents
     const exportPaths = exports.map((exp) => exp.path)
 
-    expect(exportPaths).toEqual(['.', 'extra'])
+    expect(exportPaths).toEqual(['.', './extra'])
 
     const memberExports = variables.map((sym) => sym.export)
 
@@ -127,9 +127,9 @@ describe('transform', () => {
     await project.install()
     await project.run('build')
 
-    const results = await extract({packagePath: project.cwd})
+    const {pkg, results} = await extract({packagePath: project.cwd})
 
-    const docs = transform(results, {package: {version: '1.0.0'}})
+    const docs = transform(results, {package: {version: pkg.version}})
 
     const doc = docs.find(
       (d) => d._type === 'api.namespace' && d.name === 'Schema'

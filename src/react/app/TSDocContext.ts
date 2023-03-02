@@ -1,12 +1,13 @@
+import {TSDocStore} from '@sanity/tsdoc/store'
+import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {createContext} from 'react'
-import {TSDocStore} from '../store'
-import {TSDocAppParams} from '../types'
 
 /** @beta */
 export interface TSDocContextValue {
   basePath: string
   path: string
-  params: TSDocAppParams | null
+  params: TSDocAppParams
+  updateParams: (fn: (params: TSDocAppParams) => TSDocAppParams) => void
   onPathChange: (nextPath: string, replace?: boolean) => void
   store: TSDocStore
 }

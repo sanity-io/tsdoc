@@ -10,14 +10,8 @@ import {
 import {Card, Code} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {_compileInterfaceDefinition} from '../../app/lib/_compile'
-import {
-  CommentDeprecatedCallout,
-  CommentExampleBlocks,
-  CommentRemarks,
-  CommentSummary,
-} from '../../comment'
-import {_fontSize} from '../../helpers'
-import {H} from '../../typography'
+import {CommentExampleBlocks, CommentRemarks, CommentSummary} from '../../comment'
+import {H, useTextSize} from '../../lib/ui'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
 
@@ -60,12 +54,8 @@ function useMembers(data: APIInterface) {
   }, [data])
 }
 
-export function InterfaceContent(props: {
-  data: APIInterface
-  fontSize?: number
-  level?: number
-}): ReactElement {
-  const {data, fontSize = 2, level = 1} = props
+export function InterfaceContent(props: {data: APIInterface}): ReactElement {
+  const {data} = props
   const {comment} = data
 
   const {
@@ -78,85 +68,52 @@ export function InterfaceContent(props: {
 
   return (
     <>
-      {comment && <CommentDeprecatedCallout data={comment} />}
       {comment && <CommentSummary data={comment} />}
 
-      <H fontSize={fontSize} level={level}>
-        Signature
-      </H>
-
-      <Card border overflow="auto" padding={3} radius={2}>
-        <Code language="typescript" size={_fontSize(fontSize, [0, 0, 1])}>
+      <H size={[-1, 0, 1, 2]}>Signature</H>
+      <Card border overflow="auto" padding={3} radius={3}>
+        <Code language="typescript" size={useTextSize([-1, -1, 0])}>
           {_compileInterfaceDefinition(data)}
         </Code>
       </Card>
 
       {constructSignatures.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level}>
-            Construct signatures
-          </H>
-          <Card border overflow="auto" padding={3} radius={2}>
-            <Members
-              data={constructSignatures}
-              fontSize={fontSize}
-              level={level + 1}
-              member={data}
-            />
-          </Card>
+          <H size={[-1, 0, 1, 2]}>Construct signatures</H>
+          <Members data={constructSignatures} member={data} />
         </>
       )}
 
       {callSignatures.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level}>
-            Call signatures
-          </H>
-          <Card border overflow="auto" padding={3} radius={2}>
-            <Members data={callSignatures} fontSize={fontSize} level={level + 1} member={data} />
-          </Card>
+          <H size={[-1, 0, 1, 2]}>Call signatures</H>
+          <Members data={callSignatures} member={data} />
         </>
       )}
 
       {indexSignatures.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level}>
-            Index signatures
-          </H>
-          <Card border overflow="auto" padding={3} radius={2}>
-            <Members data={indexSignatures} fontSize={fontSize} level={level + 1} member={data} />
-          </Card>
+          <H size={[-1, 0, 1, 2]}>Index signatures</H>
+          <Members data={indexSignatures} member={data} />
         </>
       )}
 
       {methodSignatures.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level}>
-            Call signatures
-          </H>
-          <Card border overflow="auto" padding={3} radius={2}>
-            <Members data={methodSignatures} fontSize={fontSize} level={level + 1} member={data} />
-          </Card>
+          <H size={[-1, 0, 1, 2]}>Call signatures</H>
+          <Members data={methodSignatures} member={data} />
         </>
       )}
 
       {propertySignatures.length > 0 && (
         <>
-          <H fontSize={fontSize} level={level}>
-            Properties
-          </H>
-
-          <Members
-            data={propertySignatures}
-            fontSize={fontSize - 1}
-            level={level + 1}
-            member={data}
-          />
+          <H size={[-1, 0, 1, 2]}>Properties</H>
+          <Members data={propertySignatures} member={data} />
         </>
       )}
 
-      {comment && <CommentRemarks data={comment} fontSize={fontSize} level={level} />}
-      {comment && <CommentExampleBlocks data={comment} fontSize={fontSize} level={level + 1} />}
+      {comment && <CommentRemarks data={comment} />}
+      {comment && <CommentExampleBlocks data={comment} />}
     </>
   )
 }

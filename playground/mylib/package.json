@@ -1,25 +1,27 @@
 {
-  "private": true,
   "name": "mylib",
   "version": "1.0.0",
+  "private": true,
   "license": "MIT",
-  "types": "./dist/src/index.d.ts",
-  "module": "./dist/index.esm.js",
-  "main": "./dist/index.js",
   "exports": {
     ".": {
+      "types": "./dist/src/index.d.ts",
       "source": "./src/index.ts",
       "require": "./dist/index.js",
       "import": "./dist/index.esm.js",
       "default": "./dist/index.esm.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/src/index.d.ts",
   "scripts": {
     "build": "rimraf dist && pkg build --strict && pkg --strict",
-    "etl": "rimraf etc && sanity-tsdoc etl"
+    "etl": "sanity-tsdoc etl --outDir ../../etc"
   },
   "devDependencies": {
-    "@sanity/tsdoc": "workspace:0.0.0"
+    "@sanity/tsdoc": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.0"

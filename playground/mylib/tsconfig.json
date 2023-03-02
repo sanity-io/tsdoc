@@ -1,8 +1,10 @@
 {
   "extends": "./tsconfig.settings",
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["./dist"],
   "compilerOptions": {
+    "composite": true,
+
     "rootDir": ".",
     "outDir": "./dist",
     "jsx": "react"

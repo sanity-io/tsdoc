@@ -122,7 +122,7 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
 
         if (memberReferences.length > 0) {
           const memberIdentifier: DocMemberIdentifier | undefined =
-            memberReferences[memberReferences.length - 1].memberIdentifier
+            memberReferences[memberReferences.length - 1]?.memberIdentifier
 
           if (memberIdentifier) {
             identifier = memberIdentifier.identifier
@@ -152,7 +152,7 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
 
     if (
       transformedParagraph.nodes.length === 1 &&
-      transformedParagraph.nodes[0].kind === 'SoftBreak'
+      transformedParagraph.nodes[0]?.kind === 'SoftBreak'
     ) {
       return undefined
     }
@@ -171,9 +171,12 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
       const headerMatch = RE_MARKDOWN_HEADER.exec(children[0].text)
 
       if (headerMatch) {
-        const child = {...children[0], text: headerMatch[2]}
+        const child: SanityArrayItem<PortableTextNode> = {
+          ...children[0],
+          text: headerMatch[2]!,
+        }
 
-        style = `h${headerMatch[1].length}`
+        style = `h${headerMatch[1]?.length}`
 
         children[0] = child
       }
@@ -291,7 +294,7 @@ export function _transformDocComment(docComment: DocComment): TSDocComment {
 
   // Custom blocks
   for (let i = 0; i < docComment.customBlocks.length; i += 1) {
-    const customBlock = docComment.customBlocks[i]
+    const customBlock = docComment.customBlocks[i]!
 
     // This is a `@example` block
     if (customBlock.blockTag.tagNameWithUpperCase === StandardTags.example.tagNameWithUpperCase) {

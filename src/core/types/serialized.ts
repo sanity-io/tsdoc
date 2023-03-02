@@ -39,6 +39,7 @@ export interface SerializedAPIRelease extends Omit<APIRelease, 'exports' | 'pack
 /** @public */
 export interface SerializedAPIExport
   extends Omit<APIExport, 'exports' | 'members' | 'package' | 'release'> {
+  members: SanityArrayItem<SanityReferenceValue>[]
   package: SanityReferenceValue
   release: SanityReferenceValue
 }

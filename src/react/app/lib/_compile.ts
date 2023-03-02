@@ -84,7 +84,11 @@ export function _compileInterfaceDefinition(data: APIInterface): string {
   let code = `interface ${data.name}${_compileTypeParameters(data.typeParameters)}`
 
   if (data.extends.length) {
-    code += ` extends ${data.extends.map((e) => _compileTokens(e.type)).join('')}`
+    if (data.extends.length === 1) {
+      code += ` extends ${data.extends.map((e) => _compileTokens(e.type)).join(', ')}`
+    } else {
+      code += `\n  extends ${data.extends.map((e) => _compileTokens(e.type)).join(',\n    ')}`
+    }
   }
 
   if (data.members.length) {

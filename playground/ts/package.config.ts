@@ -6,6 +6,5 @@ export default defineConfig({
       'ae-missing-release-tag': 'warn',
     },
   },
-
-  minify: false,
+  legacyExports: true,
 })

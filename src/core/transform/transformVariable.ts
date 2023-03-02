@@ -1,5 +1,4 @@
 import {ApiVariable} from '@microsoft/api-extractor-model'
-import {DocComment} from '@microsoft/tsdoc'
 import {SanityReferenceValue} from '../_lib/sanity'
 import {SerializedAPIVariable} from '../types'
 import {_transformTokens} from './_transformTokens'
@@ -38,7 +37,7 @@ export function _transformVariable(
     )
   )
   const isReactComponentType = _variableIsReactComponentType(node)
-  const propsType = isReactComponentType ? _variablePropsType(ctx, node, docComment) : undefined
+  const propsType = isReactComponentType ? _variablePropsType(ctx, node) : undefined
 
   return {
     _type: 'api.variable',
@@ -73,10 +72,11 @@ function _variableIsReactComponentType(node: ApiVariable) {
   const isForwardRefExoticComponent =
     typeCode.startsWith('React.ForwardRefExoticComponent<') ||
     typeCode.startsWith('React_2.ForwardRefExoticComponent<') ||
-    typeCode.startsWith('ForwardRefExoticComponent<') ||
-    typeCode.startsWith('React.NamedExoticComponent<') ||
-    typeCode.startsWith('React_2.NamedExoticComponent<') ||
-    typeCode.startsWith('NamedExoticComponent<')
+    typeCode.startsWith('ForwardRefExoticComponent<')
+  const isMemoExoticComponent =
+    typeCode.startsWith('React.MemoExoticComponent<') ||
+    typeCode.startsWith('React_2.MemoExoticComponent<') ||
+    typeCode.startsWith('MemoExoticComponent<')
   const isStyledComponent = typeCode.startsWith('StyledComponent<')
   const returnsReactElement =
     typeCode.endsWith('=> React.ReactElement') ||
@@ -87,6 +87,7 @@ function _variableIsReactComponentType(node: ApiVariable) {
   if (
     isNamedExoticComponent ||
     isForwardRefExoticComponent ||
+    isMemoExoticComponent ||
     isStyledComponent ||
     returnsReactElement
   ) {
@@ -98,52 +99,36 @@ function _variableIsReactComponentType(node: ApiVariable) {
 
 function _variablePropsType(
   ctx: TransformContext,
-  node: ApiVariable,
-  _docComment?: DocComment
+  node: ApiVariable
 ): SanityReferenceValue | undefined {
   const typeTokens = node.excerptTokens.slice(
     node.variableTypeExcerpt.tokenRange.startIndex,
     node.variableTypeExcerpt.tokenRange.endIndex
   )
 
-  if (
-    typeTokens[0].kind === 'Reference' &&
-    typeTokens[0].text === 'React.ForwardRefExoticComponent'
-  ) {
-    const sanityUIRef = typeTokens.find(
-      (t) =>
-        t.kind === 'Reference' &&
-        t.canonicalReference?.source?.toString() === '@sanity/ui!' &&
-        t.text.endsWith('Props')
-    )
+  const sanityUIRef = typeTokens.find(
+    (t) =>
+      t.kind === 'Reference' &&
+      t.canonicalReference?.source?.toString() === '@sanity/ui!' &&
+      t.text.endsWith('Props')
+  )
 
-    if (sanityUIRef && sanityUIRef.canonicalReference) {
-      return {
-        _type: 'reference',
-        _ref: _createExportMemberId(ctx, sanityUIRef.canonicalReference.toString()),
-      }
+  if (sanityUIRef && sanityUIRef.canonicalReference) {
+    return {
+      _type: 'reference',
+      _ref: _createExportMemberId(ctx, sanityUIRef.canonicalReference.toString()),
     }
+
+    // console.log({
+    //   refString: sanityUIRef.canonicalReference.toString(),
+    //   ref: {
+    //     _type: 'reference',
+    //     _ref: _createExportMemberId(ctx, sanityUIRef.canonicalReference.toString()),
+    //   },
+    // })
+
+    // return undefined
   }
-
-  // TODO
-  // if (docComment) {
-  //   for (const seeBlock of docComment.seeBlocks) {
-  //     const seeBlockNodes = seeBlock.getChildNodes()
-  //     const blockContentNode = seeBlockNodes[1]
-  //     const blockContentNodes = blockContentNode.getChildNodes()
-  //     const paragraphNode = blockContentNodes[0]
-  //     const textNode = paragraphNode.getChildNodes().find((n) => n.kind === 'PlainText')
-
-  //     if (textNode) {
-  //       const text = (textNode as DocPlainText).text.trim()
-
-  //       return {
-  //         _type: 'reference',
-  //         _ref: _createExportMemberId(ctx, `@sanity/ui!${text}:interface`),
-  //       }
-  //     }
-  //   }
-  // }
 
   return undefined
 }

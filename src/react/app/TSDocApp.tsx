@@ -1,11 +1,10 @@
+import {TSDocAppParams, TSDocStore} from '@sanity/tsdoc/store'
 import {Card, Flex} from '@sanity/ui'
 import {ReactElement, useCallback, useMemo} from 'react'
 import styled from 'styled-components'
-import {TSDocStore} from '../store'
-import {TSDocAppParams} from '../types'
 import {parsePath} from './helpers'
+import {TSDocNav} from './nav'
 import {TSDocDetail} from './TSDocDetail'
-import {TSDocNav} from './TSDocNav'
 import {TSDocProvider} from './TSDocProvider'
 
 /** @beta */
@@ -37,7 +36,10 @@ const Root = styled(Card)({
 export function TSDocApp(props: TSDocAppProps): ReactElement {
   const {basePath = '', onPathChange, path, store} = props
 
-  const params: TSDocAppParams | null = useMemo(() => parsePath(path, {basePath}), [basePath, path])
+  const params: TSDocAppParams | undefined = useMemo(
+    () => parsePath(path, {basePath}),
+    [basePath, path]
+  )
 
   const handlePathChange = useCallback(
     (nextPath: string, replace?: boolean) => {
@@ -55,21 +57,18 @@ export function TSDocApp(props: TSDocAppProps): ReactElement {
       store={store}
     >
       <Root height="fill">
-        <Flex height="fill">
-          <Card
-            borderRight
-            display={['none', 'none', 'block']}
-            overflow="auto"
-            style={{width: 400}}
-          >
-            <TSDocNav />
-          </Card>
-
-          {params && (
-            <Card flex={1} overflow="auto">
-              <TSDocDetail fontSize={2} />
+        <Flex direction="column" height="fill">
+          <Flex flex={1}>
+            <Card borderRight display={['none', 'none', 'block']} style={{width: 400}}>
+              <TSDocNav />
             </Card>
-          )}
+
+            {params && (
+              <Card flex={1} overflow="auto">
+                <TSDocDetail />
+              </Card>
+            )}
+          </Flex>
         </Flex>
       </Root>
     </TSDocProvider>

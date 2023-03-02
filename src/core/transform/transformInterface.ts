@@ -78,7 +78,7 @@ function _transformInterfaceMember(
     return {
       _type: 'api.callSignature',
       comment: docComment ? _transformDocComment(docComment) : undefined,
-      members: mem.members.map((m) => _transformInterfaceMember(ctx, m)),
+      // members: mem.members.map((m) => _transformInterfaceMember(ctx, m)),
       parameters: mem.parameters.map((p, idx) => _transformParameter(ctx, mem, p, idx)),
       releaseTag: RELEASE_TAGS[mem.releaseTag],
       returnType: _transformTokens(
@@ -99,7 +99,7 @@ function _transformInterfaceMember(
     return {
       _type: 'api.constructSignature',
       comment: docComment ? _transformDocComment(docComment) : undefined,
-      members: mem.members.map((m) => _transformInterfaceMember(ctx, m)),
+      // members: mem.members.map((m) => _transformInterfaceMember(ctx, m)),
       parameters: mem.parameters.map((p, idx) => _transformParameter(ctx, mem, p, idx)),
       releaseTag: RELEASE_TAGS[mem.releaseTag],
       returnType: _transformTokens(
@@ -121,7 +121,7 @@ function _transformInterfaceMember(
       _type: 'api.methodSignature',
       comment: docComment ? _transformDocComment(docComment) : undefined,
       isOptional: mem.isOptional,
-      members: mem.members.map((m) => _transformInterfaceMember(ctx, m)),
+      // members: mem.members.map((m) => _transformInterfaceMember(ctx, m)),
       name: mem.name,
       parameters: mem.parameters.map((p, idx) => _transformParameter(ctx, mem, p, idx)),
       releaseTag: RELEASE_TAGS[mem.releaseTag],

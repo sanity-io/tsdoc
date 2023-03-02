@@ -42,7 +42,7 @@ export interface APIProperty {
 export interface APICallSignature {
   _type: 'api.callSignature'
   comment?: TSDocComment
-  members: unknown[]
+  // members: unknown[]
   parameters: SanityArrayItem<APIParameter>[]
   releaseTag?: APIReleaseTag
   returnType: SanityArrayItem<APIToken>[]
@@ -53,7 +53,7 @@ export interface APICallSignature {
 export interface APIConstructSignature {
   _type: 'api.constructSignature'
   comment?: TSDocComment
-  members: unknown[]
+  // members: unknown[]
   parameters: SanityArrayItem<APIParameter>[]
   releaseTag?: APIReleaseTag
   returnType: SanityArrayItem<APIToken>[]
@@ -65,7 +65,7 @@ export interface APIMethodSignature {
   _type: 'api.methodSignature'
   comment?: TSDocComment
   isOptional: boolean
-  members: unknown[]
+  // members: unknown[]
   name: string
   parameters: SanityArrayItem<APIParameter>[]
   releaseTag?: APIReleaseTag

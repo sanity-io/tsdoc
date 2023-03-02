@@ -1,2 +1,1 @@
-export * from './ReferenceArticle'
-export * from './tooltip/ReferenceTooltip'
+export * from './TSDocArticle'

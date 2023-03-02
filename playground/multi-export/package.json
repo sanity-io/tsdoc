@@ -1,29 +1,30 @@
 {
-  "private": true,
-  "type": "module",
   "name": "multi-export",
   "version": "1.0.0",
+  "private": true,
   "license": "MIT",
-  "types": "./dist/exports/index.d.ts",
-  "source": "./src/index.ts",
-  "module": "./dist/index.js",
-  "main": "./dist/index.cjs",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/exports/index.d.ts",
       "source": "./src/index.ts",
-      "import": "./dist/index.js",
       "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
     "./extra": {
       "types": "./dist/exports/extra.d.ts",
       "source": "./src/extra.ts",
-      "import": "./dist/extra.js",
       "require": "./dist/extra.cjs",
+      "import": "./dist/extra.js",
       "default": "./dist/extra.js"
-    }
+    },
+    "./package.json": "./package.json"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/exports/index.d.ts",
   "typesVersions": {
     "*": {
       "extra": [
@@ -33,9 +34,9 @@
   },
   "scripts": {
     "build": "rimraf dist && pkg build --strict && pkg --strict",
-    "etl": "rimraf etc && sanity-tsdoc etl"
+    "etl": "sanity-tsdoc etl --outDir ../../etc"
   },
   "devDependencies": {
-    "@sanity/tsdoc": "workspace:0.0.0"
+    "@sanity/tsdoc": "workspace:*"
   }
 }

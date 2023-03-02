@@ -10,3 +10,7 @@
 dist
 etc
 node_modules
+
+/react.js
+/store.js
+/studio.js

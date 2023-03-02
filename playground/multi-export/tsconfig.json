@@ -3,6 +3,8 @@
   "include": ["**/*.ts"],
   "exclude": ["./dist"],
   "compilerOptions": {
+    "composite": true,
+
     "rootDir": ".",
     "outDir": "./dist",
     "jsx": "react",

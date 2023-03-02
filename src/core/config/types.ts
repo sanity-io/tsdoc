@@ -2,11 +2,24 @@ import {PkgConfigOptions} from '@sanity/pkg-utils'
 
 /** @public */
 export interface SanityTSDocConfigOptions {
-  extract?: PkgConfigOptions['extract']
-  sanity?: {
-    projectId?: string
-    dataset?: string
-    token?: string
+  app?: {
+    alias?: Record<string, string>
+    port?: number
   }
-  tsconfig?: string
+  extract?: PkgConfigOptions['extract']
+  input?: {
+    type: 'fs'
+    pattern: string | string[]
+    tsconfig?: string
+  }
+  output: {
+    fs?: {
+      outDir?: string
+    }
+    sanity?: {
+      projectId?: string
+      dataset?: string
+      token?: string
+    }
+  }
 }

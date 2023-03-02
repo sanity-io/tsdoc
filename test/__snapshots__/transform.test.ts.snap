@@ -33,6 +33,15 @@ exports[`transform should result in a "api.release" document 1`] = `
       "_ref": "mylib",
       "_type": "reference",
     },
+    "memberNames": [
+      "Button",
+      "ButtonProps",
+      "ButtonTone",
+      "ButtonType",
+      "Class",
+      "Resolver",
+      "ResponsiveMarginProps",
+    ],
     "version": "1.0.0",
   },
   {

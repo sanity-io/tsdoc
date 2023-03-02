@@ -12,7 +12,6 @@ import {_exec} from './_exec'
 import {_ExecError} from './_ExecError'
 
 const _copy = promisify(cpx.copy)
-const _rimraf = promisify(rimraf)
 
 async function _tmpWorkspace() {
   const key = uuid()
@@ -22,7 +21,7 @@ async function _tmpWorkspace() {
 
   return {
     path: workspacePath,
-    remove: () => _rimraf(workspacePath),
+    remove: () => rimraf(workspacePath),
   }
 }
 
@@ -47,8 +46,8 @@ export async function _spawnProject(name: string): Promise<{
   await _copy(path.resolve(sourcePackagePath, '**/*'), tmpPath)
 
   // clean
-  await _rimraf(path.resolve(tmpPath, 'dist'))
-  await _rimraf(path.resolve(tmpPath, 'etc'))
+  await rimraf(path.resolve(tmpPath, 'dist'))
+  await rimraf(path.resolve(tmpPath, 'etc'))
 
   const packageJsonPath = path.resolve(tmpPath, 'package.json')
 

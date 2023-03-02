@@ -1,9 +1,10 @@
+import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Card, CardProps, Text, Tooltip, TooltipProps} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
-import {ReferenceTooltipContent} from '../article'
 import {UnformattedCode} from '../components/UnformattedCode'
 import {_fontSize} from '../helpers'
-import {TSDocAppParams} from '../types'
+import {Size} from '../lib/ui'
+import {ReferenceTooltipContent} from '../tooltip'
 import {TSDocMemberTitle} from './TSDocMemberTitle'
 import {useMemberLink} from './useMemberLink'
 import {useSymbol} from './useSymbol'
@@ -23,13 +24,17 @@ export function TSDocSymbol(
   const content = useMemo(() => {
     if (!symbolMembers || symbolMembers.length === 0) return null
 
-    return <ReferenceTooltipContent data={symbolMembers[0]} fontSize={fontSize - 1} />
-  }, [fontSize, symbolMembers])
+    return (
+      <Size delta={-1}>
+        <ReferenceTooltipContent data={symbolMembers[0]!} />
+      </Size>
+    )
+  }, [symbolMembers])
 
   const child = useMemo(() => {
     if (!symbolMembers || symbolMembers.length === 0) return <UnformattedCode>…</UnformattedCode>
 
-    const member = symbolMembers[0]
+    const member = symbolMembers[0]!
 
     return <TSDocMemberTitle data={member} />
   }, [symbolMembers])
@@ -37,7 +42,7 @@ export function TSDocSymbol(
   const params: TSDocAppParams | null = useMemo(() => {
     if (!symbolMembers || symbolMembers.length === 0) return null
 
-    const member = symbolMembers[0]
+    const member = symbolMembers[0]!
 
     return {
       exportPath: member.export.path,
@@ -51,9 +56,9 @@ export function TSDocSymbol(
   const linkProps = useMemberLink({params})
 
   return (
-    <Tooltip content={content} {...tooltip}>
+    <Tooltip content={content} portal {...tooltip}>
       <Card as="a" {...restProps} {...linkProps}>
-        <Text size={_fontSize(fontSize, [0, 0, 1])}>{child}</Text>
+        <Text size={_fontSize(fontSize, [1, 1, 2])}>{child}</Text>
       </Card>
     </Tooltip>
   )

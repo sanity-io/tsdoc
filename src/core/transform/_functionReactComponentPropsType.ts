@@ -19,7 +19,7 @@ export function _functionPropsType(
     )
 
     if (propsTokens.length) {
-      return propsTokens[0].member
+      return propsTokens[0]?.member
     }
   }
 

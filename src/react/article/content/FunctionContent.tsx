@@ -1,20 +1,17 @@
 import {APIFunction} from '@sanity/tsdoc'
+import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Card} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
-import {TSDocSymbolPreview, useMemberLink} from '../../app'
-import {CommentDeprecatedCallout, CommentExampleBlocks, CommentRemarks} from '../../comment'
-import {TSDocAppParams} from '../../types'
-import {H, P} from '../../typography'
+import {TSDocSymbol, TSDocSymbolPreview} from '../../app'
+import {CommentExampleBlocks, CommentRemarks} from '../../comment'
+import {H, P} from '../../lib/ui'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
 import {TSDocCode} from '../TSDocCode'
 
-export function FunctionContent(props: {
-  data: APIFunction
-  fontSize?: number
-  level?: number
-}): ReactElement {
-  const {data, fontSize = 2, level = 1} = props
+export function FunctionContent(props: {data: APIFunction}): ReactElement {
+  const {data} = props
+
   const {comment, name, parameters, propsType, returnType, typeParameters} = data
 
   const propsTypeMembers = useMemo(() => propsType && _getMembers(propsType), [propsType])
@@ -64,46 +61,39 @@ export function FunctionContent(props: {
     [propsType]
   )
 
-  const propsTypeLink = useMemberLink({
-    params: propsTypeLinkParams || null,
-  })
-
   return (
     <>
-      {comment && <CommentDeprecatedCallout data={comment} fontSize={fontSize} />}
-
-      <H fontSize={fontSize} level={level}>
-        Signature
-      </H>
+      <H size={[-1, 0, 1, 2]}>Signature</H>
 
       <Card border padding={3} radius={2} overflow="auto" tone="inherit">
-        <TSDocCode fontSize={fontSize - 1} prefix={codePrefix} tokens={returnType} />
+        <TSDocCode prefix={codePrefix} tokens={returnType} />
       </Card>
 
       {propsType && propsTypeLinkParams && propsTypeMembers && (
         <>
-          <H fontSize={fontSize} level={level}>
-            Props
-          </H>
+          <H size={[-1, 0, 1, 2]}>Props</H>
 
-          <P fontSize={fontSize}>
+          <P muted size={[-1, 0, 1]}>
             Defined by the{' '}
-            <code>
-              <a href={propsTypeLink.href} onClick={propsTypeLink?.onClick}>
-                {propsType.name}
-              </a>
-            </code>{' '}
+            <span
+              style={{
+                display: 'inline-block',
+                verticalAlign: 'middle',
+                position: 'relative',
+                top: -1,
+              }}
+            >
+              <TSDocSymbol border name={propsType.name} padding={2} radius={3} />
+            </span>{' '}
             interface.
           </P>
 
-          {propsTypeMembers.length > 0 && (
-            <Members data={propsTypeMembers} fontSize={fontSize - 1} member={data} />
-          )}
+          {propsTypeMembers.length > 0 && <Members data={propsTypeMembers} member={data} />}
 
           {propsTypeMembers.length === 0 && (
             <>
               <TSDocSymbolPreview name={propsType.name} />
-              <P fontSize={fontSize}>
+              <P muted size={[-1, 0, 1]}>
                 <em>No members.</em>
               </P>
             </>
@@ -111,8 +101,8 @@ export function FunctionContent(props: {
         </>
       )}
 
-      {comment && <CommentRemarks data={comment} fontSize={fontSize} />}
-      {comment && <CommentExampleBlocks data={comment} fontSize={fontSize} level={2} />}
+      {comment && <CommentRemarks data={comment} />}
+      {comment && <CommentExampleBlocks data={comment} />}
     </>
   )
 }

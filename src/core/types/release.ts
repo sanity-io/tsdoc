@@ -7,5 +7,6 @@ export interface APIRelease {
   _type: 'api.release'
   exports: SanityArrayItem<APIExport>[]
   package: APIPackage
+  memberNames: string[]
   version: string
 }

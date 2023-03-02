@@ -1,6 +1,6 @@
+import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {MouseEvent, useCallback, useMemo} from 'react'
-import {TSDocAppParams} from '../types'
-import {_getPath} from './lib/_getPath'
+import {compilePath} from './lib/compilePath'
 import {useTSDoc} from './useTSDoc'
 
 /** @beta */
@@ -11,7 +11,7 @@ export function useMemberLink(props: {params: TSDocAppParams | null}): {
   const {params} = props
   const {basePath, onPathChange} = useTSDoc()
 
-  const path = params && _getPath(params)
+  const path = params && compilePath(params)
 
   const href = useMemo(() => {
     if (!path) return basePath || '/'

@@ -1,18 +1,18 @@
 import {APIMember} from '@sanity/tsdoc'
+import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {useEffect, useState} from 'react'
-import {TSDocAppParams} from '../types'
 import {useTSDoc} from './useTSDoc'
 
 /** @beta */
 export function useMember(props: {params: TSDocAppParams | null}): {
-  data: APIMember | null
+  data: (APIMember & {versions: string[]}) | null
   error: Error | null
   loading: boolean
 } {
   const {params} = props
   const {store} = useTSDoc()
 
-  const [data, setData] = useState<APIMember | null>(null)
+  const [data, setData] = useState<(APIMember & {versions: string[]}) | null>(null)
   const [error, setError] = useState<Error | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -20,9 +20,10 @@ export function useMember(props: {params: TSDocAppParams | null}): {
     async function run() {
       if (!params) return
 
+      setLoading(true)
+      setData(null)
+
       try {
-        setLoading(true)
-        setData(null)
         setData(await store.member.get(params))
       } catch (err) {
         if (err instanceof Error) {

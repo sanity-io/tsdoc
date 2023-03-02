@@ -10,6 +10,6 @@ export default defineConfig({
       },
     ],
   },
-  minify: false,
+  legacyExports: true,
   tsconfig: 'tsconfig.dist.json',
 })

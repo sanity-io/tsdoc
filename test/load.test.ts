@@ -11,13 +11,13 @@ describe('load', () => {
     await project.install()
     await project.run('build')
 
-    const results = await extract({packagePath: project.cwd})
+    const {pkg, results} = await extract({packagePath: project.cwd})
 
-    const docs = transform(results, {package: {version: '1.0.0'}})
+    const docs = transform(results, {package: {version: pkg.version}})
 
     await load(docs, {
       cwd: project.cwd,
-      fs: {path: path.resolve(project.cwd, 'etc/1.0.0.json')},
+      fs: {path: path.resolve(project.cwd, `etc/${pkg.version}.json`)},
     })
   })
 })
