@@ -1,5 +1,6 @@
 import {PortableText, PortableTextProps} from '@portabletext/react'
 import {Card, Code, Text} from '@sanity/ui'
+import {ReactElement} from 'react'
 
 const CODE_LANGUAGE: Record<string, string> = {
   tsx: 'typescript',
@@ -25,7 +26,7 @@ const components: PortableTextProps['components'] = {
   },
 }
 
-export function Blocks(props: {value?: any[]}) {
+export function Blocks(props: {value?: any[]}): ReactElement {
   const {value = []} = props
 
   return <PortableText value={value} components={components} />

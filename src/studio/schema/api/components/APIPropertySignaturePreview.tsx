@@ -1,4 +1,5 @@
 import {Box, Stack, Text} from '@sanity/ui'
+import {ReactElement} from 'react'
 import {PreviewProps} from 'sanity'
 import styled from 'styled-components'
 
@@ -9,7 +10,7 @@ const StyledText = styled(Text)`
   }
 `
 
-export function APIPropertySignaturePreview(props: PreviewProps) {
+export function APIPropertySignaturePreview(props: PreviewProps): ReactElement {
   const {name, isOptional, type} = props as any
 
   return (

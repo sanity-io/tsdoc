@@ -1,2 +1,4 @@
 /.tsdoc
 /dist
+/docs/dist
+/playground/*/dist
