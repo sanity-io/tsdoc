@@ -29,10 +29,6 @@ exports[`transform should result in a "api.release" document 1`] = `
         "_type": "reference",
       },
     ],
-    "package": {
-      "_ref": "mylib",
-      "_type": "reference",
-    },
     "memberNames": [
       "Button",
       "ButtonProps",
@@ -42,11 +38,52 @@ exports[`transform should result in a "api.release" document 1`] = `
       "Resolver",
       "ResponsiveMarginProps",
     ],
+    "package": {
+      "_ref": "mylib",
+      "_type": "reference",
+    },
     "version": "1.0.0",
   },
   {
     "_id": "mylib_1-0-0__main",
     "_type": "api.export",
+    "members": [
+      {
+        "_key": "2ed1af84bcc3daa360547384e50e276f",
+        "_ref": "2ed1af84bcc3daa360547384e50e276f",
+        "_type": "reference",
+      },
+      {
+        "_key": "c3c0c75d56a623a0d409f9fd0ec25583",
+        "_ref": "c3c0c75d56a623a0d409f9fd0ec25583",
+        "_type": "reference",
+      },
+      {
+        "_key": "fb04f0e19331b06d0e9acb7313823b63",
+        "_ref": "fb04f0e19331b06d0e9acb7313823b63",
+        "_type": "reference",
+      },
+      {
+        "_key": "bc4add0c6c20d7dc9a9b8a7d959c7b51",
+        "_ref": "bc4add0c6c20d7dc9a9b8a7d959c7b51",
+        "_type": "reference",
+      },
+      {
+        "_key": "37d9a6314d9fc88c20990c7f9b784dde",
+        "_ref": "37d9a6314d9fc88c20990c7f9b784dde",
+        "_type": "reference",
+      },
+      {
+        "_key": "814d0a452f98ffc5c2f30f549227a74c",
+        "_ref": "814d0a452f98ffc5c2f30f549227a74c",
+        "_type": "reference",
+      },
+      {
+        "_key": "1b53660d0652ecb7b6ff682fe8f3dbdd",
+        "_ref": "1b53660d0652ecb7b6ff682fe8f3dbdd",
+        "_type": "reference",
+      },
+    ],
     "name": "mylib",
     "package": {
       "_ref": "mylib",
@@ -741,7 +778,6 @@ exports[`transform should result in a "api.release" document 1`] = `
         "_key": "member0",
         "_type": "api.callSignature",
         "comment": undefined,
-        "members": [],
         "parameters": [
           {
             "_key": "param0",
@@ -1294,7 +1330,6 @@ exports[`transform should transform interface with call signature 1`] = `
       "_key": "member0",
       "_type": "api.callSignature",
       "comment": undefined,
-      "members": [],
       "parameters": [
         {
           "_key": "param0",
