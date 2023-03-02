@@ -22,4 +22,4 @@ export const PAGE_DATA_QUERY = groq`*[slug.current == $slug][0]{
   }
 }`
 
-export const PAGE_PATHS_QUERY = groq`*[defined(slug.current)]{'slug': slug.current}`
+export const PAGE_PATHS_QUERY = groq`*[_type == "article" && defined(slug.current)]{'slug': slug.current}`
