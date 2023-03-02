@@ -1,6 +1,6 @@
 import {codeInput} from '@sanity/code-input'
 import {tsdoc} from '@sanity/tsdoc/studio'
-import {visionTool} from '@sanity/vision'
+// import {visionTool} from '@sanity/vision'
 import {SingleWorkspace, defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {dataset, projectId} from './src/sanity/env'
@@ -13,5 +13,10 @@ export default defineConfig<SingleWorkspace>({
   projectId,
   schema,
   title: '@sanity/tsdoc',
-  plugins: [deskTool({structure}), visionTool(), tsdoc(), codeInput()],
+  plugins: [
+    deskTool({structure}),
+    // visionTool(),
+    tsdoc(),
+    codeInput(),
+  ],
 })
