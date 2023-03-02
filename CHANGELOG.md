@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.9](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2023-03-02)
+
+### Bug Fixes
+
+- **deps:** update dependencies ([dbbd21a](https://github.com/sanity-io/tsdoc/commit/dbbd21a2402347811430a03bdbe3b6cd8aaa21b5))
+- eslint errors ([fbfc397](https://github.com/sanity-io/tsdoc/commit/fbfc3974f0a69997cd77ed6297ad681eb740dbe6))
+- various changes ([9e8729e](https://github.com/sanity-io/tsdoc/commit/9e8729e8a7db4d3492fe8ab6722232f943b90b03))
+
 ## [1.0.0-alpha.8](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2022-10-13)
 
 ### Bug Fixes

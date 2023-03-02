@@ -1,6 +1,6 @@
 {
   "name": "@sanity/tsdoc",
-  "version": "1.0.0-alpha.8",
+  "version": "1.0.0-alpha.9",
   "description": "Generate API reference docs from TypeScript projects and store in a Sanity-friendly JSON format. Render a static frontend, or as React components.",
   "keywords": [
     "sanity",
