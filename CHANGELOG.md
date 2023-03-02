@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.11](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2023-03-02)
+
+### Bug Fixes
+
+- update package manager ([52f002b](https://github.com/sanity-io/tsdoc/commit/52f002bc228c749288de1fdd7a9b5c8bfe1efc84))
+
 ## [1.0.0-alpha.10](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2023-03-02)
 
 ### Bug Fixes
