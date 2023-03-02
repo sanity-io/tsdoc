@@ -1,5 +1,3 @@
-
-
 # @sanity/tsdoc
 
 Generate API reference docs from TypeScript projects and store in a Sanity-friendly JSON format. Render a static frontend, or as React components.

@@ -1,5 +1,7 @@
 /.tsdoc
+/docs/.next
 /dist
 /etc
 /test/__tmp__
 /pnpm-lock.yaml
+/workshop/.workshop
