@@ -75,9 +75,6 @@
   "types": "./dist/exports/index.d.ts",
   "typesVersions": {
     "*": {
-      "cli": [
-        "./dist/exports/cli.d.ts"
-      ],
       "react": [
         "./dist/exports/react.d.ts"
       ],
@@ -95,6 +92,7 @@
   "files": [
     "bin",
     "dist",
+    "exports",
     "src"
   ],
   "scripts": {
