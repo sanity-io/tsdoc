@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.13](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2023-03-03)
+
+### Bug Fixes
+
+- **build:** include `exports` in dist ([9b4788e](https://github.com/sanity-io/tsdoc/commit/9b4788ee7c2fa7cf040bf29f6bd7745adbe47eb2))
+- **build:** pin `styled-components` ([bfc389c](https://github.com/sanity-io/tsdoc/commit/bfc389c7eb85a3d5545788a26589414bf71a4b08))
+- **deps:** pin `styled-components` ([330b567](https://github.com/sanity-io/tsdoc/commit/330b567f9e08335c316df993226cc114ddfa4ca4))
+
 ## [1.0.0-alpha.12](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2023-03-03)
 
 ### Bug Fixes
