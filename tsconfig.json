@@ -33,7 +33,6 @@
     "resolveJsonModule": true
   },
   "references": [
-    {"path": "./docs"},
     {"path": "./playground/multi-export"},
     {"path": "./playground/mylib"},
     {"path": "./playground/ts"}

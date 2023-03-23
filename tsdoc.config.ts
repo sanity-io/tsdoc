@@ -6,6 +6,8 @@ export default defineConfig({
   app: {
     alias: {
       '@sanity/tsdoc/react': path.resolve(__dirname, './exports/react.ts'),
+      '@sanity/tsdoc/store': path.resolve(__dirname, './exports/store.ts'),
+      '@sanity/tsdoc/studio': path.resolve(__dirname, './exports/studio.ts'),
       '@sanity/tsdoc': path.resolve(__dirname, './exports/index.ts'),
       react: path.resolve(__dirname, './node_modules/react'),
     },
@@ -13,19 +15,6 @@ export default defineConfig({
 
   input: {
     type: 'fs',
-    pattern: [
-      // @sanity/tsdoc
-      // './etc/**/*.json',
-
-      // sanity
-      // '../sanity/etc/**/*.json',
-
-      // @sanity/pkg-utils
-      // '../pkg-utils/etc/**/*.json',
-
-      // @sanity/ui
-      '../ui/etc/**/*.json',
-    ],
     tsconfig: pkgConfig.tsconfig,
   },
 
