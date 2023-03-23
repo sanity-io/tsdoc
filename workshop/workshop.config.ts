@@ -24,6 +24,8 @@ function getAliases(): Record<string, string> | undefined {
 
   return {
     '@sanity/tsdoc/react': path.resolve(__dirname, '../exports/react.ts'),
+    '@sanity/tsdoc/store': path.resolve(__dirname, '../exports/store.ts'),
+    '@sanity/tsdoc/studio': path.resolve(__dirname, '../exports/studio.ts'),
     '@sanity/tsdoc': path.resolve(__dirname, '../exports/index.ts'),
   }
 }

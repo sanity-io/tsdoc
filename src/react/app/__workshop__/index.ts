@@ -6,12 +6,17 @@ export default defineScope({
     {
       name: 'search',
       title: 'Search',
-      component: lazy(() => import('./SearchStory')),
+      component: lazy(() => import('./search')),
     },
     {
       name: 'symbol',
       title: 'Symbol',
-      component: lazy(() => import('./SymbolStory')),
+      component: lazy(() => import('./symbol')),
+    },
+    {
+      name: 'symbol-preview',
+      title: 'Symbol preview',
+      component: lazy(() => import('./symbolPreview')),
     },
   ],
 })

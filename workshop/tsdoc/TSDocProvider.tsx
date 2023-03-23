@@ -16,7 +16,6 @@ export function TSDocProvider(props: {children?: ReactNode}): ReactElement {
   const [path, setPath] = useState('/')
   const [docs, setDocs] = useState([])
   const store = useMemo(() => createTSDocMemoryStore({docs}), [docs])
-
   const params = useMemo(() => parsePath(path), [path])
 
   useEffect(() => {
@@ -53,18 +52,21 @@ export function Inner(): null {
   const {channel, broadcast} = useWorkshop<TSDocMsg>()
   const {params, updateParams} = useTSDoc()
   const {exportPath, memberName, packageName, releaseVersion} = params
-
   const packages = usePackages()
   const exports = useExports()
 
+  const currentPackage = packages.data?.find((pkg) => pkg.name === packageName)
   const defaultPackage = packages.data?.[0]
   const defaultPackageScope = defaultPackage?.scope
   const defaultPackageName = defaultPackage?.name
-  const defaultRelease = defaultPackage?.latestRelease
+
+  const defaultRelease = (currentPackage || defaultPackage)?.latestRelease
   const defaultReleaseVersion = defaultRelease?.version
+
+  const currentExport = exports.data?.find((e) => e.path === exportPath)
   const defaultExport = exports.data?.[0]
-  const defaultExportPath = defaultExport?.path
-  const defaultMember = defaultExport?.members?.[0]
+  const defaultExportPath = (currentExport || defaultExport)?.path
+  const defaultMember = (currentExport || defaultExport)?.members?.[0]
   const defaultMemberName = defaultMember?.name
 
   // Set the default package scope/name if none is set
@@ -75,10 +77,21 @@ export function Inner(): null {
         params: {
           packageName: defaultPackageName,
           packageScope: defaultPackageScope || null,
+          releaseVersion: defaultReleaseVersion,
+          exportPath: defaultExportPath,
+          memberName: defaultMemberName,
         },
       })
     }
-  }, [broadcast, defaultPackageName, defaultPackageScope, packageName])
+  }, [
+    broadcast,
+    defaultExportPath,
+    defaultMemberName,
+    defaultPackageName,
+    defaultPackageScope,
+    defaultReleaseVersion,
+    packageName,
+  ])
 
   // Set the default release version if none is set
   useEffect(() => {
@@ -87,10 +100,12 @@ export function Inner(): null {
         type: 'workshop/tsdoc/updateParams',
         params: {
           releaseVersion: defaultReleaseVersion,
+          exportPath: defaultExportPath,
+          memberName: defaultMemberName,
         },
       })
     }
-  }, [broadcast, defaultReleaseVersion, releaseVersion])
+  }, [broadcast, defaultExportPath, defaultMemberName, defaultReleaseVersion, releaseVersion])
 
   // Set the default export path if none is set
   useEffect(() => {
@@ -99,10 +114,11 @@ export function Inner(): null {
         type: 'workshop/tsdoc/updateParams',
         params: {
           exportPath: defaultExportPath,
+          memberName: defaultMemberName,
         },
       })
     }
-  }, [broadcast, defaultExportPath, exportPath])
+  }, [broadcast, defaultExportPath, defaultMemberName, exportPath])
 
   // Set the default member name if none is set
   useEffect(() => {
