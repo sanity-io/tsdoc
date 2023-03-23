@@ -1,3 +1,4 @@
+import {APIMember} from '@sanity/tsdoc'
 import {Tooltip, TooltipProps} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {Size} from '../lib/ui'
@@ -7,21 +8,31 @@ import {useSymbol} from './useSymbol'
 /** @beta */
 export function TSDocSymbolTooltip(
   props: Omit<TooltipProps, 'content'> & {
+    member?: APIMember
     name: string
     packageName?: string
     packageScope?: string | null
   }
 ): ReactElement {
-  const {name, packageName, packageScope, ...restProps} = props
-  const symbol = useSymbol({name, packageName, packageScope})
-  const symbolMembers = symbol?.data?.members
+  const {member, name, packageName, packageScope, ...restProps} = props
+
+  const {data} = useSymbol({
+    member,
+    name,
+    packageName,
+    packageScope,
+  })
+
+  const symbolMembers = data?.members
 
   const content = useMemo(() => {
     if (!symbolMembers || symbolMembers.length === 0) return null
 
+    const member = symbolMembers[0]!
+
     return (
       <Size delta={-1}>
-        <ReferenceTooltipContent data={symbolMembers[0]!} />
+        <ReferenceTooltipContent data={member} />
       </Size>
     )
   }, [symbolMembers])

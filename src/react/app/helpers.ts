@@ -12,20 +12,37 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
   let exportPath: string | null = null
   let memberName: string | null = null
 
-  if (segments[0]?.startsWith('@')) {
-    packageScope = segments.shift() || null
+  packageName = segments.shift() || null
+
+  if (packageName?.startsWith('@')) {
+    packageScope = packageName
+    packageName = segments.shift() || null
   }
 
-  packageName = segments.shift() || null
-  releaseVersion = segments.shift() || null
-  memberName = segments.pop() || null
-  exportPath = segments.join('/') || null
+  if (packageName) {
+    releaseVersion = segments.shift() || null
+  }
 
-  return {
-    exportPath: exportPath === 'index' ? '.' : `./${exportPath}`,
+  if (releaseVersion) {
+    if (segments.length > 1) {
+      memberName = segments.pop() || null
+      exportPath = `./${segments.join('/')}`
+    } else if (segments.length === 1) {
+      exportPath = `./${segments[0]}`
+    }
+  }
+
+  if (exportPath === './index') {
+    exportPath = '.'
+  }
+
+  const params: TSDocAppParams = {
+    exportPath,
     memberName,
     packageName,
     packageScope,
     releaseVersion,
   }
+
+  return params
 }

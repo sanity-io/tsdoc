@@ -1,3 +1,4 @@
+import {APIMember} from '@sanity/tsdoc'
 import {Box, Card, CardProps, Text} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {TSDocAppParams} from '../../store'
@@ -10,11 +11,24 @@ import {useSymbol} from './useSymbol'
 
 /** @beta */
 export function TSDocSymbolPreview(
-  props: Omit<CardProps, 'as' | 'padding'> & {fontSize?: number; name: string}
+  props: Omit<CardProps, 'as' | 'padding'> & {
+    fontSize?: number
+    member?: APIMember
+    name: string
+    packageName?: string
+    packageScope?: string | null
+  }
 ): ReactElement {
-  const {fontSize = 2, name, ...restProps} = props
-  const symbol = useSymbol({name})
-  const symbolMembers = symbol?.data?.members
+  const {fontSize = 2, member, name, packageName, packageScope, ...restProps} = props
+
+  const {data} = useSymbol({
+    member,
+    name,
+    packageName,
+    packageScope,
+  })
+
+  const symbolMembers = data?.members
 
   const content = useMemo(() => {
     if (!symbolMembers || symbolMembers.length === 0) return null

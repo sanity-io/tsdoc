@@ -18,8 +18,8 @@ import {useTSDoc} from '../useTSDoc'
 import {getGroupedMembers} from './getGroupedMembers'
 import {GroupedMembersTree} from './GroupedMembersTree'
 import {PackageMenuButton} from './PackageMenuButton'
+import {PackageTreeItem} from './PackageTreeItem'
 import {ReleaseMenuButton} from './ReleaseMenuButton'
-import {SyntaxTreeItem} from './SyntaxTreeItem'
 import {TSDocSearch} from './TSDocSearch'
 
 /** @internal */
@@ -51,8 +51,15 @@ export function TSDocNav(): ReactElement {
   )
 }
 
+interface ExportData {
+  packageScope: string | null
+  packageName: string
+  name: string
+  versions: TSDocNavExportData[]
+}
+
 function TSDocNavView(): ReactElement {
-  const {params, updateParams} = useTSDoc()
+  const {params} = useTSDoc()
   const _exports = useExports()
   const packages = usePackages()
   const fontSize = useSize()
@@ -67,12 +74,14 @@ function TSDocNavView(): ReactElement {
       : r.version == currentPkg.latestRelease.version
   )
 
+  const currentVersion = currentRelease?.version
+
   const currentExportName =
     currentPkg &&
     params.exportPath &&
     [currentPkg.scope, currentPkg.name, params.exportPath].filter(Boolean).join('/')
 
-  const exports = useMemo(() => {
+  const exports: ExportData[] = useMemo(() => {
     if (!_exports.data) return []
 
     const items: {
@@ -128,20 +137,7 @@ function TSDocNavView(): ReactElement {
 
             <Tree>
               {packages.data?.map((pkg) => (
-                <SyntaxTreeItem
-                  key={pkg.name}
-                  fontSize={fontSize}
-                  onClick={() => {
-                    updateParams((prev) => ({
-                      ...prev,
-                      packageScope: pkg.scope || null,
-                      packageName: pkg.name,
-                      releaseVersion: pkg.latestRelease.version,
-                    }))
-                  }}
-                  padding={2}
-                  text={<SyntaxText>{[pkg.scope, pkg.name].filter(Boolean).join('/')}</SyntaxText>}
-                />
+                <PackageTreeItem key={pkg.name} pkg={pkg} fontSize={fontSize} padding={2} />
               ))}
             </Tree>
           </Stack>
@@ -178,46 +174,72 @@ function TSDocNavView(): ReactElement {
             <Stack flex={1} overflow="auto" padding={3} space={3}>
               {currentPkg && <TSDocSearch />}
 
-              {exports.length === 1 && (
-                <Tree>
-                  {exports[0]?.versions
-                    .filter((d) => {
-                      return d.release.version === currentRelease?.version
-                    })
-                    .map((exp) => (
-                      <GroupedMembersTree exp={exp} key={exp.release.version} />
-                    ))}
-                </Tree>
-              )}
-
-              {exports.length > 1 && (
-                <Tree>
-                  {exports
-                    .filter((data) =>
-                      data.versions.some((v) => v.release.version === currentRelease?.version)
-                    )
-                    .map((data) => (
-                      <TreeItem
-                        expanded={data.name === currentExportName}
-                        fontSize={fontSize}
-                        key={data.name}
-                        padding={2}
-                        text={<SyntaxText>{data.name}</SyntaxText>}
-                        weight="semibold"
-                      >
-                        {data.versions
-                          .filter((d) => d.release.version === currentRelease?.version)
-                          .map((exp) => (
-                            <GroupedMembersTree exp={exp} key={exp.release.version} />
-                          ))}
-                      </TreeItem>
-                    ))}
-                </Tree>
+              {exports.length === 1 ? (
+                <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
+              ) : (
+                <MultiExportTree
+                  currentExportName={currentExportName}
+                  currentVersion={currentVersion}
+                  exports={exports}
+                  fontSize={fontSize}
+                />
               )}
             </Stack>
           )}
         </>
       )}
     </Flex>
+  )
+}
+
+function SingleExportTree(props: {currentVersion?: string; exp: ExportData}) {
+  const {currentVersion, exp} = props
+
+  const versionedExports = useMemo(
+    () => exp.versions.filter((d) => d.release.version === currentVersion),
+    [currentVersion, exp]
+  )
+
+  return (
+    <Tree>
+      {versionedExports.map((exp) => (
+        <GroupedMembersTree exp={exp} key={exp.release.version} />
+      ))}
+    </Tree>
+  )
+}
+
+function MultiExportTree(props: {
+  currentExportName?: string | null
+  currentVersion?: string
+  fontSize?: number[]
+  exports: ExportData[]
+}) {
+  const {currentExportName, currentVersion, fontSize, exports} = props
+
+  const versionedExports = useMemo(
+    () => exports.filter((data) => data.versions.some((v) => v.release.version === currentVersion)),
+    [currentVersion, exports]
+  )
+
+  return (
+    <Tree>
+      {versionedExports.map((data) => (
+        <TreeItem
+          expanded={data.name === currentExportName}
+          fontSize={fontSize}
+          key={data.name}
+          padding={2}
+          text={<SyntaxText>{data.name}</SyntaxText>}
+          weight="semibold"
+        >
+          {data.versions
+            .filter((d) => d.release.version === currentVersion)
+            .map((exp) => (
+              <GroupedMembersTree exp={exp} key={exp.release.version} />
+            ))}
+        </TreeItem>
+      ))}
+    </Tree>
   )
 }

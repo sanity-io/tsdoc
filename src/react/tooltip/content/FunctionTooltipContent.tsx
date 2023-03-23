@@ -32,8 +32,11 @@ export function FunctionTooltipContent(props: {data: APIFunction}): ReactElement
 
   return (
     <>
-      <Box padding={3}>
-        <Code language="typescript">{`import {${data.name}} from '${data.export.name}'`}</Code>
+      <Box overflow="auto" padding={3}>
+        <Code
+          language="typescript"
+          size={useTextSize([-1, 0, 1])}
+        >{`import {${data.name}} from '${data.export.name}'`}</Code>
       </Box>
 
       <Box padding={3} overflow="auto" style={{borderTop: '1px solid var(--card-border-color)'}}>

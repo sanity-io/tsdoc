@@ -3,29 +3,49 @@ import {useEffect, useState} from 'react'
 import {useTSDoc} from './useTSDoc'
 
 /** @beta */
+export interface UseSymbolData extends APISymbol {
+  members: APIMember[]
+}
+
+/** @beta */
 export interface UseSymbolProps {
+  member?: APIMember
   name: string
   packageScope?: string | null
-  packageName?: string
-  releaseVersion?: string
+  packageName?: string | null
 }
 
 /** @beta */
 export function useSymbol(props: UseSymbolProps): {
-  data: (APISymbol & {members: APIMember[]}) | null
+  data: UseSymbolData | null
   error: Error | null
   loading: boolean
 } {
-  const {name, packageName: packageNameProp, packageScope: packageScopeProp} = props
+  const {member, name, packageName: packageNameProp, packageScope: packageScopeProp} = props
   const {params, store} = useTSDoc()
   const packageScope = packageScopeProp ?? params?.packageScope
   const packageName = packageNameProp ?? params?.packageName
 
-  const [data, setData] = useState<(APISymbol & {members: APIMember[]}) | null>(null)
+  const [data, setData] = useState<UseSymbolData | null>(null)
   const [error, setError] = useState<Error | null>(null)
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    if (member) {
+      setData({
+        _type: 'api.symbol',
+        name,
+        package: {
+          _type: 'api.package',
+          scope: packageScope || undefined,
+          name: packageName!,
+        } as any,
+        members: [member],
+      })
+
+      return
+    }
+
     async function run() {
       if (!packageName) return
 
@@ -49,7 +69,7 @@ export function useSymbol(props: UseSymbolProps): {
     }
 
     run()
-  }, [name, packageName, packageScope, store])
+  }, [member, name, packageName, packageScope, store])
 
   return {data, error, loading}
 }

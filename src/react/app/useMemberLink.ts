@@ -10,14 +10,8 @@ export function useMemberLink(props: {params: TSDocAppParams | null}): {
 } {
   const {params} = props
   const {basePath, onPathChange} = useTSDoc()
-
   const path = params && compilePath(params)
-
-  const href = useMemo(() => {
-    if (!path) return basePath || '/'
-
-    return `${basePath}${path}`
-  }, [basePath, path])
+  const href = useMemo(() => `${basePath}${path || ''}`, [basePath, path])
 
   const onClick = useCallback(
     (event: MouseEvent) => {
@@ -30,5 +24,5 @@ export function useMemberLink(props: {params: TSDocAppParams | null}): {
     [onPathChange, path]
   )
 
-  return {href: href || '/', onClick}
+  return {href, onClick}
 }
