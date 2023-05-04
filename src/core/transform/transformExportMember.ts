@@ -58,5 +58,5 @@ export function transformExportMember(
 }
 
 function _getItemId(item: ApiItem): string {
-  return _hash(item.canonicalReference.toString())
+  return `tsdoc.${_hash(item.canonicalReference.toString())}`
 }
