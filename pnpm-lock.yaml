@@ -26,9 +26,12 @@ importers:
       '@portabletext/react':
         specifier: ^2.0.2
         version: 2.0.2(react@18.2.0)
+<<<<<<< HEAD
       '@portabletext/toolkit':
         specifier: ^2.0.1
         version: 2.0.1
+=======
+>>>>>>> d84bf59 (chore: update pnpm lock file)
       '@sanity/client':
         specifier: ^5.2.2
         version: 5.2.2
