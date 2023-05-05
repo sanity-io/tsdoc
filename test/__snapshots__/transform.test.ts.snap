@@ -3,7 +3,7 @@
 exports[`transform should result in a "api.release" document 1`] = `
 [
   {
-    "_id": "mylib",
+    "_id": "tsdoc.mylib",
     "_type": "api.package",
     "latestRelease": {
       "_ref": "mylib_1-0-0",
@@ -20,7 +20,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "scope": undefined,
   },
   {
-    "_id": "mylib_1-0-0",
+    "_id": "tsdoc.mylib_1-0-0",
     "_type": "api.release",
     "exports": [
       {
@@ -45,7 +45,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "version": "1.0.0",
   },
   {
-    "_id": "mylib_1-0-0__main",
+    "_id": "tsdoc.mylib_1-0-0__main",
     "_type": "api.export",
     "members": [
       {
@@ -96,7 +96,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     },
   },
   {
-    "_id": "2ed1af84bcc3daa360547384e50e276f",
+    "_id": "tsdoc.2ed1af84bcc3daa360547384e50e276f",
     "_type": "api.function",
     "comment": {
       "_type": "tsdoc.docComment",
@@ -205,7 +205,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "c3c0c75d56a623a0d409f9fd0ec25583",
+    "_id": "tsdoc.c3c0c75d56a623a0d409f9fd0ec25583",
     "_type": "api.interface",
     "comment": {
       "_type": "tsdoc.docComment",
@@ -303,7 +303,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "fb04f0e19331b06d0e9acb7313823b63",
+    "_id": "tsdoc.fb04f0e19331b06d0e9acb7313823b63",
     "_type": "api.typeAlias",
     "comment": {
       "_type": "tsdoc.docComment",
@@ -351,7 +351,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "bc4add0c6c20d7dc9a9b8a7d959c7b51",
+    "_id": "tsdoc.bc4add0c6c20d7dc9a9b8a7d959c7b51",
     "_type": "api.typeAlias",
     "comment": {
       "_type": "tsdoc.docComment",
@@ -399,7 +399,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "37d9a6314d9fc88c20990c7f9b784dde",
+    "_id": "tsdoc.37d9a6314d9fc88c20990c7f9b784dde",
     "_type": "api.class",
     "comment": {
       "_type": "tsdoc.docComment",
@@ -748,7 +748,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "814d0a452f98ffc5c2f30f549227a74c",
+    "_id": "tsdoc.814d0a452f98ffc5c2f30f549227a74c",
     "_type": "api.interface",
     "comment": {
       "_type": "tsdoc.docComment",
@@ -822,7 +822,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "1b53660d0652ecb7b6ff682fe8f3dbdd",
+    "_id": "tsdoc.1b53660d0652ecb7b6ff682fe8f3dbdd",
     "_type": "api.interface",
     "comment": {
       "_type": "tsdoc.docComment",
@@ -881,7 +881,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "mylib_Button",
+    "_id": "tsdoc.mylib_Button",
     "_type": "api.symbol",
     "name": "Button",
     "package": {
@@ -890,7 +890,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     },
   },
   {
-    "_id": "mylib_ButtonProps",
+    "_id": "tsdoc.mylib_ButtonProps",
     "_type": "api.symbol",
     "name": "ButtonProps",
     "package": {
@@ -899,7 +899,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     },
   },
   {
-    "_id": "mylib_ButtonTone",
+    "_id": "tsdoc.mylib_ButtonTone",
     "_type": "api.symbol",
     "name": "ButtonTone",
     "package": {
@@ -908,7 +908,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     },
   },
   {
-    "_id": "mylib_ButtonType",
+    "_id": "tsdoc.mylib_ButtonType",
     "_type": "api.symbol",
     "name": "ButtonType",
     "package": {
@@ -917,7 +917,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     },
   },
   {
-    "_id": "mylib_Class",
+    "_id": "tsdoc.mylib_Class",
     "_type": "api.symbol",
     "name": "Class",
     "package": {
@@ -926,7 +926,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     },
   },
   {
-    "_id": "mylib_Resolver",
+    "_id": "tsdoc.mylib_Resolver",
     "_type": "api.symbol",
     "name": "Resolver",
     "package": {
@@ -935,7 +935,7 @@ exports[`transform should result in a "api.release" document 1`] = `
     },
   },
   {
-    "_id": "mylib_ResponsiveMarginProps",
+    "_id": "tsdoc.mylib_ResponsiveMarginProps",
     "_type": "api.symbol",
     "name": "ResponsiveMarginProps",
     "package": {
@@ -948,7 +948,7 @@ exports[`transform should result in a "api.release" document 1`] = `
 
 exports[`transform should transform class 1`] = `
 {
-  "_id": "37d9a6314d9fc88c20990c7f9b784dde",
+  "_id": "tsdoc.37d9a6314d9fc88c20990c7f9b784dde",
   "_type": "api.class",
   "comment": {
     "_type": "tsdoc.docComment",
@@ -1300,7 +1300,7 @@ exports[`transform should transform class 1`] = `
 
 exports[`transform should transform interface with call signature 1`] = `
 {
-  "_id": "814d0a452f98ffc5c2f30f549227a74c",
+  "_id": "tsdoc.814d0a452f98ffc5c2f30f549227a74c",
   "_type": "api.interface",
   "comment": {
     "_type": "tsdoc.docComment",
