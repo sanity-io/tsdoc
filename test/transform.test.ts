@@ -116,8 +116,8 @@ describe('transform', () => {
     const memberExports = variables.map((sym) => sym.export)
 
     expect(memberExports).toEqual([
-      {_type: 'reference', _ref: 'multi-export_1-0-0__main'},
-      {_type: 'reference', _ref: 'multi-export_1-0-0_extra'},
+      {_type: 'reference', _ref: 'tsdoc.multi-export_1-0-0__main'},
+      {_type: 'reference', _ref: 'tsdoc.multi-export_1-0-0_extra'},
     ])
   })
 
