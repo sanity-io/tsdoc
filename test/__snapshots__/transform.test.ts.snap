@@ -6,14 +6,14 @@ exports[`transform should result in a "api.release" document 1`] = `
     "_id": "tsdoc.mylib",
     "_type": "api.package",
     "latestRelease": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "name": "mylib",
     "releases": [
       {
-        "_key": "mylib_1-0-0",
-        "_ref": "mylib_1-0-0",
+        "_key": "tsdoc.mylib_1-0-0",
+        "_ref": "tsdoc.mylib_1-0-0",
         "_type": "reference",
       },
     ],
@@ -24,8 +24,8 @@ exports[`transform should result in a "api.release" document 1`] = `
     "_type": "api.release",
     "exports": [
       {
-        "_key": "mylib_1-0-0__main",
-        "_ref": "mylib_1-0-0__main",
+        "_key": "tsdoc.mylib_1-0-0__main",
+        "_ref": "tsdoc.mylib_1-0-0__main",
         "_type": "reference",
       },
     ],
@@ -39,7 +39,7 @@ exports[`transform should result in a "api.release" document 1`] = `
       "ResponsiveMarginProps",
     ],
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "version": "1.0.0",
@@ -49,49 +49,49 @@ exports[`transform should result in a "api.release" document 1`] = `
     "_type": "api.export",
     "members": [
       {
-        "_key": "2ed1af84bcc3daa360547384e50e276f",
-        "_ref": "2ed1af84bcc3daa360547384e50e276f",
+        "_key": "tsdoc.2ed1af84bcc3daa360547384e50e276f",
+        "_ref": "tsdoc.2ed1af84bcc3daa360547384e50e276f",
         "_type": "reference",
       },
       {
-        "_key": "c3c0c75d56a623a0d409f9fd0ec25583",
-        "_ref": "c3c0c75d56a623a0d409f9fd0ec25583",
+        "_key": "tsdoc.c3c0c75d56a623a0d409f9fd0ec25583",
+        "_ref": "tsdoc.c3c0c75d56a623a0d409f9fd0ec25583",
         "_type": "reference",
       },
       {
-        "_key": "fb04f0e19331b06d0e9acb7313823b63",
-        "_ref": "fb04f0e19331b06d0e9acb7313823b63",
+        "_key": "tsdoc.fb04f0e19331b06d0e9acb7313823b63",
+        "_ref": "tsdoc.fb04f0e19331b06d0e9acb7313823b63",
         "_type": "reference",
       },
       {
-        "_key": "bc4add0c6c20d7dc9a9b8a7d959c7b51",
-        "_ref": "bc4add0c6c20d7dc9a9b8a7d959c7b51",
+        "_key": "tsdoc.bc4add0c6c20d7dc9a9b8a7d959c7b51",
+        "_ref": "tsdoc.bc4add0c6c20d7dc9a9b8a7d959c7b51",
         "_type": "reference",
       },
       {
-        "_key": "37d9a6314d9fc88c20990c7f9b784dde",
-        "_ref": "37d9a6314d9fc88c20990c7f9b784dde",
+        "_key": "tsdoc.37d9a6314d9fc88c20990c7f9b784dde",
+        "_ref": "tsdoc.37d9a6314d9fc88c20990c7f9b784dde",
         "_type": "reference",
       },
       {
-        "_key": "814d0a452f98ffc5c2f30f549227a74c",
-        "_ref": "814d0a452f98ffc5c2f30f549227a74c",
+        "_key": "tsdoc.814d0a452f98ffc5c2f30f549227a74c",
+        "_ref": "tsdoc.814d0a452f98ffc5c2f30f549227a74c",
         "_type": "reference",
       },
       {
-        "_key": "1b53660d0652ecb7b6ff682fe8f3dbdd",
-        "_ref": "1b53660d0652ecb7b6ff682fe8f3dbdd",
+        "_key": "tsdoc.1b53660d0652ecb7b6ff682fe8f3dbdd",
+        "_ref": "tsdoc.1b53660d0652ecb7b6ff682fe8f3dbdd",
         "_type": "reference",
       },
     ],
     "name": "mylib",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "path": ".",
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
   },
@@ -117,14 +117,14 @@ exports[`transform should result in a "api.release" document 1`] = `
       "summary": undefined,
     },
     "export": {
-      "_ref": "mylib_1-0-0__main",
+      "_ref": "tsdoc.mylib_1-0-0__main",
       "_type": "reference",
     },
     "isReactComponentType": true,
     "isReactHook": false,
     "name": "Button",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "parameters": [
@@ -138,10 +138,6 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
-            "member": {
-              "_ref": "c3c0c75d56a623a0d409f9fd0ec25583",
-              "_type": "reference",
-            },
             "text": "ButtonProps",
           },
           {
@@ -182,12 +178,8 @@ exports[`transform should result in a "api.release" document 1`] = `
         ],
       },
     ],
-    "propsType": {
-      "_ref": "c3c0c75d56a623a0d409f9fd0ec25583",
-      "_type": "reference",
-    },
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "releaseTag": "public",
@@ -226,7 +218,7 @@ exports[`transform should result in a "api.release" document 1`] = `
       "summary": undefined,
     },
     "export": {
-      "_ref": "mylib_1-0-0__main",
+      "_ref": "tsdoc.mylib_1-0-0__main",
       "_type": "reference",
     },
     "extends": [
@@ -237,10 +229,6 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
-            "member": {
-              "_ref": "1b53660d0652ecb7b6ff682fe8f3dbdd",
-              "_type": "reference",
-            },
             "text": "ResponsiveMarginProps",
           },
         ],
@@ -258,10 +246,6 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
-            "member": {
-              "_ref": "fb04f0e19331b06d0e9acb7313823b63",
-              "_type": "reference",
-            },
             "text": "ButtonTone",
           },
         ],
@@ -277,10 +261,6 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
-            "member": {
-              "_ref": "bc4add0c6c20d7dc9a9b8a7d959c7b51",
-              "_type": "reference",
-            },
             "text": "ButtonType",
           },
         ],
@@ -288,11 +268,11 @@ exports[`transform should result in a "api.release" document 1`] = `
     ],
     "name": "ButtonProps",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "releaseTag": "public",
@@ -324,16 +304,16 @@ exports[`transform should result in a "api.release" document 1`] = `
       "summary": undefined,
     },
     "export": {
-      "_ref": "mylib_1-0-0__main",
+      "_ref": "tsdoc.mylib_1-0-0__main",
       "_type": "reference",
     },
     "name": "ButtonTone",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "releaseTag": "public",
@@ -372,16 +352,16 @@ exports[`transform should result in a "api.release" document 1`] = `
       "summary": undefined,
     },
     "export": {
-      "_ref": "mylib_1-0-0__main",
+      "_ref": "tsdoc.mylib_1-0-0__main",
       "_type": "reference",
     },
     "name": "ButtonType",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "releaseTag": "public",
@@ -613,7 +593,7 @@ exports[`transform should result in a "api.release" document 1`] = `
       ],
     },
     "export": {
-      "_ref": "mylib_1-0-0__main",
+      "_ref": "tsdoc.mylib_1-0-0__main",
       "_type": "reference",
     },
     "isReactComponentType": false,
@@ -733,11 +713,11 @@ exports[`transform should result in a "api.release" document 1`] = `
     ],
     "name": "Class",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "releaseTag": "beta",
@@ -769,7 +749,7 @@ exports[`transform should result in a "api.release" document 1`] = `
       "summary": undefined,
     },
     "export": {
-      "_ref": "mylib_1-0-0__main",
+      "_ref": "tsdoc.mylib_1-0-0__main",
       "_type": "reference",
     },
     "extends": [],
@@ -807,11 +787,11 @@ exports[`transform should result in a "api.release" document 1`] = `
     ],
     "name": "Resolver",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "releaseTag": "beta",
@@ -843,7 +823,7 @@ exports[`transform should result in a "api.release" document 1`] = `
       "summary": undefined,
     },
     "export": {
-      "_ref": "mylib_1-0-0__main",
+      "_ref": "tsdoc.mylib_1-0-0__main",
       "_type": "reference",
     },
     "extends": [],
@@ -866,11 +846,11 @@ exports[`transform should result in a "api.release" document 1`] = `
     ],
     "name": "ResponsiveMarginProps",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
     "release": {
-      "_ref": "mylib_1-0-0",
+      "_ref": "tsdoc.mylib_1-0-0",
       "_type": "reference",
     },
     "releaseTag": "public",
@@ -881,65 +861,65 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
-    "_id": "tsdoc.mylib_Button",
+    "_id": "tsdoc.tsdoc.mylib_Button",
     "_type": "api.symbol",
     "name": "Button",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
   },
   {
-    "_id": "tsdoc.mylib_ButtonProps",
+    "_id": "tsdoc.tsdoc.mylib_ButtonProps",
     "_type": "api.symbol",
     "name": "ButtonProps",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
   },
   {
-    "_id": "tsdoc.mylib_ButtonTone",
+    "_id": "tsdoc.tsdoc.mylib_ButtonTone",
     "_type": "api.symbol",
     "name": "ButtonTone",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
   },
   {
-    "_id": "tsdoc.mylib_ButtonType",
+    "_id": "tsdoc.tsdoc.mylib_ButtonType",
     "_type": "api.symbol",
     "name": "ButtonType",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
   },
   {
-    "_id": "tsdoc.mylib_Class",
+    "_id": "tsdoc.tsdoc.mylib_Class",
     "_type": "api.symbol",
     "name": "Class",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
   },
   {
-    "_id": "tsdoc.mylib_Resolver",
+    "_id": "tsdoc.tsdoc.mylib_Resolver",
     "_type": "api.symbol",
     "name": "Resolver",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
   },
   {
-    "_id": "tsdoc.mylib_ResponsiveMarginProps",
+    "_id": "tsdoc.tsdoc.mylib_ResponsiveMarginProps",
     "_type": "api.symbol",
     "name": "ResponsiveMarginProps",
     "package": {
-      "_ref": "mylib",
+      "_ref": "tsdoc.mylib",
       "_type": "reference",
     },
   },
@@ -1162,7 +1142,7 @@ exports[`transform should transform class 1`] = `
     ],
   },
   "export": {
-    "_ref": "mylib_1-0-0__main",
+    "_ref": "tsdoc.mylib_1-0-0__main",
     "_type": "reference",
   },
   "isReactComponentType": false,
@@ -1282,11 +1262,11 @@ exports[`transform should transform class 1`] = `
   ],
   "name": "Class",
   "package": {
-    "_ref": "mylib",
+    "_ref": "tsdoc.mylib",
     "_type": "reference",
   },
   "release": {
-    "_ref": "mylib_1-0-0",
+    "_ref": "tsdoc.mylib_1-0-0",
     "_type": "reference",
   },
   "releaseTag": "beta",
@@ -1321,7 +1301,7 @@ exports[`transform should transform interface with call signature 1`] = `
     "summary": undefined,
   },
   "export": {
-    "_ref": "mylib_1-0-0__main",
+    "_ref": "tsdoc.mylib_1-0-0__main",
     "_type": "reference",
   },
   "extends": [],
@@ -1359,11 +1339,11 @@ exports[`transform should transform interface with call signature 1`] = `
   ],
   "name": "Resolver",
   "package": {
-    "_ref": "mylib",
+    "_ref": "tsdoc.mylib",
     "_type": "reference",
   },
   "release": {
-    "_ref": "mylib_1-0-0",
+    "_ref": "tsdoc.mylib_1-0-0",
     "_type": "reference",
   },
   "releaseTag": "beta",
