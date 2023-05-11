@@ -76,7 +76,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
     const exportId = formatExportId(packageScope, packageName, releaseVersion, exportPath)
 
     const exportDoc: APIExportDocument = {
-      _id: `tsdoc.${exportId}`,
+      _id: `tsdoc-${exportId}`,
       _type: 'api.export',
       package: {_type: 'reference', _ref: ''},
       release: {_type: 'reference', _ref: ''},
@@ -106,7 +106,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
       memberNames: [],
       ...ctx.release,
       _type: 'api.release',
-      _id: `tsdoc.${releaseId}`,
+      _id: `tsdoc-${releaseId}`,
       package: {_type: 'reference', _ref: ctx.package._id},
       version: releaseVersion,
     }
@@ -142,7 +142,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
 
       const symbolDoc: APISymbolDocument = {
         _type: 'api.symbol',
-        _id: `tsdoc.${packageDoc._id}_${member.displayName}`,
+        _id: `tsdoc-${packageDoc._id}_${member.displayName}`,
         name: member.displayName,
         package: {_type: 'reference', _ref: packageDoc._id},
       }

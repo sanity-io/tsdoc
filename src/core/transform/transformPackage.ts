@@ -11,7 +11,7 @@ export function _transformPackage(ctx: TransformContext, node: ApiPackage): APIP
 
   return {
     _type: 'api.package',
-    _id: `tsdoc.${_id}`,
+    _id: `tsdoc-${_id}`,
     latestRelease: ctx.package?.latestRelease as SanityReferenceValue,
     name: ctx.name,
     releases: [],
