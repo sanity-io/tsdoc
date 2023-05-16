@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.15](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2023-05-16)
+
+### Bug Fixes
+
+- add prefix to avoid potential conflicts with existing docs ([1cd037c](https://github.com/sanity-io/tsdoc/commit/1cd037c1e67fe59675d28b13317fa136fff4f0ae))
+- make sure that the package itself has the prefix ([9c0de2c](https://github.com/sanity-io/tsdoc/commit/9c0de2cbe55c4aa1988e8ac21ce29a007d15f4b3))
+
 ## [1.0.0-alpha.14](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2023-03-23)
 
 ### Bug Fixes
