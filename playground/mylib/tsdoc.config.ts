@@ -3,5 +3,8 @@ import packageConfig from './package.config'
 
 export default defineConfig({
   extract: packageConfig.extract,
-  tsconfig: packageConfig.tsconfig,
+  input: {
+    type: 'fs',
+    tsconfig: packageConfig.tsconfig,
+  },
 })
