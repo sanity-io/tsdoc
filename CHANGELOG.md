@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.16](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2023-05-24)
+
+### Bug Fixes
+
+- **core:** set optional properties ([ba67a14](https://github.com/sanity-io/tsdoc/commit/ba67a142e1fe5d4cfceb98de0ed373799d6e1429))
+- update dependencies ([b801d30](https://github.com/sanity-io/tsdoc/commit/b801d3080996cd6773110abc144c345edd5c1e01))
+
 ## [1.0.0-alpha.15](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2023-05-16)
 
 ### Bug Fixes
