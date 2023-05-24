@@ -9,10 +9,10 @@ export interface SanityTSDocConfigOptions {
   extract?: PkgConfigOptions['extract']
   input?: {
     type: 'fs'
-    pattern: string | string[]
+    pattern?: string | string[]
     tsconfig?: string
   }
-  output: {
+  output?: {
     fs?: {
       outDir?: string
     }
