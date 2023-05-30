@@ -370,6 +370,8 @@ export const API_MEMBER_QUERY = groq`
   && package->name == $packageName
   && release->version == $releaseVersion
   && name == $memberName
+  && comment.customBlocks == null
+  || !("@hidden" in comment.customBlocks[].tag) 
 ]{
   ${API_MEMBER_PROJECTION},
 
