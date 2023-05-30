@@ -13,7 +13,7 @@ export const API_EXPORTS_QUERY = groq`
   package->{name,scope},
   release->{version},
   'isLatest': release->_id == package->latestRelease._ref,
-  'members': *[_type in $memberTypes && references(^._id)] | order(name asc) {
+  'members': *[_type in $memberTypes && references(^._id) && comment.customBlocks == null || !("@hidden" in comment.customBlocks[].tag)] | order(name asc) {
     '_key': _id,
     _type,
     comment{deprecated},
