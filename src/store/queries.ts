@@ -401,6 +401,8 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
     && name == ^.name
     && package->scope == $packageScope
     && package->name == $packageName
+    && comment.customBlocks == null
+    || !("@hidden" in comment.customBlocks[].tag) 
   ]{
     'exportPath': export->path,
     'releaseVersion': release->version

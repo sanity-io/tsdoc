@@ -18,7 +18,10 @@ export function TSDocSearch(): ReactElement {
   const [value, setValue] = useState<string | undefined>()
 
   const options: TSDocSearchOption[] = useMemo(
-    () => data.map((result) => ({value: result._id, symbol: result})),
+    () =>
+      data
+        .filter((result) => result.members.length > 0)
+        .map((result) => ({value: result._id, symbol: result})),
     [data]
   )
 
