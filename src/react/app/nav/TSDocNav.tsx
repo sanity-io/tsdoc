@@ -223,7 +223,7 @@ function MultiExportTree(props: {
   )
 
   return (
-    <Tree>
+    <Tree style={{overflow: 'scroll', height: '100vh'}}>
       {versionedExports.map((data) => (
         <TreeItem
           expanded={data.name === currentExportName}
