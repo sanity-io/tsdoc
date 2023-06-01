@@ -20,25 +20,35 @@ export interface TSDocExportData {
 }
 
 /** @public */
+export type TSDocAPIMember = APIMember & {versions: string[]}
+/** @public */
+export type TSDocAPISymbol = APISymbol & {members: TSDocAPIMember[]}
+/** @public */
+export type TSDocSymbolSearchResult = (APISymbol & {
+  _id: string
+  members: {exportPath: string; releaseVersion: string}[]
+})[]
+
+/** @public */
 export interface TSDocStore {
   exports: {
     get: (params: {
       packageScope: string | null
       packageName: string
       releaseVersion: string
-    }) => Promise<TSDocExportData[]>
+    }) => Promise<TSDocExportData[] | undefined>
   }
 
   member: {
-    get: (params: TSDocAppParams) => Promise<(APIMember & {versions: string[]}) | null>
+    get: (params: TSDocAppParams) => Promise<TSDocAPIMember | null | undefined>
   }
 
   package: {
-    get: (params: TSDocAppParams) => Promise<APIPackage | null>
+    get: (params: TSDocAppParams) => Promise<APIPackage | null | undefined>
   }
 
   packages: {
-    get: () => Promise<APIPackage[] | null>
+    get: () => Promise<APIPackage[] | null | undefined>
   }
 
   symbol: {
@@ -46,13 +56,20 @@ export interface TSDocStore {
       name: string
       packageName: string
       packageScope: string | null
-    }) => Promise<(APISymbol & {members: APIMember[]}) | null>
+    }) => Promise<TSDocAPISymbol | null | undefined>
     search: (params: {
       query: string
       packageName: string
       packageScope: string | null
-    }) => Promise<
-      (APISymbol & {_id: string; members: {exportPath: string; releaseVersion: string}[]})[]
-    >
+    }) => Promise<TSDocSymbolSearchResult[]>
   }
+}
+
+/** @beta */
+export interface TSDocStoreCache {
+  exports: Record<string, TSDocExportData[]>
+  member: Record<string, TSDocAPIMember>
+  package: Record<string, APIPackage | null>
+  packages: APIPackage[]
+  symbol: Record<string, TSDocAPISymbol>
 }
