@@ -1,4 +1,4 @@
-import {Flex, Spinner, Text} from '@sanity/ui'
+import {Box, Flex, Spinner, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {TSDocArticle} from '../article'
 import {useMember} from './useMember'
@@ -13,35 +13,43 @@ export function TSDocDetail(): ReactElement {
 
   if (!params.memberName) {
     return (
-      <Flex align="center" height="fill" justify="center">
-        <Text muted>Select an API member</Text>
-      </Flex>
+      <Box>
+        <Flex align="center" height="fill" justify="center">
+          <Text muted>Select an API member</Text>
+        </Flex>
+      </Box>
     )
   }
 
   if (pkg.loading || member.loading) {
     return (
-      <Flex align="center" height="fill" justify="center">
-        <Spinner />
-      </Flex>
+      <Box>
+        <Flex align="center" height="fill" justify="center">
+          <Spinner />
+        </Flex>
+      </Box>
     )
   }
 
   if (!pkg.data) {
     return (
-      <Flex align="center" height="fill" justify="center">
-        <Text muted>
-          Package not found: {[params.packageScope, params.packageName].filter(Boolean).join('/')}
-        </Text>
-      </Flex>
+      <Box>
+        <Flex align="center" height="fill" justify="center">
+          <Text muted>
+            Package not found: {[params.packageScope, params.packageName].filter(Boolean).join('/')}
+          </Text>
+        </Flex>
+      </Box>
     )
   }
 
   if (!member.data) {
     return (
-      <Flex align="center" height="fill" justify="center">
-        <Text>Member not found: {params.memberName}</Text>
-      </Flex>
+      <Box>
+        <Flex align="center" height="fill" justify="center">
+          <Text>Member not found: {params.memberName}</Text>
+        </Flex>
+      </Box>
     )
   }
 

@@ -43,10 +43,10 @@ export interface TSDocNavExportData
 }
 
 /** @beta */
-export function TSDocNav(): ReactElement {
+export function TSDocNav(props: {showVersionMenu?: boolean}): ReactElement {
   return (
     <Size delta={-1}>
-      <TSDocNavView />
+      <TSDocNavView {...props} />
     </Size>
   )
 }
@@ -58,11 +58,12 @@ interface ExportData {
   versions: TSDocNavExportData[]
 }
 
-function TSDocNavView(): ReactElement {
+function TSDocNavView(props: {showVersionMenu?: boolean}): ReactElement {
   const {params} = useTSDoc()
   const _exports = useExports()
   const packages = usePackages()
   const fontSize = useSize()
+  const {showVersionMenu} = props
 
   const currentPkg = packages.data?.find(
     (p) => p.scope === params.packageScope && p.name === params.packageName
@@ -146,23 +147,25 @@ function TSDocNavView(): ReactElement {
 
       {currentPkg && (
         <>
-          <Layer style={{flex: 'none', position: 'sticky', top: 0}}>
-            <Card padding={[2, 2, 3]} shadow={1}>
-              <Flex gap={1}>
-                {packages.data && (
-                  <Stack flex={1}>
-                    <PackageMenuButton currentPkg={currentPkg} packages={packages.data} />
-                  </Stack>
-                )}
+          {showVersionMenu && (
+            <Layer style={{flex: 'none', position: 'sticky', top: 0}}>
+              <Card padding={[2, 2, 3]} shadow={1}>
+                <Flex gap={1}>
+                  {packages.data && (
+                    <Stack flex={1}>
+                      <PackageMenuButton currentPkg={currentPkg} packages={packages.data} />
+                    </Stack>
+                  )}
 
-                {currentRelease && (
-                  <Stack flex="none">
-                    <ReleaseMenuButton currentPkg={currentPkg} currentRelease={currentRelease} />
-                  </Stack>
-                )}
-              </Flex>
-            </Card>
-          </Layer>
+                  {currentRelease && (
+                    <Stack flex="none">
+                      <ReleaseMenuButton currentPkg={currentPkg} currentRelease={currentRelease} />
+                    </Stack>
+                  )}
+                </Flex>
+              </Card>
+            </Layer>
+          )}
 
           {_exports.loading && (
             <Flex align="center" height="fill" justify="center">
@@ -223,7 +226,7 @@ function MultiExportTree(props: {
   )
 
   return (
-    <Tree>
+    <Tree style={{overflow: 'scroll', height: '100vh'}}>
       {versionedExports.map((data) => (
         <TreeItem
           expanded={data.name === currentExportName}
