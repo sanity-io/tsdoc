@@ -27,13 +27,13 @@ export interface TSDocStoreOptions {
 }
 
 /**
- * A factory function for creating a TSDocStore instance.
+ * A function for creating a TSDocStore instance.
  *
  * @beta
  *
  * @example
  * ```tsx
- * const tsdocStore = new createTSDocStore({
+ * const tsdocStore = createTSDocStore({
  *  debug: true,
  *  query: async (q, params) => tsDocClient.fetch(q, params),
  *  initialState: {
@@ -48,31 +48,16 @@ export interface TSDocStoreOptions {
  *
  * @example
  * ```tsx
- *  const tsdocStore = new createTSDocStore({
+ *  const tsdocStore = createTSDocStore({
  *    debug: true,
  *    query: async (q, params) => tsDocClient.fetch(q, params),
  * });
  * ```
  */
-export class createTSDocStore implements TSDocStore {
-  /**
-   * Whether or not debug mode is enabled.
-   */
-  debug?: boolean
+export function createTSDocStore(options: TSDocStoreOptions): TSDocStore {
+  const {debug, query, initialState} = options
 
-  /**
-   * A function for querying the TSDocStore.
-   *
-   * @param q - The query string.
-   * @param params - An object containing query parameters.
-   * @returns A Promise that resolves to the query results.
-   */
-  query: (q: string, params: Record<string, unknown>) => Promise<any>
-
-  /**
-   * The cache used by the TSDocStore.
-   */
-  cache: TSDocStoreCache = {
+  const cache: TSDocStoreCache = initialState || {
     exports: {},
     member: {},
     package: {},
@@ -80,142 +65,136 @@ export class createTSDocStore implements TSDocStore {
     symbol: {},
   }
 
-  constructor(options: TSDocStoreOptions) {
-    const {debug, query, initialState} = options
+  return {
+    exports: {
+      get: async (params: {
+        packageScope: string | null
+        packageName: string
+        releaseVersion: string
+      }): Promise<TSDocExportData[] | undefined> => {
+        if (debug) console.log('exports.get', params)
 
-    this.debug = debug
-    this.query = query
-    this.cache = initialState || this.cache
-  }
+        const key = JSON.stringify(params)
 
-  exports = {
-    get: async (params: {
-      packageScope: string | null
-      packageName: string
-      releaseVersion: string
-    }): Promise<TSDocExportData[] | undefined> => {
-      if (this.debug) console.log('exports.get', params)
+        if (cache.exports[key]) {
+          if (debug) console.log('exports.get read from cache')
 
-      const key = JSON.stringify(params)
+          return cache.exports[key]
+        }
 
-      if (this.cache.exports[key]) {
-        if (this.debug) console.log('exports.get read from cache')
+        const result = await query(API_EXPORTS_QUERY, {
+          ...params,
+          memberTypes: API_MEMBER_TYPES,
+        })
 
-        return this.cache.exports[key]
-      }
+        cache.exports[key] = result
 
-      const result = await this.query(API_EXPORTS_QUERY, {
-        ...params,
-        memberTypes: API_MEMBER_TYPES,
-      })
-
-      this.cache.exports[key] = result
-
-      return result
+        return result
+      },
     },
-  }
 
-  member = {
-    get: async (params: TSDocAppParams): Promise<TSDocAPIMember | null | undefined> => {
-      if (this.debug) console.log('member.get', params)
+    member: {
+      get: async (params: TSDocAppParams): Promise<TSDocAPIMember | null | undefined> => {
+        if (debug) console.log('member.get', params)
 
-      const key = JSON.stringify(params)
+        const key = JSON.stringify(params)
 
-      if (this.cache.member[key]) {
-        if (this.debug) console.log('member.get read from cache')
+        if (cache.member[key]) {
+          if (debug) console.log('member.get read from cache')
 
-        return this.cache.member[key]
-      }
+          return cache.member[key]
+        }
 
-      const result = await this.query(API_MEMBER_QUERY, {
-        ...params,
-        memberTypes: API_MEMBER_TYPES,
-      })
+        const result = await query(API_MEMBER_QUERY, {
+          ...params,
+          memberTypes: API_MEMBER_TYPES,
+        })
 
-      this.cache.member[key] = result
+        cache.member[key] = result
 
-      return result
+        return result
+      },
     },
-  }
 
-  package = {
-    get: async (params: TSDocAppParams): Promise<APIPackage | null | undefined> => {
-      if (this.debug) console.log('package.get', params)
+    package: {
+      get: async (params: TSDocAppParams): Promise<APIPackage | null | undefined> => {
+        if (debug) console.log('package.get', params)
 
-      const key = JSON.stringify(params)
+        const key = JSON.stringify(params)
 
-      if (this.cache.package[key]) {
-        if (this.debug) console.log('package.get read from cache')
+        if (cache.package[key]) {
+          if (debug) console.log('package.get read from cache')
 
-        return this.cache.package[key]
-      }
+          return cache.package[key]
+        }
 
-      const result = await this.query(API_PACKAGE_QUERY, {
-        ...params,
-        memberTypes: API_MEMBER_TYPES,
-      })
+        const result = await query(API_PACKAGE_QUERY, {
+          ...params,
+          memberTypes: API_MEMBER_TYPES,
+        })
 
-      this.cache.package[key] = result
+        cache.package[key] = result
 
-      return result
+        return result
+      },
     },
-  }
 
-  packages = {
-    get: async (): Promise<APIPackage[] | null | undefined> => {
-      if (this.debug) console.log('packages.get')
+    packages: {
+      get: async (): Promise<APIPackage[] | null | undefined> => {
+        if (debug) console.log('packages.get')
 
-      if (this.cache.packages.length) {
-        if (this.debug) console.log('packages.get read from cache')
+        if (cache.packages.length) {
+          if (debug) console.log('packages.get read from cache')
 
-        return this.cache.packages
-      }
+          return cache.packages
+        }
 
-      const result = await this.query(API_PACKAGES_QUERY, {})
+        const result = await query(API_PACKAGES_QUERY, {})
 
-      this.cache.packages = result
+        cache.packages = result
 
-      return result
+        return result
+      },
     },
-  }
 
-  symbol = {
-    get: async (params: {
-      name: string
-      packageName: string
-      packageScope: string | null
-    }): Promise<TSDocAPISymbol | null | undefined> => {
-      if (this.debug) console.log('symbol.get', params)
+    symbol: {
+      get: async (params: {
+        name: string
+        packageName: string
+        packageScope: string | null
+      }): Promise<TSDocAPISymbol | null | undefined> => {
+        if (debug) console.log('symbol.get', params)
 
-      const key = JSON.stringify(params)
+        const key = JSON.stringify(params)
 
-      if (this.cache.symbol[key]) {
-        if (this.debug) console.log('symbol.get read from cache')
+        if (cache.symbol[key]) {
+          if (debug) console.log('symbol.get read from cache')
 
-        return this.cache.symbol[key]
-      }
+          return cache.symbol[key]
+        }
 
-      const result = await this.query(API_SYMBOL_QUERY, {
-        ...params,
-        memberTypes: API_MEMBER_TYPES,
-      })
+        const result = await query(API_SYMBOL_QUERY, {
+          ...params,
+          memberTypes: API_MEMBER_TYPES,
+        })
 
-      this.cache.symbol[key] = result
+        cache.symbol[key] = result
 
-      return result
-    },
-    search: (params: {
-      query: string
-      packageName: string
-      packageScope: string | null
-    }): Promise<TSDocSymbolSearchResult[]> => {
-      if (this.debug) console.log('symbol.search', params)
+        return result
+      },
+      search: (params: {
+        query: string
+        packageName: string
+        packageScope: string | null
+      }): Promise<TSDocSymbolSearchResult[]> => {
+        if (debug) console.log('symbol.search', params)
 
-      return this.query(API_SYMBOL_SEARCH_QUERY, {
-        ...params,
-        memberTypes: API_MEMBER_TYPES,
-        query: `*${params.query}*`,
-      })
+        return query(API_SYMBOL_SEARCH_QUERY, {
+          ...params,
+          memberTypes: API_MEMBER_TYPES,
+          query: `*${params.query}*`,
+        })
+      },
     },
   }
 }
