@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.17](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2023-06-02)
+
+### Features
+
+- filter out hidden tagged api items ([#3](https://github.com/sanity-io/tsdoc/issues/3)) ([0982c90](https://github.com/sanity-io/tsdoc/commit/0982c90f0e59680a85aa010c00238edbe42d0b11))
+
 ## [1.0.0-alpha.16](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2023-05-24)
 
 ### Bug Fixes
