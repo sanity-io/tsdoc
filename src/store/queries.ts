@@ -13,7 +13,7 @@ export const API_EXPORTS_QUERY = groq`
   package->{name,scope},
   release->{version},
   'isLatest': release->_id == package->latestRelease._ref,
-  'members': *[_type in $memberTypes && references(^._id) && comment.customBlocks == null || !("@hidden" in comment.customBlocks[].tag)] | order(name asc) {
+  'members': *[_type in $memberTypes && references(^._id) && !("@hidden" in coalesce(comment.customBlocks[].tag, []))] | order(name asc) {
     '_key': _id,
     _type,
     comment{deprecated},
@@ -370,8 +370,7 @@ export const API_MEMBER_QUERY = groq`
   && package->name == $packageName
   && release->version == $releaseVersion
   && name == $memberName
-  && comment.customBlocks == null
-  || !("@hidden" in comment.customBlocks[].tag) 
+  && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
 ]{
   ${API_MEMBER_PROJECTION},
 
@@ -403,8 +402,7 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
     && name == ^.name
     && package->scope == $packageScope
     && package->name == $packageName
-    && comment.customBlocks == null
-    || !("@hidden" in comment.customBlocks[].tag) 
+    && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
   ]{
     'exportPath': export->path,
     'releaseVersion': release->version
