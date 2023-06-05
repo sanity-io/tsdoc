@@ -1,6 +1,7 @@
 import {Box, Flex, Spinner, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {TSDocArticle} from '../article'
+import {useSpace} from '../lib/ui'
 import {useMember} from './useMember'
 import {usePackage} from './usePackage'
 import {useTSDoc} from './useTSDoc'
@@ -10,10 +11,12 @@ export function TSDocDetail(): ReactElement {
   const {params} = useTSDoc()
   const member = useMember({params})
   const pkg = usePackage({params})
+  const paddingX = useSpace([2, 2, 2, 3])
+  const paddingY = useSpace([3, 3, 3, 4])
 
   if (!params.memberName) {
     return (
-      <Box>
+      <Box paddingX={paddingX} paddingY={paddingY}>
         <Flex align="center" height="fill" justify="center">
           <Text muted>Select an API member</Text>
         </Flex>
@@ -23,7 +26,7 @@ export function TSDocDetail(): ReactElement {
 
   if (pkg.loading || member.loading) {
     return (
-      <Box>
+      <Box paddingX={paddingX} paddingY={paddingY}>
         <Flex align="center" height="fill" justify="center">
           <Spinner />
         </Flex>
@@ -33,7 +36,7 @@ export function TSDocDetail(): ReactElement {
 
   if (!pkg.data) {
     return (
-      <Box>
+      <Box paddingX={paddingX} paddingY={paddingY}>
         <Flex align="center" height="fill" justify="center">
           <Text muted>
             Package not found: {[params.packageScope, params.packageName].filter(Boolean).join('/')}
@@ -45,7 +48,7 @@ export function TSDocDetail(): ReactElement {
 
   if (!member.data) {
     return (
-      <Box>
+      <Box paddingX={paddingX} paddingY={paddingY}>
         <Flex align="center" height="fill" justify="center">
           <Text>Member not found: {params.memberName}</Text>
         </Flex>
