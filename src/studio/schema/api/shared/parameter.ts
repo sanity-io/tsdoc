@@ -20,5 +20,10 @@ export const apiParameterType = defineType({
       name: 'type',
       title: 'Type',
     }),
+    defineField({
+      type: 'tsdoc.docComment',
+      name: 'comment',
+      title: 'Comment',
+    }),
   ],
 })
