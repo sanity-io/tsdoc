@@ -5,8 +5,11 @@ import {useTSDoc} from '../useTSDoc'
 import {MemberLink} from './MemberLink'
 import {TSDocNavExportData} from './TSDocNav'
 
-export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactElement {
-  const {exp} = props
+export function GroupedMembersTree(props: {
+  exp: TSDocNavExportData
+  expandSubPackages?: boolean
+}): ReactElement {
+  const {exp, expandSubPackages} = props
   const {params} = useTSDoc()
   const fontSize = useSize()
 
@@ -14,7 +17,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
     <>
       {exp.reactComponents.length > 0 && (
         <TreeItem
-          expanded={exp.reactComponents.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.reactComponents.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Components"
@@ -28,7 +35,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.reactHooks.length > 0 && (
         <TreeItem
-          expanded={exp.reactHooks.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.reactHooks.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Hooks"
@@ -42,7 +53,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.classes.length > 0 && (
         <TreeItem
-          expanded={exp.classes.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.classes.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Classes"
@@ -56,7 +71,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.functions.length > 0 && (
         <TreeItem
-          expanded={exp.functions.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.functions.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Functions"
@@ -70,7 +89,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.variables.length > 0 && (
         <TreeItem
-          expanded={exp.variables.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.variables.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Variables"
@@ -84,7 +107,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.enums.length > 0 && (
         <TreeItem
-          expanded={exp.enums.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.enums.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Enumerations"
@@ -98,7 +125,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.interfaces.length > 0 && (
         <TreeItem
-          expanded={exp.interfaces.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.interfaces.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Interfaces"
@@ -112,7 +143,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.namespaces.length > 0 && (
         <TreeItem
-          expanded={exp.namespaces.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.namespaces.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Namespaces"
@@ -126,7 +161,11 @@ export function GroupedMembersTree(props: {exp: TSDocNavExportData}): ReactEleme
 
       {exp.typeAliases.length > 0 && (
         <TreeItem
-          expanded={exp.typeAliases.some((m) => m.name === params.memberName)}
+          expanded={
+            expandSubPackages
+              ? expandSubPackages
+              : exp.typeAliases.some((m) => m.name === params.memberName)
+          }
           fontSize={fontSize}
           padding={2}
           text="Type aliases"
