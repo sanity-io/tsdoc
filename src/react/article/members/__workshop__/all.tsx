@@ -51,6 +51,7 @@ const members: APIMemberWithInheritance[] = [
         _key: 'foo',
         _type: 'api.parameter',
         name: 'foo',
+        isOptional: false,
         type: [
           {
             _key: 'string',
@@ -79,6 +80,7 @@ const members: APIMemberWithInheritance[] = [
         _key: 'foo',
         _type: 'api.parameter',
         name: 'foo',
+        isOptional: false,
         type: [
           {
             _key: 'string',
@@ -102,6 +104,7 @@ const members: APIMemberWithInheritance[] = [
         _key: 'foo',
         _type: 'api.parameter',
         name: 'foo',
+        isOptional: false,
         type: [
           {
             _key: 'string',

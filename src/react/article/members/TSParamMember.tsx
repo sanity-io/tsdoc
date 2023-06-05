@@ -8,7 +8,8 @@ import {TSDocCode} from '../TSDocCode'
 
 export function TSParamMember(props: {data: APIParameter}): ReactElement {
   const {data} = props
-  const {comment, name, type, releaseTag} = data
+  const {comment, name, type, releaseTag, isOptional} = data
+  const codePrefix = `${name}${isOptional ? '?' : ''}: `
 
   return (
     <Stack marginTop={useSpace([1, 1, 3])} space={useSpace([1, 2, 3])}>
@@ -21,8 +22,7 @@ export function TSParamMember(props: {data: APIParameter}): ReactElement {
           )}
 
           <Box flex={1} padding={1}>
-            {/* TODO: handle isOptional here  */}
-            <TSDocCode prefix={`${name}: `} tokens={type} />
+            <TSDocCode prefix={codePrefix} tokens={type} />
           </Box>
         </Flex>
 

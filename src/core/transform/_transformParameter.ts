@@ -31,6 +31,7 @@ export function _transformParameter(
         }
       : undefined,
     name: param.name,
+    isOptional: param.isOptional,
     releaseTag: RELEASE_TAGS[node.releaseTag],
     type: _transformTokens(
       ctx,
