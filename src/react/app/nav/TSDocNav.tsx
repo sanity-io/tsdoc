@@ -43,7 +43,11 @@ export interface TSDocNavExportData
 }
 
 /** @beta */
-export function TSDocNav(props: {showVersionMenu?: boolean}): ReactElement {
+export function TSDocNav(props: {
+  showVersionMenu?: boolean
+  expandPackages?: boolean
+  expandSubPackages?: boolean
+}): ReactElement {
   return (
     <Size delta={-1}>
       <TSDocNavView {...props} />
@@ -58,12 +62,16 @@ interface ExportData {
   versions: TSDocNavExportData[]
 }
 
-function TSDocNavView(props: {showVersionMenu?: boolean}): ReactElement {
+function TSDocNavView(props: {
+  showVersionMenu?: boolean
+  expandPackages?: boolean
+  expandSubPackages?: boolean
+}): ReactElement {
   const {params} = useTSDoc()
   const _exports = useExports()
   const packages = usePackages()
   const fontSize = useSize()
-  const {showVersionMenu} = props
+  const {showVersionMenu, expandPackages, expandSubPackages} = props
 
   const currentPkg = packages.data?.find(
     (p) => p.scope === params.packageScope && p.name === params.packageName
@@ -185,6 +193,8 @@ function TSDocNavView(props: {showVersionMenu?: boolean}): ReactElement {
                   currentVersion={currentVersion}
                   exports={exports}
                   fontSize={fontSize}
+                  expandPackages={expandPackages}
+                  expandSubPackages={expandSubPackages}
                 />
               )}
             </Stack>
@@ -217,8 +227,11 @@ function MultiExportTree(props: {
   currentVersion?: string
   fontSize?: number[]
   exports: ExportData[]
+  expandPackages?: boolean
+  expandSubPackages?: boolean
 }) {
-  const {currentExportName, currentVersion, fontSize, exports} = props
+  const {currentExportName, currentVersion, fontSize, exports, expandPackages, expandSubPackages} =
+    props
 
   const versionedExports = useMemo(
     () => exports.filter((data) => data.versions.some((v) => v.release.version === currentVersion)),
@@ -229,7 +242,7 @@ function MultiExportTree(props: {
     <Tree style={{overflow: 'scroll', height: '100vh'}}>
       {versionedExports.map((data) => (
         <TreeItem
-          expanded={data.name === currentExportName}
+          expanded={expandPackages ? expandPackages : data.name === currentExportName}
           fontSize={fontSize}
           key={data.name}
           padding={2}
@@ -239,7 +252,11 @@ function MultiExportTree(props: {
           {data.versions
             .filter((d) => d.release.version === currentVersion)
             .map((exp) => (
-              <GroupedMembersTree exp={exp} key={exp.release.version} />
+              <GroupedMembersTree
+                exp={exp}
+                key={exp.release.version}
+                expandSubPackages={expandSubPackages}
+              />
             ))}
         </TreeItem>
       ))}
