@@ -19,6 +19,7 @@ export interface APIParameter {
   name: string
   releaseTag?: APIReleaseTag
   type: SanityArrayItem<APIToken>[]
+  isOptional: boolean
 }
 
 /** @public */

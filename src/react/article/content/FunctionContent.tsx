@@ -7,6 +7,7 @@ import {CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H, P} from '../../lib/ui'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
+import {TSParamMember} from '../members/TSParamMember'
 import {TSDocCode} from '../TSDocCode'
 
 export function FunctionContent(props: {data: APIFunction}): ReactElement {
@@ -100,6 +101,15 @@ export function FunctionContent(props: {data: APIFunction}): ReactElement {
           )}
         </>
       )}
+
+      {parameters.length > 0 ? (
+        <>
+          <H size={[-1, 0, 1, 2]}>Parameters</H>
+          {parameters.map((param) => (
+            <TSParamMember data={param} key={param._key} />
+          ))}
+        </>
+      ) : null}
 
       {comment && <CommentRemarks data={comment} />}
       {comment && <CommentExampleBlocks data={comment} />}

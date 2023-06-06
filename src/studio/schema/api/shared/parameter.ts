@@ -20,5 +20,16 @@ export const apiParameterType = defineType({
       name: 'type',
       title: 'Type',
     }),
+    defineField({
+      type: 'boolean',
+      name: 'isOptional',
+      title: 'Is optional',
+      options: {layout: 'checkbox'},
+    }),
+    defineField({
+      type: 'tsdoc.docComment',
+      name: 'comment',
+      title: 'Comment',
+    }),
   ],
 })

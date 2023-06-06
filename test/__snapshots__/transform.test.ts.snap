@@ -132,6 +132,7 @@ exports[`transform should result in a "api.release" document 1`] = `
         "_key": "param0",
         "_type": "api.parameter",
         "comment": undefined,
+        "isOptional": false,
         "name": "props",
         "releaseTag": "public",
         "type": [
@@ -647,6 +648,7 @@ exports[`transform should result in a "api.release" document 1`] = `
             "_key": "param0",
             "_type": "api.parameter",
             "comment": undefined,
+            "isOptional": false,
             "name": "id",
             "releaseTag": "beta",
             "type": [
@@ -689,6 +691,7 @@ exports[`transform should result in a "api.release" document 1`] = `
             "_key": "param0",
             "_type": "api.parameter",
             "comment": undefined,
+            "isOptional": true,
             "name": "flag",
             "releaseTag": "beta",
             "type": [
@@ -763,6 +766,7 @@ exports[`transform should result in a "api.release" document 1`] = `
             "_key": "param0",
             "_type": "api.parameter",
             "comment": undefined,
+            "isOptional": false,
             "name": "id",
             "releaseTag": "beta",
             "type": [
@@ -1196,6 +1200,7 @@ exports[`transform should transform class 1`] = `
           "_key": "param0",
           "_type": "api.parameter",
           "comment": undefined,
+          "isOptional": false,
           "name": "id",
           "releaseTag": "beta",
           "type": [
@@ -1238,6 +1243,7 @@ exports[`transform should transform class 1`] = `
           "_key": "param0",
           "_type": "api.parameter",
           "comment": undefined,
+          "isOptional": true,
           "name": "flag",
           "releaseTag": "beta",
           "type": [
@@ -1315,6 +1321,7 @@ exports[`transform should transform interface with call signature 1`] = `
           "_key": "param0",
           "_type": "api.parameter",
           "comment": undefined,
+          "isOptional": false,
           "name": "id",
           "releaseTag": "beta",
           "type": [

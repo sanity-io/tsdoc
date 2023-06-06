@@ -245,6 +245,7 @@ parameters[]{
   _type,
   name,
   releaseTag,
+  comment,
   type[]{
     ...,
     member->{${API_TOKEN_MEMBER_PROJECTION}}

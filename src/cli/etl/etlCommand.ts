@@ -16,7 +16,7 @@ import mkdirp from 'mkdirp'
 import pkgUp from 'pkg-up'
 
 async function _fetchPackageDocsFromSanity(
-  sanity: NonNullable<SanityTSDocConfigOptions['output']['sanity']>
+  sanity: NonNullable<NonNullable<SanityTSDocConfigOptions['output']>['sanity']>
 ) {
   const client = createClient({
     ...sanity,
