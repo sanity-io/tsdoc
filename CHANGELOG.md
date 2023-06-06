@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.18](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2023-06-06)
+
+### Features
+
+- allow for tree open by default and padding ([#5](https://github.com/sanity-io/tsdoc/issues/5)) ([d1f168c](https://github.com/sanity-io/tsdoc/commit/d1f168c0d1373dfc06c5277d045149ef30b9c37d))
+
 ## [1.0.0-alpha.17](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2023-06-02)
 
 ### Features
