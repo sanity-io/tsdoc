@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.19](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2023-06-06)
+
+### Features
+
+- show function parameters and comments on tsdoc ([#6](https://github.com/sanity-io/tsdoc/issues/6)) ([9d085fd](https://github.com/sanity-io/tsdoc/commit/9d085fd80cde72396834ce3af9d94d1155269e48))
+
 ## [1.0.0-alpha.18](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2023-06-06)
 
 ### Features
