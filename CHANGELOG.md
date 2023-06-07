@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.20](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2023-06-07)
+
+### Features
+
+- support passing initial data to TSDocStore ([#4](https://github.com/sanity-io/tsdoc/issues/4)) ([4061f1e](https://github.com/sanity-io/tsdoc/commit/4061f1eda9224d0bf67c75f54db8d323ef38db10))
+
 ## [1.0.0-alpha.19](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2023-06-06)
 
 ### Features
