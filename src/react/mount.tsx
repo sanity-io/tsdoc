@@ -4,19 +4,7 @@ import {ThemeColorSchemeKey, ThemeProvider, studioTheme, usePrefersDark} from '@
 import {createBrowserHistory} from 'history'
 import {StrictMode, useEffect, useMemo, useState} from 'react'
 import {createRoot} from 'react-dom/client'
-import Refractor from 'react-refractor'
-import bash from 'refractor/lang/bash'
-import javascript from 'refractor/lang/javascript'
-import json from 'refractor/lang/json'
-import jsx from 'refractor/lang/jsx'
-import typescript from 'refractor/lang/typescript'
 import {parsePath, TSDocApp} from './app'
-
-Refractor.registerLanguage(bash)
-Refractor.registerLanguage(javascript)
-Refractor.registerLanguage(json)
-Refractor.registerLanguage(jsx)
-Refractor.registerLanguage(typescript)
 
 const EMPTY_ARRAY: never[] = []
 
