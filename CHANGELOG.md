@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.21](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2023-06-07)
+
+### Bug Fixes
+
+- require capitalized character after `use` for React hook detection ([#9](https://github.com/sanity-io/tsdoc/issues/9)) ([940da25](https://github.com/sanity-io/tsdoc/commit/940da252ac3541f7934f53436838bf0e8d547b82))
+
 ## [1.0.0-alpha.20](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2023-06-07)
 
 ### Features
