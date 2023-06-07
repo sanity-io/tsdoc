@@ -37,6 +37,8 @@ exports[`transform should result in a "api.release" document 1`] = `
       "Class",
       "Resolver",
       "ResponsiveMarginProps",
+      "useAnswerToLifeTheUniverseAndEverything",
+      "userHasTheRightAnswer",
     ],
     "package": {
       "_ref": "tsdoc-mylib",
@@ -81,6 +83,16 @@ exports[`transform should result in a "api.release" document 1`] = `
       {
         "_key": "tsdoc-1b53660d0652ecb7b6ff682fe8f3dbdd",
         "_ref": "tsdoc-1b53660d0652ecb7b6ff682fe8f3dbdd",
+        "_type": "reference",
+      },
+      {
+        "_key": "tsdoc-dc869bdb835661aedc9264756322ed98",
+        "_ref": "tsdoc-dc869bdb835661aedc9264756322ed98",
+        "_type": "reference",
+      },
+      {
+        "_key": "tsdoc-0fbb9c0d65a4c8b56dc8052f0ee1bc9e",
+        "_ref": "tsdoc-0fbb9c0d65a4c8b56dc8052f0ee1bc9e",
         "_type": "reference",
       },
     ],
@@ -865,6 +877,232 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
+    "_id": "tsdoc-dc869bdb835661aedc9264756322ed98",
+    "_type": "api.function",
+    "comment": {
+      "_type": "tsdoc.docComment",
+      "customBlocks": undefined,
+      "deprecated": undefined,
+      "exampleBlocks": undefined,
+      "modifierTags": [
+        {
+          "_key": "modifierTag0",
+          "_type": "tsdoc.modifierTag",
+          "name": "@public",
+        },
+      ],
+      "parameters": undefined,
+      "remarks": undefined,
+      "returns": {
+        "_type": "tsdoc.returnsBlock",
+        "content": [
+          {
+            "_key": "node0",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "node0",
+                "_type": "span",
+                "marks": [],
+                "text": "The answer, eg 42.",
+              },
+            ],
+            "markDefs": [],
+            "style": "normal",
+          },
+        ],
+      },
+      "seeBlocks": undefined,
+      "summary": [
+        {
+          "_key": "node0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "node0",
+              "_type": "span",
+              "marks": [],
+              "text": "React hook that returns the answer to life, the universe and everything",
+            },
+          ],
+          "markDefs": [],
+          "style": "normal",
+        },
+      ],
+    },
+    "export": {
+      "_ref": "tsdoc-mylib_1-0-0__main",
+      "_type": "reference",
+    },
+    "isReactComponentType": false,
+    "isReactHook": true,
+    "name": "useAnswerToLifeTheUniverseAndEverything",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+    "parameters": [],
+    "propsType": undefined,
+    "release": {
+      "_ref": "tsdoc-mylib_1-0-0",
+      "_type": "reference",
+    },
+    "releaseTag": "public",
+    "returnType": [
+      {
+        "_key": "token0",
+        "_type": "api.token",
+        "text": "number",
+      },
+    ],
+    "slug": {
+      "_type": "slug",
+      "current": "useAnswerToLifeTheUniverseAndEverything",
+    },
+    "typeParameters": [],
+  },
+  {
+    "_id": "tsdoc-0fbb9c0d65a4c8b56dc8052f0ee1bc9e",
+    "_type": "api.function",
+    "comment": {
+      "_type": "tsdoc.docComment",
+      "customBlocks": undefined,
+      "deprecated": undefined,
+      "exampleBlocks": undefined,
+      "modifierTags": [
+        {
+          "_key": "modifierTag0",
+          "_type": "tsdoc.modifierTag",
+          "name": "@public",
+        },
+      ],
+      "parameters": [
+        {
+          "_key": "paramBlock0",
+          "_type": "tsdoc.paramBlock",
+          "content": [
+            {
+              "_key": "node0",
+              "_type": "block",
+              "children": [
+                {
+                  "_key": "node0",
+                  "_type": "span",
+                  "marks": [],
+                  "text": "The users answer",
+                },
+              ],
+              "markDefs": [],
+              "style": "normal",
+            },
+          ],
+          "name": "answer",
+        },
+      ],
+      "remarks": undefined,
+      "returns": {
+        "_type": "tsdoc.returnsBlock",
+        "content": [
+          {
+            "_key": "node0",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "node0",
+                "_type": "span",
+                "marks": [],
+                "text": "True if correct, false otherwise",
+              },
+            ],
+            "markDefs": [],
+            "style": "normal",
+          },
+        ],
+      },
+      "seeBlocks": undefined,
+      "summary": [
+        {
+          "_key": "node0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "node0",
+              "_type": "span",
+              "marks": [],
+              "text": "Function that returns whether or not the user has the right answer",
+            },
+          ],
+          "markDefs": [],
+          "style": "normal",
+        },
+      ],
+    },
+    "export": {
+      "_ref": "tsdoc-mylib_1-0-0__main",
+      "_type": "reference",
+    },
+    "isReactComponentType": false,
+    "isReactHook": false,
+    "name": "userHasTheRightAnswer",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+    "parameters": [
+      {
+        "_key": "param0",
+        "_type": "api.parameter",
+        "comment": {
+          "_type": "tsdoc.docComment",
+          "summary": [
+            {
+              "_key": "node0",
+              "_type": "block",
+              "children": [
+                {
+                  "_key": "node0",
+                  "_type": "span",
+                  "marks": [],
+                  "text": "The users answer",
+                },
+              ],
+              "markDefs": [],
+              "style": "normal",
+            },
+          ],
+        },
+        "isOptional": false,
+        "name": "answer",
+        "releaseTag": "public",
+        "type": [
+          {
+            "_key": "token0",
+            "_type": "api.token",
+            "text": "number",
+          },
+        ],
+      },
+    ],
+    "propsType": undefined,
+    "release": {
+      "_ref": "tsdoc-mylib_1-0-0",
+      "_type": "reference",
+    },
+    "releaseTag": "public",
+    "returnType": [
+      {
+        "_key": "token0",
+        "_type": "api.token",
+        "text": "boolean",
+      },
+    ],
+    "slug": {
+      "_type": "slug",
+      "current": "userHasTheRightAnswer",
+    },
+    "typeParameters": [],
+  },
+  {
     "_id": "tsdoc-tsdoc-mylib_Button",
     "_type": "api.symbol",
     "name": "Button",
@@ -922,6 +1160,24 @@ exports[`transform should result in a "api.release" document 1`] = `
     "_id": "tsdoc-tsdoc-mylib_ResponsiveMarginProps",
     "_type": "api.symbol",
     "name": "ResponsiveMarginProps",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+  },
+  {
+    "_id": "tsdoc-tsdoc-mylib_useAnswerToLifeTheUniverseAndEverything",
+    "_type": "api.symbol",
+    "name": "useAnswerToLifeTheUniverseAndEverything",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+  },
+  {
+    "_id": "tsdoc-tsdoc-mylib_userHasTheRightAnswer",
+    "_type": "api.symbol",
+    "name": "userHasTheRightAnswer",
     "package": {
       "_ref": "tsdoc-mylib",
       "_type": "reference",
