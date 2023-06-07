@@ -49,12 +49,7 @@ export function TSDocArticle(props: {data: APIMember & {versions: string[]}}): R
   const typeName = _getTypeName(data)
 
   return (
-    <Box
-      as="article"
-      data-ui="TSDocArticle"
-      paddingX={useSpace([2, 2, 2, 3])}
-      paddingY={useSpace([3, 3, 3, 4])}
-    >
+    <Box as="article" data-ui="TSDocArticle" padding={useSpace([3, 3, 3, 4])}>
       <Container width={2}>
         <Flex gap={1}>
           <Box flex="none">

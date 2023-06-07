@@ -182,7 +182,7 @@ function TSDocNavView(props: {
           )}
 
           {!_exports.loading && (
-            <Stack flex={1} overflow="auto" padding={3} space={3}>
+            <Stack flex={1} overflow="auto" space={3}>
               {currentPkg && <TSDocSearch />}
 
               {exports.length === 1 ? (
