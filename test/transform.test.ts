@@ -7,6 +7,7 @@ import {
   SerializedAPINamespace,
   SerializedAPIVariable,
   SanityDocumentValue,
+  APIMemberDocument,
 } from '@sanity/tsdoc'
 import {_spawnProject} from './_spawnProject'
 
@@ -43,7 +44,7 @@ describe('transform', () => {
     const docs = transform(results, {package: {version: pkg.version}})
     const symbolDocs = docs.filter((d) => d._type === 'api.symbol')
 
-    expect(symbolDocs.length).toBe(7)
+    expect(symbolDocs.length).toBe(9)
   })
 
   test('should transform class', async () => {
@@ -61,6 +62,42 @@ describe('transform', () => {
     const classDoc = docs.find((d) => d._type === 'api.class')
 
     expect(classDoc).toMatchSnapshot()
+  })
+
+  test('should mark react hooks correctly', async () => {
+    const project = await _spawnProject('mylib')
+
+    await project.install()
+    await project.run('build')
+
+    const {pkg, results} = await extract({
+      customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
+      packagePath: project.cwd,
+    })
+
+    const docs = transform(results, {package: {version: pkg.version}})
+    const fnDocs = docs.filter((d): d is APIMemberDocument => d._type === 'api.function')
+
+    const hookDoc = fnDocs.find((d) => d.name === 'useAnswerToLifeTheUniverseAndEverything')
+    const nonHookDoc = fnDocs.find((d) => d.name === 'userHasTheRightAnswer')
+
+    if (!hookDoc) {
+      throw new Error('Document for `useAnswerToLifeTheUniverseAndEverything` not found')
+    }
+
+    if (!nonHookDoc) {
+      throw new Error('Document for `userHasTheRightAnswer` not found')
+    }
+
+    expect(hookDoc).toMatchObject({
+      _type: 'api.function',
+      isReactHook: true,
+    })
+
+    expect(nonHookDoc).toMatchObject({
+      _type: 'api.function',
+      isReactHook: false,
+    })
   })
 
   test('should transform interface with call signature', async () => {
