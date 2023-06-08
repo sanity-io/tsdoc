@@ -39,19 +39,19 @@ export function _transformVariable(
   const isReactComponentType = _variableIsReactComponentType(node)
   const propsType = isReactComponentType ? _variablePropsType(ctx, node) : undefined
 
-  console.log({
-    _type: 'api.variable',
-    comment,
-    export: {_type: 'reference', _ref: ctx.export._id},
-    isReactComponentType,
-    name,
-    package: {_type: 'reference', _ref: ctx.package._id},
-    propsType,
-    release: {_type: 'reference', _ref: ctx.release._id},
-    releaseTag: RELEASE_TAGS[node.releaseTag],
-    slug: {_type: 'slug', current: _slugify(name)},
-    type,
-  })
+  // console.log({
+  //   _type: 'api.variable',
+  //   comment,
+  //   export: {_type: 'reference', _ref: ctx.export._id},
+  //   isReactComponentType,
+  //   name,
+  //   package: {_type: 'reference', _ref: ctx.package._id},
+  //   propsType,
+  //   release: {_type: 'reference', _ref: ctx.release._id},
+  //   releaseTag: RELEASE_TAGS[node.releaseTag],
+  //   slug: {_type: 'slug', current: _slugify(name)},
+  //   type,
+  // })
   return {
     _type: 'api.variable',
     comment,
@@ -120,7 +120,7 @@ function _variablePropsType(
   )
 
   const sanityUIRef = typeTokens.find((t) => t.kind === 'Reference' && t.text.endsWith('Props'))
-  console.log(sanityUIRef)
+  // console.log(sanityUIRef)
 
   if (sanityUIRef && sanityUIRef.canonicalReference) {
     return {
