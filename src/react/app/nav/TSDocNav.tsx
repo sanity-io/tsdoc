@@ -8,7 +8,7 @@ import {
   APIVariable,
 } from '@sanity/tsdoc'
 import {TSDocExportData} from '@sanity/tsdoc/store'
-import {Box, Card, Flex, Layer, Spinner, Stack, Text, Tree, TreeItem} from '@sanity/ui'
+import {Box, Card, Flex, Layer, Spinner, Stack, Text, Tree} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {SyntaxText} from '../../components/ColoredCode'
 import {Size, useSize} from '../../lib/ui'
@@ -135,7 +135,12 @@ function TSDocNavView(props: {
   }, [_exports.data])
 
   return (
-    <Flex direction="column" height="fill" overflow="hidden">
+    <Flex
+      direction="column"
+      height="fill"
+      overflow="hidden"
+      style={{position: 'sticky', paddingTop: '2rem', top: 0}}
+    >
       {!currentPkg && (
         <Card overflow="auto" padding={3}>
           <Stack space={1}>

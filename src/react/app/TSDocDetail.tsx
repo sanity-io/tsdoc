@@ -11,7 +11,7 @@ export function TSDocDetail(): ReactElement {
   const {params} = useTSDoc()
   const member = useMember({params})
   const pkg = usePackage({params})
-  const padding = useSpace([3, 3, 3, 4])
+  const padding = useSpace([3, 3, 3, 3])
 
   if (!params.memberName) {
     return (
