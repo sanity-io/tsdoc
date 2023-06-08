@@ -7,4 +7,9 @@ export const SyntaxTreeItem = memo(styled(TreeItem)`
   & > a:focus code {
     color: inherit !important;
   }
+
+  // change focus for api items trees
+  & > a:focus {
+    background: #5680d9 !important;
+  }
 `)

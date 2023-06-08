@@ -7,4 +7,8 @@ export const SyntaxMenuItem = memo(styled(MenuItem)`
   & > a:focus code {
     color: inherit !important;
   }
+
+  & > a:focus {
+    background: #5680d9 !important;
+  }
 `)
