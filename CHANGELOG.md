@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.22](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.21...v1.0.0-alpha.22) (2023-06-08)
+
+### Bug Fixes
+
+- code highlighting not working when importing only TSDocProvider ([#10](https://github.com/sanity-io/tsdoc/issues/10)) ([5a9d7a6](https://github.com/sanity-io/tsdoc/commit/5a9d7a66d1e7edf0e0cf887495ae528c329da45d))
+
 ## [1.0.0-alpha.21](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.20...v1.0.0-alpha.21) (2023-06-07)
 
 ### Bug Fixes
