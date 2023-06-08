@@ -1,7 +1,19 @@
 import {TSDocAppParams, TSDocStore} from '@sanity/tsdoc/store'
 import {ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef} from 'react'
+import Refractor from 'react-refractor'
+import bash from 'refractor/lang/bash'
+import javascript from 'refractor/lang/javascript'
+import json from 'refractor/lang/json'
+import jsx from 'refractor/lang/jsx'
+import typescript from 'refractor/lang/typescript'
 import {compilePath} from './lib/compilePath'
 import {TSDocContext, TSDocContextValue} from './TSDocContext'
+
+Refractor.registerLanguage(bash)
+Refractor.registerLanguage(javascript)
+Refractor.registerLanguage(json)
+Refractor.registerLanguage(jsx)
+Refractor.registerLanguage(typescript)
 
 const EMPTY_PARAMS: TSDocAppParams = {
   exportPath: null,
