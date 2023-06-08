@@ -9,8 +9,8 @@ export function P(
   const {size: sizeProp = 0, ...restProps} = props
 
   return (
-    <Box data-ui="P" marginTop={useSpace([2, 2, 2])} marginBottom={useSpace([2, 2, 2])}>
-      <Text as="p" {...restProps} size={useTextSize(sizeProp)} />
+    <Box data-ui="P" marginTop={useSpace([-1, -1, -1])} marginBottom={useSpace([2, 2, 2])}>
+      <Text as="p" {...restProps} size={useTextSize(sizeProp)} style={{lineHeight: '28px'}} />
     </Box>
   )
 }

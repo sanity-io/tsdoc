@@ -127,7 +127,7 @@ function BlockquoteBlock({children}: {children?: React.ReactNode}) {
 
 function NormalBlock({children}: {children?: React.ReactNode}) {
   return (
-    <P muted size={[-1, 0, 1]}>
+    <P muted size={[0, 0, 0]}>
       {children}
     </P>
   )
