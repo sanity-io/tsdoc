@@ -20,6 +20,7 @@ import {GroupedMembersTree} from './GroupedMembersTree'
 import {PackageMenuButton} from './PackageMenuButton'
 import {PackageTreeItem} from './PackageTreeItem'
 import {ReleaseMenuButton} from './ReleaseMenuButton'
+import {TreeItemFocus} from './TreeItemFocus'
 import {TSDocSearch} from './TSDocSearch'
 
 /** @internal */
@@ -184,7 +185,6 @@ function TSDocNavView(props: {
           {!_exports.loading && (
             <Stack flex={1} overflow="auto" space={3}>
               {currentPkg && <TSDocSearch />}
-
               {exports.length === 1 ? (
                 <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
               ) : (
@@ -241,7 +241,7 @@ function MultiExportTree(props: {
   return (
     <Tree style={{overflow: 'scroll', height: '100vh'}}>
       {versionedExports.map((data) => (
-        <TreeItem
+        <TreeItemFocus
           expanded={expandPackages ? expandPackages : data.name === currentExportName}
           fontSize={fontSize}
           key={data.name}
@@ -258,7 +258,7 @@ function MultiExportTree(props: {
                 expandSubPackages={expandSubPackages}
               />
             ))}
-        </TreeItem>
+        </TreeItemFocus>
       ))}
     </Tree>
   )
