@@ -1,15 +1,21 @@
-import {TreeItem} from '@sanity/ui'
+import {TreeItem, Theme} from '@sanity/ui'
 import {memo} from 'react'
 import styled from 'styled-components'
 
-export const SyntaxTreeItem = memo(styled(TreeItem)`
-  &:focus code,
-  & > a:focus code {
-    color: inherit !important;
-  }
+export const SyntaxTreeItem = memo(
+  styled(TreeItem)(({theme}: {theme: Theme}) => {
+    const focusColor = theme.sanity.color.muted.primary.selected.skeleton?.from
 
-  // change focus for api items trees
-  & > a:focus {
-    background: #5680d9 !important;
-  }
-`)
+    return `
+      &:focus code,
+      & > a:focus code {
+        color: inherit !important;
+      }
+
+      // change focus for api items trees
+      & > a:focus {
+        background: ${focusColor} !important;
+      }
+    `
+  })
+)
