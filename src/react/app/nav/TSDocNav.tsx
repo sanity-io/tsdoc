@@ -15,7 +15,7 @@ import {Size, useSize} from '../../lib/ui'
 import {useExports} from '../useExports'
 import {usePackages} from '../usePackages'
 import {useTSDoc} from '../useTSDoc'
-import {FlexSticky} from './FlexSticky'
+import {BoxSticky} from './FlexSticky'
 import {getGroupedMembers} from './getGroupedMembers'
 import {GroupedMembersTree} from './GroupedMembersTree'
 import {PackageMenuButton} from './PackageMenuButton'
@@ -136,8 +136,8 @@ function TSDocNavView(props: {
   }, [_exports.data])
 
   return (
-    <Box paddingTop={5}>
-      <FlexSticky direction="column" height="fill" overflow="hidden">
+    <BoxSticky paddingTop={5}>
+      <Flex direction="column" height="fill" overflow="hidden">
         {!currentPkg && (
           <Card overflow="auto" padding={3}>
             <Stack space={1}>
@@ -206,8 +206,8 @@ function TSDocNavView(props: {
             )}
           </>
         )}
-      </FlexSticky>
-    </Box>
+      </Flex>
+    </BoxSticky>
   )
 }
 
