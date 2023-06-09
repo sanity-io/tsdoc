@@ -15,6 +15,7 @@ import {Size, useSize} from '../../lib/ui'
 import {useExports} from '../useExports'
 import {usePackages} from '../usePackages'
 import {useTSDoc} from '../useTSDoc'
+import {FlexSticky} from './FlexSticky'
 import {getGroupedMembers} from './getGroupedMembers'
 import {GroupedMembersTree} from './GroupedMembersTree'
 import {PackageMenuButton} from './PackageMenuButton'
@@ -135,78 +136,78 @@ function TSDocNavView(props: {
   }, [_exports.data])
 
   return (
-    <Flex
-      direction="column"
-      height="fill"
-      overflow="hidden"
-      style={{position: 'sticky', paddingTop: '2rem', top: 0}}
-    >
-      {!currentPkg && (
-        <Card overflow="auto" padding={3}>
-          <Stack space={1}>
-            <Box padding={2}>
-              <Text size={fontSize} weight="bold">
-                Choose package
-              </Text>
-            </Box>
+    <Box paddingTop={5}>
+      <FlexSticky direction="column" height="fill" overflow="hidden">
+        {!currentPkg && (
+          <Card overflow="auto" padding={3}>
+            <Stack space={1}>
+              <Box padding={2}>
+                <Text size={fontSize} weight="bold">
+                  Choose package
+                </Text>
+              </Box>
 
-            <Tree>
-              {packages.data?.map((pkg) => (
-                <PackageTreeItem key={pkg.name} pkg={pkg} fontSize={fontSize} padding={2} />
-              ))}
-            </Tree>
-          </Stack>
-        </Card>
-      )}
-
-      {currentPkg && (
-        <>
-          {showVersionMenu && (
-            <Layer style={{flex: 'none', position: 'sticky', top: 0}}>
-              <Card padding={[2, 2, 3]} shadow={1}>
-                <Flex gap={1}>
-                  {packages.data && (
-                    <Stack flex={1}>
-                      <PackageMenuButton currentPkg={currentPkg} packages={packages.data} />
-                    </Stack>
-                  )}
-
-                  {currentRelease && (
-                    <Stack flex="none">
-                      <ReleaseMenuButton currentPkg={currentPkg} currentRelease={currentRelease} />
-                    </Stack>
-                  )}
-                </Flex>
-              </Card>
-            </Layer>
-          )}
-
-          {_exports.loading && (
-            <Flex align="center" height="fill" justify="center">
-              <Spinner muted />
-            </Flex>
-          )}
-
-          {!_exports.loading && (
-            <Stack flex={1} overflow="auto" space={3}>
-              {currentPkg && <TSDocSearch />}
-              {exports.length === 1 ? (
-                <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
-              ) : (
-                <MultiExportTree
-                  currentExportName={currentExportName}
-                  currentVersion={currentVersion}
-                  exports={exports}
-                  fontSize={fontSize}
-                  expandPackages={expandPackages}
-                  expandSubPackages={expandSubPackages}
-                />
-              )}
+              <Tree>
+                {packages.data?.map((pkg) => (
+                  <PackageTreeItem key={pkg.name} pkg={pkg} fontSize={fontSize} padding={2} />
+                ))}
+              </Tree>
             </Stack>
-          )}
-        </>
-      )}
-    </Flex>
+          </Card>
+        )}
+
+        {currentPkg && (
+          <>
+            {showVersionMenu && (
+              <Layer style={{flex: 'none', position: 'sticky', top: 0}}>
+                <Card padding={[2, 2, 3]} shadow={1}>
+                  <Flex gap={1}>
+                    {packages.data && (
+                      <Stack flex={1}>
+                        <PackageMenuButton currentPkg={currentPkg} packages={packages.data} />
+                      </Stack>
+                    )}
+
+                    {currentRelease && (
+                      <Stack flex="none">
+                        <ReleaseMenuButton
+                          currentPkg={currentPkg}
+                          currentRelease={currentRelease}
+                        />
+                      </Stack>
+                    )}
+                  </Flex>
+                </Card>
+              </Layer>
+            )}
+
+            {_exports.loading && (
+              <Flex align="center" height="fill" justify="center">
+                <Spinner muted />
+              </Flex>
+            )}
+
+            {!_exports.loading && (
+              <Stack flex={1} overflow="auto" space={3}>
+                {currentPkg && <TSDocSearch />}
+                {exports.length === 1 ? (
+                  <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
+                ) : (
+                  <MultiExportTree
+                    currentExportName={currentExportName}
+                    currentVersion={currentVersion}
+                    exports={exports}
+                    fontSize={fontSize}
+                    expandPackages={expandPackages}
+                    expandSubPackages={expandSubPackages}
+                  />
+                )}
+              </Stack>
+            )}
+          </>
+        )}
+      </FlexSticky>
+    </Box>
   )
 }
 
