@@ -4,17 +4,18 @@ import styled from 'styled-components'
 
 export const SyntaxTreeItem = memo(
   styled(TreeItem)(({theme}: {theme: Theme}) => {
-    const focusColor = theme.sanity.color.muted.primary.selected.skeleton?.from
+    const background = theme.sanity.color.selectable.default.enabled.bg2
+    const color = theme.sanity.color.selectable.default.hovered.fg
 
     return `
-      &:focus code,
-      & > a:focus code {
-        color: inherit !important;
+      &:focus code:nth-child(2),
+      & > a:focus code:nth-child(2) {
+        color: ${color} !important;
       }
 
       // change focus for api items trees
       & > a:focus {
-        background: ${focusColor} !important;
+        background: ${background} !important;
       }
     `
   })
