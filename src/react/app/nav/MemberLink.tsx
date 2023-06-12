@@ -11,7 +11,7 @@ import {SyntaxTreeItem} from './SyntaxTreeItem'
 
 export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): ReactElement {
   const {data, namespace} = props
-  const {path} = useTSDoc()
+  const {basePath, path} = useTSDoc()
   const fontSize = useSize()
 
   const params: TSDocAppParams = useMemo(
@@ -51,7 +51,7 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
       {...linkProps}
       fontSize={fontSize}
       padding={2}
-      selected={path === linkProps.href}
+      selected={`${basePath}${path}` === linkProps.href}
       text={
         <Flex>
           <Box flex={1}>

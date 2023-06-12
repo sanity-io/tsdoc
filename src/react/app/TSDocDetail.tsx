@@ -11,12 +11,11 @@ export function TSDocDetail(): ReactElement {
   const {params} = useTSDoc()
   const member = useMember({params})
   const pkg = usePackage({params})
-  const paddingX = useSpace([2, 2, 2, 3])
-  const paddingY = useSpace([3, 3, 3, 4])
+  const padding = useSpace([3, 3, 3, 3])
 
   if (!params.memberName) {
     return (
-      <Box paddingX={paddingX} paddingY={paddingY}>
+      <Box padding={padding}>
         <Flex align="center" height="fill" justify="center">
           <Text muted>Select an API member</Text>
         </Flex>
@@ -26,7 +25,7 @@ export function TSDocDetail(): ReactElement {
 
   if (pkg.loading || member.loading) {
     return (
-      <Box paddingX={paddingX} paddingY={paddingY}>
+      <Box padding={padding}>
         <Flex align="center" height="fill" justify="center">
           <Spinner />
         </Flex>
@@ -36,7 +35,7 @@ export function TSDocDetail(): ReactElement {
 
   if (!pkg.data) {
     return (
-      <Box paddingX={paddingX} paddingY={paddingY}>
+      <Box padding={padding}>
         <Flex align="center" height="fill" justify="center">
           <Text muted>
             Package not found: {[params.packageScope, params.packageName].filter(Boolean).join('/')}
@@ -48,7 +47,7 @@ export function TSDocDetail(): ReactElement {
 
   if (!member.data) {
     return (
-      <Box paddingX={paddingX} paddingY={paddingY}>
+      <Box padding={padding}>
         <Flex align="center" height="fill" justify="center">
           <Text>Member not found: {params.memberName}</Text>
         </Flex>

@@ -1,8 +1,8 @@
-import {TreeItem} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {useSize} from '../../lib/ui'
 import {useTSDoc} from '../useTSDoc'
 import {MemberLink} from './MemberLink'
+import {TreeItemFocus} from './TreeItemFocus'
 import {TSDocNavExportData} from './TSDocNav'
 
 export function GroupedMembersTree(props: {
@@ -16,7 +16,7 @@ export function GroupedMembersTree(props: {
   return (
     <>
       {exp.reactComponents.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -30,11 +30,11 @@ export function GroupedMembersTree(props: {
           {exp.reactComponents.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.reactHooks.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -48,11 +48,11 @@ export function GroupedMembersTree(props: {
           {exp.reactHooks.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.classes.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -66,11 +66,11 @@ export function GroupedMembersTree(props: {
           {exp.classes.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.functions.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -84,11 +84,11 @@ export function GroupedMembersTree(props: {
           {exp.functions.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.variables.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -102,11 +102,11 @@ export function GroupedMembersTree(props: {
           {exp.variables.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.enums.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -120,11 +120,11 @@ export function GroupedMembersTree(props: {
           {exp.enums.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.interfaces.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -138,11 +138,11 @@ export function GroupedMembersTree(props: {
           {exp.interfaces.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.namespaces.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -156,11 +156,11 @@ export function GroupedMembersTree(props: {
           {exp.namespaces.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
 
       {exp.typeAliases.length > 0 && (
-        <TreeItem
+        <TreeItemFocus
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -174,7 +174,7 @@ export function GroupedMembersTree(props: {
           {exp.typeAliases.map((member) => (
             <MemberLink data={member} key={member.name} />
           ))}
-        </TreeItem>
+        </TreeItemFocus>
       )}
     </>
   )
