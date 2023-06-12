@@ -8,6 +8,7 @@ export const SyntaxTreeItem = memo(
     const color = theme.sanity.color.selectable.default.hovered.fg
 
     return `
+      // focuses solely on changing the "()" color
       &:focus code:nth-child(2),
       & > a:focus code:nth-child(2) {
         color: ${color} !important;
