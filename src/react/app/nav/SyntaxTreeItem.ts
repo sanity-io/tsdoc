@@ -10,22 +10,24 @@ export const SyntaxTreeItem = memo(
     const focusBackground = theme.sanity.color.selectable.default.enabled.bg2
     const color = theme.sanity.color.selectable.default.hovered.fg
 
-    const selectedLight = `&[data-selected] > [role='treeitem'] {
+    const selectedLight = isThemeDark
+      ? ''
+      : `&[data-selected] > [role='treeitem'] {
       background-color: ${activeBackground} !important
     }`
 
     return `  
-    // solely on changing the "()" color
-      &:focus code:nth-child(2),
-      & > a:focus code:nth-child(2) {
+      // solely on changing the "()" color
+      &:focus code,
+      & > a:focus code {
         color: ${color} !important;
       }
 
-      ${isThemeDark ? null : selectedLight}
+      ${selectedLight}
 
       // change focus for api items trees
       & > a:focus {
-        background: ${focusBackground} !important;
+        background-color: ${focusBackground} !important;
       }
     `
   })
