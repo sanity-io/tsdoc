@@ -22,6 +22,7 @@ import {PackageMenuButton} from './PackageMenuButton'
 import {PackageTreeItem} from './PackageTreeItem'
 import {ReleaseMenuButton} from './ReleaseMenuButton'
 import {TreeItemFocus} from './TreeItemFocus'
+import {TreeNav} from './TreeNav'
 import {TSDocSearch} from './TSDocSearch'
 
 /** @internal */
@@ -220,13 +221,11 @@ function SingleExportTree(props: {currentVersion?: string; exp: ExportData}) {
   )
 
   return (
-    <Tree>
+    <TreeNav>
       {versionedExports.map((exp) => (
-        <Box key={exp.release.version} paddingTop={3}>
-          <GroupedMembersTree exp={exp} key={exp.release.version} />
-        </Box>
+        <GroupedMembersTree exp={exp} key={exp.release.version} />
       ))}
-    </Tree>
+    </TreeNav>
   )
 }
 
@@ -247,29 +246,27 @@ function MultiExportTree(props: {
   )
 
   return (
-    <Tree style={{overflow: 'scroll', height: '100vh'}}>
+    <TreeNav>
       {versionedExports.map((data) => (
-        <Box key={data.name} paddingTop={3}>
-          <TreeItemFocus
-            expanded={expandPackages ? expandPackages : data.name === currentExportName}
-            fontSize={fontSize}
-            key={data.name}
-            padding={2}
-            text={<SyntaxText>{data.name}</SyntaxText>}
-            weight="semibold"
-          >
-            {data.versions
-              .filter((d) => d.release.version === currentVersion)
-              .map((exp) => (
-                <GroupedMembersTree
-                  exp={exp}
-                  key={exp.release.version}
-                  expandSubPackages={expandSubPackages}
-                />
-              ))}
-          </TreeItemFocus>
-        </Box>
+        <TreeItemFocus
+          expanded={expandPackages ? expandPackages : data.name === currentExportName}
+          fontSize={fontSize}
+          key={data.name}
+          padding={2}
+          text={<SyntaxText>{data.name}</SyntaxText>}
+          weight="semibold"
+        >
+          {data.versions
+            .filter((d) => d.release.version === currentVersion)
+            .map((exp) => (
+              <GroupedMembersTree
+                exp={exp}
+                key={exp.release.version}
+                expandSubPackages={expandSubPackages}
+              />
+            ))}
+        </TreeItemFocus>
       ))}
-    </Tree>
+    </TreeNav>
   )
 }
