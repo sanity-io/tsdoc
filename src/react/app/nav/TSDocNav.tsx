@@ -136,7 +136,7 @@ function TSDocNavView(props: {
   }, [_exports.data])
 
   return (
-    <BoxSticky paddingTop={5}>
+    <BoxSticky paddingTop={3}>
       <Flex direction="column" height="fill" overflow="hidden">
         {!currentPkg && (
           <Card overflow="auto" padding={3}>
@@ -188,7 +188,7 @@ function TSDocNavView(props: {
             )}
 
             {!_exports.loading && (
-              <Stack flex={1} overflow="auto" space={3}>
+              <Stack flex={1} overflow="auto">
                 {currentPkg && <TSDocSearch />}
                 {exports.length === 1 ? (
                   <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
@@ -222,7 +222,9 @@ function SingleExportTree(props: {currentVersion?: string; exp: ExportData}) {
   return (
     <Tree>
       {versionedExports.map((exp) => (
-        <GroupedMembersTree exp={exp} key={exp.release.version} />
+        <Box key={exp.release.version} paddingTop={3}>
+          <GroupedMembersTree exp={exp} key={exp.release.version} />
+        </Box>
       ))}
     </Tree>
   )
@@ -247,24 +249,26 @@ function MultiExportTree(props: {
   return (
     <Tree style={{overflow: 'scroll', height: '100vh'}}>
       {versionedExports.map((data) => (
-        <TreeItemFocus
-          expanded={expandPackages ? expandPackages : data.name === currentExportName}
-          fontSize={fontSize}
-          key={data.name}
-          padding={2}
-          text={<SyntaxText>{data.name}</SyntaxText>}
-          weight="semibold"
-        >
-          {data.versions
-            .filter((d) => d.release.version === currentVersion)
-            .map((exp) => (
-              <GroupedMembersTree
-                exp={exp}
-                key={exp.release.version}
-                expandSubPackages={expandSubPackages}
-              />
-            ))}
-        </TreeItemFocus>
+        <Box key={data.name} paddingTop={3}>
+          <TreeItemFocus
+            expanded={expandPackages ? expandPackages : data.name === currentExportName}
+            fontSize={fontSize}
+            key={data.name}
+            padding={2}
+            text={<SyntaxText>{data.name}</SyntaxText>}
+            weight="semibold"
+          >
+            {data.versions
+              .filter((d) => d.release.version === currentVersion)
+              .map((exp) => (
+                <GroupedMembersTree
+                  exp={exp}
+                  key={exp.release.version}
+                  expandSubPackages={expandSubPackages}
+                />
+              ))}
+          </TreeItemFocus>
+        </Box>
       ))}
     </Tree>
   )
