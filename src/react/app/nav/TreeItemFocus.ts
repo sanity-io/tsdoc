@@ -4,11 +4,15 @@ import styled from 'styled-components'
 
 export const TreeItemFocus = memo(
   styled(TreeItem)(({theme}: {theme: Theme}) => {
-    const focusColor = theme.sanity.color.muted.primary.selected.skeleton?.from
+    const text = theme.sanity.color.muted.default.hovered.muted.fg
 
     return `
       &:focus > [data-ui='TreeItem__box'] {
-        background: ${focusColor} !important;
+        background-color: transparent !important;
+
+        & svg, & code {
+          color: ${text} !important;
+        }
       }
     `
   })
