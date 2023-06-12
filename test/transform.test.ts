@@ -8,21 +8,33 @@ import {
   SerializedAPIVariable,
   SanityDocumentValue,
   APIMemberDocument,
+  SerializedAPIFunction,
 } from '@sanity/tsdoc'
-import {_spawnProject} from './_spawnProject'
+import {_SpawnedProject, _spawnProject} from './_spawnProject'
 
 describe('transform', () => {
   jest.setTimeout(60000)
 
+  let tsProject: _SpawnedProject
+  let myLibProject: _SpawnedProject
+  let multiExportProject: _SpawnedProject
+
+  beforeAll(async () => {
+    tsProject = await _spawnProject('ts')
+    myLibProject = await _spawnProject('mylib')
+    multiExportProject = await _spawnProject('multi-export')
+
+    // Install Dependencies in Parallel
+    await Promise.all([tsProject, myLibProject, multiExportProject].map((p) => p.install()))
+
+    // Build in Parallel
+    await Promise.all([tsProject, myLibProject, multiExportProject].map((p) => p.run('build')))
+  })
+
   test('should result in a "api.release" document', async () => {
-    const project = await _spawnProject('mylib')
-
-    await project.install()
-    await project.run('build')
-
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
-      packagePath: project.cwd,
+      packagePath: myLibProject.cwd,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -31,14 +43,9 @@ describe('transform', () => {
   })
 
   test('should result in "api.symbol" documents', async () => {
-    const project = await _spawnProject('mylib')
-
-    await project.install()
-    await project.run('build')
-
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
-      packagePath: project.cwd,
+      packagePath: myLibProject.cwd,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -48,14 +55,9 @@ describe('transform', () => {
   })
 
   test('should transform class', async () => {
-    const project = await _spawnProject('mylib')
-
-    await project.install()
-    await project.run('build')
-
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
-      packagePath: project.cwd,
+      packagePath: myLibProject.cwd,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -65,14 +67,9 @@ describe('transform', () => {
   })
 
   test('should mark react hooks correctly', async () => {
-    const project = await _spawnProject('mylib')
-
-    await project.install()
-    await project.run('build')
-
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
-      packagePath: project.cwd,
+      packagePath: myLibProject.cwd,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -101,14 +98,9 @@ describe('transform', () => {
   })
 
   test('should transform interface with call signature', async () => {
-    const project = await _spawnProject('mylib')
-
-    await project.install()
-    await project.run('build')
-
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
-      packagePath: project.cwd,
+      packagePath: myLibProject.cwd,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -118,19 +110,14 @@ describe('transform', () => {
   })
 
   test('should transform multiple exports', async () => {
-    const project = await _spawnProject('multi-export')
-
-    await project.install()
-    await project.run('build')
-
     const {pkg: _pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
-      packagePath: project.cwd,
+      packagePath: multiExportProject.cwd,
       tsconfig: 'tsconfig.dist.json',
     })
 
     for (const result of results) {
-      _printExtractMessages(project.cwd, result.messages)
+      _printExtractMessages(multiExportProject.cwd, result.messages)
     }
 
     const docs = transform(results, {package: {version: _pkg.version}})
@@ -159,12 +146,7 @@ describe('transform', () => {
   })
 
   test('should transform package with namespace exports', async () => {
-    const project = await _spawnProject('ts')
-
-    await project.install()
-    await project.run('build')
-
-    const {pkg, results} = await extract({packagePath: project.cwd})
+    const {pkg, results} = await extract({packagePath: tsProject.cwd})
 
     const docs = transform(results, {package: {version: pkg.version}})
 
@@ -173,5 +155,92 @@ describe('transform', () => {
     ) as SerializedAPINamespace
 
     expect(doc.members.length).toBe(5)
+  })
+
+  test('should transform function parameters', async () => {
+    const {pkg, results} = await extract({
+      packagePath: tsProject.cwd,
+    })
+
+    const docs = transform(results, {package: {version: pkg.version}})
+
+    const docLinkWithoutName = docs.find(
+      (d) => d._type === 'api.function' && d.name === 'testFunctionLink'
+    )
+    const docLinkWithName = docs.find(
+      (d) => d._type === 'api.function' && d.name === 'testFunctionLinkWithName'
+    )
+
+    expect((docLinkWithName as SerializedAPIFunction).parameters[0]).toMatchObject({
+      _key: 'param0',
+      _type: 'api.parameter',
+      comment: {
+        _type: 'tsdoc.docComment',
+        summary: [
+          {
+            _key: 'node0',
+            _type: 'block',
+            children: [
+              {
+                _key: 'node0',
+                _type: 'span',
+                marks: [],
+                text: 'Base Interface Link out ',
+              },
+              {
+                _key: 'node1',
+                _type: 'span',
+                marks: ['link0'],
+                text: 'Custom Text',
+              },
+            ],
+            markDefs: [
+              {
+                _key: 'link0',
+                _type: 'link',
+                href: 'BaseInterface',
+              },
+            ],
+            style: 'normal',
+          },
+        ],
+      },
+    })
+
+    expect((docLinkWithoutName as SerializedAPIFunction).parameters[0]).toMatchObject({
+      _key: 'param0',
+      _type: 'api.parameter',
+      comment: {
+        _type: 'tsdoc.docComment',
+        summary: [
+          {
+            _key: 'node0',
+            _type: 'block',
+            children: [
+              {
+                _key: 'node0',
+                _type: 'span',
+                marks: [],
+                text: 'Base Interface Link out ',
+              },
+              {
+                _key: 'node1',
+                _type: 'span',
+                marks: ['link0'],
+                text: 'BaseInterface',
+              },
+            ],
+            markDefs: [
+              {
+                _key: 'link0',
+                _type: 'link',
+                href: 'BaseInterface',
+              },
+            ],
+            style: 'normal',
+          },
+        ],
+      },
+    })
   })
 })

@@ -1,11 +1,24 @@
 import {BaseInterface} from './interface'
 
 /**
+ * Test function with link to BaseInterface with custom text
+ *
+ * @public
+ * @param options - Base Interface Link out
+ *  {@link BaseInterface | Custom Text}
+ *
+ * @returns string
+ */
+export function testFunctionLinkWithName(options: BaseInterface): string {
+  return `${options.id} ${options.foo}`
+}
+
+/**
  * Test function with link to BaseInterface
  *
  * @public
  * @param options - Base Interface Link out
- *  {@link BaseInterface | BaseInterface}
+ * {@link BaseInterface}
  *
  * @returns string
  */

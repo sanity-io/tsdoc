@@ -25,7 +25,7 @@ async function _tmpWorkspace() {
   }
 }
 
-export async function _spawnProject(name: string): Promise<{
+export interface _SpawnedProject {
   cwd: string
   add: (pkg: string) => Promise<{stdout: string; stderr: string}>
   dirs: (relativePath?: string) => Promise<string[]>
@@ -35,7 +35,9 @@ export async function _spawnProject(name: string): Promise<{
   remove: () => void
   require: (id: string) => any
   run: (cmd: string) => Promise<{stdout: string; stderr: string}>
-}> {
+}
+
+export async function _spawnProject(name: string): Promise<_SpawnedProject> {
   const {path: tmpPath, remove: tmpRemove} = await _tmpWorkspace()
   const sourcePackagePath = path.resolve(__dirname, '../playground', name)
 

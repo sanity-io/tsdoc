@@ -127,6 +127,7 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
 
           fullReferenceURL = memberReferences
             .map((memberReference) => memberReference.memberIdentifier?.identifier)
+            .filter((identifier) => Boolean(identifier))
             .join('/')
 
           if (memberIdentifier) {
