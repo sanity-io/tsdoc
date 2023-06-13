@@ -21,6 +21,7 @@ import {GroupedMembersTree} from './GroupedMembersTree'
 import {PackageMenuButton} from './PackageMenuButton'
 import {PackageTreeItem} from './PackageTreeItem'
 import {ReleaseMenuButton} from './ReleaseMenuButton'
+import {SearchWrapper} from './SearchWrapper'
 import {TreeItemFocus} from './TreeItemFocus'
 import {TreeNav} from './TreeNav'
 import {TSDocSearch} from './TSDocSearch'
@@ -190,7 +191,11 @@ function TSDocNavView(props: {
 
             {!_exports.loading && (
               <Stack flex={1} overflow="auto">
-                {currentPkg && <TSDocSearch />}
+                {currentPkg && (
+                  <SearchWrapper padding={1}>
+                    <TSDocSearch />
+                  </SearchWrapper>
+                )}
                 {exports.length === 1 ? (
                   <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
                 ) : (
