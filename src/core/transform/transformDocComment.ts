@@ -114,6 +114,7 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
       }
     } else {
       let identifier = ''
+      let fullReferenceURL = ''
 
       if (linkTag.codeDestination) {
         // @todo: the library should provide a default rendering for this
@@ -123,6 +124,11 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
         if (memberReferences.length > 0) {
           const memberIdentifier: DocMemberIdentifier | undefined =
             memberReferences[memberReferences.length - 1]?.memberIdentifier
+
+          fullReferenceURL = memberReferences
+            .map((memberReference) => memberReference.memberIdentifier?.identifier)
+            .filter((identifier) => Boolean(identifier))
+            .join('/')
 
           if (memberIdentifier) {
             identifier = memberIdentifier.identifier
@@ -134,11 +140,10 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
 
       return {
         _type: 'span',
-        // @todo
-        // _markDef: {
-        //   _type: 'link',
-        //   href: '#',
-        // },
+        _markDef: {
+          _type: 'link',
+          href: fullReferenceURL,
+        },
         marks: [],
         text: linkText,
       }
