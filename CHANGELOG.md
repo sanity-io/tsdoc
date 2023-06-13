@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.24](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.23...v1.0.0-alpha.24) (2023-06-13)
+
+### Features
+
+- Support adding link to internal references ([#7](https://github.com/sanity-io/tsdoc/issues/7)) ([0d91568](https://github.com/sanity-io/tsdoc/commit/0d915689d0802dfbba01414d89beeadba88e0984))
+
 ## [1.0.0-alpha.23](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.22...v1.0.0-alpha.23) (2023-06-12)
 
 ### Bug Fixes
