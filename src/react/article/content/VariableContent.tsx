@@ -7,10 +7,13 @@ import {H, P} from '../../lib/ui'
 import {CodeSnippet} from '../CodeSnippet'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
+import {TSVariableParamMember} from '../members/TSVariableParamMember'
+import {TSDocCode} from '../TSDocCode'
 
 export function VariableContent(props: {data: APIVariable}): ReactElement {
   const {data} = props
   const {comment, isReactComponentType, propsType, type} = data
+  const {parameters = []} = comment || {}
 
   const propsTypeMembers = useMemo(
     () => (isReactComponentType && propsType ? _getMembers(propsType) : undefined),
@@ -20,6 +23,15 @@ export function VariableContent(props: {data: APIVariable}): ReactElement {
   return (
     <>
       {comment && <CommentDeprecatedCallout data={comment} />}
+
+      {isReactComponentType && (
+        <>
+          <H size={[-1, 0, 1, 2]}>Signature</H>
+          <Card border padding={3} radius={2} overflow="auto" tone="inherit">
+            <TSDocCode tokens={type} />
+          </Card>
+        </>
+      )}
 
       {propsType && (
         <Box marginTop={5}>
@@ -53,6 +65,15 @@ export function VariableContent(props: {data: APIVariable}): ReactElement {
           )}
         </Box>
       )}
+
+      {parameters.length > 0 ? (
+        <>
+          <H size={[-1, 0, 1, 2]}>Parameters</H>
+          {parameters.map((param) => (
+            <TSVariableParamMember data={param} key={param._key} />
+          ))}
+        </>
+      ) : null}
 
       {!isReactComponentType && type && (
         <Card border marginTop={5} overflow="auto" padding={4} radius={2} tone="inherit">

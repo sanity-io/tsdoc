@@ -106,17 +106,12 @@ function _variablePropsType(
     node.variableTypeExcerpt.tokenRange.endIndex
   )
 
-  const sanityUIRef = typeTokens.find(
-    (t) =>
-      t.kind === 'Reference' &&
-      t.canonicalReference?.source?.toString() === '@sanity/ui!' &&
-      t.text.endsWith('Props')
-  )
+  const componentRef = typeTokens.find((t) => t.kind === 'Reference' && t.text.endsWith('Props'))
 
-  if (sanityUIRef && sanityUIRef.canonicalReference) {
+  if (componentRef && componentRef.canonicalReference) {
     return {
       _type: 'reference',
-      _ref: _createExportMemberId(ctx, sanityUIRef.canonicalReference.toString()),
+      _ref: _createExportMemberId(ctx, componentRef.canonicalReference.toString()),
     }
 
     // console.log({

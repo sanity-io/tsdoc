@@ -27,6 +27,13 @@ export interface ButtonProps extends ResponsiveMarginProps {
 
 /**
  * @public
+ *
+ * A button component.
+ *
+ * @remarks
+ * This component uses the `useButton` hook to handle button clicks and generate the `onClick` handler.
+ *
+ * @param props - Props to pass to the button element.
  */
 export function Button(
   props: ButtonProps & Omit<React.HTMLProps<HTMLButtonElement>, 'type'>

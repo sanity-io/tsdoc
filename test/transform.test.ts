@@ -44,7 +44,7 @@ describe('transform', () => {
     const docs = transform(results, {package: {version: pkg.version}})
     const symbolDocs = docs.filter((d) => d._type === 'api.symbol')
 
-    expect(symbolDocs.length).toBe(9)
+    expect(symbolDocs.length).toBe(11)
   })
 
   test('should transform class', async () => {
