@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.25](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) (2023-06-14)
+
+### Features
+
+- updated styles and colours for :focus effects on nav tree ([#12](https://github.com/sanity-io/tsdoc/issues/12)) ([ba99206](https://github.com/sanity-io/tsdoc/commit/ba9920643364add344f3cfcd7d421dfcc7f89d1c))
+
 ## [1.0.0-alpha.24](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.23...v1.0.0-alpha.24) (2023-06-13)
 
 ### Features
