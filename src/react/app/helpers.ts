@@ -26,8 +26,7 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
 
   if (releaseVersion) {
     if (segments.length > 1) {
-      memberName = segments.pop() || null
-      memberSlug = memberName?.toLowerCase() || null
+      memberSlug = segments.pop() || null
       exportPath = `./${segments.join('/')}`
     } else if (segments.length === 1) {
       exportPath = `./${segments[0]}`
