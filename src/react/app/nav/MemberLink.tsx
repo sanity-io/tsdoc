@@ -47,7 +47,7 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
     return null
   }, [data.releaseTag])
 
-  const isSelected = `${basePath}${path.toLocaleLowerCase()}` === linkProps.href.toLowerCase()
+  const isSelected = `${basePath}${path.toLowerCase()}` === linkProps.href.toLowerCase()
 
   return (
     <SyntaxTreeItem
