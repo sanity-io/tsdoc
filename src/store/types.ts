@@ -7,7 +7,7 @@ export interface TSDocAppParams {
   packageName: string | null
   packageScope: string | null
   releaseVersion: string | null
-  memberSlug: string | null
+  memberSlug?: string | null
 }
 
 /** @public */

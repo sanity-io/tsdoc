@@ -47,7 +47,6 @@ export function TSDocSymbolPreview(
       packageName: member.package.name,
       packageScope: member.package.scope || null,
       releaseVersion: member.release.version,
-      memberSlugh: member.slug.current,
     }
   }, [symbolMembers])
 

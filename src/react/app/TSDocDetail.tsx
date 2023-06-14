@@ -13,7 +13,7 @@ export function TSDocDetail(): ReactElement {
   const pkg = usePackage({params})
   const padding = useSpace([3, 3, 3, 3])
 
-  if (!params.memberName) {
+  if (!params.memberSlug) {
     return (
       <Box padding={padding}>
         <Flex align="center" height="fill" justify="center">
