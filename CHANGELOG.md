@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.26](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.25...v1.0.0-alpha.26) (2023-06-14)
+
+### Features
+
+- show signature and parameter for components classified as variables ([#13](https://github.com/sanity-io/tsdoc/issues/13)) ([9889c74](https://github.com/sanity-io/tsdoc/commit/9889c74db70b6ffe9d71c789e66c5433471686ea))
+
 ## [1.0.0-alpha.25](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.24...v1.0.0-alpha.25) (2023-06-14)
 
 ### Features
