@@ -75,6 +75,9 @@ const SearchOption = forwardRef(function SearchOption(
       packageScope: symbol.package.scope || null,
       memberName: symbol.name,
       releaseVersion: latestMember ? latestMember.releaseVersion : '0.0.0',
+      // symbols currently don't have a slug, so we just use the name
+      // not sure if we want to add the slug?
+      memberSlug: symbol.name.toLowerCase(),
     }),
     [latestMember, symbol]
   )
