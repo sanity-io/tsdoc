@@ -11,6 +11,7 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
   let releaseVersion: string | null = null
   let exportPath: string | null = null
   let memberName: string | null = null
+  let memberSlug: string | null = null
 
   packageName = segments.shift() || null
 
@@ -26,6 +27,7 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
   if (releaseVersion) {
     if (segments.length > 1) {
       memberName = segments.pop() || null
+      memberSlug = memberName?.toLocaleLowerCase() || null
       exportPath = `./${segments.join('/')}`
     } else if (segments.length === 1) {
       exportPath = `./${segments[0]}`
@@ -42,6 +44,7 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
     packageName,
     packageScope,
     releaseVersion,
+    memberSlug,
   }
 
   return params

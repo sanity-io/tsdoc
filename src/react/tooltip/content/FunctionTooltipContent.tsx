@@ -22,6 +22,7 @@ export function FunctionTooltipContent(props: {data: APIFunction}): ReactElement
         packageScope: propsType.package?.scope || null,
         memberName: propsType.name,
         releaseVersion: propsType.release?.version,
+        memberSlug: propsType.slug.current,
       },
     [propsType]
   )

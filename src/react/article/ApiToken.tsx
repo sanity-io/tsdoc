@@ -18,6 +18,7 @@ export function ApiToken(props: {deindent?: boolean; token: APIToken}): ReactEle
             packageScope: token.member.package.scope || null,
             packageName: token.member.package.name,
             releaseVersion: token.member.release.version,
+            memberSlug: token.member.slug.current,
           }
         : null,
     [token.member]
