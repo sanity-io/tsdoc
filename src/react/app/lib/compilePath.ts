@@ -12,10 +12,10 @@ export function compilePath(params: TSDocAppParams): string {
     segments.push(params.packageName)
 
     if (params.releaseVersion) {
-      segments.push(params.releaseVersion)
-
       if (params.exportPath) {
-        segments.push(params.exportPath === '.' ? 'index' : params.exportPath.slice(2))
+        if (params.exportPath !== '.') {
+          segments.push(params.exportPath.slice(2))
+        }
 
         if (params.memberSlug) {
           segments.push(params.memberSlug)
