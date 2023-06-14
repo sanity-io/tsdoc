@@ -437,7 +437,6 @@ export const API_PACKAGE_QUERY = groq`
 export const API_SYMBOL_QUERY = groq`
 *[
   _type == 'api.symbol'
-  && slug == $slug
   && package->scope == $packageScope
   && package->name == $packageName
 ]{
@@ -446,7 +445,6 @@ export const API_SYMBOL_QUERY = groq`
   package->{name,scope},
   'members': *[
     _type in $memberTypes
-    && slug == $slug
   ]{${API_MEMBER_PROJECTION}}
 }[0]
 `
