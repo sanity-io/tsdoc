@@ -21,7 +21,9 @@ import {GroupedMembersTree} from './GroupedMembersTree'
 import {PackageMenuButton} from './PackageMenuButton'
 import {PackageTreeItem} from './PackageTreeItem'
 import {ReleaseMenuButton} from './ReleaseMenuButton'
+import {SearchWrapper} from './SearchWrapper'
 import {TreeItemFocus} from './TreeItemFocus'
+import {TreeNav} from './TreeNav'
 import {TSDocSearch} from './TSDocSearch'
 
 /** @internal */
@@ -136,7 +138,7 @@ function TSDocNavView(props: {
   }, [_exports.data])
 
   return (
-    <BoxSticky paddingTop={5}>
+    <BoxSticky paddingTop={3}>
       <Flex direction="column" height="fill" overflow="hidden">
         {!currentPkg && (
           <Card overflow="auto" padding={3}>
@@ -188,8 +190,12 @@ function TSDocNavView(props: {
             )}
 
             {!_exports.loading && (
-              <Stack flex={1} overflow="auto" space={3}>
-                {currentPkg && <TSDocSearch />}
+              <Stack flex={1} overflow="auto">
+                {currentPkg && (
+                  <SearchWrapper padding={1}>
+                    <TSDocSearch />
+                  </SearchWrapper>
+                )}
                 {exports.length === 1 ? (
                   <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
                 ) : (
@@ -220,11 +226,11 @@ function SingleExportTree(props: {currentVersion?: string; exp: ExportData}) {
   )
 
   return (
-    <Tree>
+    <TreeNav>
       {versionedExports.map((exp) => (
         <GroupedMembersTree exp={exp} key={exp.release.version} />
       ))}
-    </Tree>
+    </TreeNav>
   )
 }
 
@@ -245,7 +251,7 @@ function MultiExportTree(props: {
   )
 
   return (
-    <Tree style={{overflow: 'scroll', height: '100vh'}}>
+    <TreeNav>
       {versionedExports.map((data) => (
         <TreeItemFocus
           expanded={expandPackages ? expandPackages : data.name === currentExportName}
@@ -266,6 +272,6 @@ function MultiExportTree(props: {
             ))}
         </TreeItemFocus>
       ))}
-    </Tree>
+    </TreeNav>
   )
 }
