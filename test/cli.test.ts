@@ -15,7 +15,7 @@ describe('cli', () => {
 
     expect(await project.dirs()).toEqual(['dist', 'node_modules', 'src'])
 
-    expect(stdout).toContain('wrote 21 documents to ../../etc/mylib/1.0.0.json')
+    expect(stdout).toContain('wrote 25 documents to ../../etc/mylib/1.0.0.json')
   })
 
   test('run `etl` command in `multi-export`', async () => {

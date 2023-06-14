@@ -35,6 +35,8 @@ exports[`transform should result in a "api.release" document 1`] = `
       "ButtonTone",
       "ButtonType",
       "Class",
+      "Link",
+      "LinkProps",
       "Resolver",
       "ResponsiveMarginProps",
       "useAnswerToLifeTheUniverseAndEverything",
@@ -73,6 +75,16 @@ exports[`transform should result in a "api.release" document 1`] = `
       {
         "_key": "tsdoc-37d9a6314d9fc88c20990c7f9b784dde",
         "_ref": "tsdoc-37d9a6314d9fc88c20990c7f9b784dde",
+        "_type": "reference",
+      },
+      {
+        "_key": "tsdoc-4e8a1c8c97521af6976b0fbc948aed03",
+        "_ref": "tsdoc-4e8a1c8c97521af6976b0fbc948aed03",
+        "_type": "reference",
+      },
+      {
+        "_key": "tsdoc-7421c952c885f9f8ba76357756f79dc5",
+        "_ref": "tsdoc-7421c952c885f9f8ba76357756f79dc5",
         "_type": "reference",
       },
       {
@@ -122,11 +134,94 @@ exports[`transform should result in a "api.release" document 1`] = `
           "name": "@public",
         },
       ],
-      "parameters": undefined,
-      "remarks": undefined,
+      "parameters": [
+        {
+          "_key": "paramBlock0",
+          "_type": "tsdoc.paramBlock",
+          "content": [
+            {
+              "_key": "node0",
+              "_type": "block",
+              "children": [
+                {
+                  "_key": "node0",
+                  "_type": "span",
+                  "marks": [],
+                  "text": "Props to pass to the button element.",
+                },
+              ],
+              "markDefs": [],
+              "style": "normal",
+            },
+          ],
+          "name": "props",
+        },
+      ],
+      "remarks": {
+        "_type": "tsdoc.remarksBlock",
+        "content": [
+          {
+            "_key": "node0",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "node0",
+                "_type": "span",
+                "marks": [],
+                "text": "This component uses the ",
+              },
+              {
+                "_key": "node1",
+                "_type": "span",
+                "marks": [
+                  "code",
+                ],
+                "text": "useButton",
+              },
+              {
+                "_key": "node2",
+                "_type": "span",
+                "marks": [],
+                "text": " hook to handle button clicks and generate the ",
+              },
+              {
+                "_key": "node3",
+                "_type": "span",
+                "marks": [
+                  "code",
+                ],
+                "text": "onClick",
+              },
+              {
+                "_key": "node4",
+                "_type": "span",
+                "marks": [],
+                "text": " handler.",
+              },
+            ],
+            "markDefs": [],
+            "style": "normal",
+          },
+        ],
+      },
       "returns": undefined,
       "seeBlocks": undefined,
-      "summary": undefined,
+      "summary": [
+        {
+          "_key": "node0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "node0",
+              "_type": "span",
+              "marks": [],
+              "text": "A button component.",
+            },
+          ],
+          "markDefs": [],
+          "style": "normal",
+        },
+      ],
     },
     "export": {
       "_ref": "tsdoc-mylib_1-0-0__main",
@@ -143,7 +238,25 @@ exports[`transform should result in a "api.release" document 1`] = `
       {
         "_key": "param0",
         "_type": "api.parameter",
-        "comment": undefined,
+        "comment": {
+          "_type": "tsdoc.docComment",
+          "summary": [
+            {
+              "_key": "node0",
+              "_type": "block",
+              "children": [
+                {
+                  "_key": "node0",
+                  "_type": "span",
+                  "marks": [],
+                  "text": "Props to pass to the button element.",
+                },
+              ],
+              "markDefs": [],
+              "style": "normal",
+            },
+          ],
+        },
         "isOptional": false,
         "name": "props",
         "releaseTag": "public",
@@ -743,6 +856,364 @@ exports[`transform should result in a "api.release" document 1`] = `
     "typeParameters": [],
   },
   {
+    "_id": "tsdoc-4e8a1c8c97521af6976b0fbc948aed03",
+    "_type": "api.variable",
+    "comment": {
+      "_type": "tsdoc.docComment",
+      "customBlocks": undefined,
+      "deprecated": undefined,
+      "exampleBlocks": [
+        {
+          "_key": "exampleBlock0",
+          "_type": "tsdoc.exampleBlock",
+          "content": [
+            {
+              "_key": "node1",
+              "_type": "code",
+              "code": "function MyComponent() {
+  return (
+   <Link href="https://www.sanity.io" target="_blank" replace>
+     Go to Sanity
+   </Link>
+  )
+}
+",
+              "language": "tsx",
+            },
+          ],
+        },
+      ],
+      "modifierTags": [
+        {
+          "_key": "modifierTag0",
+          "_type": "tsdoc.modifierTag",
+          "name": "@public",
+        },
+      ],
+      "parameters": [
+        {
+          "_key": "paramBlock0",
+          "_type": "tsdoc.paramBlock",
+          "content": [
+            {
+              "_key": "node0",
+              "_type": "block",
+              "children": [
+                {
+                  "_key": "node0",
+                  "_type": "span",
+                  "marks": [],
+                  "text": "Props to pass to the anchor element.",
+                },
+              ],
+              "markDefs": [],
+              "style": "normal",
+            },
+          ],
+          "name": "props",
+        },
+        {
+          "_key": "paramBlock1",
+          "_type": "tsdoc.paramBlock",
+          "content": [
+            {
+              "_key": "node0",
+              "_type": "block",
+              "children": [
+                {
+                  "_key": "node0",
+                  "_type": "span",
+                  "marks": [],
+                  "text": "A ref to the anchor element.",
+                },
+              ],
+              "markDefs": [],
+              "style": "normal",
+            },
+          ],
+          "name": "ref",
+        },
+      ],
+      "remarks": {
+        "_type": "tsdoc.remarksBlock",
+        "content": [
+          {
+            "_key": "node0",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "node0",
+                "_type": "span",
+                "marks": [],
+                "text": "This component uses the ",
+              },
+              {
+                "_key": "node1",
+                "_type": "span",
+                "marks": [
+                  "code",
+                ],
+                "text": "useLink",
+              },
+              {
+                "_key": "node2",
+                "_type": "span",
+                "marks": [],
+                "text": " hook to handle link clicks and generate the ",
+              },
+              {
+                "_key": "node3",
+                "_type": "span",
+                "marks": [
+                  "code",
+                ],
+                "text": "onClick",
+              },
+              {
+                "_key": "node4",
+                "_type": "span",
+                "marks": [],
+                "text": " handler.",
+              },
+            ],
+            "markDefs": [],
+            "style": "normal",
+          },
+        ],
+      },
+      "returns": {
+        "_type": "tsdoc.returnsBlock",
+        "content": [
+          {
+            "_key": "node0",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "node0",
+                "_type": "span",
+                "marks": [],
+                "text": "The created anchor element.",
+              },
+            ],
+            "markDefs": [],
+            "style": "normal",
+          },
+        ],
+      },
+      "seeBlocks": undefined,
+      "summary": [
+        {
+          "_key": "node0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "node0",
+              "_type": "span",
+              "marks": [],
+              "text": "A component that creates an HTML anchor element.",
+            },
+          ],
+          "markDefs": [],
+          "style": "normal",
+        },
+      ],
+    },
+    "export": {
+      "_ref": "tsdoc-mylib_1-0-0__main",
+      "_type": "reference",
+    },
+    "isReactComponentType": true,
+    "name": "Link",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+    "release": {
+      "_ref": "tsdoc-mylib_1-0-0",
+      "_type": "reference",
+    },
+    "releaseTag": "public",
+    "slug": {
+      "_type": "slug",
+      "current": "Link",
+    },
+    "type": [
+      {
+        "_key": "token0",
+        "_type": "api.token",
+        "text": "React_2.ForwardRefExoticComponent",
+      },
+      {
+        "_key": "token1",
+        "_type": "api.token",
+        "text": "<
+  ",
+      },
+      {
+        "_key": "token2",
+        "_type": "api.token",
+        "text": "Omit",
+      },
+      {
+        "_key": "token3",
+        "_type": "api.token",
+        "text": "<",
+      },
+      {
+        "_key": "token4",
+        "_type": "api.token",
+        "text": "LinkProps",
+      },
+      {
+        "_key": "token5",
+        "_type": "api.token",
+        "text": " & ",
+      },
+      {
+        "_key": "token6",
+        "_type": "api.token",
+        "text": "React_2.HTMLProps",
+      },
+      {
+        "_key": "token7",
+        "_type": "api.token",
+        "text": "<",
+      },
+      {
+        "_key": "token8",
+        "_type": "api.token",
+        "text": "HTMLAnchorElement",
+      },
+      {
+        "_key": "token9",
+        "_type": "api.token",
+        "text": ">, 'ref'> &
+    ",
+      },
+      {
+        "_key": "token10",
+        "_type": "api.token",
+        "text": "React_2.RefAttributes",
+      },
+      {
+        "_key": "token11",
+        "_type": "api.token",
+        "text": "<",
+      },
+      {
+        "_key": "token12",
+        "_type": "api.token",
+        "text": "HTMLAnchorElement",
+      },
+      {
+        "_key": "token13",
+        "_type": "api.token",
+        "text": ">
+>",
+      },
+    ],
+  },
+  {
+    "_id": "tsdoc-7421c952c885f9f8ba76357756f79dc5",
+    "_type": "api.interface",
+    "comment": {
+      "_type": "tsdoc.docComment",
+      "customBlocks": undefined,
+      "deprecated": undefined,
+      "exampleBlocks": undefined,
+      "modifierTags": [
+        {
+          "_key": "modifierTag0",
+          "_type": "tsdoc.modifierTag",
+          "name": "@public",
+        },
+      ],
+      "parameters": undefined,
+      "remarks": undefined,
+      "returns": undefined,
+      "seeBlocks": undefined,
+      "summary": [
+        {
+          "_key": "node0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "node0",
+              "_type": "span",
+              "marks": [],
+              "text": "Props for the ForwardingRefComponent.",
+            },
+          ],
+          "markDefs": [],
+          "style": "normal",
+        },
+      ],
+    },
+    "export": {
+      "_ref": "tsdoc-mylib_1-0-0__main",
+      "_type": "reference",
+    },
+    "extends": [],
+    "members": [
+      {
+        "_key": "member0",
+        "_type": "api.propertySignature",
+        "comment": {
+          "_type": "tsdoc.docComment",
+          "customBlocks": undefined,
+          "deprecated": undefined,
+          "exampleBlocks": undefined,
+          "modifierTags": undefined,
+          "parameters": undefined,
+          "remarks": undefined,
+          "returns": undefined,
+          "seeBlocks": undefined,
+          "summary": [
+            {
+              "_key": "node0",
+              "_type": "block",
+              "children": [
+                {
+                  "_key": "node0",
+                  "_type": "span",
+                  "marks": [],
+                  "text": "The name to display in the component.",
+                },
+              ],
+              "markDefs": [],
+              "style": "normal",
+            },
+          ],
+        },
+        "isOptional": false,
+        "name": "name",
+        "releaseTag": "public",
+        "type": [
+          {
+            "_key": "token0",
+            "_type": "api.token",
+            "text": "string",
+          },
+        ],
+      },
+    ],
+    "name": "LinkProps",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+    "release": {
+      "_ref": "tsdoc-mylib_1-0-0",
+      "_type": "reference",
+    },
+    "releaseTag": "public",
+    "slug": {
+      "_type": "slug",
+      "current": "LinkProps",
+    },
+    "typeParameters": [],
+  },
+  {
     "_id": "tsdoc-814d0a452f98ffc5c2f30f549227a74c",
     "_type": "api.interface",
     "comment": {
@@ -1142,6 +1613,24 @@ exports[`transform should result in a "api.release" document 1`] = `
     "_id": "tsdoc-tsdoc-mylib_Class",
     "_type": "api.symbol",
     "name": "Class",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+  },
+  {
+    "_id": "tsdoc-tsdoc-mylib_Link",
+    "_type": "api.symbol",
+    "name": "Link",
+    "package": {
+      "_ref": "tsdoc-mylib",
+      "_type": "reference",
+    },
+  },
+  {
+    "_id": "tsdoc-tsdoc-mylib_LinkProps",
+    "_type": "api.symbol",
+    "name": "LinkProps",
     "package": {
       "_ref": "tsdoc-mylib",
       "_type": "reference",

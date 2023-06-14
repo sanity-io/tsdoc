@@ -314,6 +314,17 @@ comment,
 export->{name,path},
 isReactComponentType,
 name,
+parameters[]{
+  _key,
+  _type,
+  name,
+  releaseTag,
+  comment,
+  type[]{
+    ...,
+    member->{${API_TOKEN_MEMBER_PROJECTION}}
+  }
+},
 package->{scope,name},
 propsType->,
 release->{version},
