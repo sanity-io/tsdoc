@@ -8,7 +8,7 @@ import {
   APISymbolDocument,
   SerializedAPIMember,
 } from '../types'
-import {_isRecord, _parsePackageName} from './helpers'
+import {_isRecord, _parsePackageName, _slugify} from './helpers'
 import {transformExportMember} from './transformExportMember'
 import {_transformPackage} from './transformPackage'
 import {TransformContext, TransformOpts} from './types'
@@ -145,6 +145,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
         _id: `tsdoc-${packageDoc._id}_${member.displayName}`,
         name: member.displayName,
         package: {_type: 'reference', _ref: packageDoc._id},
+        slug: {_type: 'slug', current: _slugify(member.displayName)},
       }
 
       const hasSymbol = state.symbols.some((s) => s.name === symbolDoc.name)

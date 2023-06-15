@@ -8,6 +8,7 @@ export type SanityDocumentValue<T extends {}> = T & {
   _rev?: string
   _updatedAt?: string
   _createdAt?: string
+  slug?: SanitySlugValue
 }
 
 /** @public */
