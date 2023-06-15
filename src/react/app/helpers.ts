@@ -38,7 +38,6 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
 
   const params: TSDocAppParams = {
     exportPath,
-    memberName,
     packageName,
     packageScope,
     releaseVersion,

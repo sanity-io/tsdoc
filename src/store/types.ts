@@ -3,7 +3,7 @@ import {APIMember, APIPackage, APISymbol, SanityArrayItem} from '@sanity/tsdoc'
 /** @public */
 export interface TSDocAppParams {
   exportPath: string | null
-  memberName: string | null
+  memberName?: string | null
   packageName: string | null
   packageScope: string | null
   releaseVersion: string | null
