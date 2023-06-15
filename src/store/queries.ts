@@ -392,7 +392,6 @@ export const API_MEMBER_QUERY = groq`
     _type == 'api.release'
     && package->scope == $packageScope
     && package->name == $packageName
-    && $memberSlug in memberSlugs
   ]{version}.version
 }[0]
 `
