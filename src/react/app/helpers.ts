@@ -10,7 +10,6 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
   let packageName: string | null = null
   let releaseVersion: string | null = null
   let exportPath: string | null = null
-  let memberName: string | null = null
   let memberSlug: string | null = null
 
   packageName = segments.shift() || null
