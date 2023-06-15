@@ -36,10 +36,6 @@ export function parsePath(
     }
   }
 
-  if (exportPath === './index') {
-    exportPath = '.'
-  }
-
   const params: TSDocAppParams = {
     exportPath,
     packageName,
