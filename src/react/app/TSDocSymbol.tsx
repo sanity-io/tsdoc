@@ -72,6 +72,7 @@ export function TSDocSymbol(
       packageName: member.package.name,
       packageScope: member.package.scope || null,
       releaseVersion: member.release.version,
+      memberSlug: member.slug,
     }
   }, [symbolMembers])
 
