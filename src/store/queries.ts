@@ -417,6 +417,7 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
     && package->name == $packageName
     && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
   ]{
+    slug,
     'exportPath': export->path,
     'releaseVersion': release->version
   }

@@ -1,5 +1,5 @@
 import {SearchIcon} from '@sanity/icons'
-import {APISymbol} from '@sanity/tsdoc'
+import {APISymbol, SanitySlugValue} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Autocomplete, BaseAutocompleteOption, Card, Stack, Text} from '@sanity/ui'
 import {ForwardedRef, forwardRef, ReactElement, useCallback, useMemo, useState} from 'react'
@@ -60,7 +60,9 @@ export function TSDocSearch(): ReactElement {
 
 const SearchOption = forwardRef(function SearchOption(
   props: {
-    symbol: APISymbol & {members: {exportPath: string; releaseVersion: string}[]}
+    symbol: APISymbol & {
+      members: {slug: SanitySlugValue; exportPath: string; releaseVersion: string}[]
+    }
   },
   ref: ForwardedRef<HTMLDivElement>
 ) {
@@ -75,7 +77,7 @@ const SearchOption = forwardRef(function SearchOption(
       packageScope: symbol.package.scope || null,
       memberName: symbol.name,
       releaseVersion: latestMember ? latestMember.releaseVersion : '0.0.0',
-      memberSlug: symbol.slug.current,
+      memberSlug: latestMember ? latestMember.slug.current : '',
     }),
     [latestMember, symbol]
   )
