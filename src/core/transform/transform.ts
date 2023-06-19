@@ -8,7 +8,7 @@ import {
   APISymbolDocument,
   SerializedAPIMember,
 } from '../types'
-import {_isRecord, _parsePackageName, _slugify} from './helpers'
+import {_isRecord, _parsePackageName} from './helpers'
 import {transformExportMember} from './transformExportMember'
 import {_transformPackage} from './transformPackage'
 import {TransformContext, TransformOpts} from './types'
