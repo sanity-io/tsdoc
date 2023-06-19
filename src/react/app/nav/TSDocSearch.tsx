@@ -75,7 +75,7 @@ const SearchOption = forwardRef(function SearchOption(
       packageScope: symbol.package.scope || null,
       memberName: symbol.name,
       releaseVersion: latestMember ? latestMember.releaseVersion : '0.0.0',
-      memberSlug: symbol.name,
+      memberSlug: symbol.slug.current,
     }),
     [latestMember, symbol]
   )

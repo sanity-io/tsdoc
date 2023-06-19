@@ -17,6 +17,11 @@ export const apiSymbolType = defineType({
       to: [{type: 'api.package'}],
       // hidden: true,
     }),
+    defineField({
+      type: 'slug',
+      name: 'slug',
+      title: 'Slug',
+    }),
   ],
   preview: {
     select: {
