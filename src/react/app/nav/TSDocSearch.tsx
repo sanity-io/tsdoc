@@ -104,7 +104,9 @@ const SearchOption = forwardRef(function SearchOption(
               [
                 symbol.package.scope,
                 symbol.package.name,
-                latestMember?.exportPath === '.' ? undefined : latestMember?.exportPath,
+                latestMember?.exportPath === '.'
+                  ? undefined
+                  : latestMember?.exportPath.replace('./', '/'),
               ]
                 .filter(Boolean)
                 .join('/'),
