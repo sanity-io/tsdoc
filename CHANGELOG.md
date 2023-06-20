@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.30](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-06-20)
+
+### Features
+
+- remove index / version from link and add support for slugs ([#16](https://github.com/sanity-io/tsdoc/issues/16)) ([496ae4a](https://github.com/sanity-io/tsdoc/commit/496ae4a6239a976a4b7d2af4dbfdfc94043ccbb1))
+
 ## [1.0.0-alpha.29](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.28...v1.0.0-alpha.29) (2023-06-20)
 
 ### Features
