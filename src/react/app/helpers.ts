@@ -1,8 +1,11 @@
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 
 /** @beta */
-export function parsePath(path: string, options: {basePath?: string} = {}): TSDocAppParams {
-  const {basePath = ''} = options
+export function parsePath(
+  path: string,
+  options: {basePath?: string; version?: string} = {}
+): TSDocAppParams {
+  const {basePath = '', version = '0.0.0'} = options
   const baseSegments = basePath.split('/').filter(Boolean)
   const segments = path.split('/').filter(Boolean).slice(baseSegments.length)
 
@@ -20,7 +23,7 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
   }
 
   if (packageName) {
-    releaseVersion = segments.shift() || null
+    releaseVersion = version
   }
 
   if (releaseVersion) {
@@ -28,12 +31,10 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
       memberSlug = segments.pop() || null
       exportPath = `./${segments.join('/')}`
     } else if (segments.length === 1) {
-      exportPath = `./${segments[0]}`
+      // needs to be this since if the last element is popped then the export path needs to be "empty"
+      memberSlug = segments.pop() || null
+      exportPath = `.`
     }
-  }
-
-  if (exportPath === './index') {
-    exportPath = '.'
   }
 
   const params: TSDocAppParams = {
