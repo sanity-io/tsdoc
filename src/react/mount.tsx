@@ -1,5 +1,5 @@
-import {APIDocument, APIMember} from '@sanity/tsdoc'
-import {TSDocAppParams, createTSDocMemoryStore} from '@sanity/tsdoc/store'
+import {APIDocument} from '@sanity/tsdoc'
+import {TSDocAPIMember, TSDocAppParams, createTSDocMemoryStore} from '@sanity/tsdoc/store'
 import {ThemeColorSchemeKey, ThemeProvider, studioTheme, usePrefersDark} from '@sanity/ui'
 import {createBrowserHistory} from 'history'
 import {StrictMode, useEffect, useMemo, useState} from 'react'
@@ -20,7 +20,7 @@ function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
     [basePath, path]
   )
 
-  const [member, setMember] = useState<(APIMember & {versions: string[]}) | null>(null)
+  const [member, setMember] = useState<TSDocAPIMember[] | undefined | null>(null)
 
   // Listen to history changes
   useEffect(() => history.listen((update) => setPath(update.location.pathname)), [history])
@@ -34,7 +34,7 @@ function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
 
   useEffect(() => {
     if (member) {
-      document.title = `${member.name} | ${member.export.name}@${member.release.version}`
+      document.title = `${member?.[0]?.name} | ${member?.[0]?.export.name}@${member?.[0]?.release.version}`
     }
   }, [member])
 

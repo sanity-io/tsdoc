@@ -45,7 +45,7 @@ export function TSDocDetail(): ReactElement {
     )
   }
 
-  if (!member.data) {
+  if (!member.data || !member.data.length) {
     return (
       <Box padding={padding}>
         <Flex align="center" height="fill" justify="center">
@@ -55,5 +55,11 @@ export function TSDocDetail(): ReactElement {
     )
   }
 
-  return <TSDocArticle data={member.data} />
+  return (
+    <>
+      {member.data?.map((member) => (
+        <TSDocArticle key={member._id} data={member} />
+      ))}
+    </>
+  )
 }

@@ -243,4 +243,36 @@ describe('transform', () => {
       },
     })
   })
+
+  test('should transform function overloads', async () => {
+    const {pkg, results} = await extract({
+      packagePath: tsProject.cwd,
+    })
+
+    const docs = transform(results, {package: {version: pkg.version}})
+
+    const overloadFunctions = docs.filter(
+      (d) => d._type === 'api.function' && d.name === 'testOverload'
+    )
+
+    expect(overloadFunctions.length).toBe(3)
+
+    expect(overloadFunctions[0]).toMatchObject({
+      _type: 'api.function',
+      name: 'testOverload',
+      isOverloading: false,
+    })
+
+    expect(overloadFunctions[1]).toMatchObject({
+      _type: 'api.function',
+      name: 'testOverload',
+      isOverloading: true,
+    })
+
+    expect(overloadFunctions[2]).toMatchObject({
+      _type: 'api.function',
+      name: 'testOverload',
+      isOverloading: true,
+    })
+  })
 })

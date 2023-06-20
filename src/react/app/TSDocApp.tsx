@@ -42,8 +42,6 @@ export function TSDocApp(props: TSDocAppProps): ReactElement {
     [basePath, path, releaseVersion]
   )
 
-  console.log(params)
-
   const handlePathChange = useCallback(
     (nextPath: string, replace?: boolean) => {
       onPathChange(`${basePath}${nextPath}`, replace)

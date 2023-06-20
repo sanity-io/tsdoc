@@ -10,7 +10,7 @@ export function useExports(): {
 } {
   const {params, store} = useTSDoc()
 
-  const [data, setData] = useState<TSDocExportData[] | null>(null)
+  const [data, setData] = useState<TSDocExportData[] | undefined | null>(null)
   const [error, setError] = useState<Error | null>(null)
   const [loading, setLoading] = useState(false)
 

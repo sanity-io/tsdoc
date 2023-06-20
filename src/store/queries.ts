@@ -13,7 +13,7 @@ export const API_EXPORTS_QUERY = groq`
   package->{name,scope},
   release->{version},
   'isLatest': release->_id == package->latestRelease._ref,
-  'members': *[_type in $memberTypes && references(^._id) && !("@hidden" in coalesce(comment.customBlocks[].tag, []))] | order(name asc) {
+  'members': *[_type in $memberTypes && references(^._id) && !("@hidden" in coalesce(comment.customBlocks[].tag, [])) && !coalesce(isOverloading, false)] | order(name asc) {
     '_key': _id,
     _type,
     comment{deprecated},
@@ -27,7 +27,6 @@ export const API_EXPORTS_QUERY = groq`
       release->{version},
       releaseTag,
       isReactComponentType,
-      isReactHook,
       slug,
     },
     name,
@@ -36,7 +35,8 @@ export const API_EXPORTS_QUERY = groq`
     release->{version},
     releaseTag,
     isReactComponentType,
-    isReactHook
+    isReactHook,
+    isOverloading,
   }
 } | order(name)
 `
@@ -393,7 +393,7 @@ export const API_MEMBER_QUERY = groq`
     && package->scope == $packageScope
     && package->name == $packageName
   ]{version}.version
-}[0]
+}
 `
 
 /** @internal */

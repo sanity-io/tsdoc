@@ -128,7 +128,7 @@ export interface SerializedAPIFunction
   /**
    * Used to store if the function is overloading another function
    */
-  isOverloaded?: boolean
+  isOverloading: boolean
 }
 
 /** @public */
