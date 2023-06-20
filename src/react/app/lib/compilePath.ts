@@ -17,8 +17,8 @@ export function compilePath(params: TSDocAppParams): string {
       if (params.exportPath) {
         segments.push(params.exportPath === '.' ? 'index' : params.exportPath.slice(2))
 
-        if (params.memberName) {
-          segments.push(params.memberName)
+        if (params.memberSlug) {
+          segments.push(params.memberSlug)
         }
       }
     }

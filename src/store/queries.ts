@@ -27,9 +27,11 @@ export const API_EXPORTS_QUERY = groq`
       release->{version},
       releaseTag,
       isReactComponentType,
-      isReactHook
+      isReactHook,
+      slug,
     },
     name,
+    slug,
     package->{name,scope},
     release->{version},
     releaseTag,
@@ -381,7 +383,7 @@ export const API_MEMBER_QUERY = groq`
   && package->scope == $packageScope
   && package->name == $packageName
   && release->version == $releaseVersion
-  && name == $memberName
+  && slug.current == $memberSlug
   && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
 ]{
   ${API_MEMBER_PROJECTION},
@@ -390,7 +392,6 @@ export const API_MEMBER_QUERY = groq`
     _type == 'api.release'
     && package->scope == $packageScope
     && package->name == $packageName
-    && $memberName in memberNames
   ]{version}.version
 }[0]
 `
@@ -416,6 +417,7 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
     && package->name == $packageName
     && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
   ]{
+    slug,
     'exportPath': export->path,
     'releaseVersion': release->version
   }
@@ -446,7 +448,6 @@ export const API_PACKAGE_QUERY = groq`
 export const API_SYMBOL_QUERY = groq`
 *[
   _type == 'api.symbol'
-  && name == $name
   && package->scope == $packageScope
   && package->name == $packageName
 ]{
@@ -455,7 +456,6 @@ export const API_SYMBOL_QUERY = groq`
   package->{name,scope},
   'members': *[
     _type in $memberTypes
-    && name == $name
   ]{${API_MEMBER_PROJECTION}}
 }[0]
 `

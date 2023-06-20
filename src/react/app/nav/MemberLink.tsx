@@ -21,6 +21,7 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
       packageName: data.package.name,
       packageScope: data.package.scope || null,
       releaseVersion: data.release.version,
+      memberSlug: data.slug.current,
     }),
     [data, namespace]
   )
@@ -46,12 +47,14 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
     return null
   }, [data.releaseTag])
 
+  const isSelected = `${basePath}${path}` === linkProps.href
+
   return (
     <SyntaxTreeItem
       {...linkProps}
       fontSize={fontSize}
       padding={2}
-      selected={`${basePath}${path}` === linkProps.href}
+      selected={isSelected}
       text={
         <Flex>
           <Box flex={1}>

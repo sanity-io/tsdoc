@@ -10,7 +10,7 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
   let packageName: string | null = null
   let releaseVersion: string | null = null
   let exportPath: string | null = null
-  let memberName: string | null = null
+  let memberSlug: string | null = null
 
   packageName = segments.shift() || null
 
@@ -25,7 +25,7 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
 
   if (releaseVersion) {
     if (segments.length > 1) {
-      memberName = segments.pop() || null
+      memberSlug = segments.pop() || null
       exportPath = `./${segments.join('/')}`
     } else if (segments.length === 1) {
       exportPath = `./${segments[0]}`
@@ -38,10 +38,10 @@ export function parsePath(path: string, options: {basePath?: string} = {}): TSDo
 
   const params: TSDocAppParams = {
     exportPath,
-    memberName,
     packageName,
     packageScope,
     releaseVersion,
+    memberSlug,
   }
 
   return params
