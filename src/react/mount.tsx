@@ -8,8 +8,8 @@ import {parsePath, TSDocApp} from './app'
 
 const EMPTY_ARRAY: never[] = []
 
-function Root(props: {docs?: APIDocument[]}) {
-  const {docs = EMPTY_ARRAY} = props
+function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
+  const {docs = EMPTY_ARRAY, releaseVersion = '0.0.0'} = props
   const store = useMemo(() => createTSDocMemoryStore({docs}), [docs])
   const history = useMemo(() => createBrowserHistory(), [])
   const scheme: ThemeColorSchemeKey = usePrefersDark() ? 'dark' : 'light'
@@ -19,6 +19,7 @@ function Root(props: {docs?: APIDocument[]}) {
     () => parsePath(path, {basePath}),
     [basePath, path]
   )
+
   const [member, setMember] = useState<(APIMember & {versions: string[]}) | null>(null)
 
   // Listen to history changes
@@ -39,14 +40,24 @@ function Root(props: {docs?: APIDocument[]}) {
 
   return (
     <ThemeProvider scheme={scheme} theme={studioTheme}>
-      <TSDocApp basePath={basePath} onPathChange={setPath} path={path} store={store} />
+      <TSDocApp
+        basePath={basePath}
+        onPathChange={setPath}
+        path={path}
+        store={store}
+        releaseVersion={releaseVersion}
+      />
     </ThemeProvider>
   )
 }
 
 /** @beta */
-export function mount(options: {docs: APIDocument[]; element: HTMLElement | null}): void {
-  const {docs, element} = options
+export function mount(options: {
+  docs: APIDocument[]
+  releaseVersion?: string
+  element: HTMLElement | null
+}): void {
+  const {docs, releaseVersion, element} = options
 
   if (!element) throw new Error('missing element')
 
@@ -54,7 +65,7 @@ export function mount(options: {docs: APIDocument[]; element: HTMLElement | null
 
   root.render(
     <StrictMode>
-      <Root docs={docs} />
+      <Root docs={docs} releaseVersion={releaseVersion} />
     </StrictMode>
   )
 }

@@ -13,6 +13,7 @@ export interface TSDocAppProps {
   onPathChange: (value: string, replace?: boolean) => void
   path: string
   store: TSDocStore
+  releaseVersion?: string
 }
 
 const Root = styled(Card)({
@@ -34,12 +35,14 @@ const Root = styled(Card)({
  * @beta
  * */
 export function TSDocApp(props: TSDocAppProps): ReactElement {
-  const {basePath = '', onPathChange, path, store} = props
+  const {basePath = '', onPathChange, path, store, releaseVersion = ''} = props
 
   const params: TSDocAppParams | undefined = useMemo(
-    () => parsePath(path, {basePath}),
-    [basePath, path]
+    () => ({...parsePath(path, {basePath}), releaseVersion}),
+    [basePath, path, releaseVersion]
   )
+
+  console.log(params)
 
   const handlePathChange = useCallback(
     (nextPath: string, replace?: boolean) => {

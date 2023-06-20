@@ -272,68 +272,6 @@ importers:
         specifier: workspace:*
         version: link:../..
 
-  test/__tmp__/02341f8e-2030-49ba-8c8a-d060edae0ab3:
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-
-  test/__tmp__/287e2ccf-7d71-49a4-879c-46880f7bb45c:
-    dependencies:
-      react:
-        specifier: ^18.0
-        version: 18.2.0
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-
-  test/__tmp__/7cae13b7-0af0-4c1e-ac84-cab88c4cfb50:
-    dependencies:
-      react:
-        specifier: ^18.0
-        version: 18.2.0
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-
-  test/__tmp__/a4d765ad-261c-4fbc-a893-ee00df907355:
-    dependencies:
-      react:
-        specifier: ^18.0
-        version: 18.2.0
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-
-  test/__tmp__/c1a504ba-864b-4420-8f73-cc7adcec8b61:
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-
-  test/__tmp__/dbe1e650-9a4b-499a-a1c3-bff349ea4e8e:
-    dependencies:
-      react:
-        specifier: ^18.0
-        version: 18.2.0
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-
-  test/__tmp__/fec4beb9-b72f-4afd-8a5e-d6a401598c33:
-    dependencies:
-      react:
-        specifier: ^18.0
-        version: 18.2.0
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-
 packages:
 
   /@ampproject/remapping@2.2.1:
