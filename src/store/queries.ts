@@ -385,7 +385,7 @@ export const API_MEMBER_QUERY = groq`
   && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
 ]{
   ${API_MEMBER_PROJECTION},
-
+  "members": members[!("@hidden" in coalesce(comment.customBlocks[].tag, []))],
   'versions': *[
     _type == 'api.release'
     && package->scope == $packageScope
