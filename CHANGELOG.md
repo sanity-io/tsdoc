@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.28](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.27...v1.0.0-alpha.28) (2023-06-20)
+
+### Bug Fixes
+
+- issue where hidden properties were showing up ([#17](https://github.com/sanity-io/tsdoc/issues/17)) ([fc2393e](https://github.com/sanity-io/tsdoc/commit/fc2393ecc5bb723b6d8108fb7baf2fc5ed586330))
+
 ## [1.0.0-alpha.27](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.26...v1.0.0-alpha.27) (2023-06-15)
 
 ### Features
