@@ -31,6 +31,7 @@ export function parsePath(
       memberSlug = segments.pop() || null
       exportPath = `./${segments.join('/')}`
     } else if (segments.length === 1) {
+      // needs to be this since if the last element is popped then the export path needs to be "empty"
       memberSlug = segments.pop() || null
       exportPath = `.`
     }
