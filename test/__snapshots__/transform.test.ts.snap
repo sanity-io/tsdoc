@@ -1581,10 +1581,6 @@ exports[`transform should result in a "api.release" document 1`] = `
       "_ref": "tsdoc-mylib",
       "_type": "reference",
     },
-    "slug": {
-      "_type": "slug",
-      "current": "Button",
-    },
   },
   {
     "_id": "tsdoc-tsdoc-mylib_ButtonProps",
@@ -1593,10 +1589,6 @@ exports[`transform should result in a "api.release" document 1`] = `
     "package": {
       "_ref": "tsdoc-mylib",
       "_type": "reference",
-    },
-    "slug": {
-      "_type": "slug",
-      "current": "ButtonProps",
     },
   },
   {
@@ -1607,10 +1599,6 @@ exports[`transform should result in a "api.release" document 1`] = `
       "_ref": "tsdoc-mylib",
       "_type": "reference",
     },
-    "slug": {
-      "_type": "slug",
-      "current": "ButtonTone",
-    },
   },
   {
     "_id": "tsdoc-tsdoc-mylib_ButtonType",
@@ -1619,10 +1607,6 @@ exports[`transform should result in a "api.release" document 1`] = `
     "package": {
       "_ref": "tsdoc-mylib",
       "_type": "reference",
-    },
-    "slug": {
-      "_type": "slug",
-      "current": "ButtonType",
     },
   },
   {
@@ -1633,10 +1617,6 @@ exports[`transform should result in a "api.release" document 1`] = `
       "_ref": "tsdoc-mylib",
       "_type": "reference",
     },
-    "slug": {
-      "_type": "slug",
-      "current": "Class",
-    },
   },
   {
     "_id": "tsdoc-tsdoc-mylib_Link",
@@ -1645,10 +1625,6 @@ exports[`transform should result in a "api.release" document 1`] = `
     "package": {
       "_ref": "tsdoc-mylib",
       "_type": "reference",
-    },
-    "slug": {
-      "_type": "slug",
-      "current": "Link",
     },
   },
   {
@@ -1659,10 +1635,6 @@ exports[`transform should result in a "api.release" document 1`] = `
       "_ref": "tsdoc-mylib",
       "_type": "reference",
     },
-    "slug": {
-      "_type": "slug",
-      "current": "LinkProps",
-    },
   },
   {
     "_id": "tsdoc-tsdoc-mylib_Resolver",
@@ -1671,10 +1643,6 @@ exports[`transform should result in a "api.release" document 1`] = `
     "package": {
       "_ref": "tsdoc-mylib",
       "_type": "reference",
-    },
-    "slug": {
-      "_type": "slug",
-      "current": "Resolver",
     },
   },
   {
@@ -1685,10 +1653,6 @@ exports[`transform should result in a "api.release" document 1`] = `
       "_ref": "tsdoc-mylib",
       "_type": "reference",
     },
-    "slug": {
-      "_type": "slug",
-      "current": "ResponsiveMarginProps",
-    },
   },
   {
     "_id": "tsdoc-tsdoc-mylib_useAnswerToLifeTheUniverseAndEverything",
@@ -1698,10 +1662,6 @@ exports[`transform should result in a "api.release" document 1`] = `
       "_ref": "tsdoc-mylib",
       "_type": "reference",
     },
-    "slug": {
-      "_type": "slug",
-      "current": "useAnswerToLifeTheUniverseAndEverything",
-    },
   },
   {
     "_id": "tsdoc-tsdoc-mylib_userHasTheRightAnswer",
@@ -1710,10 +1670,6 @@ exports[`transform should result in a "api.release" document 1`] = `
     "package": {
       "_ref": "tsdoc-mylib",
       "_type": "reference",
-    },
-    "slug": {
-      "_type": "slug",
-      "current": "userHasTheRightAnswer",
     },
   },
 ]
