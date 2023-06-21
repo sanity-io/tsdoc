@@ -3,7 +3,7 @@ import {memo} from 'react'
 import styled from 'styled-components'
 
 export const TreeNav = memo(styled(Tree)`
-  overflow: scroll;
+  overflow: auto;
   height: 100vh;
   padding-top: 0.75rem;
 `)

@@ -408,7 +408,7 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
   _type,
   name,
   package->{name,scope}
-}[0...40]{
+}[0...10]{
   ...,
   'members': *[
     _type in $memberTypes
