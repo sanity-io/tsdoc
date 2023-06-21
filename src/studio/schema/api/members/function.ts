@@ -74,6 +74,12 @@ export const apiFunctionType = defineType({
       options: {layout: 'checkbox'},
     }),
     defineField({
+      type: 'boolean',
+      name: 'isOverloading',
+      title: 'This function is overloaded',
+      options: {layout: 'checkbox'},
+    }),
+    defineField({
       type: 'tsdoc.docComment',
       name: 'comment',
       title: 'Comment',

@@ -125,6 +125,10 @@ export interface SerializedAPIFunction
   release: SanityReferenceValue
   returnType: SanityArrayItem<SerializedAPIToken>[]
   typeParameters: SanityArrayItem<SerializedAPITypeParameter>[]
+  /**
+   * Used to store if the function is overloading another function
+   */
+  isOverloading: boolean
 }
 
 /** @public */

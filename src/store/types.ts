@@ -41,7 +41,7 @@ export interface TSDocStore {
   }
 
   member: {
-    get: (params: TSDocAppParams) => Promise<TSDocAPIMember | null | undefined>
+    get: (params: TSDocAppParams) => Promise<TSDocAPIMember[] | null | undefined>
   }
 
   package: {
@@ -69,7 +69,7 @@ export interface TSDocStore {
 /** @beta */
 export interface TSDocStoreCache {
   exports: Record<string, TSDocExportData[]>
-  member: Record<string, TSDocAPIMember>
+  member: Record<string, TSDocAPIMember[]>
   package: Record<string, APIPackage | null>
   packages: APIPackage[]
   symbol: Record<string, TSDocAPISymbol>

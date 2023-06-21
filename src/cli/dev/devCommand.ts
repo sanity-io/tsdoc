@@ -159,6 +159,8 @@ export async function devCommand(options: {cwd: string}): Promise<void> {
     const url = req.originalUrl
 
     try {
+      const releaseVersion = initialDocs.find((d) => d._type === 'api.release')?.version
+
       // 1. Read index.html
       let template = await readFile(path.resolve(outDir, 'index.html'), 'utf-8')
 
@@ -184,7 +186,7 @@ export async function devCommand(options: {cwd: string}): Promise<void> {
         [
           `<div id="root"></div><script type="module">`,
           `window.__INITIAL_STATE__=`,
-          JSON.stringify({docs: initialDocs}),
+          JSON.stringify({docs: initialDocs, releaseVersion}),
           `</script>`,
         ].join('')
       )

@@ -94,7 +94,7 @@ export function createTSDocStore(options: TSDocStoreOptions): TSDocStore {
     },
 
     member: {
-      get: async (params: TSDocAppParams): Promise<TSDocAPIMember | null | undefined> => {
+      get: async (params: TSDocAppParams): Promise<TSDocAPIMember[] | null | undefined> => {
         if (debug) console.log('member.get', params)
 
         const key = JSON.stringify(params)

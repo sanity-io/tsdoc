@@ -7,5 +7,9 @@ export default function SymbolStory(): ReactElement {
   const tsdoc = useTSDoc()
   const member = useMember({params: tsdoc.params})
 
-  return <>{member.data && <TSDocArticle data={member.data} />}</>
+  return (
+    <>
+      {member.data && member.data.map((member) => <TSDocArticle key={member._id} data={member} />)}
+    </>
+  )
 }

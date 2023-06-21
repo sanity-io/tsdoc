@@ -109,6 +109,7 @@ export interface APIIndentifier {
 
 /** @public */
 export interface APIClass {
+  _id?: string
   _type: 'api.class'
   comment?: TSDocComment
   export: APIExport
@@ -124,6 +125,7 @@ export interface APIClass {
 
 /** @public */
 export interface APIEnum {
+  _id?: string
   _type: 'api.enum'
   comment?: TSDocComment
   export: APIExport
@@ -137,11 +139,13 @@ export interface APIEnum {
 
 /** @public */
 export interface APIFunction {
+  _id?: string
   _type: 'api.function'
   comment?: TSDocComment
   export: APIExport
   isReactComponentType: boolean
   isReactHook: boolean
+  isOverloading: boolean
   name: string
   package: APIPackage
   parameters: SanityArrayItem<APIParameter>[]
@@ -155,6 +159,7 @@ export interface APIFunction {
 
 /** @public */
 export interface APIInterface {
+  _id?: string
   _type: 'api.interface'
   comment?: TSDocComment
   export: APIExport
@@ -176,6 +181,7 @@ export interface APIInterface {
 
 /** @public */
 export interface APINamespace {
+  _id?: string
   _type: 'api.namespace'
   comment?: TSDocComment
   export: APIExport
@@ -189,6 +195,7 @@ export interface APINamespace {
 
 /** @public */
 export interface APITypeAlias {
+  _id?: string
   _type: 'api.typeAlias'
   comment?: TSDocComment
   export: APIExport
@@ -203,6 +210,7 @@ export interface APITypeAlias {
 
 /** @public */
 export interface APIVariable {
+  _id?: string
   _type: 'api.variable'
   comment?: TSDocComment
   export: APIExport

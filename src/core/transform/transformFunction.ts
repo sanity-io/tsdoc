@@ -57,5 +57,6 @@ export function _transformFunction(
       )
     ),
     typeParameters: node.typeParameters.map((p, idx) => _transformTypeParameter(ctx, node, p, idx)),
+    isOverloading: node.overloadIndex > 1,
   }
 }

@@ -6,6 +6,7 @@ const SCRIPT = `import {mount} from '@sanity/tsdoc/react'
 mount({
   docs: window.__INITIAL_STATE__ ? window.__INITIAL_STATE__.docs : undefined,
   element: document.getElementById('root'),
+  releaseVersion: window.__INITIAL_STATE__ ? window.__INITIAL_STATE__.releaseVersion : undefined,
 })
 `
 

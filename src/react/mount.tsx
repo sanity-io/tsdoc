@@ -1,5 +1,5 @@
-import {APIDocument, APIMember} from '@sanity/tsdoc'
-import {TSDocAppParams, createTSDocMemoryStore} from '@sanity/tsdoc/store'
+import {APIDocument} from '@sanity/tsdoc'
+import {TSDocAPIMember, TSDocAppParams, createTSDocMemoryStore} from '@sanity/tsdoc/store'
 import {ThemeColorSchemeKey, ThemeProvider, studioTheme, usePrefersDark} from '@sanity/ui'
 import {createBrowserHistory} from 'history'
 import {StrictMode, useEffect, useMemo, useState} from 'react'
@@ -8,8 +8,8 @@ import {parsePath, TSDocApp} from './app'
 
 const EMPTY_ARRAY: never[] = []
 
-function Root(props: {docs?: APIDocument[]}) {
-  const {docs = EMPTY_ARRAY} = props
+function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
+  const {docs = EMPTY_ARRAY, releaseVersion = '0.0.0'} = props
   const store = useMemo(() => createTSDocMemoryStore({docs}), [docs])
   const history = useMemo(() => createBrowserHistory(), [])
   const scheme: ThemeColorSchemeKey = usePrefersDark() ? 'dark' : 'light'
@@ -19,7 +19,8 @@ function Root(props: {docs?: APIDocument[]}) {
     () => parsePath(path, {basePath}),
     [basePath, path]
   )
-  const [member, setMember] = useState<(APIMember & {versions: string[]}) | null>(null)
+
+  const [member, setMember] = useState<TSDocAPIMember[] | undefined | null>(null)
 
   // Listen to history changes
   useEffect(() => history.listen((update) => setPath(update.location.pathname)), [history])
@@ -33,20 +34,30 @@ function Root(props: {docs?: APIDocument[]}) {
 
   useEffect(() => {
     if (member) {
-      document.title = `${member.name} | ${member.export.name}@${member.release.version}`
+      document.title = `${member?.[0]?.name} | ${member?.[0]?.export.name}@${member?.[0]?.release.version}`
     }
   }, [member])
 
   return (
     <ThemeProvider scheme={scheme} theme={studioTheme}>
-      <TSDocApp basePath={basePath} onPathChange={setPath} path={path} store={store} />
+      <TSDocApp
+        basePath={basePath}
+        onPathChange={setPath}
+        path={path}
+        store={store}
+        releaseVersion={releaseVersion}
+      />
     </ThemeProvider>
   )
 }
 
 /** @beta */
-export function mount(options: {docs: APIDocument[]; element: HTMLElement | null}): void {
-  const {docs, element} = options
+export function mount(options: {
+  docs: APIDocument[]
+  releaseVersion?: string
+  element: HTMLElement | null
+}): void {
+  const {docs, releaseVersion, element} = options
 
   if (!element) throw new Error('missing element')
 
@@ -54,7 +65,7 @@ export function mount(options: {docs: APIDocument[]; element: HTMLElement | null
 
   root.render(
     <StrictMode>
-      <Root docs={docs} />
+      <Root docs={docs} releaseVersion={releaseVersion} />
     </StrictMode>
   )
 }
