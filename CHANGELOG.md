@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.31](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-06-21)
+
+### Features
+
+- support displaying function overloads ([#18](https://github.com/sanity-io/tsdoc/issues/18)) ([861dd8f](https://github.com/sanity-io/tsdoc/commit/861dd8f0d5bce89c0ce8e904c4f8095b60f7b38a))
+
+### Bug Fixes
+
+- various search UI issues ([#19](https://github.com/sanity-io/tsdoc/issues/19)) ([4dad97e](https://github.com/sanity-io/tsdoc/commit/4dad97ed3e0d3670f1710686165e39d8c1f34313))
+
 ## [1.0.0-alpha.30](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.29...v1.0.0-alpha.30) (2023-06-20)
 
 ### Features
