@@ -55,12 +55,12 @@ export function TSMethodMember(props: {
 
       {/* Parameters */}
       {data.parameters && data.parameters.length > 0 && (
-        <Card borderTop padding={3} tone="inherit">
-          <Box marginBottom={3}>
+        <Card borderTop padding={4} tone="inherit">
+          <Box marginBottom={4}>
             <Label muted>Parameters</Label>
           </Box>
 
-          <Card>
+          <Stack space={3}>
             {data.parameters.map((param, idx) => {
               const paramComment = comment?.parameters?.[idx]?.content
 
@@ -83,10 +83,9 @@ export function TSMethodMember(props: {
                 </Card>
               )
             })}
-          </Card>
+          </Stack>
         </Card>
       )}
-
       {/* Return type */}
       {data.returnType && data.returnType.length > 0 && (
         <Card borderTop padding={3} tone="inherit">
