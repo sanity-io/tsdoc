@@ -49,12 +49,19 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
 
   const isSelected = `${basePath}${path}` === linkProps.href
 
+  const handleKeyPress = (event: KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      linkProps.onClick(event)
+    }
+  }
+
   return (
     <SyntaxTreeItem
       {...linkProps}
       fontSize={fontSize}
       padding={2}
       selected={isSelected}
+      tabIndex={0}
       text={
         <Flex>
           <Box flex={1}>
@@ -63,6 +70,7 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
           {tag}
         </Flex>
       }
+      onKeyPress={handleKeyPress}
       tone={tone}
     />
   )

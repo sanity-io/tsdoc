@@ -17,6 +17,7 @@ export function GroupedMembersTree(props: {
     <>
       {exp.reactComponents.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -35,6 +36,7 @@ export function GroupedMembersTree(props: {
 
       {exp.reactHooks.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -53,6 +55,7 @@ export function GroupedMembersTree(props: {
 
       {exp.classes.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -71,6 +74,7 @@ export function GroupedMembersTree(props: {
 
       {exp.functions.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -89,6 +93,7 @@ export function GroupedMembersTree(props: {
 
       {exp.variables.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -107,6 +112,7 @@ export function GroupedMembersTree(props: {
 
       {exp.enums.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -125,6 +131,7 @@ export function GroupedMembersTree(props: {
 
       {exp.interfaces.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -143,6 +150,7 @@ export function GroupedMembersTree(props: {
 
       {exp.namespaces.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
@@ -161,6 +169,7 @@ export function GroupedMembersTree(props: {
 
       {exp.typeAliases.length > 0 && (
         <TreeItemFocus
+          tabIndex={0}
           expanded={
             expandSubPackages
               ? expandSubPackages
