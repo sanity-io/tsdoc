@@ -1,7 +1,7 @@
 import {APIMember, APIMethod} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
-import {CommentBox, CommentSummary} from '../../comment'
+import {CommentBox, CommentReturnType, CommentSummary} from '../../comment'
 import {PortableText} from '../../comment/PortableText'
 import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
@@ -97,9 +97,9 @@ export function TSMethodMember(props: {
           <Stack space={3}>
             <TSDocCode deindent tokens={data.returnType} />
 
-            {comment?.returns?.content && (
+            {comment && (
               <CommentBox>
-                <PortableText blocks={comment.returns.content} />
+                <CommentReturnType data={comment} />
               </CommentBox>
             )}
           </Stack>
