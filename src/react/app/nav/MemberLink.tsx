@@ -37,11 +37,19 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
 
   const tag = useMemo(() => {
     if (data.releaseTag === 'beta') {
-      return <SyntaxText $syntax="string">@beta</SyntaxText>
+      return (
+        <Box marginLeft={1}>
+          <SyntaxText $syntax="string">@beta</SyntaxText>
+        </Box>
+      )
     }
 
     if (data.releaseTag === 'alpha') {
-      return <SyntaxText $syntax="builtin">@alpha</SyntaxText>
+      return (
+        <Box marginLeft={1}>
+          <SyntaxText $syntax="builtin">@alpha</SyntaxText>
+        </Box>
+      )
     }
 
     return null
