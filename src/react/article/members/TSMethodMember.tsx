@@ -2,6 +2,7 @@ import {APIMember, APIMethod} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {CommentBox, CommentSummary} from '../../comment'
+import {PortableText} from '../../comment/PortableText'
 import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
@@ -59,11 +60,30 @@ export function TSMethodMember(props: {
             <Label muted>Parameters</Label>
           </Box>
 
-          <Stack space={3}>
-            {data.parameters.map((param) => (
-              <TSDocCode deindent key={param._key} prefix={`${param.name}: `} tokens={param.type} />
-            ))}
-          </Stack>
+          <Card>
+            {data.parameters.map((param, idx) => {
+              const paramComment = comment?.parameters?.[idx]?.content
+
+              return (
+                <Card
+                  paddingY={3}
+                  borderBottom={data.parameters.length - 1 !== idx}
+                  key={param._key}
+                >
+                  <TSDocCode
+                    deindent
+                    prefix={`${param.name}${param.isOptional ? '?' : ''}: `}
+                    tokens={param.type}
+                  />
+                  {paramComment && (
+                    <CommentBox paddingY={3}>
+                      <PortableText blocks={paramComment} />
+                    </CommentBox>
+                  )}
+                </Card>
+              )
+            })}
+          </Card>
         </Card>
       )}
 
@@ -74,7 +94,15 @@ export function TSMethodMember(props: {
             <Label muted>Returns</Label>
           </Box>
 
-          <TSDocCode deindent tokens={data.returnType} />
+          <Stack space={3}>
+            <TSDocCode deindent tokens={data.returnType} />
+
+            {comment?.returns?.content && (
+              <CommentBox>
+                <PortableText blocks={comment.returns.content} />
+              </CommentBox>
+            )}
+          </Stack>
         </Card>
       )}
     </Card>
