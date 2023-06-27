@@ -8,7 +8,7 @@ import {
   APIVariable,
 } from '@sanity/tsdoc'
 import {TSDocExportData} from '@sanity/tsdoc/store'
-import {Box, Card, Flex, Layer, Spinner, Stack, Text, Tree} from '@sanity/ui'
+import {Box, Card, Flex, Layer, Spinner, Stack, Text, Tree, TreeItemProps} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {SyntaxText} from '../../components/ColoredCode'
 import {Size, useSize} from '../../lib/ui'
@@ -47,11 +47,15 @@ export interface TSDocNavExportData
 }
 
 /** @beta */
-export function TSDocNav(props: {
+export interface TSDocNavProps {
   showVersionMenu?: boolean
   expandPackages?: boolean
   expandSubPackages?: boolean
-}): ReactElement {
+  memberLinkAs?: TreeItemProps['linkAs']
+}
+
+/** @beta */
+export function TSDocNav(props: TSDocNavProps): ReactElement {
   return (
     <Size delta={-1}>
       <TSDocNavView {...props} />
@@ -66,16 +70,12 @@ interface ExportData {
   versions: TSDocNavExportData[]
 }
 
-function TSDocNavView(props: {
-  showVersionMenu?: boolean
-  expandPackages?: boolean
-  expandSubPackages?: boolean
-}): ReactElement {
+function TSDocNavView(props: TSDocNavProps): ReactElement {
   const {params} = useTSDoc()
   const _exports = useExports()
   const packages = usePackages()
   const fontSize = useSize()
-  const {showVersionMenu, expandPackages, expandSubPackages} = props
+  const {showVersionMenu, expandPackages, expandSubPackages, memberLinkAs} = props
 
   const currentPkg = packages.data?.find(
     (p) => p.scope === params.packageScope && p.name === params.packageName
@@ -197,7 +197,11 @@ function TSDocNavView(props: {
                   </SearchWrapper>
                 )}
                 {exports.length === 1 ? (
-                  <SingleExportTree currentVersion={currentVersion} exp={exports[0]!} />
+                  <SingleExportTree
+                    currentVersion={currentVersion}
+                    exp={exports[0]!}
+                    memberLinkAs={memberLinkAs}
+                  />
                 ) : (
                   <MultiExportTree
                     currentExportName={currentExportName}
@@ -206,6 +210,7 @@ function TSDocNavView(props: {
                     fontSize={fontSize}
                     expandPackages={expandPackages}
                     expandSubPackages={expandSubPackages}
+                    memberLinkAs={memberLinkAs}
                   />
                 )}
               </Stack>
@@ -217,8 +222,13 @@ function TSDocNavView(props: {
   )
 }
 
-function SingleExportTree(props: {currentVersion?: string; exp: ExportData}) {
-  const {currentVersion, exp} = props
+interface SingleExportTreeProps extends Pick<TSDocNavProps, 'memberLinkAs'> {
+  currentVersion?: string
+  exp: ExportData
+}
+
+function SingleExportTree(props: SingleExportTreeProps) {
+  const {currentVersion, exp, memberLinkAs} = props
 
   const versionedExports = useMemo(
     () => exp.versions.filter((d) => d.release.version === currentVersion),
@@ -228,22 +238,29 @@ function SingleExportTree(props: {currentVersion?: string; exp: ExportData}) {
   return (
     <TreeNav>
       {versionedExports.map((exp) => (
-        <GroupedMembersTree exp={exp} key={exp.release.version} />
+        <GroupedMembersTree exp={exp} key={exp.release.version} memberLinkAs={memberLinkAs} />
       ))}
     </TreeNav>
   )
 }
 
-function MultiExportTree(props: {
+interface MultiExportTreeProps extends Omit<TSDocNavProps, 'showVersionMenu'> {
   currentExportName?: string | null
   currentVersion?: string
   fontSize?: number[]
   exports: ExportData[]
-  expandPackages?: boolean
-  expandSubPackages?: boolean
-}) {
-  const {currentExportName, currentVersion, fontSize, exports, expandPackages, expandSubPackages} =
-    props
+}
+
+function MultiExportTree(props: MultiExportTreeProps) {
+  const {
+    currentExportName,
+    currentVersion,
+    fontSize,
+    exports,
+    expandPackages,
+    expandSubPackages,
+    memberLinkAs,
+  } = props
 
   const versionedExports = useMemo(
     () => exports.filter((data) => data.versions.some((v) => v.release.version === currentVersion)),
@@ -268,6 +285,7 @@ function MultiExportTree(props: {
                 exp={exp}
                 key={exp.release.version}
                 expandSubPackages={expandSubPackages}
+                memberLinkAs={memberLinkAs}
               />
             ))}
         </TreeItemFocus>

@@ -1,6 +1,6 @@
 import {APIMember, APINamespace} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
-import {Box, CardTone, Flex} from '@sanity/ui'
+import {Box, CardTone, Flex, useTree, type TreeItemProps} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {SyntaxText} from '../../components/ColoredCode'
 import {useSize} from '../../lib/ui'
@@ -9,10 +9,15 @@ import {useMemberLink} from '../useMemberLink'
 import {useTSDoc} from '../useTSDoc'
 import {SyntaxTreeItem} from './SyntaxTreeItem'
 
-export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): ReactElement {
-  const {data, namespace} = props
+export function MemberLink(props: {
+  data: APIMember
+  namespace?: APINamespace
+  linkAs?: TreeItemProps['linkAs']
+}): ReactElement {
+  const {data, namespace, linkAs} = props
   const {basePath, path} = useTSDoc()
   const fontSize = useSize()
+  const tree = useTree()
 
   const params: TSDocAppParams = useMemo(
     () => ({
@@ -51,10 +56,13 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
 
   return (
     <SyntaxTreeItem
-      {...linkProps}
+      // {...linkProps}
+      href={linkProps.href}
       fontSize={fontSize}
       padding={2}
       selected={isSelected}
+      linkAs={linkAs}
+      $level={tree.level}
       text={
         <Flex>
           <Box flex={1}>

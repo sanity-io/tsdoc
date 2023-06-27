@@ -1,3 +1,4 @@
+import type {TreeItemProps} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {useSize} from '../../lib/ui'
 import {useTSDoc} from '../useTSDoc'
@@ -8,8 +9,9 @@ import {TSDocNavExportData} from './TSDocNav'
 export function GroupedMembersTree(props: {
   exp: TSDocNavExportData
   expandSubPackages?: boolean
+  memberLinkAs?: TreeItemProps['linkAs']
 }): ReactElement {
-  const {exp, expandSubPackages} = props
+  const {exp, expandSubPackages, memberLinkAs} = props
   const {params} = useTSDoc()
   const fontSize = useSize()
 
@@ -28,7 +30,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.reactComponents.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -46,7 +48,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.reactHooks.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -64,7 +66,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.classes.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -82,7 +84,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.functions.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -100,7 +102,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.variables.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -118,7 +120,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.enums.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -136,7 +138,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.interfaces.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -154,7 +156,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.namespaces.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
@@ -172,7 +174,7 @@ export function GroupedMembersTree(props: {
           weight="semibold"
         >
           {exp.typeAliases.map((member) => (
-            <MemberLink data={member} key={member.name} />
+            <MemberLink data={member} key={member.name} linkAs={memberLinkAs} />
           ))}
         </TreeItemFocus>
       )}
