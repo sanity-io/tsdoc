@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.32](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-06-27)
+
+### Bug Fixes
+
+- remove duplicate interface description ([#21](https://github.com/sanity-io/tsdoc/issues/21)) ([08c1eb9](https://github.com/sanity-io/tsdoc/commit/08c1eb99e09d9ed0ad9ca2180031b702fd4d0e14))
+
 ## [1.0.0-alpha.31](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.30...v1.0.0-alpha.31) (2023-06-21)
 
 ### Features
