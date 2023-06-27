@@ -68,8 +68,6 @@ export function InterfaceContent(props: {data: APIInterface}): ReactElement {
 
   return (
     <>
-      {comment && <CommentSummary data={comment} />}
-
       <H size={[-1, 0, 1, 2]}>Signature</H>
       <Card border overflow="auto" padding={3} radius={3}>
         <Code language="typescript" size={useTextSize([-1, -1, 0])}>
