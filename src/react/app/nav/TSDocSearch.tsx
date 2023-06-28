@@ -107,11 +107,7 @@ const SearchOption = forwardRef(function SearchOption(
                 latestMember?.exportPath === '.'
                   ? undefined
                   : latestMember?.exportPath.replace('./', '/'),
-              ]
-                .filter(Boolean)
-                .join('/'),
-              '@',
-              latestMember?.releaseVersion || '0.0.0',
+              ].filter(Boolean),
             ]}
           </UnformattedCode>
         </Text>
