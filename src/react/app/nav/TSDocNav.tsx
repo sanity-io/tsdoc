@@ -81,11 +81,13 @@ function TSDocNavView(props: {
     (p) => p.scope === params.packageScope && p.name === params.packageName
   )
 
-  const currentRelease = currentPkg?.releases.find((r) =>
-    params.releaseVersion
-      ? r.version === params.releaseVersion
-      : r.version == currentPkg.latestRelease.version
-  )
+  const currentRelease = currentPkg?.releases.length
+    ? currentPkg?.releases.find((r) =>
+        params.releaseVersion
+          ? r.version === params.releaseVersion
+          : r.version == currentPkg.latestRelease.version
+      )
+    : currentPkg?.latestRelease
 
   const currentVersion = currentRelease?.version
 

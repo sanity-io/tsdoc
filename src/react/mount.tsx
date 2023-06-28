@@ -16,8 +16,8 @@ function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
   const [path, setPath] = useState<string>(() => history.location.pathname)
   const basePath = undefined
   const params: TSDocAppParams | undefined = useMemo(
-    () => parsePath(path, {basePath}),
-    [basePath, path]
+    () => parsePath(path, {basePath, version: releaseVersion}),
+    [basePath, path, releaseVersion]
   )
 
   const [member, setMember] = useState<TSDocAPIMember[] | undefined | null>(null)
