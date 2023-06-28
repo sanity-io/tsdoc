@@ -13,6 +13,7 @@ export function TSPropertySignatureMember(props: {
 }): ReactElement {
   const {data} = props
   const {comment, inheritedFrom, isOptional, name, type} = data
+  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   return (
     <Card border overflow="auto" radius={3} tone="inherit">
@@ -20,6 +21,12 @@ export function TSPropertySignatureMember(props: {
         {data.releaseTag && data.releaseTag !== 'public' && (
           <Box flex="none">
             <ReleaseBadge releaseTag={data.releaseTag} />
+          </Box>
+        )}
+
+        {hasExperimentalTag && (
+          <Box flex="none">
+            <ReleaseBadge releaseTag="experimental" />
           </Box>
         )}
 

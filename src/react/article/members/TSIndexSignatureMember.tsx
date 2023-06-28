@@ -11,6 +11,8 @@ export function TSIndexSignatureMember(props: {
   level?: number
 }): ReactElement {
   const {data} = props
+  const {comment} = data
+  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   return (
     <Card border overflow="auto" radius={3}>
@@ -18,6 +20,12 @@ export function TSIndexSignatureMember(props: {
         <Box flex="none">
           <ReleaseBadge releaseTag={data.releaseTag} />
         </Box>
+
+        {hasExperimentalTag && (
+          <Box flex="none">
+            <ReleaseBadge releaseTag="experimental" />
+          </Box>
+        )}
 
         <Box flex="none">
           <Code as="h3" language="ts">

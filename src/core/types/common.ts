@@ -3,7 +3,7 @@ import {APIMember} from './members'
 import {TSDocComment} from './tsdoc'
 
 /** @public */
-export type APIReleaseTag = 'internal' | 'alpha' | 'beta' | 'public'
+export type APIReleaseTag = 'internal' | 'alpha' | 'beta' | 'public' | 'experimental'
 
 /** @public */
 export interface APIToken {

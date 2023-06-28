@@ -17,6 +17,7 @@ export function TSCallSignatureMember(props: {
     // fontSize = 2, level = 1
   } = props
   const {comment, parameters} = data
+  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   return (
     <Card border overflow="hidden" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
@@ -24,6 +25,12 @@ export function TSCallSignatureMember(props: {
         <Box flex="none">
           <ReleaseBadge releaseTag={data.releaseTag} />
         </Box>
+
+        {hasExperimentalTag && (
+          <Box flex="none">
+            <ReleaseBadge releaseTag="experimental" />
+          </Box>
+        )}
 
         <Box flex={1} padding={1}>
           <Code

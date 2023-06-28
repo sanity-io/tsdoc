@@ -23,6 +23,7 @@ export function TSMethodSignatureMember(props: {
 
     return t
   }, [data, member])
+  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   return (
     <Card border overflow="hidden" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
@@ -30,6 +31,12 @@ export function TSMethodSignatureMember(props: {
         <Box flex="none">
           <ReleaseBadge releaseTag={data.releaseTag} />
         </Box>
+
+        {hasExperimentalTag && (
+          <Box flex="none">
+            <ReleaseBadge releaseTag="experimental" />
+          </Box>
+        )}
 
         <Box flex="none" padding={1}>
           <Code

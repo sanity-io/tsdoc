@@ -15,6 +15,7 @@ export function TSContructorMember(props: {
   const {data, member} = props
   const {comment, parameters} = data
   // const fontSize = useSize()
+  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   const title = `new ${member.name}(${parameters.map((p) => p.name).join(', ') || ''})`
 
@@ -24,6 +25,12 @@ export function TSContructorMember(props: {
         <Box flex="none">
           <ReleaseBadge releaseTag={data.releaseTag} />
         </Box>
+
+        {hasExperimentalTag && (
+          <Box flex="none">
+            <ReleaseBadge releaseTag="experimental" />
+          </Box>
+        )}
 
         <Box flex={1} padding={1}>
           <Code language="ts">{title}</Code>

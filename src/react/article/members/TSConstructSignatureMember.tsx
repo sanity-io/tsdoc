@@ -11,6 +11,7 @@ export function TSConstructSignatureMember(props: {
 }): ReactElement {
   const {data} = props
   const {comment, inheritedFrom, releaseTag} = data
+  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   return (
     <Card border overflow="auto" radius={3}>
@@ -18,6 +19,12 @@ export function TSConstructSignatureMember(props: {
         <Box flex="none">
           <ReleaseBadge releaseTag={releaseTag} />
         </Box>
+
+        {hasExperimentalTag && (
+          <Box flex="none">
+            <ReleaseBadge releaseTag="experimental" />
+          </Box>
+        )}
 
         <Box flex="none">
           <Code as="h3" language="ts">

@@ -10,6 +10,7 @@ export function TSParamMember(props: {data: APIParameter}): ReactElement {
   const {data} = props
   const {comment, name, type, releaseTag, isOptional} = data
   const codePrefix = `${name}${isOptional ? '?' : ''}: `
+  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   return (
     <Stack marginTop={useSpace([1, 1, 3])} space={useSpace([1, 2, 3])}>
@@ -18,6 +19,12 @@ export function TSParamMember(props: {data: APIParameter}): ReactElement {
           {releaseTag && releaseTag !== 'public' && (
             <Box flex="none">
               <ReleaseBadge releaseTag={releaseTag} />
+            </Box>
+          )}
+
+          {hasExperimentalTag && (
+            <Box flex="none">
+              <ReleaseBadge releaseTag="experimental" />
             </Box>
           )}
 
