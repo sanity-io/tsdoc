@@ -32,7 +32,6 @@ function Member(props: {data: APIMemberWithInheritance; member: APIMember}) {
   const {data, member} = props
   const textSize = useTextSize([-1, 0, 1])
 
-  console.log(data._type)
   if (data._type === 'api.callSignature') {
     return <TSCallSignatureMember data={data} />
   }
