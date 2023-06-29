@@ -76,7 +76,11 @@ export function _compileFunctionDefinition(data: APIFunction): string {
 
 /** @internal */
 export function _compileTokens(tokens: APIToken[]): string {
-  return tokens.map((t) => t.text).join('')
+  return tokens
+    .map((t) => t.text)
+    .join('')
+    .replace(/History_2/g, 'History')
+    .replace(/React_2/g, 'React')
 }
 
 /** @internal */
