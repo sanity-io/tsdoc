@@ -7,7 +7,7 @@ import {BaseInterface} from './interface'
  * @param options - Base Interface Link out
  *  {@link BaseInterface | Custom Text}
  *
- * @returns string
+ * @returns string with id and foo
  */
 export function testFunctionLinkWithName(options: BaseInterface): string {
   return `${options.id} ${options.foo}`

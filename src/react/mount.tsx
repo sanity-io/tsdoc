@@ -20,7 +20,7 @@ function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
     [basePath, path, releaseVersion]
   )
 
-  const [member, setMember] = useState<TSDocAPIMember[] | undefined | null>(null)
+  const [members, setMembers] = useState<TSDocAPIMember[] | undefined | null>(null)
 
   // Listen to history changes
   useEffect(() => history.listen((update) => setPath(update.location.pathname)), [history])
@@ -29,14 +29,14 @@ function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
   useEffect(() => history.push({pathname: path || ''}), [path, history])
 
   useEffect(() => {
-    if (params) store.member.get(params).then(setMember)
+    if (params) store.member.get(params).then(setMembers)
   }, [params, store])
 
   useEffect(() => {
-    if (member) {
-      document.title = `${member?.[0]?.name} | ${member?.[0]?.export.name}@${member?.[0]?.release.version}`
+    if (members?.length) {
+      document.title = `${members?.[0]?.name} | ${members?.[0]?.export.name}@${members?.[0]?.release.version}`
     }
-  }, [member])
+  }, [members])
 
   return (
     <ThemeProvider scheme={scheme} theme={studioTheme}>

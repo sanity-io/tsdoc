@@ -38,7 +38,7 @@ export function TSDocApp(props: TSDocAppProps): ReactElement {
   const {basePath = '', onPathChange, path, store, releaseVersion = ''} = props
 
   const params: TSDocAppParams | undefined = useMemo(
-    () => ({...parsePath(path, {basePath}), releaseVersion}),
+    () => parsePath(path, {basePath, version: releaseVersion}),
     [basePath, path, releaseVersion]
   )
 
