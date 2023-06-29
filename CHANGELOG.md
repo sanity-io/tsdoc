@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.33](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2023-06-29)
+
+### Bug Fixes
+
+- fix playground so it works in monorepo ([#24](https://github.com/sanity-io/tsdoc/issues/24)) ([c90d532](https://github.com/sanity-io/tsdoc/commit/c90d532dbd4569611708298b3b9a797e08ea39a7))
+
 ## [1.0.0-alpha.32](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.31...v1.0.0-alpha.32) (2023-06-27)
 
 ### Bug Fixes
