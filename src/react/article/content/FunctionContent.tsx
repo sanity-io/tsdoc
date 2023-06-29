@@ -66,7 +66,7 @@ export function FunctionContent(props: {data: APIFunction}): ReactElement {
     <>
       <H size={[-1, 0, 1, 2]}>Signature</H>
 
-      <Card border padding={3} radius={2} overflow="auto" tone="inherit">
+      <Card border padding={4} radius={3} overflow="auto" tone="inherit">
         <TSDocCode prefix={codePrefix} tokens={returnType} />
       </Card>
 

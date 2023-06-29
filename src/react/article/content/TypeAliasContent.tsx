@@ -16,7 +16,7 @@ export function TypeAliasContent(props: {data: APITypeAlias}): ReactElement {
         <>
           <H size={[-1, 0, 1, 2]}>Signature</H>
 
-          <Card border overflow="auto" padding={3} radius={3} tone="inherit">
+          <Card border overflow="auto" padding={4} radius={3} tone="inherit">
             <TSDocCode
               prefix={`type ${name}${_compileTypeParameters(typeParameters)} = `}
               tokens={type}

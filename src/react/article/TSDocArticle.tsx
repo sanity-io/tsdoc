@@ -80,7 +80,7 @@ export function TSDocArticle(props: {data: APIMember & {versions: string[]}}): R
           <Box marginTop={useSpace([3, 3, 4])}>
             <H size={[-1, 0, 1, 2]}>Import</H>
 
-            <Card border overflow="auto" padding={3} radius={3} tone="inherit">
+            <Card border overflow="auto" padding={4} radius={3} tone="inherit">
               <Code language="typescript" size={useTextSize([-1, -1, 0])}>{`import {${
                 isType ? `type ` : ``
               }${data.name}} from '${data.export?.name}'`}</Code>

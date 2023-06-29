@@ -51,10 +51,10 @@ export function TSContructorMember(props: {
 
       {/* Parameters */}
       {parameters && parameters.length > 0 && (
-        <Card borderTop overflow="auto" padding={3} tone="inherit">
+        <Card borderTop overflow="auto" padding={4} tone="inherit">
           <Label muted>Parameters</Label>
 
-          <Stack marginTop={3} space={3}>
+          <Stack marginTop={4} space={3}>
             {data.parameters.map((param) => (
               <TSDocCode deindent key={param._key} prefix={`${param.name}: `} tokens={param.type} />
             ))}

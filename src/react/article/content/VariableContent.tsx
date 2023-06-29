@@ -27,7 +27,7 @@ export function VariableContent(props: {data: APIVariable}): ReactElement {
       {isReactComponentType && (
         <>
           <H size={[-1, 0, 1, 2]}>Signature</H>
-          <Card border padding={3} radius={2} overflow="auto" tone="inherit">
+          <Card border padding={4} radius={3} overflow="auto" tone="inherit">
             <TSDocCode tokens={type} />
           </Card>
         </>
@@ -76,9 +76,11 @@ export function VariableContent(props: {data: APIVariable}): ReactElement {
       ) : null}
 
       {!isReactComponentType && type && (
-        <Card border marginTop={5} overflow="auto" padding={4} radius={2} tone="inherit">
-          <Box marginBottom={3}>
-            <Label muted>Type</Label>
+        <Card border marginTop={5} overflow="auto" padding={4} radius={3} tone="inherit">
+          <Box marginBottom={4}>
+            <Label muted weight="semibold">
+              Type
+            </Label>
           </Box>
 
           <Text muted>

@@ -40,8 +40,8 @@ function CodeBlock(props: {value: {code?: string; language?: string}}) {
       border
       marginY={useSpace([1, 1, 2, 3])}
       overflow="auto"
-      padding={3}
-      radius={2}
+      padding={4}
+      radius={3}
       tone="inherit"
     >
       <Code language={CODE_LANGUAGES[language] || language} size={useTextSize([-1, -1, 0])}>

@@ -63,8 +63,8 @@ export function TSMethodSignatureMember(props: {
 
       {/* Parameters */}
       {data.parameters && data.parameters.length > 0 && (
-        <Card overflow="auto" padding={3} tone="inherit">
-          <Box marginBottom={3}>
+        <Card overflow="auto" padding={4} tone="inherit">
+          <Box marginBottom={4}>
             <Label>Parameters</Label>
           </Box>
 

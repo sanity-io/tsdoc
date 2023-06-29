@@ -95,8 +95,8 @@ export function TSMethodMember(props: {
       )}
       {/* Return type */}
       {data.returnType && data.returnType.length > 0 && (
-        <Card borderTop padding={3} tone="inherit">
-          <Box marginBottom={3}>
+        <Card borderTop padding={4} tone="inherit">
+          <Box marginBottom={4}>
             <Label muted>Returns</Label>
           </Box>
 
