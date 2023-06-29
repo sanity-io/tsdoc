@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.34](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) (2023-06-29)
+
+### Features
+
+- support showing doc comments for classes and functions ([#22](https://github.com/sanity-io/tsdoc/issues/22)) ([442960c](https://github.com/sanity-io/tsdoc/commit/442960cfc24bbdeb8e0d663401abfa08f827101e))
+
 ## [1.0.0-alpha.33](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.32...v1.0.0-alpha.33) (2023-06-29)
 
 ### Bug Fixes
