@@ -12,7 +12,7 @@ export function H(
 
   return (
     <Box
-      marginTop={useSpace(level === 1 ? [1, 1, 2, 3] : [3, 3, 4, 5])}
+      marginTop={useSpace(level === 1 ? [1, 1, 2, 3] : [2, 2, 3, 4])}
       marginBottom={useSpace([2, 2, 2, 3])}
     >
       <Heading as={`h${level}` as 'h1'} {...restProps} size={useHeadingSize(sizeProp)} />
