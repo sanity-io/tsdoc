@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /** @public */
 export class TestClass<T = any> {
   private $private: boolean

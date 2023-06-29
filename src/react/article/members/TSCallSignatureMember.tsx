@@ -2,10 +2,10 @@ import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {APICallSignature} from '../../../core'
 import {CommentBox, CommentSummary} from '../../comment'
-import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
+import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSCallSignatureMember(props: {
   data: APIMemberWithInheritance<APICallSignature>
@@ -16,23 +16,14 @@ export function TSCallSignatureMember(props: {
     data,
     // fontSize = 2, level = 1
   } = props
-  const {comment, parameters} = data
-  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
+  const {comment, parameters, releaseTag} = data
 
   return (
     <Card border overflow="hidden" tone={comment?.deprecated ? 'critical' : 'inherit'}>
       <Flex align="flex-start" gap={1} padding={2}>
-        <Box flex="none">
-          <ReleaseBadge releaseTag={data.releaseTag} />
-        </Box>
+        <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} />
 
-        {hasExperimentalTag && (
-          <Box flex="none">
-            <ReleaseBadge releaseTag="experimental" />
-          </Box>
-        )}
-
-        <Box flex={1} padding={1}>
+        <Box flex={1}>
           <Code
             // as={`h${level}` as any}
             language="ts"

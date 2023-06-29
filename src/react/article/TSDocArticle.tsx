@@ -4,9 +4,9 @@ import {ReactElement} from 'react'
 import {TSDocMemberTitle} from '../app'
 import {CommentDeprecatedCallout, CommentSummary} from '../comment'
 import {SyntaxText} from '../components/ColoredCode'
-import {ReleaseBadge} from '../components/ReleaseBadge'
 import {H, Level, Size, useSpace, useTextSize} from '../lib/ui'
 import {ReferenceContent} from './content'
+import {TSMemberReleaseTag} from './members/TSMemberReleaseTag'
 
 const TYPE_NAME: Record<APIMember['_type'], string> = {
   'api.class': 'class',
@@ -47,6 +47,7 @@ export function TSDocArticle(props: {data: APIMember & {versions: string[]}}): R
   const {data} = props
   const isType = ['api.interface', 'api.namespace', 'api.typeAlias'].includes(data._type)
   const typeName = _getTypeName(data)
+  const {comment, releaseTag} = data
 
   return (
     <Box
@@ -56,10 +57,8 @@ export function TSDocArticle(props: {data: APIMember & {versions: string[]}}): R
       paddingY={useSpace([3, 3, 3, 4])}
     >
       <Container width={2}>
-        <Flex gap={1}>
-          <Box flex="none">
-            <ReleaseBadge releaseTag={data.releaseTag} />
-          </Box>
+        <Flex align="center" gap={1}>
+          <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} />
 
           <Box flex="none" padding={1}>
             <Text size={useTextSize([-1, -1, 0])}>

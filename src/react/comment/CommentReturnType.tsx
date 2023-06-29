@@ -1,5 +1,6 @@
 import {TSDocComment} from '@sanity/tsdoc'
 import {ReactElement} from 'react'
+import {CommentBox} from './CommentBox'
 import {PortableText} from './PortableText'
 
 export function CommentReturnType(props: {data: TSDocComment}): ReactElement {
@@ -7,5 +8,9 @@ export function CommentReturnType(props: {data: TSDocComment}): ReactElement {
 
   if (!returns?.content) return <></>
 
-  return <PortableText blocks={returns.content} />
+  return (
+    <CommentBox>
+      <PortableText blocks={returns.content} />
+    </CommentBox>
+  )
 }

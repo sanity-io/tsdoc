@@ -1,9 +1,9 @@
 import {APIFunction} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
-import {Box, Card} from '@sanity/ui'
+import {Box, Card, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {TSDocSymbol, TSDocSymbolPreview} from '../../app'
-import {CommentBox, CommentExampleBlocks, CommentRemarks, CommentReturnType} from '../../comment'
+import {CommentExampleBlocks, CommentRemarks, CommentReturnType} from '../../comment'
 import {H, P} from '../../lib/ui'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
@@ -117,17 +117,16 @@ export function FunctionContent(props: {data: APIFunction}): ReactElement {
           <Card
             border
             overflow="hidden"
+            padding={4}
             radius={3}
             tone={comment?.deprecated ? 'critical' : 'inherit'}
           >
-            <Box padding={3}>
-              <TSDocCode tokens={returnType} />
-            </Box>
-            {comment && (
-              <CommentBox padding={3}>
-                <CommentReturnType data={comment} />
-              </CommentBox>
-            )}
+            <Stack space={4}>
+              <Box>
+                <TSDocCode tokens={returnType} />
+              </Box>
+              {comment && <CommentReturnType data={comment} />}
+            </Stack>
           </Card>
         </>
       ) : null}

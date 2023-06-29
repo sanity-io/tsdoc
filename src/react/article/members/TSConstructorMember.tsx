@@ -2,43 +2,40 @@ import {APIConstructor, APIMember} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {CommentBox, CommentSummary} from '../../comment'
-import {ReleaseBadge} from '../../components/ReleaseBadge'
 // import {useSize} from '../../lib/ui'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
+import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSContructorMember(props: {
   data: APIMemberWithInheritance<APIConstructor>
   member: APIMember
 }): ReactElement {
   const {data, member} = props
-  const {comment, parameters} = data
+  const {comment, parameters, releaseTag} = data
   // const fontSize = useSize()
-  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   const title = `new ${member.name}(${parameters.map((p) => p.name).join(', ') || ''})`
 
   return (
-    <Card border overflow="hidden" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
-      <Flex align="flex-start" gap={1} padding={2}>
-        <Box flex="none">
-          <ReleaseBadge releaseTag={data.releaseTag} />
-        </Box>
+    <Card
+      border
+      overflow="hidden"
+      padding={4}
+      radius={3}
+      tone={comment?.deprecated ? 'critical' : 'inherit'}
+    >
+      <Flex align="flex-start" gap={1}>
+        <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} />
 
-        {hasExperimentalTag && (
-          <Box flex="none">
-            <ReleaseBadge releaseTag="experimental" />
-          </Box>
-        )}
-
-        <Box flex={1} padding={1}>
+        <Box flex={1} paddingBottom={4}>
           <Code language="ts">{title}</Code>
         </Box>
       </Flex>
 
       {comment?.summary && (
-        <CommentBox padding={3}>
+        <CommentBox>
           <CommentSummary data={comment} />
         </CommentBox>
       )}

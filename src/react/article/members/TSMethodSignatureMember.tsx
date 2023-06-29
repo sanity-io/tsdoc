@@ -2,17 +2,17 @@ import {APIMember, APIMethodSignature} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {CommentBox, CommentSummary} from '../../comment'
-import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
+import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSMethodSignatureMember(props: {
   data: APIMemberWithInheritance<APIMethodSignature>
   member: APIMember
 }): ReactElement {
   const {data, member} = props
-  const {comment} = data
+  const {comment, releaseTag} = data
 
   const title = useMemo(() => {
     let t = member.name as string
@@ -23,22 +23,13 @@ export function TSMethodSignatureMember(props: {
 
     return t
   }, [data, member])
-  const hasExperimentalTag = comment?.modifierTags?.find((tag) => tag.name === '@experimental')
 
   return (
     <Card border overflow="hidden" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
       <Flex gap={1} padding={2}>
+        <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} />
+
         <Box flex="none">
-          <ReleaseBadge releaseTag={data.releaseTag} />
-        </Box>
-
-        {hasExperimentalTag && (
-          <Box flex="none">
-            <ReleaseBadge releaseTag="experimental" />
-          </Box>
-        )}
-
-        <Box flex="none" padding={1}>
           <Code
             // as={`h${level}` as any}
             language="ts"
