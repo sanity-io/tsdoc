@@ -1,7 +1,7 @@
 import {APIMember, APINamespace} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Box, CardTone, Flex} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {ReactElement, useCallback, useMemo} from 'react'
 import {SyntaxText} from '../../components/ColoredCode'
 import {useSize} from '../../lib/ui'
 import {TSDocMemberTitle} from '../TSDocMemberTitle'
@@ -57,11 +57,14 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
 
   const isSelected = `${basePath}${path}` === linkProps.href
 
-  const handleKeyPress = (event: KeyboardEvent) => {
-    if (event.key === 'Enter') {
-      linkProps.onClick(event)
-    }
-  }
+  const handleKeyPress = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === 'Enter') {
+        linkProps.onClick(event)
+      }
+    },
+    [linkProps]
+  )
 
   return (
     <SyntaxTreeItem
