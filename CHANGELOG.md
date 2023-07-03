@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.35](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) (2023-07-03)
+
+### Features
+
+- add labels to badges on articles ([#25](https://github.com/sanity-io/tsdoc/issues/25)) ([5d8cd91](https://github.com/sanity-io/tsdoc/commit/5d8cd910b7e5adf934afcf43d598f7f6cf4b19ac))
+
 ## [1.0.0-alpha.34](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.33...v1.0.0-alpha.34) (2023-06-29)
 
 ### Features
