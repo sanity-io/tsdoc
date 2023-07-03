@@ -25,7 +25,7 @@ export function TSPropertySignatureMember(props: {
 
       {comment?.summary && (
         <Size delta={-1}>
-          <CommentBox padding={3}>
+          <CommentBox paddingTop={3}>
             {/* TODO: CommentDeprecatedCallout */}
             <CommentSummary data={comment} />
             {/* TODO: CommentRemarks */}
@@ -35,7 +35,7 @@ export function TSPropertySignatureMember(props: {
       )}
 
       {inheritedFrom && (
-        <Card borderTop padding={3} tone="inherit">
+        <Card borderTop marginTop={3} paddingTop={3} tone="inherit">
           <MemberInheritedFrom data={inheritedFrom} />
         </Card>
       )}
