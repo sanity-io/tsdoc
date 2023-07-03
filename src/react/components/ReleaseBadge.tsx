@@ -22,7 +22,7 @@ export function ReleaseBadge(props: {
   }, [releaseTag])
 
   const explanation: string = useMemo(() => {
-    if (releaseTag === 'alpha')
+    if (releaseTag === 'alpha' || releaseTag === 'experimental')
       return `This API is in very early stages of release. Breaking changes are not only expected but very likely.\n We strongly don't recommend using it in production.`
     if (releaseTag === 'beta')
       return `This API is in early stages of release. Breaking changes are expected.\n We don't recommend using it in production.`
