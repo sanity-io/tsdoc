@@ -11,14 +11,18 @@ export function usePackages(): {
   const {store} = useTSDoc()
   const [data, setData] = useState<APIPackage[] | null>(null)
   const [error, setError] = useState<Error | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function run() {
       try {
-        setLoading(true)
         setData(null)
-        setData(await store.packages.get())
+        setData(
+          await store.packages.get().then((res) => {
+            setLoading(false)
+            return res
+          })
+        )
       } catch (err) {
         if (err instanceof Error) {
           setError(err)

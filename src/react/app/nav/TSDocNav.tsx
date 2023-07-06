@@ -142,7 +142,7 @@ function TSDocNavView(props: {
   return (
     <BoxSticky paddingTop={3}>
       <Flex direction="column" height="fill" overflow="hidden">
-        {!currentPkg && (
+        {!currentPkg && !packages.loading && (
           <Card overflow="auto" padding={3}>
             <Stack space={1}>
               <Box padding={2}>
