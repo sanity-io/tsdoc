@@ -3,17 +3,17 @@ import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {CommentBox, CommentReturnType, CommentSummary} from '../../comment'
 import {PortableText} from '../../comment/PortableText'
-import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
+import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSMethodMember(props: {
   data: APIMemberWithInheritance<APIMethod>
   member: APIMember
 }): ReactElement {
   const {data, member} = props
-  const {comment} = data
+  const {comment, releaseTag} = data
 
   const title = useMemo(() => {
     let t = data.isStatic ? `${member.name}.` : ''
@@ -26,15 +26,17 @@ export function TSMethodMember(props: {
   }, [data, member])
 
   return (
-    <Card border overflow="auto" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
-      <Flex align="flex-start" gap={1} padding={2}>
-        {data.releaseTag && data.releaseTag !== 'public' && (
-          <Box flex="none">
-            <ReleaseBadge releaseTag={data.releaseTag} />
-          </Box>
-        )}
+    <Card
+      border
+      overflow="auto"
+      radius={3}
+      padding={4}
+      tone={comment?.deprecated ? 'critical' : 'inherit'}
+    >
+      <Flex align="flex-start" gap={1}>
+        <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} hidePublicTag />
 
-        <Box flex="none" padding={1}>
+        <Box flex="none" paddingBottom={4}>
           <Code as="h3" language="ts">
             {title}
           </Code>
@@ -42,7 +44,7 @@ export function TSMethodMember(props: {
       </Flex>
 
       {comment?.summary && (
-        <CommentBox padding={3}>
+        <CommentBox>
           <CommentSummary data={comment} />
         </CommentBox>
       )}
@@ -55,42 +57,43 @@ export function TSMethodMember(props: {
 
       {/* Parameters */}
       {data.parameters && data.parameters.length > 0 && (
-        <Card borderTop padding={3} tone="inherit">
-          <Box marginBottom={3}>
+        <Card borderTop padding={4} marginTop={4} tone="inherit">
+          <Box marginBottom={4}>
             <Label muted>Parameters</Label>
           </Box>
 
-          <Card>
+          <Stack space={3}>
             {data.parameters.map((param, idx) => {
               const paramComment = comment?.parameters?.[idx]?.content
 
               return (
                 <Card
-                  paddingY={3}
+                  paddingY={4}
                   borderBottom={data.parameters.length - 1 !== idx}
                   key={param._key}
                 >
-                  <TSDocCode
-                    deindent
-                    prefix={`${param.name}${param.isOptional ? '?' : ''}: `}
-                    tokens={param.type}
-                  />
-                  {paramComment && (
-                    <CommentBox paddingY={3}>
-                      <PortableText blocks={paramComment} />
-                    </CommentBox>
-                  )}
+                  <Stack space={3}>
+                    <TSDocCode
+                      deindent
+                      prefix={`${param.name}${param.isOptional ? '?' : ''}: `}
+                      tokens={param.type}
+                    />
+                    {paramComment && (
+                      <CommentBox>
+                        <PortableText blocks={paramComment} />
+                      </CommentBox>
+                    )}
+                  </Stack>
                 </Card>
               )
             })}
-          </Card>
+          </Stack>
         </Card>
       )}
-
       {/* Return type */}
       {data.returnType && data.returnType.length > 0 && (
-        <Card borderTop padding={3} tone="inherit">
-          <Box marginBottom={3}>
+        <Card borderTop padding={4} tone="inherit">
+          <Box marginBottom={4}>
             <Label muted>Returns</Label>
           </Box>
 

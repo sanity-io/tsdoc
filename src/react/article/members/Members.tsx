@@ -69,7 +69,7 @@ function Member(props: {data: APIMemberWithInheritance; member: APIMember}) {
   }
 
   return (
-    <Card padding={3} radius={2} tone="critical">
+    <Card padding={4} radius={2} tone="critical">
       <Text size={textSize}>
         Unexpected member type: <code>{data._type}</code>
       </Text>

@@ -2,10 +2,10 @@ import {APIProperty} from '@sanity/tsdoc'
 import {Box, Card, Flex} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {CommentBox, CommentSummary} from '../../comment'
-import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
+import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSPropertyMember(props: {
   data: APIMemberWithInheritance<APIProperty>
@@ -19,18 +19,21 @@ export function TSPropertyMember(props: {
     isStatic,
     name,
     type,
+    releaseTag,
   } = data
 
   return (
-    <Card border overflow="hidden" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
-      <Flex align="flex-start" gap={1} padding={2}>
-        {data.releaseTag && data.releaseTag !== 'public' && (
-          <Box flex="none">
-            <ReleaseBadge releaseTag={data.releaseTag} />
-          </Box>
-        )}
+    <Card
+      border
+      overflow="hidden"
+      radius={3}
+      padding={4}
+      tone={comment?.deprecated ? 'critical' : 'inherit'}
+    >
+      <Flex align="flex-start" gap={1}>
+        <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} hidePublicTag />
 
-        <Box flex={1} padding={1}>
+        <Box flex={1} paddingBottom={4}>
           <TSDocCode
             prefix={`${isStatic ? 'static ' : ''}${name}${isOptional ? '?' : ''}: `}
             tokens={type}
@@ -39,7 +42,7 @@ export function TSPropertyMember(props: {
       </Flex>
 
       {comment && (
-        <CommentBox padding={3}>
+        <CommentBox>
           <CommentSummary data={comment} />
         </CommentBox>
       )}

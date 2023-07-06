@@ -2,10 +2,10 @@ import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {APICallSignature} from '../../../core'
 import {CommentBox, CommentSummary} from '../../comment'
-import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
+import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSCallSignatureMember(props: {
   data: APIMemberWithInheritance<APICallSignature>
@@ -16,16 +16,14 @@ export function TSCallSignatureMember(props: {
     data,
     // fontSize = 2, level = 1
   } = props
-  const {comment, parameters} = data
+  const {comment, parameters, releaseTag} = data
 
   return (
-    <Card border overflow="hidden" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
+    <Card border overflow="hidden" tone={comment?.deprecated ? 'critical' : 'inherit'}>
       <Flex align="flex-start" gap={1} padding={2}>
-        <Box flex="none">
-          <ReleaseBadge releaseTag={data.releaseTag} />
-        </Box>
+        <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} />
 
-        <Box flex={1} padding={1}>
+        <Box flex={1}>
           <Code
             // as={`h${level}` as any}
             language="ts"
@@ -50,7 +48,7 @@ export function TSCallSignatureMember(props: {
 
       {/* Parameters */}
       {parameters && parameters.length > 0 && (
-        <Card borderTop overflow="auto" padding={3} tone="inherit">
+        <Card borderTop overflow="auto" padding={4} tone="inherit">
           <Label
             muted
             // size={_fontSize(fontSize, [1, 1, 2])}
@@ -58,7 +56,7 @@ export function TSCallSignatureMember(props: {
             Parameters
           </Label>
 
-          <Stack marginTop={3} space={3}>
+          <Stack marginTop={4} space={3}>
             {data.parameters.map((param) => (
               <TSDocCode deindent key={param._key} prefix={`${param.name}: `} tokens={param.type} />
             ))}
@@ -67,7 +65,7 @@ export function TSCallSignatureMember(props: {
       )}
 
       {data.returnType && (
-        <Card borderTop overflow="auto" padding={3} tone="inherit">
+        <Card borderTop overflow="auto" padding={4} tone="inherit">
           <Label
             muted
             // size={_fontSize(fontSize, [1, 1, 2])}
@@ -75,7 +73,7 @@ export function TSCallSignatureMember(props: {
             Return type
           </Label>
 
-          <Box marginTop={3}>
+          <Box marginTop={4}>
             <TSDocCode deindent tokens={data.returnType} />
           </Box>
         </Card>

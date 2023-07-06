@@ -39,6 +39,7 @@ export function TSDocCode(props: {
   const code = (prefix + tokens.map((t) => t.text).join('') + suffix)
     .replace(/History_2/g, 'History')
     .replace(/React_2/g, 'React')
+    .replace(/Plugin_2/g, 'Plugin2')
 
   return (
     <Root>

@@ -1,4 +1,5 @@
-import {ThemeColorSyntax} from '@sanity/ui'
+import {green, yellow, cyan} from '@sanity/color'
+import {ThemeColor, ThemeColorSyntax} from '@sanity/ui'
 import styled, {css} from 'styled-components'
 
 export const SyntaxText = styled.code<{$deprecated?: boolean; $syntax?: keyof ThemeColorSyntax}>(
@@ -8,9 +9,25 @@ export const SyntaxText = styled.code<{$deprecated?: boolean; $syntax?: keyof Th
     return css`
       && {
         background-color: transparent;
-        color: ${$syntax ? color.syntax[$syntax] : undefined};
+        color: ${$syntax ? overrideSyntaxColors(color, $syntax) : undefined};
         text-decoration: ${$deprecated ? 'line-through' : undefined};
       }
     `
   }
 )
+
+const overrideSyntaxColors = (color: ThemeColor, $syntax: keyof ThemeColorSyntax) => {
+  const isDarkMode = color.dark
+
+  // adds support for issues with light theme
+  switch ($syntax) {
+    case 'function':
+      return !isDarkMode ? green[700].hex : color.syntax[$syntax]
+    case 'string':
+      return !isDarkMode ? yellow[700].hex : color.syntax[$syntax]
+    case 'className':
+      return !isDarkMode ? cyan[700].hex : color.syntax[$syntax]
+    default:
+      return color.syntax[$syntax]
+  }
+}

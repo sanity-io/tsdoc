@@ -37,11 +37,19 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
 
   const tag = useMemo(() => {
     if (data.releaseTag === 'beta') {
-      return <SyntaxText $syntax="string">@beta</SyntaxText>
+      return (
+        <Box>
+          <SyntaxText $syntax="string">@beta</SyntaxText>
+        </Box>
+      )
     }
 
     if (data.releaseTag === 'alpha') {
-      return <SyntaxText $syntax="builtin">@alpha</SyntaxText>
+      return (
+        <Box>
+          <SyntaxText $syntax="builtin">@alpha</SyntaxText>
+        </Box>
+      )
     }
 
     return null
@@ -56,7 +64,7 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
       padding={2}
       selected={isSelected}
       text={
-        <Flex>
+        <Flex gap={1}>
           <Box flex={1}>
             <TSDocMemberTitle data={data} />
           </Box>

@@ -2,17 +2,17 @@ import {APIMember, APIMethodSignature} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {CommentBox, CommentSummary} from '../../comment'
-import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
+import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSMethodSignatureMember(props: {
   data: APIMemberWithInheritance<APIMethodSignature>
   member: APIMember
 }): ReactElement {
   const {data, member} = props
-  const {comment} = data
+  const {comment, releaseTag} = data
 
   const title = useMemo(() => {
     let t = member.name as string
@@ -27,11 +27,9 @@ export function TSMethodSignatureMember(props: {
   return (
     <Card border overflow="hidden" radius={3} tone={comment?.deprecated ? 'critical' : 'inherit'}>
       <Flex gap={1} padding={2}>
-        <Box flex="none">
-          <ReleaseBadge releaseTag={data.releaseTag} />
-        </Box>
+        <TSMemberReleaseTag comment={comment} releaseTag={releaseTag} />
 
-        <Box flex="none" padding={1}>
+        <Box flex="none">
           <Code
             // as={`h${level}` as any}
             language="ts"
@@ -56,8 +54,8 @@ export function TSMethodSignatureMember(props: {
 
       {/* Parameters */}
       {data.parameters && data.parameters.length > 0 && (
-        <Card overflow="auto" padding={3} tone="inherit">
-          <Box marginBottom={3}>
+        <Card overflow="auto" padding={4} tone="inherit">
+          <Box marginBottom={4}>
             <Label>Parameters</Label>
           </Box>
 

@@ -6,6 +6,7 @@ export interface BaseInterface {
 
 /** @public */
 export interface TestInterface extends BaseInterface {
+  /** @experimental */
   bar: string
 }
 

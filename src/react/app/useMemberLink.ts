@@ -6,7 +6,7 @@ import {useTSDoc} from './useTSDoc'
 /** @beta */
 export function useMemberLink(props: {params: TSDocAppParams | null}): {
   href: string
-  onClick: (event: MouseEvent) => void
+  onClick: (event: MouseEvent | KeyboardEvent) => void
 } {
   const {params} = props
   const {basePath, onPathChange} = useTSDoc()
@@ -14,7 +14,7 @@ export function useMemberLink(props: {params: TSDocAppParams | null}): {
   const href = useMemo(() => `${basePath}${path || ''}`, [basePath, path])
 
   const onClick = useCallback(
-    (event: MouseEvent) => {
+    (event: MouseEvent | KeyboardEvent) => {
       if (!path) return
 
       event.preventDefault()

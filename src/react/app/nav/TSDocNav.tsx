@@ -257,6 +257,7 @@ function MultiExportTree(props: {
       {versionedExports.map((data) => (
         <TreeItemFocus
           expanded={expandPackages ? expandPackages : data.name === currentExportName}
+          tabIndex={0}
           fontSize={fontSize}
           key={data.name}
           padding={2}
