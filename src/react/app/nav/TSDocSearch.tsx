@@ -28,10 +28,7 @@ export function TSDocSearch(): ReactElement {
   const autocompletePopoverReferenceElementRef = useRef<HTMLDivElement | null>(null)
 
   const options: TSDocSearchOption[] = useMemo(
-    () =>
-      data
-        .filter((result) => result.members.length > 0)
-        .map((result) => ({value: result._id, symbol: result})),
+    () => data.map((result) => ({value: result._id, symbol: result})),
     [data]
   )
 
