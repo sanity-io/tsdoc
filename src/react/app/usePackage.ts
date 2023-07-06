@@ -14,7 +14,7 @@ export function usePackage(props: {params: TSDocAppParams | null}): {
 
   const [data, setData] = useState<APIPackage | null>(null)
   const [error, setError] = useState<Error | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function run() {
@@ -23,7 +23,12 @@ export function usePackage(props: {params: TSDocAppParams | null}): {
       try {
         setLoading(true)
         setData(null)
-        setData(await store.package.get(params))
+        setData(
+          await store.package.get(params).then((res) => {
+            setLoading(false)
+            return res
+          })
+        )
       } catch (err) {
         if (err instanceof Error) {
           setError(err)
