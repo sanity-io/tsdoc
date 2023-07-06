@@ -47,7 +47,7 @@ export function TSDocSearch(): ReactElement {
 
   const renderPopover = useCallback(
     ({content, hidden}: {content: ReactElement | null; hidden: boolean}) => {
-      return (
+      return query ? (
         <Popover
           arrow={false}
           open={!loading && !hidden}
@@ -70,7 +70,7 @@ export function TSDocSearch(): ReactElement {
           }
           referenceElement={autocompletePopoverReferenceElementRef.current}
         />
-      )
+      ) : null
     },
     [loading, query]
   )
