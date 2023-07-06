@@ -426,7 +426,7 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
     'exportPath': export->path,
     'releaseVersion': release->version
   }
-}
+} | order(lower(name) asc)
 `
 
 /** @internal */
