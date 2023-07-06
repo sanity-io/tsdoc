@@ -1,8 +1,17 @@
 import {SearchIcon} from '@sanity/icons'
 import {APISymbol, SanitySlugValue} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
-import {Autocomplete, BaseAutocompleteOption, Card, Stack, Text} from '@sanity/ui'
-import {ForwardedRef, forwardRef, ReactElement, useCallback, useMemo, useState} from 'react'
+import {
+  Autocomplete,
+  BaseAutocompleteOption,
+  Box,
+  Card,
+  Flex,
+  Popover,
+  Stack,
+  Text,
+} from '@sanity/ui'
+import {ForwardedRef, forwardRef, ReactElement, useCallback, useMemo, useRef, useState} from 'react'
 import {UnformattedCode} from '../../components/UnformattedCode'
 import {useMemberLink} from '../useMemberLink'
 import {useSymbolSearch} from '../useSymbolSearch'
@@ -16,6 +25,7 @@ export function TSDocSearch(): ReactElement {
   const [query, setQuery] = useState<string | null>(null)
   const {data, loading} = useSymbolSearch({query})
   const [value, setValue] = useState<string | undefined>()
+  const autocompletePopoverReferenceElementRef = useRef<HTMLDivElement | null>(null)
 
   const options: TSDocSearchOption[] = useMemo(
     () =>
@@ -38,23 +48,55 @@ export function TSDocSearch(): ReactElement {
 
   const renderValue = useCallback(() => '', [])
 
+  const renderPopover = useCallback(
+    ({content, hidden}: {content: ReactElement | null; hidden: boolean}) => {
+      return (
+        <Popover
+          arrow={false}
+          open={!loading && !hidden}
+          overflow="auto"
+          placement="bottom-start"
+          matchReferenceWidth
+          radius={0}
+          content={
+            content ? (
+              content
+            ) : (
+              <Box padding={4}>
+                <Flex align="center" height="fill" justify="center">
+                  <Text align="center" muted>
+                    No results for <strong>“{query}”</strong>
+                  </Text>
+                </Flex>
+              </Box>
+            )
+          }
+          referenceElement={autocompletePopoverReferenceElementRef.current}
+        />
+      )
+    },
+    [loading, query]
+  )
+
   return (
-    <Autocomplete
-      filterOption={filterOption}
-      icon={SearchIcon}
-      id="tsdoc-search"
-      loading={loading}
-      onQueryChange={setQuery}
-      onSelect={handleSelect}
-      options={options}
-      padding={3}
-      placeholder="Search for API members"
-      popover={{portal: true}}
-      radius={2}
-      renderOption={renderOption}
-      renderValue={renderValue}
-      value={value}
-    />
+    <div ref={autocompletePopoverReferenceElementRef}>
+      <Autocomplete
+        filterOption={filterOption}
+        icon={SearchIcon}
+        id="tsdoc-search"
+        loading={loading}
+        onQueryChange={setQuery}
+        onSelect={handleSelect}
+        options={options}
+        padding={3}
+        placeholder="Search for API members"
+        radius={2}
+        renderOption={renderOption}
+        renderValue={renderValue}
+        renderPopover={renderPopover}
+        value={value}
+      />
+    </div>
   )
 }
 
