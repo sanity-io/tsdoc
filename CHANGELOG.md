@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.36](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2023-07-07)
+
+### Features
+
+- add no results to search & iron out search ([#26](https://github.com/sanity-io/tsdoc/issues/26)) ([555412d](https://github.com/sanity-io/tsdoc/commit/555412d9d033d6651135ae2087ed96f56a9b2ddb))
+
+### Bug Fixes
+
+- General UI and Accessibility tweaks ([#20](https://github.com/sanity-io/tsdoc/issues/20)) ([6a439f5](https://github.com/sanity-io/tsdoc/commit/6a439f5c4c0ed4bec4b2ad05393e40fa5da5c612))
+
 ## [1.0.0-alpha.35](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.34...v1.0.0-alpha.35) (2023-07-03)
 
 ### Features
