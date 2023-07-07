@@ -17,19 +17,15 @@ export function usePackages(): {
     async function run() {
       try {
         setData(null)
-        setData(
-          await store.packages.get().then((res) => {
-            setLoading(false)
-            return res
-          })
-        )
+
+        setData(await store.packages.get())
       } catch (err) {
         if (err instanceof Error) {
           setError(err)
         }
+      } finally {
+        setLoading(false)
       }
-
-      setLoading(false)
     }
 
     run()

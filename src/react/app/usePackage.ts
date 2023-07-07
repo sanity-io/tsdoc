@@ -23,19 +23,15 @@ export function usePackage(props: {params: TSDocAppParams | null}): {
       try {
         setLoading(true)
         setData(null)
-        setData(
-          await store.package.get(params).then((res) => {
-            setLoading(false)
-            return res
-          })
-        )
+
+        setData(await store.package.get(params))
       } catch (err) {
         if (err instanceof Error) {
           setError(err)
         }
+      } finally {
+        setLoading(false)
       }
-
-      setLoading(false)
     }
 
     run()
