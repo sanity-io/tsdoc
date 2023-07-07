@@ -397,12 +397,23 @@ export const API_MEMBER_QUERY = groq`
 `
 
 /** @internal */
+
+const NON_HIDDEN_MEMBER_TYPES_ARRAY = groq`*[
+  _type in $memberTypes
+  && name == ^.name
+  && package->scope == $packageScope
+  && package->name == $packageName
+  && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
+]`
+
+/** @internal */
 export const API_SYMBOL_SEARCH_QUERY = groq`
 *[
   _type == 'api.symbol'
   && name match $query
   && package->scope == $packageScope
   && package->name == $packageName
+  && count(${NON_HIDDEN_MEMBER_TYPES_ARRAY}) > 0
 ]{
   _id,
   _type,
@@ -410,18 +421,12 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
   package->{name,scope}
 }[0...10]{
   ...,
-  'members': *[
-    _type in $memberTypes
-    && name == ^.name
-    && package->scope == $packageScope
-    && package->name == $packageName
-    && !("@hidden" in coalesce(comment.customBlocks[].tag, []))
-  ]{
+  'members': ${NON_HIDDEN_MEMBER_TYPES_ARRAY}{
     slug,
     'exportPath': export->path,
     'releaseVersion': release->version
   }
-}
+} | order(lower(name) asc)
 `
 
 /** @internal */
