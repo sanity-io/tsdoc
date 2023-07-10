@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.37](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.36...v1.0.0-alpha.37) (2023-07-10)
+
+### Bug Fixes
+
+- no data flicker on reload and navigation ([#27](https://github.com/sanity-io/tsdoc/issues/27)) ([3996578](https://github.com/sanity-io/tsdoc/commit/3996578fa98d52d68757ef0bc10cb0d4dadcbfe5))
+
 ## [1.0.0-alpha.36](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.35...v1.0.0-alpha.36) (2023-07-07)
 
 ### Features
