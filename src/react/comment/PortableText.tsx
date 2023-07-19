@@ -1,7 +1,12 @@
-import {PortableText as BasePortableText, PortableTextProps} from '@portabletext/react'
+import {
+  PortableText as BasePortableText,
+  PortableTextMarkComponentProps,
+  PortableTextProps,
+} from '@portabletext/react'
 import {PortableTextNode} from '@sanity/tsdoc'
 import {Box, Card, Code} from '@sanity/ui'
-import {ReactElement} from 'react'
+import {ReactElement, useCallback, MouseEvent, useMemo} from 'react'
+import {useTSDoc} from '../app'
 import {H, Level, P, useSpace, useTextSize} from '../lib/ui'
 
 const CODE_LANGUAGES: Record<string, string> = {
@@ -29,6 +34,9 @@ const components: PortableTextProps['components'] = {
   },
   types: {
     code: CodeBlock,
+  },
+  marks: {
+    link: Link,
   },
 }
 
@@ -127,4 +135,56 @@ function BlockquoteBlock({children}: {children?: React.ReactNode}) {
 
 function NormalBlock({children}: {children?: React.ReactNode}) {
   return <P muted>{children}</P>
+}
+
+function isValidUrl(url: string) {
+  try {
+    return Boolean(new URL(url))
+  } catch (error) {
+    return false
+  }
+}
+
+function Link(props: PortableTextMarkComponentProps) {
+  const {basePath, onPathChange, params} = useTSDoc()
+  const {value, text} = props
+  const {packageName, exportPath} = params
+
+  const url = value?.['href']
+
+  const isExternalUrl = useMemo(() => isValidUrl(url), [url])
+
+  const href = useMemo(() => {
+    // If the url is pointing to external URL than return that
+    if (isExternalUrl) return url
+
+    const urlSegments = url.split('/')
+
+    // URL can be of two types:
+    // if it's referencing the same package then it will just have the name
+    // if it's referencing another package then it will also have the exportPath in the name
+    if (urlSegments.length === 1) {
+      // exportPath is either `.`  or `./router`
+      return `/${packageName}${exportPath?.replace('.', '')}/${url}`
+    }
+
+    return `/${packageName}/${urlSegments.join('/')}`
+  }, [exportPath, isExternalUrl, packageName, url])
+
+  const handleClick = useCallback(
+    (e: MouseEvent) => {
+      // If the url is pointing to external URL don't call onPathChange
+      if (isExternalUrl) return
+      e.preventDefault()
+
+      onPathChange(href)
+    },
+    [href, isExternalUrl, onPathChange]
+  )
+
+  return (
+    <a href={`${basePath}${href}`} onClick={handleClick}>
+      {text}
+    </a>
+  )
 }

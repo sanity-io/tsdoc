@@ -25,7 +25,7 @@ export function TSPropertySignatureMember(props: {
 
       {comment?.summary && (
         <Size delta={-1}>
-          <CommentBox paddingTop={3}>
+          <CommentBox paddingTop={4}>
             {/* TODO: CommentDeprecatedCallout */}
             <CommentSummary data={comment} />
             {/* TODO: CommentRemarks */}

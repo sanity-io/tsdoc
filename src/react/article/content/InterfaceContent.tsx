@@ -10,7 +10,7 @@ import {
 import {Card, Code} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
 import {_compileInterfaceDefinition} from '../../app/lib/_compile'
-import {CommentExampleBlocks, CommentRemarks, CommentSummary} from '../../comment'
+import {CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H, useTextSize} from '../../lib/ui'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
@@ -69,7 +69,7 @@ export function InterfaceContent(props: {data: APIInterface}): ReactElement {
   return (
     <>
       <H size={[-1, 0, 1, 2]}>Signature</H>
-      <Card border overflow="auto" padding={3} radius={3}>
+      <Card border overflow="auto" padding={4} radius={3}>
         <Code language="typescript" size={useTextSize([-1, -1, 0])}>
           {_compileInterfaceDefinition(data)}
         </Code>
