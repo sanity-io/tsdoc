@@ -146,10 +146,12 @@ function isValidUrl(url: string) {
 }
 
 function getInternalHref({
+  basePath,
   url,
   packageName,
   exportPath,
 }: {
+  basePath?: string
   url: string
   packageName: string | null
   exportPath?: string | null
@@ -161,10 +163,10 @@ function getInternalHref({
   // if it's referencing another package then it will also have the exportPath in the name
   if (urlSegments.length === 1) {
     // exportPath is either `.`  or `./router`
-    return `/${packageName}${exportPath?.replace('.', '')}/${url}`
+    return `${basePath}/${packageName}${exportPath?.replace('.', '')}/${url}`
   }
 
-  return `/${packageName}/${urlSegments.join('/')}`
+  return `${basePath}/${packageName}/${urlSegments.join('/')}`
 }
 
 function Link(props: PortableTextMarkComponentProps) {
@@ -173,7 +175,7 @@ function Link(props: PortableTextMarkComponentProps) {
   const {packageName, exportPath} = params
   const url = value?.['href']
   const isExternalUrl = isValidUrl(url)
-  const href = isExternalUrl ? url : getInternalHref({url, packageName, exportPath})
+  const href = isExternalUrl ? url : getInternalHref({url, basePath, packageName, exportPath})
 
   const handleClick = useCallback(
     (e: MouseEvent) => {
@@ -187,7 +189,7 @@ function Link(props: PortableTextMarkComponentProps) {
   )
 
   return (
-    <a href={`${!isExternalUrl ? basePath : ''}${href}`} onClick={handleClick}>
+    <a href={href} onClick={handleClick}>
       {text}
     </a>
   )
