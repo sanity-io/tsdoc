@@ -5,5 +5,4 @@ import styled from 'styled-components'
 export const TreeNav = memo(styled(Tree)`
   overflow: auto;
   height: 100vh;
-  padding-top: 0.75rem;
 `)
