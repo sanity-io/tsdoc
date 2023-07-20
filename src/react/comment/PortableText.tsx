@@ -145,31 +145,35 @@ function isValidUrl(url: string) {
   }
 }
 
+function getInternalHref({
+  url,
+  packageName,
+  exportPath,
+}: {
+  url: string
+  packageName: string | null
+  exportPath?: string | null
+}) {
+  const urlSegments = url.split('/')
+
+  // URL can be of two types:
+  // if it's referencing the same package then it will just have the name
+  // if it's referencing another package then it will also have the exportPath in the name
+  if (urlSegments.length === 1) {
+    // exportPath is either `.`  or `./router`
+    return `/${packageName}${exportPath?.replace('.', '')}/${url}`
+  }
+
+  return `/${packageName}/${urlSegments.join('/')}`
+}
+
 function Link(props: PortableTextMarkComponentProps) {
   const {basePath, onPathChange, params} = useTSDoc()
   const {value, text} = props
   const {packageName, exportPath} = params
-
   const url = value?.['href']
-
-  const isExternalUrl = useMemo(() => isValidUrl(url), [url])
-
-  const href = useMemo(() => {
-    // If the url is pointing to external URL than return that
-    if (isExternalUrl) return url
-
-    const urlSegments = url.split('/')
-
-    // URL can be of two types:
-    // if it's referencing the same package then it will just have the name
-    // if it's referencing another package then it will also have the exportPath in the name
-    if (urlSegments.length === 1) {
-      // exportPath is either `.`  or `./router`
-      return `/${packageName}${exportPath?.replace('.', '')}/${url}`
-    }
-
-    return `/${packageName}/${urlSegments.join('/')}`
-  }, [exportPath, isExternalUrl, packageName, url])
+  const isExternalUrl = isValidUrl(url)
+  const href = isExternalUrl ? url : getInternalHref({url, packageName, exportPath})
 
   const handleClick = useCallback(
     (e: MouseEvent) => {
@@ -183,7 +187,7 @@ function Link(props: PortableTextMarkComponentProps) {
   )
 
   return (
-    <a href={`${basePath}${href}`} onClick={handleClick}>
+    <a href={`${!isExternalUrl ? basePath : ''}${href}`} onClick={handleClick}>
       {text}
     </a>
   )
