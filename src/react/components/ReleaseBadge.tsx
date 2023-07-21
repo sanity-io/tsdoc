@@ -23,11 +23,10 @@ export function ReleaseBadge(props: {
 
   const explanation: string = useMemo(() => {
     if (releaseTag === 'alpha' || releaseTag === 'experimental')
-      return `This API is in very early stages of release. Breaking changes are not only expected but very likely.\n We strongly don't recommend using it in production.`
+      return `The API is in very early stages of development. Breaking changes are not only expected but very likely.\n We strongly recommend against using it in a production environment.`
     if (releaseTag === 'beta')
-      return `This API is in early stages of release. Breaking changes are expected.\n We don't recommend using it in production.`
-    if (releaseTag === 'public')
-      return 'This API is public and stable. Breaking changes are unlikely.'
+      return `The API is in a testing phase and is considered immature. Breaking changes are expected.\n We don't recommend using it in a production environment.`
+    if (releaseTag === 'public') return 'The API is public and stable.'
 
     return 'primary'
   }, [releaseTag])
