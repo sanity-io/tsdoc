@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.39](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.38...v1.0.0-alpha.39) (2023-07-21)
+
+### Bug Fixes
+
+- UI issues and trigger path update when clicking internal links ([#28](https://github.com/sanity-io/tsdoc/issues/28)) ([0d88f39](https://github.com/sanity-io/tsdoc/commit/0d88f395cc5fe7109da5831ad004b05d273da107))
+
 ## [1.0.0-alpha.38](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.37...v1.0.0-alpha.38) (2023-07-10)
 
 ### Features
