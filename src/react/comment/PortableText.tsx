@@ -146,12 +146,10 @@ function isValidUrl(url: string) {
 }
 
 function getInternalHref({
-  basePath,
   url,
   packageName,
   exportPath,
 }: {
-  basePath?: string
   url: string
   packageName: string | null
   exportPath?: string | null
@@ -175,7 +173,7 @@ function Link(props: PortableTextMarkComponentProps) {
   const {packageName, exportPath} = params
   const url = value?.['href']
   const isExternalUrl = isValidUrl(url)
-  const path = !isExternalUrl && getInternalHref({url, basePath, packageName, exportPath})
+  const path = !isExternalUrl && getInternalHref({url, packageName, exportPath})
   const href = isExternalUrl ? url : `${basePath}${path}`
 
   const handleClick = useCallback(
