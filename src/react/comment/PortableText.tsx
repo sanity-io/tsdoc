@@ -163,10 +163,10 @@ function getInternalHref({
   // if it's referencing another package then it will also have the exportPath in the name
   if (urlSegments.length === 1) {
     // exportPath is either `.`  or `./router`
-    return `${basePath}/${packageName}${exportPath?.replace('.', '')}/${url}`
+    return `/${packageName}${exportPath?.replace('.', '')}/${url}`
   }
 
-  return `${basePath}/${packageName}/${urlSegments.join('/')}`
+  return `/${packageName}/${urlSegments.join('/')}`
 }
 
 function Link(props: PortableTextMarkComponentProps) {
@@ -175,17 +175,19 @@ function Link(props: PortableTextMarkComponentProps) {
   const {packageName, exportPath} = params
   const url = value?.['href']
   const isExternalUrl = isValidUrl(url)
-  const href = isExternalUrl ? url : getInternalHref({url, basePath, packageName, exportPath})
+  const path = !isExternalUrl && getInternalHref({url, basePath, packageName, exportPath})
+  const href = isExternalUrl ? url : `${basePath}${path}`
 
   const handleClick = useCallback(
     (e: MouseEvent) => {
       // If the url is pointing to external URL don't call onPathChange
-      if (isExternalUrl) return
+      if (isExternalUrl || !path) return
       e.preventDefault()
 
-      onPathChange(href)
+      // When calling onPathChange we need to call it without the basePath
+      onPathChange(path)
     },
-    [href, isExternalUrl, onPathChange]
+    [isExternalUrl, onPathChange, path]
   )
 
   return (
