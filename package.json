@@ -144,6 +144,10 @@
       {
         "name": "alpha",
         "prerelease": true
+      },
+      {
+        "name": "bundle.types",
+        "prerelease": true
       }
     ],
     "extends": "@sanity/semantic-release-preset"
