@@ -40,7 +40,7 @@ export async function extract(options: {
   tsconfig?: string
   bundledPackages?: string[]
 }): Promise<{pkg: PackageJSON; results: ExtractResult[]}> {
-  const {customTags, packagePath, rules, tsconfig: tsconfigPath} = options
+  const {customTags, packagePath, rules, tsconfig: tsconfigPath, bundledPackages} = options
   const tempDir = await createTempDir()
   const tempDirPath = tempDir.path
   const packageJsonFullPath = path.resolve(packagePath, 'package.json')
@@ -73,6 +73,7 @@ export async function extract(options: {
         tempDirPath,
         tsconfigPath,
         packageJsonFullPath,
+        bundledPackages,
       })
 
       results.push({
