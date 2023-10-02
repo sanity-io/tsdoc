@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-bundle.types.2](https://github.com/sanity-io/tsdoc/compare/v1.0.0-bundle.types.1...v1.0.0-bundle.types.2) (2023-10-02)
+
+### Bug Fixes
+
+- pass option to extract function ([d2dac18](https://github.com/sanity-io/tsdoc/commit/d2dac18067a57870fd6677a9d1d85b108b7f7a03))
+
 ## 1.0.0-bundle.types.1 (2023-10-02)
 
 ### Features
