@@ -8,6 +8,7 @@ export function createApiExtractorConfig(opts: {
   packagePath: string
   tempDirPath: string
   tsconfigPath?: string
+  bundledPackages?: string[]
 }): IConfigFile {
   /**
    * Config file for API Extractor.  For more info, please visit: https://api-extractor.com
@@ -69,7 +70,7 @@ export function createApiExtractorConfig(opts: {
      * This would direct API Extractor to embed those types directly in the .d.ts rollup, as if they had been
      * local files for library1.
      */
-    bundledPackages: [],
+    bundledPackages: opts.bundledPackages ?? [],
 
     /**
      * Determines how the TypeScript compiler engine will be invoked by API Extractor.
