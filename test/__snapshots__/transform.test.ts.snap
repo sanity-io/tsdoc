@@ -265,6 +265,10 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
+            "member": {
+              "_ref": "tsdoc-c3c0c75d56a623a0d409f9fd0ec25583",
+              "_type": "reference",
+            },
             "text": "ButtonProps",
           },
           {
@@ -305,6 +309,10 @@ exports[`transform should result in a "api.release" document 1`] = `
         ],
       },
     ],
+    "propsType": {
+      "_ref": "tsdoc-c3c0c75d56a623a0d409f9fd0ec25583",
+      "_type": "reference",
+    },
     "release": {
       "_ref": "tsdoc-mylib_1-0-0",
       "_type": "reference",
@@ -356,6 +364,10 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
+            "member": {
+              "_ref": "tsdoc-1b53660d0652ecb7b6ff682fe8f3dbdd",
+              "_type": "reference",
+            },
             "text": "ResponsiveMarginProps",
           },
         ],
@@ -373,6 +385,10 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
+            "member": {
+              "_ref": "tsdoc-fb04f0e19331b06d0e9acb7313823b63",
+              "_type": "reference",
+            },
             "text": "ButtonTone",
           },
         ],
@@ -388,6 +404,10 @@ exports[`transform should result in a "api.release" document 1`] = `
           {
             "_key": "token0",
             "_type": "api.token",
+            "member": {
+              "_ref": "tsdoc-bc4add0c6c20d7dc9a9b8a7d959c7b51",
+              "_type": "reference",
+            },
             "text": "ButtonType",
           },
         ],
@@ -1063,6 +1083,10 @@ exports[`transform should result in a "api.release" document 1`] = `
       {
         "_key": "token4",
         "_type": "api.token",
+        "member": {
+          "_ref": "tsdoc-7421c952c885f9f8ba76357756f79dc5",
+          "_type": "reference",
+        },
         "text": "LinkProps",
       },
       {
