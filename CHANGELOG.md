@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.41](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.40...v1.0.0-alpha.41) (2024-02-02)
+
+### Bug Fixes
+
+- fix issue with reference to properties not being saved ([#31](https://github.com/sanity-io/tsdoc/issues/31)) ([7aef19b](https://github.com/sanity-io/tsdoc/commit/7aef19b4982a51e5d954aad9db2142ffd44cd390))
+
 ## [1.0.0-alpha.40](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.39...v1.0.0-alpha.40) (2023-07-24)
 
 ### Bug Fixes
