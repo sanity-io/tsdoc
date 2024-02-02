@@ -54,5 +54,5 @@ function _getTokenId(t: ExcerptToken) {
     return '$$unknown$$'
   }
 
-  return _hash(_ref?.replace('~', '') || '')
+  return `tsdoc-${_hash(_ref?.replace('~', '') || '')}`
 }

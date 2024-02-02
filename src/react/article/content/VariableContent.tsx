@@ -41,10 +41,9 @@ export function VariableContent(props: {data: APIVariable}): ReactElement {
             Defined by the{' '}
             <span
               style={{
-                display: 'inline-block',
+                display: 'inline-flex',
                 verticalAlign: 'middle',
                 position: 'relative',
-                top: -1,
               }}
             >
               <TSDocSymbol border name={propsType.name} padding={2} radius={3} />

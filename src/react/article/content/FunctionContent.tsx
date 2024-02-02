@@ -7,7 +7,6 @@ import {CommentExampleBlocks, CommentRemarks, CommentReturnType} from '../../com
 import {H, P} from '../../lib/ui'
 import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
-import {TSParamMember} from '../members/TSParamMember'
 import {TSDocCode} from '../TSDocCode'
 
 export function FunctionContent(props: {data: APIFunction}): ReactElement {
@@ -78,10 +77,9 @@ export function FunctionContent(props: {data: APIFunction}): ReactElement {
             Defined by the{' '}
             <span
               style={{
-                display: 'inline-block',
+                display: 'inline-flex',
                 verticalAlign: 'middle',
                 position: 'relative',
-                top: -1,
               }}
             >
               <TSDocSymbol border name={propsType.name} padding={2} radius={3} />
@@ -101,15 +99,6 @@ export function FunctionContent(props: {data: APIFunction}): ReactElement {
           )}
         </>
       )}
-
-      {parameters.length > 0 ? (
-        <>
-          <H size={[-1, 0, 1, 2]}>Parameters</H>
-          {parameters.map((param) => (
-            <TSParamMember data={param} key={param._key} />
-          ))}
-        </>
-      ) : null}
 
       {returnType.length > 0 ? (
         <>

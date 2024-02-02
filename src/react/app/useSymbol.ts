@@ -17,7 +17,7 @@ export interface UseSymbolProps {
 
 /** @beta */
 export function useSymbol(props: UseSymbolProps): {
-  data: UseSymbolData | null
+  data?: UseSymbolData | null
   error: Error | null
   loading: boolean
 } {
@@ -26,7 +26,7 @@ export function useSymbol(props: UseSymbolProps): {
   const packageScope = packageScopeProp ?? params?.packageScope
   const packageName = packageNameProp ?? params?.packageName
 
-  const [data, setData] = useState<UseSymbolData | null>(null)
+  const [data, setData] = useState<UseSymbolData | null | undefined>(null)
   const [error, setError] = useState<Error | null>(null)
   const [loading, setLoading] = useState(false)
 
