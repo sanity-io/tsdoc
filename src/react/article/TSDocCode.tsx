@@ -40,6 +40,7 @@ export function TSDocCode(props: {
     .replace(/History_2/g, 'History')
     .replace(/React_2/g, 'React')
     .replace(/Plugin_2/g, 'Plugin2')
+    .replace(/JSX_2/g, 'JSX')
 
   return (
     <Root>
