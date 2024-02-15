@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.42](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.41...v1.0.0-alpha.42) (2024-02-15)
+
+### Bug Fixes
+
+- regex to rewrite JSX_2 to JSX ([#33](https://github.com/sanity-io/tsdoc/issues/33)) ([6f8b8c1](https://github.com/sanity-io/tsdoc/commit/6f8b8c158669389cba99209805ee13f941d8ea67))
+
 ## [1.0.0-alpha.41](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.40...v1.0.0-alpha.41) (2024-02-02)
 
 ### Bug Fixes
