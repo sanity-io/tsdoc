@@ -4,8 +4,8 @@ import {
   PortableTextProps,
 } from '@portabletext/react'
 import {PortableTextNode} from '@sanity/tsdoc'
-import {Box, Card, Code, Stack} from '@sanity/ui'
-import {ReactElement, useCallback, MouseEvent, useMemo} from 'react'
+import {Box, Card, Code} from '@sanity/ui'
+import {ReactElement, useCallback, MouseEvent} from 'react'
 import {useTSDoc} from '../app'
 import {H, Level, P, useSpace, useTextSize} from '../lib/ui'
 
@@ -41,6 +41,7 @@ const components: PortableTextProps['components'] = {
 
 function CodeBlock(props: {value: {code?: string; language?: string}}) {
   const {code, language = 'typescript'} = props.value
+
   return (
     <Card
       border
