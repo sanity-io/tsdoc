@@ -4,7 +4,7 @@ import {
   PortableTextProps,
 } from '@portabletext/react'
 import {PortableTextNode} from '@sanity/tsdoc'
-import {Box, Card, Code} from '@sanity/ui'
+import {Box, Card, Code, Stack} from '@sanity/ui'
 import {ReactElement, useCallback, MouseEvent, useMemo} from 'react'
 import {useTSDoc} from '../app'
 import {H, Level, P, useSpace, useTextSize} from '../lib/ui'
@@ -17,7 +17,6 @@ const CODE_LANGUAGES: Record<string, string> = {
 
 export function PortableText(props: {blocks: PortableTextNode[]}): ReactElement {
   const {blocks} = props
-
   return <BasePortableText components={components} value={blocks} />
 }
 
@@ -133,7 +132,11 @@ function BlockquoteBlock({children}: {children?: React.ReactNode}) {
 }
 
 function NormalBlock({children}: {children?: React.ReactNode}) {
-  return <P muted>{children}</P>
+  return (
+    <Box marginBottom={4}>
+      <P muted>{children}</P>
+    </Box>
+  )
 }
 
 function isValidUrl(url: string) {
