@@ -16,14 +16,18 @@ export function CommentExampleBlocks(props: {data: TSDocComment}): ReactElement 
 
       {exampleBlocks.map((exampleBlock, idx: number) => (
         <Level key={exampleBlock._key}>
-          <CommentExampleBlock data={exampleBlock} index={idx} showHeader={showPerExampleHeader}/>
+          <CommentExampleBlock data={exampleBlock} index={idx} showHeader={showPerExampleHeader} />
         </Level>
       ))}
     </>
   )
 }
 
-export function CommentExampleBlock(props: {data: TSDocExampleBlock; index: number; showHeader: boolean}): ReactElement {
+export function CommentExampleBlock(props: {
+  data: TSDocExampleBlock
+  index: number
+  showHeader: boolean
+}): ReactElement {
   const {data, index, showHeader} = props
 
   if (!data.content) return <></>
