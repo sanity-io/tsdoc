@@ -8,6 +8,7 @@ export function CommentExampleBlocks(props: {data: TSDocComment}): ReactElement 
   const {exampleBlocks} = data
 
   if (!exampleBlocks || exampleBlocks.length === 0) return <></>
+  const showPerExampleHeader = exampleBlocks.length > 1
 
   return (
     <>
@@ -15,21 +16,21 @@ export function CommentExampleBlocks(props: {data: TSDocComment}): ReactElement 
 
       {exampleBlocks.map((exampleBlock, idx: number) => (
         <Level key={exampleBlock._key}>
-          <CommentExampleBlock data={exampleBlock} index={idx} />
+          <CommentExampleBlock data={exampleBlock} index={idx} showHeader={showPerExampleHeader}/>
         </Level>
       ))}
     </>
   )
 }
 
-export function CommentExampleBlock(props: {data: TSDocExampleBlock; index: number}): ReactElement {
-  const {data, index} = props
+export function CommentExampleBlock(props: {data: TSDocExampleBlock; index: number; showHeader: boolean}): ReactElement {
+  const {data, index, showHeader} = props
 
   if (!data.content) return <></>
 
   return (
     <>
-      <H size={[-1, 0, 1, 2]}>Example #{index + 1}</H>
+      {showHeader && <H size={[-1, 0, 1, 2]}>Example #{index + 1}</H>}
 
       <PortableText blocks={data.content} />
     </>
