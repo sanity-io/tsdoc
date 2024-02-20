@@ -41,8 +41,7 @@ const components: PortableTextProps['components'] = {
 }
 
 function CodeBlock(props: {value: {code?: string; language?: string}}) {
-  const {code, language = 'plain'} = props.value
-
+  const {code, language = 'typescript'} = props.value
   return (
     <Card
       border
@@ -52,7 +51,7 @@ function CodeBlock(props: {value: {code?: string; language?: string}}) {
       radius={3}
       tone="inherit"
     >
-      <Code language={CODE_LANGUAGES[language] || language} size={useTextSize([-1, -1, 0])}>
+      <Code language={CODE_LANGUAGES[language] || language || 'typescript'} size={useTextSize([-1, -1, 0])}>
         {code}
       </Code>
     </Card>
