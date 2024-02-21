@@ -5,7 +5,7 @@ import {
 } from '@portabletext/react'
 import {PortableTextNode} from '@sanity/tsdoc'
 import {Box, Card, Code} from '@sanity/ui'
-import {ReactElement, useCallback, MouseEvent, useMemo} from 'react'
+import {ReactElement, useCallback, MouseEvent} from 'react'
 import {useTSDoc} from '../app'
 import {H, Level, P, useSpace, useTextSize} from '../lib/ui'
 
@@ -41,7 +41,7 @@ const components: PortableTextProps['components'] = {
 }
 
 function CodeBlock(props: {value: {code?: string; language?: string}}) {
-  const {code, language = 'plain'} = props.value
+  const {code, language = 'typescript'} = props.value
 
   return (
     <Card
@@ -52,7 +52,10 @@ function CodeBlock(props: {value: {code?: string; language?: string}}) {
       radius={3}
       tone="inherit"
     >
-      <Code language={CODE_LANGUAGES[language] || language} size={useTextSize([-1, -1, 0])}>
+      <Code
+        language={CODE_LANGUAGES[language] || language || 'typescript'}
+        size={useTextSize([-1, -1, 0])}
+      >
         {code}
       </Code>
     </Card>
@@ -134,7 +137,11 @@ function BlockquoteBlock({children}: {children?: React.ReactNode}) {
 }
 
 function NormalBlock({children}: {children?: React.ReactNode}) {
-  return <P muted>{children}</P>
+  return (
+    <Box marginBottom={4}>
+      <P muted>{children}</P>
+    </Box>
+  )
 }
 
 function isValidUrl(url: string) {
