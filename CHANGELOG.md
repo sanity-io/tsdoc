@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.44](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.43...v1.0.0-alpha.44) (2024-02-27)
+
+### Features
+
+- **tsdoc:** allow passing bundled packages to tsdoc extractor ([#32](https://github.com/sanity-io/tsdoc/issues/32)) ([543e23f](https://github.com/sanity-io/tsdoc/commit/543e23fa804415055a335ccf4307838668099274))
+
 ## [1.0.0-alpha.43](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.42...v1.0.0-alpha.43) (2024-02-21)
 
 ### Bug Fixes
