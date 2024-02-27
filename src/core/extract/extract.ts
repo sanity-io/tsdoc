@@ -38,8 +38,9 @@ export async function extract(options: {
   packagePath: string
   rules?: NonNullable<PkgConfigOptions['extract']>['rules']
   tsconfig?: string
+  bundledPackages?: string[]
 }): Promise<{pkg: PackageJSON; results: ExtractResult[]}> {
-  const {customTags, packagePath, rules, tsconfig: tsconfigPath} = options
+  const {customTags, packagePath, rules, tsconfig: tsconfigPath, bundledPackages} = options
   const tempDir = await createTempDir()
   const tempDirPath = tempDir.path
   const packageJsonFullPath = path.resolve(packagePath, 'package.json')
@@ -72,6 +73,7 @@ export async function extract(options: {
         tempDirPath,
         tsconfigPath,
         packageJsonFullPath,
+        bundledPackages,
       })
 
       results.push({
@@ -102,6 +104,7 @@ async function _doExtract(options: {
   tempDirPath: string
   tsconfigPath?: string
   packageJsonFullPath: string
+  bundledPackages?: string[]
 }) {
   const {
     customTags,
@@ -111,6 +114,7 @@ async function _doExtract(options: {
     tempDirPath,
     tsconfigPath,
     packageJsonFullPath,
+    bundledPackages,
   } = options
 
   const tsdocConfigFile = await createTSDocConfig({customTags: customTags || []})
@@ -123,6 +127,7 @@ async function _doExtract(options: {
       packagePath,
       tempDirPath,
       tsconfigPath,
+      bundledPackages,
     }),
     configObjectFullPath: undefined,
     packageJson: undefined,

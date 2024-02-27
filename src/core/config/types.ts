@@ -11,6 +11,7 @@ export interface SanityTSDocConfigOptions {
     type: 'fs'
     pattern?: string | string[]
     tsconfig?: string
+    bundledPackages?: string[]
   }
   output?: {
     fs?: {
