@@ -15,30 +15,13 @@ jobs:
         platform: [ubuntu-latest, macos-latest]
         node-version: [lts/*, current]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
         with:
+          cache: pnpm
           node-version: ${{ matrix.node-version }}
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        id: pnpm-setup
-        with:
-          version: latest
-          run_install: false
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
+      - run: corepack enable && pnpm --version
       - run: pnpm install
       - run: pnpm lint
       - run: pnpm build
@@ -49,33 +32,17 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           # Need to fetch entire commit history to
           # analyze every commit since last release
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
         with:
+          cache: pnpm
           node-version: lts/*
-      - uses: pnpm/action-setup@v2
-        name: Install pnpm
-        id: pnpm-setup
-        with:
-          version: latest
-          run_install: false
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - uses: actions/cache@v3
-        name: Setup pnpm cache
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+      - run: corepack enable && pnpm --version
       - run: pnpm install
       # Branches that will release new versions are defined in .releaserc.json
       - run: npx semantic-release
