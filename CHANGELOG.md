@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.0-alpha.45](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.44...v1.0.0-alpha.45) (2024-03-12)
+
+### Bug Fixes
+
+- bump api extractor packages ([#35](https://github.com/sanity-io/tsdoc/issues/35)) ([aafebfb](https://github.com/sanity-io/tsdoc/commit/aafebfb25310c1a191dfbe5991cefb4d9d702fd9))
+
 ## [1.0.0-alpha.44](https://github.com/sanity-io/tsdoc/compare/v1.0.0-alpha.43...v1.0.0-alpha.44) (2024-02-27)
 
 ### Features
