@@ -8,15 +8,15 @@
     ".": {
       "types": "./dist/exports/index.d.ts",
       "source": "./src/index.ts",
-      "require": "./dist/index.cjs",
       "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     },
     "./extra": {
       "types": "./dist/exports/extra.d.ts",
       "source": "./src/extra.ts",
-      "require": "./dist/extra.cjs",
       "import": "./dist/extra.js",
+      "require": "./dist/extra.cjs",
       "default": "./dist/extra.js"
     },
     "./package.json": "./package.json"

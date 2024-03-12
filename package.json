@@ -149,15 +149,16 @@
     "extends": "@sanity/semantic-release-preset"
   },
   "dependencies": {
-    "@microsoft/api-extractor": "7.35.0",
-    "@microsoft/api-extractor-model": "7.27.0",
-    "@microsoft/tsdoc": "0.14.2",
+    "@microsoft/api-extractor": "^7.42.3",
+    "@microsoft/api-extractor-model": "^7.28.13",
+    "@microsoft/tsdoc": "^0.14.2",
     "@microsoft/tsdoc-config": "^0.16.2",
     "@portabletext/react": "^3.0.0",
     "@portabletext/toolkit": "^2.0.1",
     "@sanity/client": "^6.1.2",
     "@sanity/color": "^2.2.5",
     "@sanity/icons": "^2.3.1",
+    "@sanity/pkg-utils": "2.2.16",
     "@sanity/ui": "^1.7.2",
     "@types/cpx": "^1.5.2",
     "@vitejs/plugin-react": "^4.0.0",
@@ -185,7 +186,6 @@
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@jest/types": "^29.5.0",
-    "@sanity/pkg-utils": "^2.2.16",
     "@sanity/semantic-release-preset": "^4.1.1",
     "@sanity/ui-workshop": "^1.2.1",
     "@types/cors": "^2.8.13",
@@ -233,13 +233,12 @@
     "uuid": "^9.0.0"
   },
   "peerDependencies": {
-    "@sanity/pkg-utils": "^2.2",
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^3",
-    "styled-components": "^5.2"
+    "styled-components": "^5.2 || ^6"
   },
-  "packageManager": "pnpm@8.5.1",
+  "packageManager": "pnpm@8.15.4",
   "engines": {
     "node": ">=14.0.0"
   },
