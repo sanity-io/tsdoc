@@ -53,7 +53,7 @@ export async function extract(options: {
   const exports = parseExports({
     pkg,
     strict: true,
-    legacyExports: false,
+    legacyExports: true,
   })
 
   try {
