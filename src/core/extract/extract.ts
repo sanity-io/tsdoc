@@ -1,12 +1,11 @@
 import path from 'path'
-import {Extractor, ExtractorConfig, ExtractorMessage} from '@microsoft/api-extractor'
+import {Extractor, ExtractorConfig, type ExtractorMessage} from '@microsoft/api-extractor'
 import {ApiPackage} from '@microsoft/api-extractor-model'
 import {
-  PackageJSON,
-  PkgConfigOptions,
+  type PackageJSON,
+  type PkgConfigOptions,
   createLogger,
   getExtractMessagesConfig,
-  getPkgExtMap,
   loadConfig,
   loadPkgWithReporting,
   parseExports,
@@ -14,7 +13,7 @@ import {
 import {createApiExtractorConfig} from './apiExtractorConfig'
 import {createTempDir} from './helpers'
 import {createTSDocConfig} from './tsDocConfig'
-import {TSDocCustomTag} from './types'
+import type {TSDocCustomTag} from './types'
 
 /**
  * @public
@@ -48,13 +47,13 @@ export async function extract(options: {
   // pkg utils
   const config = await loadConfig({cwd: packagePath})
   const logger = createLogger()
-  const pkg = await loadPkgWithReporting({cwd: packagePath, logger})
+  const pkg = await loadPkgWithReporting({cwd: packagePath, logger, strict: true})
 
   // const exports = _resolveExports({pkg})
   const exports = parseExports({
-    extMap: getPkgExtMap({legacyExports: config?.legacyExports ?? false}),
     pkg,
     strict: true,
+    legacyExports: false,
   })
 
   try {
