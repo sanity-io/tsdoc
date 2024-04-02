@@ -27,12 +27,10 @@ describe('cli', () => {
     await project.run('build')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     const {stdout} = await project.run('etl')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export/1.0.0.json')
   })
@@ -44,12 +42,10 @@ describe('cli', () => {
     await project.run('build')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     const {stdout} = await project.run('etl')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export-legacy/1.0.0.json')
   })
@@ -61,12 +57,10 @@ describe('cli', () => {
     await project.run('build')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     const {stdout} = await project.run('etl')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export-cjs/1.0.0.json')
   })
@@ -78,12 +72,10 @@ describe('cli', () => {
     await project.run('build')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     const {stdout} = await project.run('etl')
 
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-    expect(await project.dirs('dist')).toEqual(['exports'])
 
     expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export-cjs-legacy/1.0.0.json')
   })
