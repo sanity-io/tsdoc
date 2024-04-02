@@ -22,7 +22,6 @@
   "license": "MIT",
   "author": "Sanity.io <hello@sanity.io>",
   "sideEffects": false,
-  "type": "commonjs",
   "exports": {
     ".": {
       "source": "./exports/index.ts",
@@ -163,7 +162,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
-    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@sanity/semantic-release-preset": "^4.1.7",

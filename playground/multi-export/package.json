@@ -23,11 +23,11 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "source": "./src/index.ts",
-  "types": "./dist/exports/index.d.ts",
+  "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
       "extra": [
-        "./dist/exports/extra.d.ts"
+        "./dist/extra.d.ts"
       ]
     }
   },

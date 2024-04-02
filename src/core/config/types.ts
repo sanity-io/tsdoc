@@ -1,4 +1,4 @@
-import {PkgConfigOptions} from '@sanity/pkg-utils'
+import type {PkgConfigOptions} from '@sanity/pkg-utils'
 
 /** @public */
 export interface SanityTSDocConfigOptions {
@@ -7,6 +7,7 @@ export interface SanityTSDocConfigOptions {
     port?: number
   }
   extract?: PkgConfigOptions['extract']
+  legacyExports?: PkgConfigOptions['legacyExports']
   input?: {
     type: 'fs'
     pattern?: string | string[]

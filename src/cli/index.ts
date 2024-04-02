@@ -14,6 +14,7 @@ cli
   .command('etl')
   .option('--cwd [cwd]', 'Output directory')
   .option('--outDir [outDir]', 'Output directory')
+  .option('--strict', 'Strict mode')
   .option('--tsconfig [tsconfig]', 'Path to tsconfig.json')
   .action(async (options) => {
     const {etlCommand} = await import('./etl')
