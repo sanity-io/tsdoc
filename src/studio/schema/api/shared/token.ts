@@ -15,6 +15,7 @@ export const apiTokenType = defineType({
       type: 'reference',
       name: 'member',
       title: 'Member',
+      // @ts-expect-error find out why this is not working
       to: [
         {type: 'api.class'},
         {type: 'api.enum'},

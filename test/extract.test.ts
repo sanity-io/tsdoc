@@ -1,8 +1,13 @@
+import {createRequire} from 'node:module'
 import path from 'node:path'
 
-import {extract} from '@sanity/tsdoc'
+import {describe, expect, test, vi} from 'vitest'
 
 import {_spawnProject} from './_spawnProject'
+
+const require = createRequire(import.meta.url)
+// @sanity/tsdoc is currently designed to be used in a CJS process
+const {extract} = require('@sanity/tsdoc')
 
 describe('extract', () => {
   vi.setConfig({testTimeout: 60000})
@@ -16,6 +21,8 @@ describe('extract', () => {
     const {results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
+      strict: true,
+      legacyExports: true,
       tsconfig: 'tsconfig.dist.json',
     })
 
@@ -35,6 +42,8 @@ describe('extract', () => {
     const {results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
+      strict: true,
+      legacyExports: true,
       tsconfig: 'tsconfig.dist.json',
     })
 

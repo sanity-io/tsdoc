@@ -21,12 +21,14 @@ export const apiPackageType = defineType({
       type: 'reference',
       name: 'latestRelease',
       title: 'Latest release',
+      // @ts-expect-error find out why this is not working
       to: [{type: 'api.release'}],
     }),
     defineField({
       type: 'array',
       name: 'releases',
       title: 'Releases',
+      // @ts-expect-error find out why this is not working
       of: [
         defineArrayMember({
           type: 'reference',

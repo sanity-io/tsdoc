@@ -1,3 +1,5 @@
+import {describe, expect, test, vi} from 'vitest'
+
 import {_spawnProject} from './_spawnProject'
 
 describe('cli', () => {

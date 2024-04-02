@@ -37,7 +37,7 @@ export async function extract(options: {
   customTags?: TSDocCustomTag[]
   packagePath: string
   rules?: NonNullable<PkgConfigOptions['extract']>['rules']
-  strict?: boolean
+  strict: boolean
   legacyExports: boolean
   tsconfig?: string
   bundledPackages?: string[]
@@ -46,7 +46,7 @@ export async function extract(options: {
     customTags,
     packagePath,
     rules,
-    strict = false,
+    strict,
     legacyExports,
     tsconfig: tsconfigPath,
     bundledPackages,
@@ -71,14 +71,15 @@ export async function extract(options: {
     const results: ExtractResult[] = []
 
     for (const exp of exports) {
-      if (!exp.types) {
+      if (!exp.source || !exp.default) {
         continue
       }
 
+      const typesPath = exp.default.replace(/\.[mc]?js$/, '.d.ts')
       const result = await _doExtract({
         customTags,
         rules: rules ?? config?.extract?.rules,
-        mainEntryPointFilePath: exp.types,
+        mainEntryPointFilePath: typesPath,
         packagePath,
         tempDirPath,
         tsconfigPath,
@@ -89,7 +90,7 @@ export async function extract(options: {
       results.push({
         exportPath: exp._path,
         tempDirPath,
-        typesPath: exp.types,
+        typesPath: typesPath,
         ...result,
       })
     }

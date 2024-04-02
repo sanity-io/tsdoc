@@ -1,21 +1,27 @@
-import {
-  _printExtractMessages,
-  type APIExportDocument,
-  type APIMemberDocument,
-  type APIPackageDocument,
-  extract,
-  type SanityDocumentValue,
-  type SerializedAPIFunction,
-  type SerializedAPINamespace,
-  type SerializedAPIVariable,
-  transform,
+import {createRequire} from 'node:module'
+
+import type {
+  APIExportDocument,
+  APIMemberDocument,
+  APIPackageDocument,
+  SanityDocumentValue,
+  SerializedAPIFunction,
+  SerializedAPINamespace,
+  SerializedAPIVariable,
 } from '@sanity/tsdoc'
+import {beforeAll, describe, expect, test, vi} from 'vitest'
 
 import {type _SpawnedProject, _spawnProject} from './_spawnProject'
+
+const require = createRequire(import.meta.url)
+// @sanity/tsdoc is currently designed to be used in a CJS process
+const {_printExtractMessages, extract, transform} = require('@sanity/tsdoc')
 
 describe('transform', () => {
   vi.setConfig({testTimeout: 60000})
 
+  const strict = true
+  const legacyExports = true
   let tsProject: _SpawnedProject
   let myLibProject: _SpawnedProject
   let multiExportProject: _SpawnedProject
@@ -36,6 +42,8 @@ describe('transform', () => {
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
+      strict,
+      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -47,6 +55,8 @@ describe('transform', () => {
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
+      strict,
+      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -59,6 +69,8 @@ describe('transform', () => {
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
+      strict,
+      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -71,6 +83,8 @@ describe('transform', () => {
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
+      strict,
+      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -102,6 +116,8 @@ describe('transform', () => {
     const {pkg, results} = await extract({
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
+      strict,
+      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -115,6 +131,8 @@ describe('transform', () => {
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: multiExportProject.cwd,
       tsconfig: 'tsconfig.dist.json',
+      strict,
+      legacyExports,
     })
 
     for (const result of results) {
@@ -147,7 +165,7 @@ describe('transform', () => {
   })
 
   test('should transform package with namespace exports', async () => {
-    const {pkg, results} = await extract({packagePath: tsProject.cwd})
+    const {pkg, results} = await extract({packagePath: tsProject.cwd, strict, legacyExports})
 
     const docs = transform(results, {package: {version: pkg.version}})
 
@@ -161,6 +179,8 @@ describe('transform', () => {
   test('should transform function parameters', async () => {
     const {pkg, results} = await extract({
       packagePath: tsProject.cwd,
+      strict,
+      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -248,6 +268,8 @@ describe('transform', () => {
   test('should transform function overloads', async () => {
     const {pkg, results} = await extract({
       packagePath: tsProject.cwd,
+      strict,
+      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})

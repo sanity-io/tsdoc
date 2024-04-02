@@ -12,13 +12,12 @@
     "./typings",
     "./workshop"
   ],
-  "exclude": ["./test/__tmp__"],
+  "exclude": ["./test/__tmp__", "./dist", "./workshop/dist"],
   "compilerOptions": {
     "composite": true,
 
     "rootDir": ".",
     "outDir": "./dist",
-    "types": ["vitest/globals"],
 
     "paths": {
       "@sanity/tsdoc/cli": ["./exports/cli.ts"],

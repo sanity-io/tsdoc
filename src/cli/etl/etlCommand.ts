@@ -34,7 +34,7 @@ export async function etlCommand(options: {
   tsconfig?: string
   strict?: boolean
 }): Promise<void> {
-  const {cwd, outDir = 'etc', tsconfig: tsconfigPath = 'tsconfig.json', strict} = options
+  const {cwd, outDir = 'etc', tsconfig: tsconfigPath = 'tsconfig.json', strict = false} = options
 
   const packageJsonPath = await pkgUp({cwd})
 
@@ -59,6 +59,7 @@ export async function etlCommand(options: {
     strict,
     tsconfig: config?.input?.tsconfig ?? tsconfigPath,
     bundledPackages: config?.input?.bundledPackages,
+    legacyExports: config?.legacyExports ?? false,
   })
 
   const jsonPath = path.resolve(packagePath, outDir, `${pkg.name}/${pkg.version}.json`)

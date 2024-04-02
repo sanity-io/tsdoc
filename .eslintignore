@@ -5,3 +5,4 @@
 /playground/*/dist
 /workshop/.workshop
 /workshop/dist
+/test/__tmp__

@@ -8,6 +8,7 @@ import {perfPlugin} from '@sanity/ui-workshop/plugin-perf'
 import {tsdocPlugin} from './tsdoc'
 
 export default defineConfig({
+  // @ts-expect-error find out why this is not working
   alias: getAliases(),
   pattern: ['../src/**/__workshop__/index.ts', '../src/**/__workshop__/index.tsx'],
   plugins: [

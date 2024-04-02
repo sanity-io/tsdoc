@@ -1,8 +1,13 @@
+import {createRequire} from 'node:module'
 import path from 'node:path'
 
-import {extract, load, transform} from '@sanity/tsdoc'
+import {describe, test, vi} from 'vitest'
 
 import {_spawnProject} from './_spawnProject'
+
+const require = createRequire(import.meta.url)
+// @sanity/tsdoc is currently designed to be used in a CJS process
+const {extract, load, transform} = require('@sanity/tsdoc')
 
 describe('load', () => {
   vi.setConfig({testTimeout: 60000})
@@ -13,7 +18,11 @@ describe('load', () => {
     await project.install()
     await project.run('build')
 
-    const {pkg, results} = await extract({packagePath: project.cwd})
+    const {pkg, results} = await extract({
+      packagePath: project.cwd,
+      strict: true,
+      legacyExports: true,
+    })
 
     const docs = transform(results, {package: {version: pkg.version}})
 

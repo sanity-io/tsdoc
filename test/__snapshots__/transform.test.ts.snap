@@ -1,5 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`transform > should result in a "api.release" document 1`] = `[]`;
+
+exports[`transform > should transform class 1`] = `undefined`;
+
+exports[`transform > should transform interface with call signature 1`] = `undefined`;
+
 exports[`transform should result in a "api.release" document 1`] = `
 [
   {

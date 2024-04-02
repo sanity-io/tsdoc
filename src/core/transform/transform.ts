@@ -1,7 +1,7 @@
 import path from 'path'
 
-import {ExtractResult} from '../extract'
-import {
+import type {ExtractResult} from '../extract'
+import type {
   APIDocument,
   APIExportDocument,
   APIPackageDocument,
@@ -12,7 +12,7 @@ import {
 import {_isRecord, _parsePackageName} from './helpers'
 import {transformExportMember} from './transformExportMember'
 import {_transformPackage} from './transformPackage'
-import {TransformContext, TransformOpts} from './types'
+import type {TransformContext, TransformOpts} from './types'
 
 function formatReleaseId(
   packageScope: string | undefined,

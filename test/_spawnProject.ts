@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 
 import {readdir, readFile} from 'node:fs/promises'
+import {createRequire} from 'node:module'
 import path from 'node:path'
 import {promisify} from 'node:util'
 
@@ -14,6 +15,7 @@ import {_exec} from './_exec'
 import {_ExecError} from './_ExecError'
 
 const _copy = promisify(cpx.copy)
+const require = createRequire(import.meta.url)
 
 async function _tmpWorkspace() {
   const key = uuid()
@@ -59,7 +61,6 @@ export async function _spawnProject(name: string): Promise<_SpawnedProject> {
     throw new Error(`failed to spawn project: ${name}`)
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const pkg = require(packageJsonPath)
 
   async function runExec(cmd: string) {

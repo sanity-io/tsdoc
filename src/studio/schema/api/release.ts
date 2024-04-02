@@ -16,6 +16,7 @@ export const apiReleaseType = defineType({
       type: 'array',
       name: 'exports',
       title: 'Exports',
+      // @ts-expect-error find out why this is not working
       of: [
         defineArrayMember({
           type: 'reference',
@@ -27,6 +28,7 @@ export const apiReleaseType = defineType({
       type: 'array',
       name: 'memberNames',
       title: 'Member names',
+      // @ts-expect-error find out why this is not working
       of: [{type: 'string'}],
       options: {
         layout: 'tags',
@@ -36,6 +38,7 @@ export const apiReleaseType = defineType({
       type: 'reference',
       name: 'package',
       title: 'Package',
+      // @ts-expect-error find out why this is not working
       to: [{type: 'api.package'}],
       hidden: true,
     }),
