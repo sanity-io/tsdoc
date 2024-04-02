@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/sanity-io/tsdoc/compare/v1.0.2...v1.0.3) (2024-04-02)
+
+### Bug Fixes
+
+- **deps:** update dependency @portabletext/react to ^3.0.15 ([#96](https://github.com/sanity-io/tsdoc/issues/96)) ([d1f0a64](https://github.com/sanity-io/tsdoc/commit/d1f0a64065e67f8f77adc11b3976bac9d9af5034))
+- **deps:** update dependency @vitejs/plugin-react to ^4.2.1 ([#91](https://github.com/sanity-io/tsdoc/issues/91)) ([d96e60a](https://github.com/sanity-io/tsdoc/commit/d96e60a21cce2a5425f01b5c956b817977358db2))
+- **deps:** update dependency chokidar to ^3.6.0 ([#92](https://github.com/sanity-io/tsdoc/issues/92)) ([c45f705](https://github.com/sanity-io/tsdoc/commit/c45f705e363b814aee8691719090c95ddaa981df))
+- **deps:** update dependency jsonc-parser to ^3.2.1 ([#93](https://github.com/sanity-io/tsdoc/issues/93)) ([b22b993](https://github.com/sanity-io/tsdoc/commit/b22b99308ece1063fc54ac2deb3d30a4e1c4c405))
+- **deps:** update dependency vite to v4.5.3 ([bae94ae](https://github.com/sanity-io/tsdoc/commit/bae94aec306ea58e49e28af34d1c7ed8141f202a))
+
 ## [1.0.2](https://github.com/sanity-io/tsdoc/compare/v1.0.1...v1.0.2) (2024-04-02)
 
 ### Bug Fixes
