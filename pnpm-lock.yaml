@@ -51,7 +51,7 @@ importers:
         version: 1.5.5
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.2.1(vite@4.5.3)
+        version: 4.2.1(vite@5.2.7)
       cac:
         specifier: ^6.7.14
         version: 6.7.14
@@ -110,8 +110,8 @@ importers:
         specifier: 5.4.2
         version: 5.4.2
       vite:
-        specifier: ^4.5.3
-        version: 4.5.3(@types/node@20.12.3)
+        specifier: ^5.2.7
+        version: 5.2.7(@types/node@20.12.3)
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.2.1
@@ -1868,6 +1868,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm64@0.20.2:
@@ -1884,6 +1885,7 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm@0.20.2:
@@ -1900,6 +1902,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-x64@0.20.2:
@@ -1916,6 +1919,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-arm64@0.20.2:
@@ -1932,6 +1936,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-x64@0.20.2:
@@ -1948,6 +1953,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64@0.20.2:
@@ -1964,6 +1970,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-x64@0.20.2:
@@ -1980,6 +1987,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm64@0.20.2:
@@ -1996,6 +2004,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm@0.20.2:
@@ -2012,6 +2021,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ia32@0.20.2:
@@ -2028,6 +2038,7 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.20.2:
@@ -2044,6 +2055,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-mips64el@0.20.2:
@@ -2060,6 +2072,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ppc64@0.20.2:
@@ -2076,6 +2089,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-riscv64@0.20.2:
@@ -2092,6 +2106,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-s390x@0.20.2:
@@ -2108,6 +2123,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-x64@0.20.2:
@@ -2124,6 +2140,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/netbsd-x64@0.20.2:
@@ -2140,6 +2157,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openbsd-x64@0.20.2:
@@ -2156,6 +2174,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/sunos-x64@0.20.2:
@@ -2172,6 +2191,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-arm64@0.20.2:
@@ -2188,6 +2208,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-ia32@0.20.2:
@@ -2204,6 +2225,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-x64@0.20.2:
@@ -3880,6 +3902,7 @@ packages:
       vite: 4.5.3(@types/node@20.12.3)
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@vitejs/plugin-react@4.2.1(vite@5.2.7):
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
@@ -3895,7 +3918,6 @@ packages:
       vite: 5.2.7(@types/node@20.12.3)
     transitivePeerDependencies:
       - supports-color
-    dev: true
 
   /@vitest/expect@1.4.0:
     resolution: {integrity: sha512-Jths0sWCJZ8BxjKe+p+eKsoqev1/T8lYcrjavEaz8auEJ4jAVY0GwW3JKmdVU4mmNPLPHixh4GNXP7GFtAiDHA==}
@@ -5861,6 +5883,7 @@ packages:
       '@esbuild/win32-arm64': 0.18.20
       '@esbuild/win32-ia32': 0.18.20
       '@esbuild/win32-x64': 0.18.20
+    dev: true
 
   /esbuild@0.20.2:
     resolution: {integrity: sha512-WdOOppmUNU+IbZ0PaDiTst80zjnrOkyJNHoKupIcVyU8Lvla3Ugx94VzkQ32Ijqd7UhHJy75gNWDMUekcrSJ6g==}
@@ -10413,6 +10436,7 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /rollup@4.13.2:
     resolution: {integrity: sha512-MIlLgsdMprDBXC+4hsPgzWUasLO9CE4zOkj/u6j+Z6j5A4zRY+CtiXAdJyPtgCsc42g658Aeh1DlrdVEJhsL2g==}
@@ -12113,6 +12137,7 @@ packages:
       rollup: 3.29.4
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vite@5.2.7(@types/node@20.12.3):
     resolution: {integrity: sha512-k14PWOKLI6pMaSzAuGtT+Cf0YmIx12z9YGon39onaJNy8DLBfBJrzg9FQEmkAM5lpHBZs9wksWAsyF/HkpEwJA==}
@@ -12148,7 +12173,6 @@ packages:
       rollup: 4.13.2
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /vitest-github-actions-reporter@0.11.1(vitest@1.4.0):
     resolution: {integrity: sha512-ZHHB0wBgOPhMYCB17WKVlJZa+5SdudBZFoVoebwfq3ioIUTeLQGYHwh85vpdJAxRghLP8d0qI/6eCTueGyDVXA==}
