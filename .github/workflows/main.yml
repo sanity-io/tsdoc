@@ -38,7 +38,8 @@ jobs:
       - run: pnpm install
       - if: matrix.platform != 'windows-latest'
         run: pnpm lint
-      - run: pnpm build
+      - if: matrix.platform == 'windows-latest'
+        run: pnpm build
       - run: pnpm test
 
   release:

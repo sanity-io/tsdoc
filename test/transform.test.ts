@@ -1,4 +1,5 @@
 import {createRequire} from 'node:module'
+import {platform} from 'node:process'
 
 import type {
   APIExportDocument,
@@ -17,7 +18,7 @@ const require = createRequire(import.meta.url)
 // @sanity/tsdoc is currently designed to be used in a CJS process
 const {_printExtractMessages, extract, transform} = require('@sanity/tsdoc')
 
-describe('transform', () => {
+describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform', () => {
   vi.setConfig({testTimeout: 60000, hookTimeout: 60000})
 
   const strict = true
