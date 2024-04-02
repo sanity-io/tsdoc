@@ -1,12 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`transform > should result in a "api.release" document 1`] = `[]`;
-
-exports[`transform > should transform class 1`] = `undefined`;
-
-exports[`transform > should transform interface with call signature 1`] = `undefined`;
-
-exports[`transform should result in a "api.release" document 1`] = `
+exports[`transform > should result in a "api.release" document 1`] = `
 [
   {
     "_id": "tsdoc-mylib",
@@ -1708,7 +1702,7 @@ exports[`transform should result in a "api.release" document 1`] = `
 ]
 `;
 
-exports[`transform should transform class 1`] = `
+exports[`transform > should transform class 1`] = `
 {
   "_id": "tsdoc-37d9a6314d9fc88c20990c7f9b784dde",
   "_type": "api.class",
@@ -2062,7 +2056,7 @@ exports[`transform should transform class 1`] = `
 }
 `;
 
-exports[`transform should transform interface with call signature 1`] = `
+exports[`transform > should transform interface with call signature 1`] = `
 {
   "_id": "tsdoc-814d0a452f98ffc5c2f30f549227a74c",
   "_type": "api.interface",

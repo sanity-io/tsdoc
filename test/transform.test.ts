@@ -132,7 +132,7 @@ describe('transform', () => {
       packagePath: multiExportProject.cwd,
       tsconfig: 'tsconfig.dist.json',
       strict,
-      legacyExports,
+      legacyExports: false,
     })
 
     for (const result of results) {
