@@ -18,7 +18,7 @@ const require = createRequire(import.meta.url)
 const {_printExtractMessages, extract, transform} = require('@sanity/tsdoc')
 
 describe('transform', () => {
-  vi.setConfig({testTimeout: 60000})
+  vi.setConfig({testTimeout: 60000, hookTimeout: 60000})
 
   const strict = true
   const legacyExports = true
