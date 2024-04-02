@@ -130,17 +130,17 @@
     "extends": "@sanity/semantic-release-preset"
   },
   "dependencies": {
-    "@microsoft/api-extractor": "^7.42.3",
-    "@microsoft/api-extractor-model": "^7.28.13",
-    "@microsoft/tsdoc": "^0.14.2",
-    "@microsoft/tsdoc-config": "^0.16.2",
+    "@microsoft/api-extractor": "7.43.0",
+    "@microsoft/api-extractor-model": "7.28.13",
+    "@microsoft/tsdoc": "0.14.2",
+    "@microsoft/tsdoc-config": "0.16.2",
     "@portabletext/react": "^3.0.0",
     "@portabletext/toolkit": "^2.0.1",
     "@sanity/client": "^6.1.2",
     "@sanity/color": "^2.2.5",
     "@sanity/icons": "^2.3.1",
     "@sanity/pkg-utils": "5.1.4",
-    "@sanity/ui": "^1.7.2",
+    "@sanity/ui": "^2.0.12",
     "@types/cpx": "^1.5.2",
     "@vitejs/plugin-react": "^4.0.0",
     "cac": "^6.7.14",
@@ -167,8 +167,8 @@
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@jest/types": "30.0.0-alpha.3",
-    "@sanity/semantic-release-preset": "^4.1.1",
-    "@sanity/ui-workshop": "^1.2.1",
+    "@sanity/semantic-release-preset": "^4.1.7",
+    "@sanity/ui-workshop": "^2.0.7",
     "@types/cors": "^2.8.13",
     "@types/cpx": "^1.5.2",
     "@types/express": "^4.17.17",
@@ -177,7 +177,6 @@
     "@types/node": "^20.2.3",
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
-    "@types/styled-components": "^5.1.26",
     "@types/tmp": "^0.2.3",
     "@types/uuid": "^9.0.1",
     "@types/yargs": "^17.0.24",
@@ -208,8 +207,8 @@
     "refractor": "^4.8.1",
     "rimraf": "^4.4.1",
     "sanity": "^3.11.2",
-    "semantic-release": "^21.0.2",
-    "styled-components": "^5.3.10",
+    "semantic-release": "^23.0.6",
+    "styled-components": "^6.1.8",
     "typescript": "5.4.2",
     "uuid": "^9.0.0"
   },
@@ -229,10 +228,8 @@
   "pnpm": {
     "overrides": {
       "@sanity/tsdoc": "workspace:*",
-      "@sanity/ui": "1.7.2",
       "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "styled-components": "5.3.10"
+      "react-dom": "^18.2.0"
     }
   }
 }
