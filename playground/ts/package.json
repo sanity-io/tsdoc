@@ -18,7 +18,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && pkg build --strict && pkg --strict",
-    "etl": "sanity-tsdoc etl --outDir ../../etc"
+    "etl": "sanity-tsdoc etl --outDir ../../etc --strict"
   },
   "browserslist": "extends @sanity/browserslist-config",
   "devDependencies": {
