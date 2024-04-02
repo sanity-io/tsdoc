@@ -44,8 +44,8 @@ importers:
         specifier: 5.1.4
         version: 5.1.4(@types/node@20.2.3)(typescript@5.4.2)
       '@sanity/ui':
-        specifier: ^2.0.12
-        version: 2.0.12(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+        specifier: ^2.0.13
+        version: 2.0.13(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
       '@types/cpx':
         specifier: ^1.5.2
         version: 1.5.2
@@ -124,7 +124,7 @@ importers:
         version: 4.1.7(semantic-release@23.0.6)
       '@sanity/ui-workshop':
         specifier: ^2.0.7
-        version: 2.0.7(@sanity/icons@2.11.4)(@sanity/ui@2.0.12)(@types/node@20.2.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+        version: 2.0.7(@sanity/icons@2.11.4)(@sanity/ui@2.0.13)(@types/node@20.2.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
       '@types/cors':
         specifier: ^2.8.13
         version: 2.8.13
@@ -2722,7 +2722,7 @@ packages:
       - supports-color
     dev: true
 
-  /@sanity/ui-workshop@2.0.7(@sanity/icons@2.11.4)(@sanity/ui@2.0.12)(@types/node@20.2.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
+  /@sanity/ui-workshop@2.0.7(@sanity/icons@2.11.4)(@sanity/ui@2.0.13)(@types/node@20.2.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
     resolution: {integrity: sha512-iVtrAps3iO4w1/4jBPYAKMdDseeu3GpM73dGGb+9uxJ+s4adqNaJtiGKOih3dtT2kKs4tVJaV8NxCZNw0Jf+8w==}
     hasBin: true
     peerDependencies:
@@ -2733,7 +2733,7 @@ packages:
       styled-components: ^5.2 || ^6
     dependencies:
       '@sanity/icons': 2.11.4(react@18.2.0)
-      '@sanity/ui': 2.0.12(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+      '@sanity/ui': 2.0.13(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
       '@vitejs/plugin-react': 4.2.1(vite@5.2.7)
       axe-core: 4.9.0
       cac: 6.7.14
@@ -2785,8 +2785,8 @@ packages:
       styled-components: 6.1.8(react-dom@18.2.0)(react@18.2.0)
     dev: true
 
-  /@sanity/ui@2.0.12(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8):
-    resolution: {integrity: sha512-/9TNsl3c/DL5KLc1VcNkkp9PJRDrXvhLnVjiJozqWcdQdApMOovoM8cSeDd8U1jlnVmdyIVhT8T7EnAkU7scFw==}
+  /@sanity/ui@2.0.13(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8):
+    resolution: {integrity: sha512-jLI9UgCsY+fEFs+kHz8PeELNIWZyWCJYMgBCITu+ITdD+/F/H5eGbZALtspiKqNTJ83JG5rDNf6MVCiVqK4gmQ==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: ^18.2.0
