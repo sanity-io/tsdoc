@@ -153,7 +153,7 @@
     "express": "^4.19.2",
     "globby": "^11.1.0",
     "groq": "^3.36.3",
-    "groq-js": "^1.1.9",
+    "groq-js": "^1.7.0",
     "history": "^5.3.0",
     "jsonc-parser": "^3.2.1",
     "mkdirp": "^1.0.4",

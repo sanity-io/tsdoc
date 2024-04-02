@@ -83,7 +83,7 @@ importers:
         specifier: ^3.36.3
         version: 3.36.3
       groq-js:
-        specifier: ^1.1.9
+        specifier: ^1.7.0
         version: 1.7.0
       history:
         specifier: ^5.3.0
