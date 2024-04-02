@@ -1,4 +1,4 @@
-import path from 'path'
+import path from 'node:path'
 import {defineConfig} from '@sanity/ui-workshop'
 import {perfPlugin} from '@sanity/ui-workshop/plugin-perf'
 // import {sanityTheme} from './theme/sanity'
