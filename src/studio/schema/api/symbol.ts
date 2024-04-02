@@ -14,7 +14,6 @@ export const apiSymbolType = defineType({
       type: 'reference',
       name: 'package',
       title: 'Package',
-      // @ts-expect-error find out why this is not working
       to: [{type: 'api.package'}],
       // hidden: true,
     }),

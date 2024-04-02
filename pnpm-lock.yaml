@@ -35,8 +35,8 @@ importers:
         specifier: ^6.15.9
         version: 6.15.9
       '@sanity/color':
-        specifier: ^3.0.4
-        version: 3.0.4
+        specifier: ^2.2.5
+        version: 2.2.5
       '@sanity/icons':
         specifier: ^2.11.6
         version: 2.11.6(react@18.2.0)
@@ -2926,6 +2926,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@sanity/color@2.2.5:
+    resolution: {integrity: sha512-tTi22KoKuER3sldXYl4c1Dq2zU7tMLDkljFiaUKVkBbu4PBvRGCFw75kXZnD2b4Bsp6vin+7sI+AKdCKRhfRuw==}
+    dev: false
 
   /@sanity/color@3.0.4:
     resolution: {integrity: sha512-kPlUmTdMbMOuYtx+eC+pAWtEjwIKR8MwnqMf+Hzy51/npIZr6PywSRTt+PA+9aWov39/N5ZjEPayCFjdeUuHJA==}
