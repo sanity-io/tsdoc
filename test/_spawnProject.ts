@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 
-import {readdir, readFile} from 'fs/promises'
-import path from 'path'
-import {promisify} from 'util'
+import {readdir, readFile} from 'node:fs/promises'
+import path from 'node:path'
+import {promisify} from 'node:util'
 import cpx from 'cpx'
 import mkdirp from 'mkdirp'
 import rimraf from 'rimraf'

@@ -1,7 +1,7 @@
 import {_spawnProject} from './_spawnProject'
 
 describe('cli', () => {
-  jest.setTimeout(60000)
+  vi.setConfig({testTimeout: 60000})
 
   test('run `etl` command', async () => {
     const project = await _spawnProject('mylib')

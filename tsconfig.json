@@ -3,7 +3,6 @@
   "include": [
     "./eslintrc.js",
     "./exports",
-    "./jest.config.js",
     "./package.config.ts",
     "./package.json",
     "./scripts",
@@ -19,6 +18,7 @@
 
     "rootDir": ".",
     "outDir": "./dist",
+    "types": ["vitest/globals"],
 
     "paths": {
       "@sanity/tsdoc/cli": ["./exports/cli.ts"],
@@ -28,7 +28,6 @@
     },
 
     "checkJs": true,
-    "jsx": "react-jsx",
     "noEmit": true,
     "resolveJsonModule": true
   },

@@ -1,4 +1,4 @@
-import child_process from 'child_process'
+import child_process from 'node:child_process'
 import {_ExecError} from './_ExecError'
 
 export function _exec(

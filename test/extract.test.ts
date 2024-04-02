@@ -1,9 +1,9 @@
-import path from 'path'
+import path from 'node:path'
 import {extract} from '@sanity/tsdoc'
 import {_spawnProject} from './_spawnProject'
 
 describe('extract', () => {
-  jest.setTimeout(60000)
+  vi.setConfig({testTimeout: 60000})
 
   test('should extract package with only root export', async () => {
     const project = await _spawnProject('mylib')

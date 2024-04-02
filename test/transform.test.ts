@@ -1,19 +1,19 @@
 import {
-  APIExportDocument,
-  APIPackageDocument,
+  type APIExportDocument,
+  type APIPackageDocument,
   _printExtractMessages,
   extract,
   transform,
-  SerializedAPINamespace,
-  SerializedAPIVariable,
-  SanityDocumentValue,
-  APIMemberDocument,
-  SerializedAPIFunction,
+  type SerializedAPINamespace,
+  type SerializedAPIVariable,
+  type SanityDocumentValue,
+  type APIMemberDocument,
+  type SerializedAPIFunction,
 } from '@sanity/tsdoc'
-import {_SpawnedProject, _spawnProject} from './_spawnProject'
+import {type _SpawnedProject, _spawnProject} from './_spawnProject'
 
 describe('transform', () => {
-  jest.setTimeout(60000)
+  vi.setConfig({testTimeout: 60000})
 
   let tsProject: _SpawnedProject
   let myLibProject: _SpawnedProject

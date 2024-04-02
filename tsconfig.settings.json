@@ -4,6 +4,7 @@
   "compilerOptions": {
     "module": "Preserve",
     "target": "ES2022",
+    "jsx": "preserve",
 
     "declaration": true,
     "declarationMap": true,

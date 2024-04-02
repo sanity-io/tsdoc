@@ -1,9 +1,9 @@
-import path from 'path'
+import path from 'node:path'
 import {extract, load, transform} from '@sanity/tsdoc'
 import {_spawnProject} from './_spawnProject'
 
 describe('load', () => {
-  jest.setTimeout(60000)
+  vi.setConfig({testTimeout: 60000})
 
   test('should ...', async () => {
     const project = await _spawnProject('mylib')
