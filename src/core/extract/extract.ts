@@ -1,4 +1,3 @@
-import path from 'path'
 import {Extractor, ExtractorConfig, type ExtractorMessage} from '@microsoft/api-extractor'
 import {ApiPackage} from '@microsoft/api-extractor-model'
 import {
@@ -10,6 +9,7 @@ import {
   parseExports,
   type PkgConfigOptions,
 } from '@sanity/pkg-utils'
+import path from 'path'
 
 import {createApiExtractorConfig} from './apiExtractorConfig'
 import {createTempDir} from './helpers'

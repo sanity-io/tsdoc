@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 
-import path from 'path'
 import {ExtractorMessage} from '@microsoft/api-extractor'
 import chalk from 'chalk'
+import path from 'path'
 
 /** @internal */
 export function _printExtractMessages(cwd: string, messages: ExtractorMessage[]): void {

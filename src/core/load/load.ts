@@ -1,6 +1,6 @@
-import path from 'path'
 import {createClient, SanityDocument} from '@sanity/client'
 import mkdirp from 'mkdirp'
+import path from 'path'
 
 import {APIDocument} from '../types'
 import {writeFile} from './helpers'

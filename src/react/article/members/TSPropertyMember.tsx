@@ -15,6 +15,7 @@ export function TSPropertyMember(props: {
   const {
     comment,
     inheritedFrom,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     isEventProperty: _isEventProperty,
     isOptional,
     isStatic,

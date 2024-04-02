@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 
-import {readFile} from 'fs/promises'
 import {_loadConfig, APIDocument, APIPackageDocument, APISymbolDocument} from '@sanity/tsdoc'
 import react from '@vitejs/plugin-react'
 import chokidar from 'chokidar'
 import cors from 'cors'
 import express from 'express'
+import {readFile} from 'fs/promises'
 import globby from 'globby'
 import mkdirp from 'mkdirp'
 import path from 'path'

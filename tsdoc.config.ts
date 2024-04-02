@@ -1,5 +1,5 @@
-import path from 'path'
 import {defineConfig} from '@sanity/tsdoc'
+import path from 'path'
 
 import pkgConfig from './package.config'
 

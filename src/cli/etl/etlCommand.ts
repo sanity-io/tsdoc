@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 
-import path from 'path'
 import {createClient} from '@sanity/client'
 import {
   _loadConfig,
@@ -13,6 +12,7 @@ import {
 } from '@sanity/tsdoc'
 import chalk from 'chalk'
 import mkdirp from 'mkdirp'
+import path from 'path'
 import pkgUp from 'pkg-up'
 
 async function _fetchPackageDocsFromSanity(

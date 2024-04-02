@@ -23,7 +23,6 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'import',
     'simple-import-sort',
     'jsx-a11y',
     'react',
@@ -37,15 +36,6 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
-    'import/order': [
-      'error',
-      {
-        alphabetize: {
-          caseInsensitive: true,
-          order: 'asc',
-        },
-      },
-    ],
     'no-console': 'error',
     'no-warning-comments': ['warn', {location: 'start', terms: ['todo', '@todo', 'fixme']}],
     'padding-line-between-statements': [
