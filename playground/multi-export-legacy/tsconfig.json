@@ -9,8 +9,8 @@
     "outDir": "./dist",
 
     "paths": {
-      "multi-export": ["./exports/index.ts"],
-      "multi-export/extra": ["./exports/extra.ts"]
+      "multi-export-legacy": ["./exports/index.ts"],
+      "multi-export-legacy/extra": ["./exports/extra.ts"]
     }
   }
 }

@@ -6,7 +6,6 @@
     "composite": true,
 
     "rootDir": ".",
-    "outDir": "./dist",
-    "jsx": "react"
+    "outDir": "./dist"
   }
 }

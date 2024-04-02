@@ -2,6 +2,9 @@
   "compilerOptions": {
     "target": "ES2020",
     "sourceMap": true,
+    "module": "Preserve",
+    "moduleDetection": "force",
+    "jsx": "preserve",
 
     // Strict type-checking
     "strict": true,
@@ -20,7 +23,6 @@
     "skipLibCheck": true,
 
     // Module resolution
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   }

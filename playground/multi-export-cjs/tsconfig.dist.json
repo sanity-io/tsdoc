@@ -9,8 +9,8 @@
     // NOTE: Caveat: these need to commented out when building distribution files
     // This is required for `@sanity/tsdoc` to construct Sanity references between export bundles
     // "paths": {
-    //   "multi-export": ["./exports/index.ts"],
-    //   "multi-export/extra": ["./exports/extra.ts"]
+    //   "multi-export-cjs": ["./exports/index.ts"],
+    //   "multi-export-cjs/extra": ["./exports/extra.ts"]
     // }
   }
 }

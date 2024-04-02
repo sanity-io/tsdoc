@@ -249,6 +249,24 @@ importers:
         specifier: workspace:*
         version: link:../..
 
+  playground/multi-export-cjs:
+    devDependencies:
+      '@sanity/tsdoc':
+        specifier: workspace:*
+        version: link:../..
+
+  playground/multi-export-cjs-legacy:
+    devDependencies:
+      '@sanity/tsdoc':
+        specifier: workspace:*
+        version: link:../..
+
+  playground/multi-export-legacy:
+    devDependencies:
+      '@sanity/tsdoc':
+        specifier: workspace:*
+        version: link:../..
+
   playground/mylib:
     dependencies:
       react:

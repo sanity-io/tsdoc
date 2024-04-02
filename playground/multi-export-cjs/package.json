@@ -1,0 +1,42 @@
+{
+  "name": "multi-export-cjs",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/exports/index.d.ts",
+      "source": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./extra": {
+      "types": "./dist/exports/extra.d.ts",
+      "source": "./src/extra.ts",
+      "import": "./dist/extra.js",
+      "require": "./dist/extra.cjs",
+      "default": "./dist/extra.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/exports/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "extra": [
+        "./dist/exports/extra.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && pkg build --strict && pkg --strict",
+    "etl": "sanity-tsdoc etl --outDir ../../etc"
+  },
+  "devDependencies": {
+    "@sanity/tsdoc": "workspace:*"
+  }
+}
