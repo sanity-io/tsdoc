@@ -176,7 +176,7 @@
     "@types/react": "^18.2.6",
     "@types/react-dom": "^18.2.4",
     "@types/tmp": "^0.2.3",
-    "@types/uuid": "^9.0.1",
+    "@types/uuid": "^9.0.8",
     "@types/yargs": "^17.0.32",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",
