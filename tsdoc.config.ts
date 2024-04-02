@@ -14,6 +14,8 @@ export default defineConfig({
     },
   },
 
+  legacyExports: pkgConfig.legacyExports,
+
   input: {
     type: 'fs',
     tsconfig: pkgConfig.tsconfig,
