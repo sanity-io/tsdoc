@@ -106,13 +106,13 @@ importers:
       tmp:
         specifier: ^0.2.3
         version: 0.2.3
+      typescript:
+        specifier: 5.4.2
+        version: 5.4.2
       vite:
         specifier: ^4.3.8
         version: 4.3.8(@types/node@20.2.3)
     devDependencies:
-      '@babel/core':
-        specifier: ^7.21.8
-        version: 7.24.3
       '@commitlint/cli':
         specifier: ^19.2.1
         version: 19.2.1(@types/node@20.2.3)(typescript@5.4.2)
@@ -227,9 +227,6 @@ importers:
       styled-components:
         specifier: ^6.1.8
         version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
-      typescript:
-        specifier: 5.4.2
-        version: 5.4.2
       uuid:
         specifier: ^9.0.1
         version: 9.0.1
