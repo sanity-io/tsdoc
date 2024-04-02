@@ -84,7 +84,7 @@
     "etl": "node -r dotenv-flow/config -r esbuild-register scripts/etl",
     "format": "prettier --cache --write .",
     "lint": "eslint . --ext .cjs,.js,.ts,.tsx",
-    "pkg:build": "pkg build",
+    "pkg:build": "pkg build --strict",
     "pkg:check": "pkg --strict",
     "prepublishOnly": "run-s build",
     "release": "semantic-release",
