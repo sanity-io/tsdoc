@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/sanity-io/tsdoc/compare/v1.0.0...v1.0.1) (2024-04-02)
+
+### Bug Fixes
+
+- add `typescript` as a pinned dependency ([9dca920](https://github.com/sanity-io/tsdoc/commit/9dca920c86424b0db10a6f728354e8cd619f44d1))
+- **deps:** update dependency groq to ^3.36.3 ([#90](https://github.com/sanity-io/tsdoc/issues/90)) ([20407be](https://github.com/sanity-io/tsdoc/commit/20407be92ce8fab41b6e816391187f8e44dbf9c0))
+
 ## 1.0.0 (2024-04-02)
 
 ### Features
