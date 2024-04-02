@@ -68,7 +68,7 @@ jobs:
           node-version: lts/*
       - run: corepack enable && pnpm --version
       - run: pnpm install
-      - run: npx semantic-release --dry-run
+      - run: pnpm exec semantic-release --dry-run
         env:
           NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}

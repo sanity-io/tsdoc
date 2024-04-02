@@ -1,11 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>sanity-io/renovate-config"],
-  "ignorePresets": ["replacements:cpx-to-maintenance-fork"],
+  "ignorePresets": [":ignoreModulesAndTests", "replacements:cpx-to-maintenance-fork", "github>sanity-io/renovate-config:group-non-major"],
   "packageRules": [
     {
       "matchFileNames": ["playground/**/package.json"],
-      "extends": [":semanticCommitTypeAll(chore)"]
+      "extends": [":semanticCommitTypeAll(chore)"],
+      "semanticCommitType": "chore",
+      "groupSlug": "playground"
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "bump"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupSlug": "dev"
     }
   ]
 }
