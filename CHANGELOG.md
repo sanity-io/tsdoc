@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/sanity-io/tsdoc/compare/v1.0.4...v1.0.5) (2024-04-02)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/color to v3 ([#73](https://github.com/sanity-io/tsdoc/issues/73)) ([3fcb384](https://github.com/sanity-io/tsdoc/commit/3fcb3844825899f66788c8c63466204e1bcddd4a))
+
 ## [1.0.4](https://github.com/sanity-io/tsdoc/compare/v1.0.3...v1.0.4) (2024-04-02)
 
 ### Bug Fixes
