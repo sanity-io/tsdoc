@@ -105,7 +105,7 @@ importers:
         version: 4.3.8(@types/node@20.2.3)
     devDependencies:
       '@babel/core':
-        specifier: ^7.21.8
+        specifier: ^7.24.3
         version: 7.24.3
       '@babel/plugin-proposal-object-rest-spread':
         specifier: ^7.20.7
@@ -4811,6 +4811,7 @@ packages:
   /cosmiconfig@8.2.0:
     resolution: {integrity: sha512-3rTMnFJA1tCOPwRxtgF4wd7Ab2qvDbL8jX+3smjIbS4HlZBagTlpERbdN7iAbWlrfxE3M8c27kTwTawQ7st+OQ==}
     engines: {node: '>=14'}
+    requiresBuild: true
     dependencies:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
