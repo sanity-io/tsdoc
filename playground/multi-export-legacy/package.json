@@ -23,17 +23,17 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
   "source": "./src/index.ts",
-  "types": "./dist/exports/index.d.ts",
+  "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
       "extra": [
-        "./dist/exports/extra.d.ts"
+        "./dist/extra.d.ts"
       ]
     }
   },
   "scripts": {
     "build": "rimraf dist && pkg build --strict && pkg --strict",
-    "etl": "sanity-tsdoc etl --outDir ../../etc"
+    "etl": "sanity-tsdoc etl --outDir ../../etc --strict"
   },
   "browserslist": "extends @sanity/browserslist-config",
   "devDependencies": {
