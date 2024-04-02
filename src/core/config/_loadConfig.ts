@@ -1,6 +1,8 @@
-import {TransformOptions} from 'esbuild'
+import {register} from 'esbuild-register/dist/node'
 import {_findConfigFile} from './_findConfigFile'
-import {SanityTSDocConfigOptions} from './types'
+import type {SanityTSDocConfigOptions} from './types'
+
+type RegisterOptions = Exclude<Parameters<typeof register>[0], undefined>
 
 /** @internal */
 export async function _loadConfig(options: {
@@ -14,24 +16,20 @@ export async function _loadConfig(options: {
     return undefined
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const {register} = require('esbuild-register/dist/node')
-
-  const esbuildOptions: TransformOptions = {
-    // eslint options
+  const esbuildOptions = {
     jsx: 'automatic',
     jsxFactory: 'createElement',
     jsxFragment: 'Fragment',
     jsxImportSource: 'react',
     logLevel: 'silent',
-  }
+  } satisfies RegisterOptions
 
   const {unregister} = globalThis.__DEV__ ? {unregister: () => undefined} : register(esbuildOptions)
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const config = require(configPath)
 
-  // Unregister the require hook if you don't need it anymore
+  // Unregister the require hook as we don't need it anymore
   unregister()
 
   return config?.default || config
