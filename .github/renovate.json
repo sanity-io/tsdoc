@@ -11,6 +11,7 @@
     },
     {
       "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "fix",
       "rangeStrategy": "bump"
     },
     {
