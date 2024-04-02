@@ -26,8 +26,8 @@ importers:
         specifier: 0.16.2
         version: 0.16.2
       '@portabletext/react':
-        specifier: ^3.0.0
-        version: 3.0.0(react@18.2.0)
+        specifier: ^3.0.15
+        version: 3.0.15(react@18.2.0)
       '@portabletext/toolkit':
         specifier: ^2.0.13
         version: 2.0.13
@@ -1646,8 +1646,8 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@portabletext/react@3.0.0(react@18.2.0):
-    resolution: {integrity: sha512-bvh9Ls3ZOa7rPOtJ2fTrTFAC6nXAwHlyt1ukFqFSgTehtsgl91WB2kaBa3XdXCBiobzED3OPcLZ3Y3fsb9ZFiQ==}
+  /@portabletext/react@3.0.15(react@18.2.0):
+    resolution: {integrity: sha512-M4Yag/C+1k9jnBs9n+ciDz2sP3vuvohxlX4CL3VFIlnDOsjzFmkPhWjOO4HUhOl+YE1VABJv/q8MW7PYaKS7SQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
       react: ^18.2.0
