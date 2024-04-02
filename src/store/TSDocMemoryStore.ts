@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 
 import {APIDocument} from '@sanity/tsdoc'
-import {parse, evaluate} from 'groq-js'
+import {evaluate, parse} from 'groq-js'
+
 import {createTSDocStore} from './TSDocStore'
 import {TSDocStore} from './types'
 

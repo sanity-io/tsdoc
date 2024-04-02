@@ -1,6 +1,7 @@
 import {APIPropertySignature} from '@sanity/tsdoc'
 import {Box, Card, Flex} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {CommentBox, CommentSummary} from '../../comment'
 import {Size} from '../../lib/ui'
 import {TSDocCode} from '../TSDocCode'

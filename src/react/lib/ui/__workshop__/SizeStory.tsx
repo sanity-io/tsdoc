@@ -1,5 +1,6 @@
 import {Box} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {H} from '../H'
 import {Level} from '../Level'
 import {P} from '../P'

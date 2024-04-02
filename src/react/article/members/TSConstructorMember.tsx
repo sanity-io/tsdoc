@@ -1,6 +1,7 @@
 import {APIConstructor, APIMember} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {CommentBox, CommentSummary} from '../../comment'
 // import {useSize} from '../../lib/ui'
 import {TSDocCode} from '../TSDocCode'

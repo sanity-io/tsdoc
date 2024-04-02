@@ -8,6 +8,7 @@ import {
   ApiTypeAlias,
   ApiVariable,
 } from '@microsoft/api-extractor-model'
+
 import {SerializedAPIMember} from '../types'
 import {_hash} from './helpers'
 import {_transformClass} from './transformClass'

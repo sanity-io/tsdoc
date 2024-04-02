@@ -3,7 +3,7 @@ import {Card, Code as UICode} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {ArrayOfObjectsInputProps} from 'sanity'
 import {IntentLink} from 'sanity/router'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
 
 const Code = styled(UICode)`
   & a {

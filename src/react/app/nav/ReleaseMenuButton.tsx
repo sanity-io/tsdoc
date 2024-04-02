@@ -2,6 +2,7 @@ import {SelectIcon} from '@sanity/icons'
 import {APIPackage, APIRelease} from '@sanity/tsdoc'
 import {Button, Menu, MenuButton} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {SyntaxText} from '../../components/ColoredCode'
 import {useSize} from '../../lib/ui'
 import {useTSDoc} from '../useTSDoc'

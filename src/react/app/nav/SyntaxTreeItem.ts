@@ -1,7 +1,7 @@
 import {blue} from '@sanity/color'
-import {TreeItem, Theme} from '@sanity/ui'
+import {Theme, TreeItem} from '@sanity/ui'
 import {memo} from 'react'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
 
 export const SyntaxTreeItem = memo(
   styled(TreeItem)(({theme}: {theme: Theme}) => {
@@ -16,7 +16,7 @@ export const SyntaxTreeItem = memo(
       background-color: ${activeBackground} !important
     }`
 
-    return `  
+    return `
       // solely on changing the "()" color
       &:focus code,
       & > a:focus code {

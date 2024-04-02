@@ -1,5 +1,6 @@
 import {Box, Text, TextProps} from '@sanity/ui'
 import {HTMLProps, ReactElement} from 'react'
+
 import {useSpace} from './useSpace'
 import {useTextSize} from './useTextSize'
 

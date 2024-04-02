@@ -1,6 +1,7 @@
 import {APINamespace} from '@sanity/tsdoc'
 import {Stack} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H} from '../../lib/ui'
 import {Members} from '../members'

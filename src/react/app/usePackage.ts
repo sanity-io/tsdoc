@@ -1,6 +1,7 @@
 import {APIPackage} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {useEffect, useState} from 'react'
+
 import {useTSDoc} from './useTSDoc'
 
 /** @beta */

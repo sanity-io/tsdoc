@@ -1,4 +1,5 @@
 import {useTheme} from '@sanity/ui'
+
 import {useSize} from './useSize'
 
 export function useSpace(size: number | number[]): number[] {

@@ -7,6 +7,7 @@ import {
   ApiMethodSignature,
   ApiPropertySignature,
 } from '@microsoft/api-extractor-model'
+
 import {SerializedAPIInterface, SerializedAPIInterfaceMember} from '../types'
 import {_transformParameter} from './_transformParameter'
 import {_transformTokens} from './_transformTokens'

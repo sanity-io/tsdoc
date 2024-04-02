@@ -1,5 +1,6 @@
 import {APIMember} from '@sanity/tsdoc'
 import {ReactElement} from 'react'
+
 import {SyntaxText} from '../components/ColoredCode'
 import {UnformattedCode} from '../components/UnformattedCode'
 

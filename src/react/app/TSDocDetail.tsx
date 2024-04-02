@@ -1,5 +1,6 @@
 import {Box, Flex, Spinner, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {TSDocArticle} from '../article'
 import {useSpace} from '../lib/ui'
 import {useMember} from './useMember'

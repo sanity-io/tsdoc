@@ -1,5 +1,6 @@
 import {Box, Heading, HeadingProps} from '@sanity/ui'
 import {HTMLProps, ReactElement} from 'react'
+
 import {useHeadingSize} from './useHeadingSize'
 import {useLevel} from './useLevel'
 import {useSpace} from './useSpace'

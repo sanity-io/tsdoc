@@ -1,4 +1,5 @@
 import {ExcerptToken} from '@microsoft/api-extractor-model'
+
 import {SanityArrayItem} from '../_lib/sanity'
 import {SerializedAPIToken} from '../types'
 import {_hash} from './helpers'

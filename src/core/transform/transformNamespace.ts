@@ -8,6 +8,7 @@ import {
   ApiTypeAlias,
   ApiVariable,
 } from '@microsoft/api-extractor-model'
+
 import {SerializedAPIMember, SerializedAPINamespace} from '../types'
 import {RELEASE_TAGS} from './constants'
 import {_slugify} from './helpers'

@@ -1,6 +1,7 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Box, Card, CardProps, Text} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {TSDocAppParams} from '../../store'
 import {UnformattedCode} from '../components/UnformattedCode'
 import {_fontSize} from '../helpers'

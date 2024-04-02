@@ -1,4 +1,5 @@
 import {ApiFunction} from '@microsoft/api-extractor-model'
+
 import {SerializedAPIFunction} from '../types'
 import {_functionIsReactComponentType} from './_functionIsReactComponentType'
 import {_functionIsReactHook} from './_functionIsReactHook'

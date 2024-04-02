@@ -1,6 +1,7 @@
 import {APIEnum} from '@sanity/tsdoc'
 import {Box, Code} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {CommentBox, CommentSummary} from '../../comment'
 import {useTextSize} from '../../lib/ui'
 

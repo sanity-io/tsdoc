@@ -1,6 +1,7 @@
 import {APIInterface} from '@sanity/tsdoc'
 import {Box, Code} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {_compileInterfaceDefinition} from '../../app/lib/_compile'
 import {CommentBox, CommentSummary} from '../../comment'
 import {useTextSize} from '../../lib/ui'

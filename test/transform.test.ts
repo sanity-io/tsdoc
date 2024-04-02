@@ -1,15 +1,16 @@
 import {
-  type APIExportDocument,
-  type APIPackageDocument,
   _printExtractMessages,
+  type APIExportDocument,
+  type APIMemberDocument,
+  type APIPackageDocument,
   extract,
-  transform,
+  type SanityDocumentValue,
+  type SerializedAPIFunction,
   type SerializedAPINamespace,
   type SerializedAPIVariable,
-  type SanityDocumentValue,
-  type APIMemberDocument,
-  type SerializedAPIFunction,
+  transform,
 } from '@sanity/tsdoc'
+
 import {type _SpawnedProject, _spawnProject} from './_spawnProject'
 
 describe('transform', () => {

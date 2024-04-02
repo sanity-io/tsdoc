@@ -8,6 +8,7 @@ import {
   APITypeAlias,
   APIVariable,
 } from '@sanity/tsdoc'
+
 import {TSDocNavGroupedMembers} from './TSDocNav'
 
 export function getGroupedMembers(members: APIMember[]): TSDocNavGroupedMembers {

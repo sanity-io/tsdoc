@@ -1,6 +1,7 @@
 import {APIConstructSignature} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {CommentBox, CommentSummary} from '../../comment'
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'

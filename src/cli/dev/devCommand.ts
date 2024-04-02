@@ -1,15 +1,16 @@
 /* eslint-disable no-console */
 
 import {readFile} from 'fs/promises'
-import path from 'path'
-import {APIDocument, APIPackageDocument, APISymbolDocument, _loadConfig} from '@sanity/tsdoc'
+import {_loadConfig, APIDocument, APIPackageDocument, APISymbolDocument} from '@sanity/tsdoc'
 import react from '@vitejs/plugin-react'
 import chokidar from 'chokidar'
 import cors from 'cors'
 import express from 'express'
 import globby from 'globby'
 import mkdirp from 'mkdirp'
+import path from 'path'
 import {createServer as createViteServer, defineConfig} from 'vite'
+
 import {_writeHTML} from './_writeHTML'
 import {_writeScript} from './_writeScript'
 

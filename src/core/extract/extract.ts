@@ -2,14 +2,15 @@ import path from 'path'
 import {Extractor, ExtractorConfig, type ExtractorMessage} from '@microsoft/api-extractor'
 import {ApiPackage} from '@microsoft/api-extractor-model'
 import {
-  type PackageJSON,
-  type PkgConfigOptions,
   createLogger,
   getExtractMessagesConfig,
   loadConfig,
   loadPkgWithReporting,
+  type PackageJSON,
   parseExports,
+  type PkgConfigOptions,
 } from '@sanity/pkg-utils'
+
 import {createApiExtractorConfig} from './apiExtractorConfig'
 import {createTempDir} from './helpers'
 import {createTSDocConfig} from './tsDocConfig'

@@ -1,5 +1,6 @@
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {APICallSignature} from '../../../core'
 import {CommentBox, CommentSummary} from '../../comment'
 import {TSDocCode} from '../TSDocCode'

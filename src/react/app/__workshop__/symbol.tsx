@@ -1,5 +1,6 @@
 import {Box, Container, Flex} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {TSDocSymbol} from '../TSDocSymbol'
 import {useTSDoc} from '../useTSDoc'
 

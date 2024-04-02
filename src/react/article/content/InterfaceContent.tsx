@@ -9,6 +9,7 @@ import {
 } from '@sanity/tsdoc'
 import {Card, Code} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {_compileInterfaceDefinition} from '../../app/lib/_compile'
 import {CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H, useTextSize} from '../../lib/ui'

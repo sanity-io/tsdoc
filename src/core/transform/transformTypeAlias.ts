@@ -1,4 +1,5 @@
 import {ApiTypeAlias} from '@microsoft/api-extractor-model'
+
 import {SerializedAPITypeAlias} from '../types'
 import {_transformTokens} from './_transformTokens'
 import {_transformTypeParameter} from './_transformTypeParameter'

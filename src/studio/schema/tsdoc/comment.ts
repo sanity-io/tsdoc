@@ -1,4 +1,5 @@
 import {defineType} from 'sanity'
+
 import {TsdocComment} from './components/TsdocComment'
 
 export const tsdocCommentType = defineType({

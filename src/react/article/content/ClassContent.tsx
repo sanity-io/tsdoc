@@ -1,6 +1,7 @@
 import {APIClass, APIConstructor, APIMethod, APIProperty, SanityArrayItem} from '@sanity/tsdoc'
 import {Box} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {CommentRemarks} from '../../comment'
 import {H} from '../../lib/ui'
 import {Members} from '../members'

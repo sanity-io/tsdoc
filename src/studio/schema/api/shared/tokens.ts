@@ -1,6 +1,7 @@
 // import {APITokensInput} from './APITokensInput'
 
 import {defineType} from 'sanity'
+
 import {APITokensInput} from '../components/APITokensInput'
 
 export const apiTokensType = defineType({

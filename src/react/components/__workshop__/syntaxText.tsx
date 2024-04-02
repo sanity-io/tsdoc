@@ -1,5 +1,6 @@
 import {Box, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {SyntaxText} from '../ColoredCode'
 
 export default function SyntaxTextStory(): ReactElement {

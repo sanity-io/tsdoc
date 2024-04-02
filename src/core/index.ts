@@ -1,5 +1,3 @@
-export type {ExtractorLogLevel, ExtractorMessage} from '@microsoft/api-extractor'
-
 export * from './_lib/_fileExists'
 export * from './_lib/portable-text'
 export * from './_lib/sanity'
@@ -9,3 +7,4 @@ export * from './extract'
 export * from './load'
 export * from './transform'
 export * from './types'
+export type {ExtractorLogLevel, ExtractorMessage} from '@microsoft/api-extractor'

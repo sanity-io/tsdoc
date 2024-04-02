@@ -1,5 +1,7 @@
 import path from 'node:path'
+
 import {extract, load, transform} from '@sanity/tsdoc'
+
 import {_spawnProject} from './_spawnProject'
 
 describe('load', () => {

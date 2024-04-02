@@ -1,5 +1,6 @@
 import {APISymbol} from '@sanity/tsdoc'
 import {useEffect, useRef, useState} from 'react'
+
 import {useTSDoc} from './useTSDoc'
 
 const DEBOUNCE_MS = 150

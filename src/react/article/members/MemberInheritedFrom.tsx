@@ -1,5 +1,6 @@
 import {Text} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {_fontSize} from '../../helpers'
 
 export function MemberInheritedFrom(props: {

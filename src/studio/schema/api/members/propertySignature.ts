@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+
 import {APIPropertySignaturePreview} from '../components/APIPropertySignaturePreview'
 
 export const apiPropertySignatureType = defineType({

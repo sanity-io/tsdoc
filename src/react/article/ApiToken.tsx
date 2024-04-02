@@ -1,6 +1,7 @@
 import {APIToken} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {ReactElement, useMemo} from 'react'
+
 import {useMemberLink} from '../app'
 import {Size} from '../lib/ui'
 import {ReferenceTooltip} from '../tooltip'

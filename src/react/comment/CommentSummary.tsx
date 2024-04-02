@@ -1,5 +1,6 @@
 import {TSDocComment} from '@sanity/tsdoc'
 import {ReactElement} from 'react'
+
 import {PortableText} from './PortableText'
 
 export function CommentSummary(props: {data: TSDocComment}): ReactElement {

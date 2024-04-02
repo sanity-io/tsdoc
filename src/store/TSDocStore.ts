@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 import {APIPackage} from '@sanity/tsdoc'
+
 import {API_MEMBER_TYPES} from './constants'
 import {
   API_EXPORTS_QUERY,
   API_MEMBER_QUERY,
   API_PACKAGE_QUERY,
-  API_SYMBOL_SEARCH_QUERY,
-  API_SYMBOL_QUERY,
   API_PACKAGES_QUERY,
+  API_SYMBOL_QUERY,
+  API_SYMBOL_SEARCH_QUERY,
 } from './queries'
 import {
   TSDocAPIMember,

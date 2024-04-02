@@ -1,5 +1,6 @@
 import {Box, Inline} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {ReleaseBadge} from '../ReleaseBadge'
 
 export default function ReleaseBadgeStory(): ReactElement {

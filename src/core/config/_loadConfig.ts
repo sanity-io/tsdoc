@@ -1,4 +1,5 @@
 import {register} from 'esbuild-register/dist/node'
+
 import {_findConfigFile} from './_findConfigFile'
 import type {SanityTSDocConfigOptions} from './types'
 

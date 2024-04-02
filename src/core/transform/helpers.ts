@@ -1,5 +1,6 @@
 import crypto from 'crypto'
 import slugify from 'slugify'
+
 import {TransformContext} from './types'
 
 export function _hash(key: string): string {

@@ -6,6 +6,7 @@ import {
   Parameter,
 } from '@microsoft/api-extractor-model'
 import {DocSection} from '@microsoft/tsdoc'
+
 import {SanityArrayItem} from '../_lib/sanity'
 import {SerializedAPIParameter} from '../types'
 import {_transformTokens} from './_transformTokens'

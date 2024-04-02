@@ -1,7 +1,8 @@
 import {APIToken, SanityArrayItem} from '@sanity/tsdoc'
 import {Box, Code} from '@sanity/ui'
 import {ReactElement} from 'react'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
+
 import {useTextSize} from '../lib/ui'
 import {CodeSnippet} from './CodeSnippet'
 

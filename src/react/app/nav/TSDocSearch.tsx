@@ -12,6 +12,7 @@ import {
   Text,
 } from '@sanity/ui'
 import {ForwardedRef, forwardRef, ReactElement, useCallback, useMemo, useRef, useState} from 'react'
+
 import {UnformattedCode} from '../../components/UnformattedCode'
 import {useMemberLink} from '../useMemberLink'
 import {useSymbolSearch} from '../useSymbolSearch'

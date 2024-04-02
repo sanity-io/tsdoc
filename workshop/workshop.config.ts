@@ -1,6 +1,8 @@
 import path from 'node:path'
+
 import {defineConfig} from '@sanity/ui-workshop'
 import {perfPlugin} from '@sanity/ui-workshop/plugin-perf'
+
 // import {sanityTheme} from './theme/sanity'
 // import {themePlugin} from './theme/themePlugin'
 import {tsdocPlugin} from './tsdoc'

@@ -1,6 +1,7 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Card, Stack, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {useSpace, useTextSize} from '../../lib/ui'
 import {APIMemberWithInheritance} from './_types'
 import {TSCallSignatureMember} from './TSCallSignatureMember'

@@ -1,5 +1,6 @@
 import {ThemeColorSyntax} from '@sanity/ui'
 import {ReactElement, ReactNode} from 'react'
+
 import {SyntaxText} from './ColoredCode'
 
 const TAG_SYNTAX: Record<string, keyof ThemeColorSyntax> = {

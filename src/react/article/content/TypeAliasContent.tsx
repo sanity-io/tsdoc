@@ -1,6 +1,7 @@
 import {APITypeAlias} from '@sanity/tsdoc'
 import {Card} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {_compileTypeParameters} from '../../app/lib/_compile'
 import {CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H} from '../../lib/ui'

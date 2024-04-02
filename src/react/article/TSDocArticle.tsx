@@ -1,6 +1,7 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Box, Card, Code, Container, Flex, Text, ThemeColorSyntax} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {TSDocMemberTitle} from '../app'
 import {CommentDeprecatedCallout, CommentSummary} from '../comment'
 import {SyntaxText} from '../components/ColoredCode'

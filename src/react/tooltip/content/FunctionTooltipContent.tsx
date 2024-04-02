@@ -1,6 +1,7 @@
 import {APIFunction} from '@sanity/tsdoc'
 import {Box, Code} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {useMemberLink} from '../../app'
 import {_compileFunctionDefinition} from '../../app/lib/_compile'
 import {Members} from '../../article/members'

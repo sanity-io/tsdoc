@@ -3,12 +3,12 @@
 import path from 'path'
 import {createClient} from '@sanity/client'
 import {
-  APIPackageDocument,
-  SanityTSDocConfigOptions,
   _loadConfig,
   _printExtractMessages,
+  APIPackageDocument,
   extract,
   load,
+  SanityTSDocConfigOptions,
   transform,
 } from '@sanity/tsdoc'
 import chalk from 'chalk'

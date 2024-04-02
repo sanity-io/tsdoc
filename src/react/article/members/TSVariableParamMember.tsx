@@ -1,6 +1,7 @@
-import {Stack, Card, Flex, Text, Box} from '@sanity/ui'
-import {ReactElement} from 'react'
-import {TSDocParamBlock} from '../../../core'
+import {Box, Card, Stack, Text} from '@sanity/ui'
+import type {ReactElement} from 'react'
+
+import type {TSDocParamBlock} from '../../../core'
 import {CommentBox} from '../../comment'
 import {PortableText} from '../../comment/PortableText'
 import {useSpace, useTextSize} from '../../lib/ui'

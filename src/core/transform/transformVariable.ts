@@ -1,4 +1,5 @@
 import {ApiVariable} from '@microsoft/api-extractor-model'
+
 import {SanityReferenceValue} from '../_lib/sanity'
 import {SerializedAPIVariable} from '../types'
 import {_transformTokens} from './_transformTokens'

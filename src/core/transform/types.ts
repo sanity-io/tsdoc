@@ -1,4 +1,5 @@
 import {ApiPackage} from '@microsoft/api-extractor-model'
+
 import {APIExportDocument, APIPackageDocument, APIReleaseDocument} from '../types'
 
 /**

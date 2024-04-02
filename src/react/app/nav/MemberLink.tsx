@@ -2,6 +2,7 @@ import {APIMember, APINamespace} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Box, CardTone, Flex} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {SyntaxText} from '../../components/ColoredCode'
 import {useSize} from '../../lib/ui'
 import {TSDocMemberTitle} from '../TSDocMemberTitle'

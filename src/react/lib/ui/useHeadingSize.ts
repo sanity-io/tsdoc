@@ -1,5 +1,6 @@
 import {useTheme} from '@sanity/ui'
 import {useMemo} from 'react'
+
 import {isArray} from '../isArray'
 import {useLevel} from './useLevel'
 import {useSize} from './useSize'

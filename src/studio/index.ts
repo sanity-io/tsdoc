@@ -1,5 +1,6 @@
 import {API_MEMBER_TYPES} from '@sanity/tsdoc/store'
 import {definePlugin} from 'sanity'
+
 import {useDeletePackageAction} from './documentActions/useDeletePackageAction'
 import {apiTypes} from './schema/api'
 import {tsdocTypes} from './schema/tsdoc'

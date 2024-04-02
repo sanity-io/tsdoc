@@ -1,6 +1,7 @@
 import {APIVariable} from '@sanity/tsdoc'
 import {Box, Card, Label, Text} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {TSDocSymbol} from '../../app'
 import {CommentDeprecatedCallout, CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H, P} from '../../lib/ui'

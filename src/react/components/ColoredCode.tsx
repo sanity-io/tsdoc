@@ -1,6 +1,6 @@
-import {green, yellow, cyan} from '@sanity/color'
+import {cyan, green, yellow} from '@sanity/color'
 import {ThemeColor, ThemeColorSyntax} from '@sanity/ui'
-import styled, {css} from 'styled-components'
+import {css, styled} from 'styled-components'
 
 export const SyntaxText = styled.code<{$deprecated?: boolean; $syntax?: keyof ThemeColorSyntax}>(
   ({$deprecated, $syntax, theme}) => {

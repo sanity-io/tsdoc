@@ -1,9 +1,10 @@
 import {APIDocument} from '@sanity/tsdoc'
-import {TSDocAPIMember, TSDocAppParams, createTSDocMemoryStore} from '@sanity/tsdoc/store'
-import {ThemeColorSchemeKey, ThemeProvider, studioTheme, usePrefersDark} from '@sanity/ui'
+import {createTSDocMemoryStore, TSDocAPIMember, TSDocAppParams} from '@sanity/tsdoc/store'
+import {studioTheme, ThemeColorSchemeKey, ThemeProvider, usePrefersDark} from '@sanity/ui'
 import {createBrowserHistory} from 'history'
 import {StrictMode, useEffect, useMemo, useState} from 'react'
 import {createRoot} from 'react-dom/client'
+
 import {parsePath, TSDocApp} from './app'
 
 const EMPTY_ARRAY: never[] = []

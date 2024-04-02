@@ -1,4 +1,5 @@
 import {RootTheme, studioTheme} from '@sanity/ui'
+
 import {color} from './color'
 import {fonts} from './fonts'
 

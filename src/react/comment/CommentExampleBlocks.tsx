@@ -1,5 +1,6 @@
 import {TSDocComment, TSDocExampleBlock} from '@sanity/tsdoc'
 import {ReactElement} from 'react'
+
 import {H, Level} from '../lib/ui'
 import {PortableText} from './PortableText'
 

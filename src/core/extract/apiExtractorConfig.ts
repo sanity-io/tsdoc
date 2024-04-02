@@ -1,5 +1,6 @@
 import path from 'path'
 import {IConfigFile, IExtractorMessagesConfig} from '@microsoft/api-extractor'
+
 import {DEFAULT_MESSAGES_CONFIG} from './defaults'
 
 export function createApiExtractorConfig(opts: {

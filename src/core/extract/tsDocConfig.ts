@@ -1,6 +1,7 @@
 import {readFile} from 'fs/promises'
 import {TSDocConfigFile} from '@microsoft/tsdoc-config'
 import {parse} from 'jsonc-parser'
+
 import {TSDocCustomTag} from './types'
 
 export async function createTSDocConfig(opts: {

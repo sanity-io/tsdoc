@@ -1,5 +1,5 @@
 import {Box} from '@sanity/ui'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
 
 export const CommentBox = styled(Box)`
   /* border-top: 1px solid var(--card-border-color); */

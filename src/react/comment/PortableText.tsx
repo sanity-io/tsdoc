@@ -5,7 +5,8 @@ import {
 } from '@portabletext/react'
 import {PortableTextNode} from '@sanity/tsdoc'
 import {Box, Card, Code} from '@sanity/ui'
-import {ReactElement, useCallback, MouseEvent} from 'react'
+import {MouseEvent, ReactElement, useCallback} from 'react'
+
 import {useTSDoc} from '../app'
 import {H, Level, P, useSpace, useTextSize} from '../lib/ui'
 

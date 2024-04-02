@@ -1,4 +1,5 @@
 import path from 'path'
+
 import {ExtractResult} from '../extract'
 import {
   APIDocument,

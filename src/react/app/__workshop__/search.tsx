@@ -1,5 +1,6 @@
 import {Box, Container} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {TSDocSearch} from '../nav/TSDocSearch'
 
 export default function SearchStory(): ReactElement {

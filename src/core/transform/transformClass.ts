@@ -5,6 +5,7 @@ import {
   ApiMethod,
   ApiProperty,
 } from '@microsoft/api-extractor-model'
+
 import {SerializedAPIClass, SerializedAPIClassMember} from '../types'
 import {_classIsReactComponentType} from './_classIsReactComponentType'
 import {_transformParameter} from './_transformParameter'

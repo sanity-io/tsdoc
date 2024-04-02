@@ -1,7 +1,8 @@
 import {TSDocAppParams, TSDocStore} from '@sanity/tsdoc/store'
 import {Card, Flex} from '@sanity/ui'
 import {ReactElement, useCallback, useMemo} from 'react'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
+
 import {parsePath} from './helpers'
 import {TSDocNav} from './nav'
 import {TSDocDetail} from './TSDocDetail'

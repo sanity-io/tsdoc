@@ -1,4 +1,5 @@
 import {ApiFunction} from '@microsoft/api-extractor-model'
+
 import {SanityReferenceValue} from '../_lib/sanity'
 import {_transformTokens} from './_transformTokens'
 import {TransformContext} from './types'

@@ -6,6 +6,7 @@ import {
   APINamespace,
   SanityArrayItem,
 } from '@sanity/tsdoc'
+
 import {APIMemberWithInheritance} from './_types'
 
 export function _getMembers(data: APIMember): SanityArrayItem<APIMemberWithInheritance>[] {

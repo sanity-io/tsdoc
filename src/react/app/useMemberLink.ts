@@ -1,5 +1,6 @@
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {MouseEvent, useCallback, useMemo} from 'react'
+
 import {compilePath} from './lib/compilePath'
 import {useTSDoc} from './useTSDoc'
 

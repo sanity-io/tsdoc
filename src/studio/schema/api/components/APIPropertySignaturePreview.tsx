@@ -1,7 +1,7 @@
 import {Box, Stack, Text} from '@sanity/ui'
 import {ReactElement} from 'react'
 import {PreviewProps} from 'sanity'
-import styled from 'styled-components'
+import {styled} from 'styled-components'
 
 const StyledText = styled(Text)`
   code {

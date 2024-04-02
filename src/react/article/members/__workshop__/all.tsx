@@ -1,6 +1,7 @@
 import {APIMember, APIPackage, APIRelease} from '@sanity/tsdoc'
 import {Box, Container} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {APIMemberWithInheritance} from '../_types'
 import {Members} from '../Members'
 

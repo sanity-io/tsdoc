@@ -1,6 +1,7 @@
 import {APIMember, APIMethod} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {CommentBox, CommentReturnType, CommentSummary} from '../../comment'
 import {PortableText} from '../../comment/PortableText'
 import {TSDocCode} from '../TSDocCode'

@@ -2,6 +2,7 @@ import {APIFunction} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Box, Card, Stack} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {TSDocSymbol, TSDocSymbolPreview} from '../../app'
 import {CommentExampleBlocks, CommentRemarks, CommentReturnType} from '../../comment'
 import {H, P} from '../../lib/ui'

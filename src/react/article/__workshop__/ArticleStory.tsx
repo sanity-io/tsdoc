@@ -1,6 +1,6 @@
 import {ReactElement} from 'react'
-import {useMember, useTSDoc} from '../../app'
 
+import {useMember, useTSDoc} from '../../app'
 import {TSDocArticle} from '../TSDocArticle'
 
 export default function SymbolStory(): ReactElement {

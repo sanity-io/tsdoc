@@ -1,5 +1,6 @@
 import {Box} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {APIReleaseTag, TSDocComment} from '../../../core'
 import {ReleaseBadge} from '../../components/ReleaseBadge'
 

@@ -1,4 +1,5 @@
 import {ApiEnum, ApiEnumMember, ApiItem} from '@microsoft/api-extractor-model'
+
 import {SanityArrayItem} from '../_lib/sanity'
 import {APIEnumMember, SerializedAPIEnum} from '../types'
 import {RELEASE_TAGS} from './constants'

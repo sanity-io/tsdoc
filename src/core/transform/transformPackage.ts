@@ -1,4 +1,5 @@
 import {ApiPackage} from '@microsoft/api-extractor-model'
+
 import {SanityReferenceValue} from '../_lib/sanity'
 import {APIPackageDocument} from '../types'
 import {TransformContext} from './types'

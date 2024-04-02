@@ -6,6 +6,7 @@ import {
   ApiTypeAlias,
   TypeParameter,
 } from '@microsoft/api-extractor-model'
+
 import {SanityArrayItem} from '../_lib/sanity'
 import {SerializedAPITypeParameter} from '../types'
 import {_transformTokens} from './_transformTokens'

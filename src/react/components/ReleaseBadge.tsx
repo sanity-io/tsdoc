@@ -2,6 +2,7 @@ import {InfoOutlineIcon} from '@sanity/icons'
 import {APIReleaseTag} from '@sanity/tsdoc'
 import {Box, Card, CardTone, Flex, Text, Tooltip} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {useTextSize} from '../lib/ui'
 import {ReleaseBadgeTextWrapper} from './ReleaseBadgeTextWrapper'
 import {UnformattedCode} from './UnformattedCode'

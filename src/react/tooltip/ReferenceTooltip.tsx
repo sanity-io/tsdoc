@@ -1,6 +1,7 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Box, Text, Tooltip} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {Level, Size, useTextSize} from '../lib/ui'
 import {ClassTooltipContent} from './content/ClassTooltipContent'
 import {EnumTooltipContent} from './content/EnumTooltipContent'

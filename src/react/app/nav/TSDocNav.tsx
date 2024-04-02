@@ -10,6 +10,7 @@ import {
 import {TSDocExportData} from '@sanity/tsdoc/store'
 import {Box, Card, Flex, Layer, Spinner, Stack, Text, Tree} from '@sanity/ui'
 import {ReactElement, useMemo} from 'react'
+
 import {SyntaxText} from '../../components/ColoredCode'
 import {Size, useSize} from '../../lib/ui'
 import {useExports} from '../useExports'

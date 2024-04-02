@@ -1,14 +1,15 @@
 import {
-  TSDocProvider as BaseTSDocProvider,
   parsePath,
+  TSDocProvider as BaseTSDocProvider,
+  useExports,
   usePackages,
   useTSDoc,
-  useExports,
 } from '@sanity/tsdoc/react'
 import {createTSDocMemoryStore} from '@sanity/tsdoc/store'
 import {useWorkshop} from '@sanity/ui-workshop'
 import {useMemo} from 'react'
 import {ReactElement, ReactNode, useEffect, useState} from 'react'
+
 import {TSDocMsg} from './types'
 
 export function TSDocProvider(props: {children?: ReactNode}): ReactElement {

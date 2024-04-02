@@ -1,6 +1,7 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Code} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {useTextSize} from '../../lib/ui'
 import {ClassContent} from './ClassContent'
 import {FunctionContent} from './FunctionContent'

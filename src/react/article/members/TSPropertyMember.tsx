@@ -1,6 +1,7 @@
 import {APIProperty} from '@sanity/tsdoc'
 import {Box, Card, Flex} from '@sanity/ui'
 import {ReactElement} from 'react'
+
 import {CommentBox, CommentSummary} from '../../comment'
 import {TSDocCode} from '../TSDocCode'
 import {APIMemberWithInheritance} from './_types'

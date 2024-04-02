@@ -1,5 +1,6 @@
 import {TSDocComment} from '@sanity/tsdoc'
 import {ReactElement} from 'react'
+
 import {H} from '../lib/ui'
 import {PortableText} from './PortableText'
 

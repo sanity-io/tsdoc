@@ -1,4 +1,7 @@
 /.tsdoc
 /dist
+/etc
 /docs/dist
 /playground/*/dist
+/workshop/.workshop
+/workshop/dist
