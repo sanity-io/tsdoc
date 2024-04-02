@@ -16,7 +16,7 @@ import {TransformContext} from './types'
  */
 export function _transformFunction(
   ctx: TransformContext,
-  node: ApiFunction
+  node: ApiFunction,
 ): SerializedAPIFunction {
   if (!ctx.export) {
     throw new Error('transformFunction: missing `export` document')
@@ -53,8 +53,8 @@ export function _transformFunction(
       ctx,
       node.excerptTokens.slice(
         node.returnTypeExcerpt.tokenRange.startIndex,
-        node.returnTypeExcerpt.tokenRange.endIndex
-      )
+        node.returnTypeExcerpt.tokenRange.endIndex,
+      ),
     ),
     typeParameters: node.typeParameters.map((p, idx) => _transformTypeParameter(ctx, node, p, idx)),
     isOverloading: node.overloadIndex > 1,

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/src/index.d.ts",
       "source": "./src/index.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js",
@@ -20,6 +20,7 @@
     "build": "rimraf dist && pkg build --strict && pkg --strict",
     "etl": "sanity-tsdoc etl --outDir ../../etc"
   },
+  "browserslist": "extends @sanity/browserslist-config",
   "devDependencies": {
     "@sanity/tsdoc": "workspace:*"
   }

@@ -13,7 +13,7 @@ export const SyntaxText = styled.code<{$deprecated?: boolean; $syntax?: keyof Th
         text-decoration: ${$deprecated ? 'line-through' : undefined};
       }
     `
-  }
+  },
 )
 
 const overrideSyntaxColors = (color: ThemeColor, $syntax: keyof ThemeColorSyntax) => {

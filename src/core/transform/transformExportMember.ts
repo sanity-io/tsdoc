@@ -24,7 +24,7 @@ import {TransformContext} from './types'
  */
 export function transformExportMember(
   ctx: TransformContext,
-  item: ApiItem
+  item: ApiItem,
 ): SerializedAPIMember & {_id: string} {
   if (item.kind === 'Class') {
     return {_id: _getItemId(item), ..._transformClass(ctx, item as ApiClass)}

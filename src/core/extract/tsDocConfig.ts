@@ -13,7 +13,7 @@ export async function createTSDocConfig(opts: {
   }
 
   const tsDocBaseBuf = await readFile(
-    require.resolve('@microsoft/api-extractor/extends/tsdoc-base.json')
+    require.resolve('@microsoft/api-extractor/extends/tsdoc-base.json'),
   )
 
   // Include the definitions that are required for API Extractor
@@ -26,7 +26,7 @@ export async function createTSDocConfig(opts: {
       tagName: `@${t.name}`,
       syntaxKind: t.syntaxKind,
       allowMultiple: t.allowMultiple,
-    }))
+    })),
   )
 
   // Indicate that custom tags are supported by your tooling.

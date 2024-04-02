@@ -23,7 +23,7 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
       releaseVersion: data.release.version,
       memberSlug: data.slug.current,
     }),
-    [data, namespace]
+    [data, namespace],
   )
 
   const linkProps = useMemberLink({params})

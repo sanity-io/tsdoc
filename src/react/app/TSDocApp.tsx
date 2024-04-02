@@ -39,14 +39,14 @@ export function TSDocApp(props: TSDocAppProps): ReactElement {
 
   const params: TSDocAppParams | undefined = useMemo(
     () => parsePath(path, {basePath, version: releaseVersion}),
-    [basePath, path, releaseVersion]
+    [basePath, path, releaseVersion],
   )
 
   const handlePathChange = useCallback(
     (nextPath: string, replace?: boolean) => {
       onPathChange(`${basePath}${nextPath}`, replace)
     },
-    [basePath, onPathChange]
+    [basePath, onPathChange],
   )
 
   return (

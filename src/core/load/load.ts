@@ -13,7 +13,7 @@ export async function load(
     cwd: string
     fs?: {path: string}
     sanity?: {projectId?: string; dataset?: string; token?: string}
-  }
+  },
 ): Promise<void> {
   // Write to file system
   if (opts.fs) {
@@ -31,7 +31,7 @@ export async function load(
 
 async function _loadToSanity(
   sanity: {projectId?: string; dataset?: string; token?: string},
-  docs: APIDocument[]
+  docs: APIDocument[],
 ): Promise<void> {
   const client = createClient({
     ...sanity,

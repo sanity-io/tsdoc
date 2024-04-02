@@ -4,7 +4,7 @@ import {useSpace} from './useSpace'
 import {useTextSize} from './useTextSize'
 
 export function P(
-  props: Omit<TextProps, 'as'> & Omit<HTMLProps<HTMLDivElement>, 'as' | 'ref' | 'size'>
+  props: Omit<TextProps, 'as'> & Omit<HTMLProps<HTMLDivElement>, 'as' | 'ref' | 'size'>,
 ): ReactElement {
   const {size: sizeProp = 0, ...restProps} = props
 

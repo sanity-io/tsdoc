@@ -37,7 +37,7 @@ export interface LinkProps {
  */
 export const Link = forwardRef(function Link(
   props: LinkProps & React.HTMLProps<HTMLAnchorElement>,
-  ref: React.ForwardedRef<HTMLAnchorElement>
+  ref: React.ForwardedRef<HTMLAnchorElement>,
 ) {
   const {onClick, href, target, ...restProps} = props
 

@@ -36,7 +36,7 @@ export function useSymbolSearch(props: {query: string | null}): {
             query: debouncedQuery,
             packageName: params.packageName,
             packageScope: params.packageScope,
-          })
+          }),
         )
       } catch (err) {
         if (err instanceof Error) {

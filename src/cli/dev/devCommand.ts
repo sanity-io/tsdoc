@@ -188,7 +188,7 @@ export async function devCommand(options: {cwd: string}): Promise<void> {
           `window.__INITIAL_STATE__=`,
           JSON.stringify({docs: initialDocs, releaseVersion}),
           `</script>`,
-        ].join('')
+        ].join(''),
       )
 
       // 6. Send the rendered HTML back.

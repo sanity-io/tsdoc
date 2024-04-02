@@ -192,7 +192,7 @@ function Link(props: PortableTextMarkComponentProps) {
       // When calling onPathChange we need to call it without the basePath
       onPathChange(path)
     },
-    [isExternalUrl, onPathChange, path]
+    [isExternalUrl, onPathChange, path],
   )
 
   return (

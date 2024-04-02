@@ -57,7 +57,7 @@ export function useSymbol(props: UseSymbolProps): {
             packageName,
             packageScope,
             name,
-          })
+          }),
         )
       } catch (err) {
         if (err instanceof Error) {

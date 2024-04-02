@@ -16,7 +16,7 @@ import {TransformContext, TransformOpts} from './types'
 function formatReleaseId(
   packageScope: string | undefined,
   packageName: string,
-  releaseVersion: string
+  releaseVersion: string,
 ) {
   return [packageScope, packageName, releaseVersion]
     .filter(Boolean)
@@ -30,7 +30,7 @@ function formatExportId(
   packageScope: string | undefined,
   packageName: string,
   releaseVersion: string,
-  exportPath: string
+  exportPath: string,
 ) {
   const prefix = [packageScope, packageName, releaseVersion].filter(Boolean).join('_')
 
@@ -179,7 +179,7 @@ export function transform(extractResults: ExtractResult[], opts: TransformOpts):
 function resolveExportId(
   packageScope: string | undefined,
   packageName: string,
-  exportPath: string | undefined
+  exportPath: string | undefined,
 ) {
   const packageId = [packageScope, packageName].filter(Boolean).join('/')
 

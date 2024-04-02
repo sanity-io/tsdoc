@@ -54,7 +54,7 @@ export function TSDocInspector(): ReactElement {
         },
       })
     },
-    [broadcast]
+    [broadcast],
   )
 
   const handleReleaseVersionChange = useCallback(
@@ -70,7 +70,7 @@ export function TSDocInspector(): ReactElement {
         },
       })
     },
-    [broadcast]
+    [broadcast],
   )
 
   const handleExportPathChange = useCallback(
@@ -85,7 +85,7 @@ export function TSDocInspector(): ReactElement {
         },
       })
     },
-    [broadcast]
+    [broadcast],
   )
 
   const handleMemberNameChange = useCallback(
@@ -99,7 +99,7 @@ export function TSDocInspector(): ReactElement {
         },
       })
     },
-    [broadcast]
+    [broadcast],
   )
 
   return (

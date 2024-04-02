@@ -129,7 +129,7 @@ describe('transform', () => {
 
     const exports = docs.filter((d) => d._type === 'api.export') as APIExportDocument[]
     const variables = docs.filter(
-      (d) => d._type === 'api.variable'
+      (d) => d._type === 'api.variable',
     ) as SanityDocumentValue<SerializedAPIVariable>[]
 
     // Assert export documents
@@ -151,7 +151,7 @@ describe('transform', () => {
     const docs = transform(results, {package: {version: pkg.version}})
 
     const doc = docs.find(
-      (d) => d._type === 'api.namespace' && d.name === 'Schema'
+      (d) => d._type === 'api.namespace' && d.name === 'Schema',
     ) as SerializedAPINamespace
 
     expect(doc.members.length).toBe(5)
@@ -165,10 +165,10 @@ describe('transform', () => {
     const docs = transform(results, {package: {version: pkg.version}})
 
     const docLinkWithoutName = docs.find(
-      (d) => d._type === 'api.function' && d.name === 'testFunctionLink'
+      (d) => d._type === 'api.function' && d.name === 'testFunctionLink',
     )
     const docLinkWithName = docs.find(
-      (d) => d._type === 'api.function' && d.name === 'testFunctionLinkWithName'
+      (d) => d._type === 'api.function' && d.name === 'testFunctionLinkWithName',
     )
 
     expect((docLinkWithName as SerializedAPIFunction).parameters[0]).toMatchObject({
@@ -252,7 +252,7 @@ describe('transform', () => {
     const docs = transform(results, {package: {version: pkg.version}})
 
     const overloadFunctions = docs.filter(
-      (d) => d._type === 'api.function' && d.name === 'testOverload'
+      (d) => d._type === 'api.function' && d.name === 'testOverload',
     )
 
     expect(overloadFunctions.length).toBe(3)

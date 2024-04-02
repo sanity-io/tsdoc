@@ -21,7 +21,7 @@ import {TransformContext} from './types'
  */
 export function _transformInterface(
   ctx: TransformContext,
-  node: ApiInterface
+  node: ApiInterface,
 ): SerializedAPIInterface {
   if (!ctx.export) {
     throw new Error('transformEnum: missing `export` document')
@@ -48,7 +48,7 @@ export function _transformInterface(
         _key: `extend${idx}`,
         type: _transformTokens(
           ctx,
-          t.excerpt.tokens.slice(t.excerpt.tokenRange.startIndex, t.excerpt.tokenRange.endIndex)
+          t.excerpt.tokens.slice(t.excerpt.tokenRange.startIndex, t.excerpt.tokenRange.endIndex),
         ),
       }
     }),
@@ -69,7 +69,7 @@ export function _transformInterface(
 
 function _transformInterfaceMember(
   ctx: TransformContext,
-  m: ApiItem
+  m: ApiItem,
 ): SerializedAPIInterfaceMember {
   if (m.kind === 'CallSignature') {
     const mem = m as ApiCallSignature
@@ -85,8 +85,8 @@ function _transformInterfaceMember(
         ctx,
         mem.excerptTokens.slice(
           mem.returnTypeExcerpt.tokenRange.startIndex,
-          mem.returnTypeExcerpt.tokenRange.endIndex
-        )
+          mem.returnTypeExcerpt.tokenRange.endIndex,
+        ),
       ),
       typeParameters: mem.typeParameters.map((p, idx) => _transformTypeParameter(ctx, mem, p, idx)),
     }
@@ -106,8 +106,8 @@ function _transformInterfaceMember(
         ctx,
         mem.excerptTokens.slice(
           mem.returnTypeExcerpt.tokenRange.startIndex,
-          mem.returnTypeExcerpt.tokenRange.endIndex
-        )
+          mem.returnTypeExcerpt.tokenRange.endIndex,
+        ),
       ),
       typeParameters: mem.typeParameters.map((p, idx) => _transformTypeParameter(ctx, mem, p, idx)),
     }
@@ -129,8 +129,8 @@ function _transformInterfaceMember(
         ctx,
         mem.excerptTokens.slice(
           mem.returnTypeExcerpt.tokenRange.startIndex,
-          mem.returnTypeExcerpt.tokenRange.endIndex
-        )
+          mem.returnTypeExcerpt.tokenRange.endIndex,
+        ),
       ),
       typeParameters: mem.typeParameters.map((p, idx) => _transformTypeParameter(ctx, mem, p, idx)),
     }
@@ -150,8 +150,8 @@ function _transformInterfaceMember(
         ctx,
         mem.excerptTokens.slice(
           mem.propertyTypeExcerpt.tokenRange.startIndex,
-          mem.propertyTypeExcerpt.tokenRange.endIndex
-        )
+          mem.propertyTypeExcerpt.tokenRange.endIndex,
+        ),
       ),
     }
   }
@@ -169,8 +169,8 @@ function _transformInterfaceMember(
         ctx,
         mem.excerptTokens.slice(
           mem.returnTypeExcerpt.tokenRange.startIndex,
-          mem.returnTypeExcerpt.tokenRange.endIndex
-        )
+          mem.returnTypeExcerpt.tokenRange.endIndex,
+        ),
       ),
     }
   }

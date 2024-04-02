@@ -5,7 +5,7 @@ import {useLevel} from './useLevel'
 import {useSpace} from './useSpace'
 
 export function H(
-  props: Omit<HeadingProps, 'as'> & Omit<HTMLProps<HTMLDivElement>, 'as' | 'ref' | 'size'>
+  props: Omit<HeadingProps, 'as'> & Omit<HTMLProps<HTMLDivElement>, 'as' | 'ref' | 'size'>,
 ): ReactElement {
   const {size: sizeProp = 0, ...restProps} = props
   const level = useLevel()

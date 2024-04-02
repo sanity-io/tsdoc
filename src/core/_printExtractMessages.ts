@@ -23,7 +23,7 @@ export function _printExtractMessages(cwd: string, messages: ExtractorMessage[])
         `:${chalk.yellow(msg.sourceFileLine)}:${chalk.yellow(msg.sourceFileColumn)}`,
         ` - ${chalk.yellow('warning')} ${chalk.gray(msg.messageId)}\n`,
         msg.text,
-      ].join('')
+      ].join(''),
     )
   }
 
@@ -40,7 +40,7 @@ export function _printExtractMessages(cwd: string, messages: ExtractorMessage[])
         `:${chalk.yellow(msg.sourceFileLine)}:${chalk.yellow(msg.sourceFileColumn)}`,
         ` - ${chalk.red('error')} ${chalk.gray(msg.messageId)}\n`,
         msg.text,
-      ].join('')
+      ].join(''),
     )
   }
 }

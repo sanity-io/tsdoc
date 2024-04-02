@@ -12,7 +12,7 @@ import {TransformContext} from './types'
  */
 export function _transformVariable(
   ctx: TransformContext,
-  node: ApiVariable
+  node: ApiVariable,
 ): SerializedAPIVariable {
   if (!ctx.export) {
     throw new Error('transformVariable: missing `export` document')
@@ -33,8 +33,8 @@ export function _transformVariable(
     ctx,
     node.excerptTokens.slice(
       node.variableTypeExcerpt.tokenRange.startIndex,
-      node.variableTypeExcerpt.tokenRange.endIndex
-    )
+      node.variableTypeExcerpt.tokenRange.endIndex,
+    ),
   )
   const isReactComponentType = _variableIsReactComponentType(node)
   const propsType = isReactComponentType ? _variablePropsType(ctx, node) : undefined
@@ -57,7 +57,7 @@ export function _transformVariable(
 function _variableIsReactComponentType(node: ApiVariable) {
   const typeTokens = node.excerptTokens.slice(
     node.variableTypeExcerpt.tokenRange.startIndex,
-    node.variableTypeExcerpt.tokenRange.endIndex
+    node.variableTypeExcerpt.tokenRange.endIndex,
   )
 
   const typeCode = typeTokens
@@ -99,11 +99,11 @@ function _variableIsReactComponentType(node: ApiVariable) {
 
 function _variablePropsType(
   ctx: TransformContext,
-  node: ApiVariable
+  node: ApiVariable,
 ): SanityReferenceValue | undefined {
   const typeTokens = node.excerptTokens.slice(
     node.variableTypeExcerpt.tokenRange.startIndex,
-    node.variableTypeExcerpt.tokenRange.endIndex
+    node.variableTypeExcerpt.tokenRange.endIndex,
   )
 
   const componentRef = typeTokens.find((t) => t.kind === 'Reference' && t.text.endsWith('Props'))

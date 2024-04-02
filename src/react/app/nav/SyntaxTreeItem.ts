@@ -30,5 +30,5 @@ export const SyntaxTreeItem = memo(
         background-color: ${focusBackground} !important;
       }
     `
-  })
+  }),
 )

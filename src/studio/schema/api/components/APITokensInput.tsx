@@ -16,7 +16,7 @@ const Code = styled(UICode)`
 `
 
 export function APITokensInput(
-  props: ArrayOfObjectsInputProps<SanityArrayItem<SerializedAPIToken>>
+  props: ArrayOfObjectsInputProps<SanityArrayItem<SerializedAPIToken>>,
 ): ReactElement {
   const {value = []} = props
 

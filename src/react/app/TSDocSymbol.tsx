@@ -30,7 +30,7 @@ export function TSDocSymbol(
     packageScope?: string | null
     packageName?: string | null
     tooltip?: Omit<TooltipProps, 'content'>
-  }
+  },
 ): ReactElement {
   const {member, fontSize = 2, name, packageScope, packageName, tooltip, ...restProps} = props
 

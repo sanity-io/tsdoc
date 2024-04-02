@@ -13,9 +13,7 @@ export function CodeSnippet(props: {
   return (
     <>
       {prefix}
-      {data?.map((t) => (
-        <ApiToken deindent={deindent} key={t._key} token={t} />
-      ))}
+      {data?.map((t) => <ApiToken deindent={deindent} key={t._key} token={t} />)}
       {suffix}
     </>
   )

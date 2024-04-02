@@ -5,7 +5,7 @@ import {TransformContext} from './types'
 
 export function _functionPropsType(
   ctx: TransformContext,
-  node: ApiFunction
+  node: ApiFunction,
 ): SanityReferenceValue | undefined {
   const propsParam = node.parameters[0] && node.parameters[0].name === 'props' && node.parameters[0]
 
@@ -14,8 +14,8 @@ export function _functionPropsType(
       ctx,
       node.excerptTokens.slice(
         propsParam.parameterTypeExcerpt.tokenRange.startIndex,
-        propsParam.parameterTypeExcerpt.tokenRange.endIndex
-      )
+        propsParam.parameterTypeExcerpt.tokenRange.endIndex,
+      ),
     )
 
     if (propsTokens.length) {

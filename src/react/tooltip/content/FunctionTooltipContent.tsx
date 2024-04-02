@@ -24,7 +24,7 @@ export function FunctionTooltipContent(props: {data: APIFunction}): ReactElement
         releaseVersion: propsType.release?.version,
         memberSlug: propsType.slug.current,
       },
-    [propsType]
+    [propsType],
   )
 
   const propsTypeLink = useMemberLink({

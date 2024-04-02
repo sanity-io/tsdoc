@@ -17,7 +17,7 @@ export function TSDocSymbolPreview(
     name: string
     packageName?: string
     packageScope?: string | null
-  }
+  },
 ): ReactElement {
   const {fontSize = 2, member, name, packageName, packageScope, ...restProps} = props
 

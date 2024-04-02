@@ -3,17 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/exports/index.d.ts",
       "source": "./src/index.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     },
     "./extra": {
-      "types": "./dist/exports/extra.d.ts",
       "source": "./src/extra.ts",
       "import": "./dist/extra.js",
       "require": "./dist/extra.cjs",
@@ -22,7 +21,7 @@
     "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./dist/index.esm.js",
   "source": "./src/index.ts",
   "types": "./dist/exports/index.d.ts",
   "typesVersions": {
@@ -36,6 +35,7 @@
     "build": "rimraf dist && pkg build --strict && pkg --strict",
     "etl": "sanity-tsdoc etl --outDir ../../etc"
   },
+  "browserslist": "extends @sanity/browserslist-config",
   "devDependencies": {
     "@sanity/tsdoc": "workspace:*"
   }

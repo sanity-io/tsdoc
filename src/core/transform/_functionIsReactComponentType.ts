@@ -13,7 +13,7 @@ export function _functionIsReactComponentType(node: ApiFunction): boolean {
 
   const returnTypeTokens = node.excerptTokens.slice(
     node.returnTypeExcerpt.tokenRange.startIndex,
-    node.returnTypeExcerpt.tokenRange.endIndex
+    node.returnTypeExcerpt.tokenRange.endIndex,
   )
 
   const returnTypeCode = returnTypeTokens

@@ -29,7 +29,7 @@ export function TSDocSearch(): ReactElement {
 
   const options: TSDocSearchOption[] = useMemo(
     () => data.map((result) => ({value: result._id, symbol: result})),
-    [data]
+    [data],
   )
 
   const filterOption = useCallback(() => true, [])
@@ -72,7 +72,7 @@ export function TSDocSearch(): ReactElement {
         />
       ) : null
     },
-    [loading, query]
+    [loading, query],
   )
 
   return (
@@ -103,7 +103,7 @@ const SearchOption = forwardRef(function SearchOption(
       members: {slug: SanitySlugValue; exportPath: string; releaseVersion: string}[]
     }
   },
-  ref: ForwardedRef<HTMLDivElement>
+  ref: ForwardedRef<HTMLDivElement>,
 ) {
   const {symbol, ...restProps} = props
 
@@ -118,7 +118,7 @@ const SearchOption = forwardRef(function SearchOption(
       releaseVersion: latestMember ? latestMember.releaseVersion : '0.0.0',
       memberSlug: latestMember ? latestMember.slug.current : '',
     }),
-    [latestMember, symbol]
+    [latestMember, symbol],
   )
 
   const link = useMemberLink({params})

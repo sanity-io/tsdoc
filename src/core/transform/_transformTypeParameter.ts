@@ -15,7 +15,7 @@ export function _transformTypeParameter(
   ctx: TransformContext,
   node: ApiCallSignature | ApiClass | ApiFunction | ApiInterface | ApiTypeAlias,
   p: TypeParameter,
-  idx: number
+  idx: number,
 ): SanityArrayItem<SerializedAPITypeParameter> {
   return {
     _type: 'api.typeParameter',
@@ -25,15 +25,15 @@ export function _transformTypeParameter(
       ctx,
       node.excerptTokens.slice(
         p.constraintExcerpt.tokenRange.startIndex,
-        p.constraintExcerpt.tokenRange.endIndex
-      )
+        p.constraintExcerpt.tokenRange.endIndex,
+      ),
     ),
     defaultType: _transformTokens(
       ctx,
       node.excerptTokens.slice(
         p.defaultTypeExcerpt.tokenRange.startIndex,
-        p.defaultTypeExcerpt.tokenRange.endIndex
-      )
+        p.defaultTypeExcerpt.tokenRange.endIndex,
+      ),
     ),
   }
 }

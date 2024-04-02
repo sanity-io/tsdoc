@@ -58,12 +58,12 @@ export function TSDocProvider(props: TSDocProviderProps): ReactElement {
 
       onPathChange(nextPath)
     },
-    [onPathChange]
+    [onPathChange],
   )
 
   const tsdoc: TSDocContextValue = useMemo(
     () => ({basePath, onPathChange, params, path, store, updateParams}),
-    [basePath, onPathChange, params, path, store, updateParams]
+    [basePath, onPathChange, params, path, store, updateParams],
   )
 
   useEffect(() => {

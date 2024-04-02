@@ -63,7 +63,7 @@ export class Class {
      * testing
      * @beta
      * */
-    id: string
+    id: string,
   ) {
     this.$id = id
   }

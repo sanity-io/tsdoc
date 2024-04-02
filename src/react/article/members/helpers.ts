@@ -34,7 +34,7 @@ export function _getMembers(data: APIMember): SanityArrayItem<APIMemberWithInher
               }
 
               return m
-            })
+            }),
           )
         }
       }

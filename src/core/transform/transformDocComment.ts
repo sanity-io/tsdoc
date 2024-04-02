@@ -152,7 +152,7 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
 
   if (docNode.kind === 'Paragraph') {
     const transformedParagraph: DocParagraph = DocNodeTransforms.trimSpacesInParagraph(
-      docNode as DocParagraph
+      docNode as DocParagraph,
     )
 
     if (
@@ -249,7 +249,7 @@ function _transformDocNode(docNode: DocNode): PortableTextNode | undefined {
 }
 
 export function _transformDocCommentContent(
-  section: DocSection | DocParagraph
+  section: DocSection | DocParagraph,
 ): SanityArrayItem<PortableTextNode>[] | undefined {
   if (!section.nodes.length) return undefined
 

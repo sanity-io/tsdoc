@@ -12,7 +12,7 @@ import {TransformContext} from './types'
  */
 export function _transformTypeAlias(
   ctx: TransformContext,
-  node: ApiTypeAlias
+  node: ApiTypeAlias,
 ): SerializedAPITypeAlias {
   if (!ctx.export) {
     throw new Error('transformTypeAlias: missing `export` document')
@@ -42,11 +42,11 @@ export function _transformTypeAlias(
       ctx,
       node.excerptTokens.slice(
         node.typeExcerpt.tokenRange.startIndex,
-        node.typeExcerpt.tokenRange.endIndex
-      )
+        node.typeExcerpt.tokenRange.endIndex,
+      ),
     ),
     typeParameters: node.typeParameters.map((param, idx) =>
-      _transformTypeParameter(ctx, node, param, idx)
+      _transformTypeParameter(ctx, node, param, idx),
     ),
   }
 }

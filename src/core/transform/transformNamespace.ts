@@ -25,7 +25,7 @@ import {TransformContext} from './types'
  */
 export function _transformNamespace(
   ctx: TransformContext,
-  node: ApiNamespace
+  node: ApiNamespace,
 ): SerializedAPINamespace {
   if (!ctx.export) {
     throw new Error('transformNamespace: missing `export` document')

@@ -13,6 +13,6 @@ export function useSize(props?: {size?: number | number[]; min?: number; max?: n
 
     // Improve performance: Keep object identify for a given hash of the value
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [__cache_key__]
+    [__cache_key__],
   )
 }

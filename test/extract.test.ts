@@ -20,7 +20,7 @@ describe('extract', () => {
     const result = results[0]!
 
     expect(result.messages[result.messages.length - 1]?.text).toEqual(
-      `Writing: ${path.resolve(result.tempDirPath, 'api.json')}`
+      `Writing: ${path.resolve(result.tempDirPath, 'api.json')}`,
     )
   })
 
@@ -41,7 +41,7 @@ describe('extract', () => {
     const result = results[0]!
 
     expect(result.messages[result.messages.length - 1]?.text).toEqual(
-      `Writing: ${path.resolve(result.tempDirPath, 'api.json')}`
+      `Writing: ${path.resolve(result.tempDirPath, 'api.json')}`,
     )
   })
 })

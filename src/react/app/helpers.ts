@@ -3,7 +3,7 @@ import {TSDocAppParams} from '@sanity/tsdoc/store'
 /** @beta */
 export function parsePath(
   path: string,
-  options: {basePath?: string; version?: string} = {}
+  options: {basePath?: string; version?: string} = {},
 ): TSDocAppParams {
   const {basePath = '', version = '0.0.0'} = options
   const baseSegments = basePath.split('/').filter(Boolean)

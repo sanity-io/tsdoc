@@ -78,14 +78,14 @@ function TSDocNavView(props: {
   const {showVersionMenu, expandPackages, expandSubPackages} = props
 
   const currentPkg = packages.data?.find(
-    (p) => p.scope === params.packageScope && p.name === params.packageName
+    (p) => p.scope === params.packageScope && p.name === params.packageName,
   )
 
   const currentRelease = currentPkg?.releases.length
     ? currentPkg?.releases.find((r) =>
         params.releaseVersion
           ? r.version === params.releaseVersion
-          : r.version == currentPkg.latestRelease.version
+          : r.version == currentPkg.latestRelease.version,
       )
     : currentPkg?.latestRelease
 
@@ -114,7 +114,7 @@ function TSDocNavView(props: {
       const {members, name, package: pkg, ...restExp} = exp
 
       const item = items.find(
-        (e) => e.packageScope === pkg.scope && e.packageName === pkg.name && e.name === exp.name
+        (e) => e.packageScope === pkg.scope && e.packageName === pkg.name && e.name === exp.name,
       )
 
       const data: TSDocNavExportData = {
@@ -224,7 +224,7 @@ function SingleExportTree(props: {currentVersion?: string; exp: ExportData}) {
 
   const versionedExports = useMemo(
     () => exp.versions.filter((d) => d.release.version === currentVersion),
-    [currentVersion, exp]
+    [currentVersion, exp],
   )
 
   return (
@@ -249,7 +249,7 @@ function MultiExportTree(props: {
 
   const versionedExports = useMemo(
     () => exports.filter((data) => data.versions.some((v) => v.release.version === currentVersion)),
-    [currentVersion, exports]
+    [currentVersion, exports],
   )
 
   return (

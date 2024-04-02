@@ -21,7 +21,7 @@ export function ApiToken(props: {deindent?: boolean; token: APIToken}): ReactEle
             memberSlug: token.member.slug.current,
           }
         : null,
-    [token.member]
+    [token.member],
   )
 
   const linkProps = useMemberLink({params})

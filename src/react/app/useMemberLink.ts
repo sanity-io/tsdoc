@@ -21,7 +21,7 @@ export function useMemberLink(props: {params: TSDocAppParams | null}): {
 
       onPathChange(path)
     },
-    [onPathChange, path]
+    [onPathChange, path],
   )
 
   return {href, onClick}

@@ -17,7 +17,7 @@ export function VariableContent(props: {data: APIVariable}): ReactElement {
 
   const propsTypeMembers = useMemo(
     () => (isReactComponentType && propsType ? _getMembers(propsType) : undefined),
-    [isReactComponentType, propsType]
+    [isReactComponentType, propsType],
   )
 
   return (

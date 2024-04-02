@@ -16,7 +16,7 @@ import mkdirp from 'mkdirp'
 import pkgUp from 'pkg-up'
 
 async function _fetchPackageDocsFromSanity(
-  sanity: NonNullable<NonNullable<SanityTSDocConfigOptions['output']>['sanity']>
+  sanity: NonNullable<NonNullable<SanityTSDocConfigOptions['output']>['sanity']>,
 ) {
   const client = createClient({
     ...sanity,
@@ -68,8 +68,8 @@ export async function etlCommand(options: {
     // eslint-disable-next-line no-console
     console.log(
       `${chalk.bgCyan(
-        chalk.black(` ${path.join(pkg['name'], result.exportPath || '')} `)
-      )} extracted from ${chalk.cyan(path.relative('.', result.typesPath))}`
+        chalk.black(` ${path.join(pkg['name'], result.exportPath || '')} `),
+      )} extracted from ${chalk.cyan(path.relative('.', result.typesPath))}`,
     )
 
     _printExtractMessages(cwd, result.messages)
@@ -105,7 +105,7 @@ export async function etlCommand(options: {
   if (config?.output?.sanity && !config.output?.sanity.token) {
     console.warn(
       // prettier-ignore
-      `${chalk.gray('ignore')} no token provided, skipped writing to sanity (${config.output.sanity.projectId}:${config.output.sanity.dataset})`
+      `${chalk.gray('ignore')} no token provided, skipped writing to sanity (${config.output.sanity.projectId}:${config.output.sanity.dataset})`,
     )
   }
 
@@ -118,14 +118,14 @@ export async function etlCommand(options: {
   console.log('')
   console.log(
     // prettier-ignore
-    `${chalk.green('success')} wrote ${docs.length} documents to ${path.relative(cwd, jsonPath)}`
+    `${chalk.green('success')} wrote ${docs.length} documents to ${path.relative(cwd, jsonPath)}`,
   )
 
   if (config?.output?.sanity?.token) {
     console.log('')
     console.log(
       // prettier-ignore
-      `${chalk.green('success')} wrote ${docs.length} documents to Sanity (${config.output?.sanity.projectId}:${config.output?.sanity.dataset})`
+      `${chalk.green('success')} wrote ${docs.length} documents to Sanity (${config.output?.sanity.projectId}:${config.output?.sanity.dataset})`,
     )
   }
 }

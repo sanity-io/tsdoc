@@ -6,7 +6,7 @@ import {TransformContext} from './types'
 
 export function _transformTokens(
   ctx: TransformContext,
-  tokens: ExcerptToken[]
+  tokens: ExcerptToken[],
 ): SanityArrayItem<SerializedAPIToken>[] {
   const pkg = ctx.package
 

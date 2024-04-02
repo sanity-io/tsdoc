@@ -17,7 +17,7 @@ function Root(props: {docs?: APIDocument[]; releaseVersion?: string}) {
   const basePath = undefined
   const params: TSDocAppParams | undefined = useMemo(
     () => parsePath(path, {basePath, version: releaseVersion}),
-    [basePath, path, releaseVersion]
+    [basePath, path, releaseVersion],
   )
 
   const [members, setMembers] = useState<TSDocAPIMember[] | undefined | null>(null)
@@ -66,6 +66,6 @@ export function mount(options: {
   root.render(
     <StrictMode>
       <Root docs={docs} releaseVersion={releaseVersion} />
-    </StrictMode>
+    </StrictMode>,
   )
 }

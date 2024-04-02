@@ -82,8 +82,8 @@ function _transformClassMember(ctx: TransformContext, m: ApiItem): SerializedAPI
         ctx,
         mem.excerptTokens.slice(
           mem.returnTypeExcerpt.tokenRange.startIndex,
-          mem.returnTypeExcerpt.tokenRange.endIndex
-        )
+          mem.returnTypeExcerpt.tokenRange.endIndex,
+        ),
       ),
       typeParameters: mem.typeParameters.map((p, idx) => _transformTypeParameter(ctx, mem, p, idx)),
     }
@@ -105,8 +105,8 @@ function _transformClassMember(ctx: TransformContext, m: ApiItem): SerializedAPI
         ctx,
         mem.excerptTokens.slice(
           mem.propertyTypeExcerpt.tokenRange.startIndex,
-          mem.propertyTypeExcerpt.tokenRange.endIndex
-        )
+          mem.propertyTypeExcerpt.tokenRange.endIndex,
+        ),
       ),
     }
   }

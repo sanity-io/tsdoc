@@ -7,7 +7,7 @@ import {useTSDoc} from '../useTSDoc'
 import {SyntaxTreeItem} from './SyntaxTreeItem'
 
 export function PackageTreeItem(
-  props: {pkg: APIPackage} & Omit<TreeItemProps, 'href' | 'onClick' | 'text'>
+  props: {pkg: APIPackage} & Omit<TreeItemProps, 'href' | 'onClick' | 'text'>,
 ): ReactElement {
   const {pkg, ...restProps} = props
   const {params, updateParams} = useTSDoc()
@@ -30,7 +30,7 @@ export function PackageTreeItem(
         releaseVersion: pkg.latestRelease.version,
       }))
     },
-    [pkg, updateParams]
+    [pkg, updateParams],
   )
 
   return (

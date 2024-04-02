@@ -41,7 +41,7 @@ export function FunctionContent(props: {data: APIFunction}): ReactElement {
           .map((param) => `${param.name}: ${param.type.map((t) => t.text).join('')}`)
           .join(', ')}): `,
       ].join(''),
-    [name, parameters, typeParameters]
+    [name, parameters, typeParameters],
   )
 
   const propsTypeLinkParams: TSDocAppParams | null = useMemo(
@@ -58,7 +58,7 @@ export function FunctionContent(props: {data: APIFunction}): ReactElement {
             releaseVersion: propsType.release.version,
           }
         : null,
-    [propsType]
+    [propsType],
   )
 
   return (

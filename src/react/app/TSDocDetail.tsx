@@ -55,11 +55,5 @@ export function TSDocDetail(): ReactElement {
     )
   }
 
-  return (
-    <>
-      {member.data?.map((member) => (
-        <TSDocArticle key={member._id} data={member} />
-      ))}
-    </>
-  )
+  return <>{member.data?.map((member) => <TSDocArticle key={member._id} data={member} />)}</>
 }

@@ -17,7 +17,7 @@ export function _transformParameter(
   ctx: TransformContext,
   node: ApiCallSignature | ApiConstructor | ApiFunction | ApiIndexSignature,
   param: Parameter,
-  idx: number
+  idx: number,
 ): SanityArrayItem<SerializedAPIParameter> {
   const tsDocComment = param.tsdocParamBlock?.content
 
@@ -37,8 +37,8 @@ export function _transformParameter(
       ctx,
       node.excerptTokens.slice(
         param.parameterTypeExcerpt.tokenRange.startIndex,
-        param.parameterTypeExcerpt.tokenRange.endIndex
-      )
+        param.parameterTypeExcerpt.tokenRange.endIndex,
+      ),
     ),
   }
 }
