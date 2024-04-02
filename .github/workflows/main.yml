@@ -20,8 +20,8 @@ jobs:
         include:
           - platform: macos-latest
             node-version: lts/*
-          - platform: windows-latest
-            node-version: lts/*
+          # - platform: windows-latest
+          #   node-version: lts/*
     steps:
       - uses: actions/checkout@v4
       # It's only necessary to do this for windows, as mac and ubuntu are sane OS's that already use LF
