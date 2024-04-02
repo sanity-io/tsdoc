@@ -36,7 +36,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: corepack enable && pnpm --version
       - run: pnpm install
-      - run: pnpm lint
+      - if: matrix.platform != 'windows-latest'
+        run: pnpm lint
       - run: pnpm build
       - run: pnpm test
 

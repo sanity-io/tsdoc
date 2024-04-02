@@ -9,5 +9,13 @@ export default defineConfig({
     globalSetup: ['./test/_setupFolders.ts'],
     // Enable rich PR failed test annotation on the CI
     reporters: process.env.GITHUB_ACTIONS ? ['default', new GithubActionsReporter()] : 'default',
+    watchExclude: [
+      '**/.tsdoc/**',
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/etc/**',
+      '**/__tmp__/**',
+      'pnpm-lock.yaml',
+    ],
   },
 })
