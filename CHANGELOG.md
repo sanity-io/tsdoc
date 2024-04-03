@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/sanity-io/tsdoc/compare/v1.0.6...v1.0.7) (2024-04-03)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/pkg-utils to 5.1.8 ([6a7ca33](https://github.com/sanity-io/tsdoc/commit/6a7ca33fd592b1f61257fa6ac6c3197f76dfebf2))
+- log the tsconfig file being used ([b1f4101](https://github.com/sanity-io/tsdoc/commit/b1f4101407befbad9fdd8eaa63ade80750fca3f4))
+
 ## [1.0.6](https://github.com/sanity-io/tsdoc/compare/v1.0.5...v1.0.6) (2024-04-02)
 
 ### Bug Fixes
