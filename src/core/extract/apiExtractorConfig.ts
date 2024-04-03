@@ -1,4 +1,4 @@
-import {IConfigFile, IExtractorMessagesConfig} from '@microsoft/api-extractor'
+import type {IConfigFile, IExtractorMessagesConfig} from '@microsoft/api-extractor'
 import path from 'path'
 
 import {DEFAULT_MESSAGES_CONFIG} from './defaults'
@@ -8,8 +8,8 @@ export function createApiExtractorConfig(opts: {
   messagesConfig: IExtractorMessagesConfig
   packagePath: string
   tempDirPath: string
-  tsconfigPath?: string
-  bundledPackages?: string[]
+  tsconfigPath: string
+  bundledPackages: string[]
 }): IConfigFile {
   /**
    * Config file for API Extractor.  For more info, please visit: https://api-extractor.com
@@ -71,7 +71,7 @@ export function createApiExtractorConfig(opts: {
      * This would direct API Extractor to embed those types directly in the .d.ts rollup, as if they had been
      * local files for library1.
      */
-    bundledPackages: opts.bundledPackages ?? [],
+    bundledPackages: opts.bundledPackages,
 
     /**
      * Determines how the TypeScript compiler engine will be invoked by API Extractor.
@@ -89,7 +89,7 @@ export function createApiExtractorConfig(opts: {
        * DEFAULT VALUE: "<projectFolder>/tsconfig.json"
        */
       // tsconfigFilePath: path.resolve(opts.packagePath, opts.tsconfigPath || 'tsconfig.json'),
-      tsconfigFilePath: `<projectFolder>/${opts.tsconfigPath || 'tsconfig.json'}`,
+      tsconfigFilePath: `<projectFolder>/${opts.tsconfigPath}`,
 
       /**
        * Provides a compiler configuration that will be used instead of reading the tsconfig.json file from disk.

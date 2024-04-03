@@ -21,6 +21,9 @@
     "etl": "sanity-tsdoc etl --outDir ../../etc --strict"
   },
   "browserslist": "extends @sanity/browserslist-config",
+  "dependencies": {
+    "ts": "workspace:*"
+  },
   "devDependencies": {
     "@sanity/tsdoc": "workspace:*"
   },

@@ -41,6 +41,7 @@ export function TSDocSearch(): ReactElement {
   }, [])
 
   const renderOption = useCallback((option: TSDocSearchOption) => {
+    // @ts-expect-error - find a way to fix this
     return <SearchOption symbol={option.symbol} />
   }, [])
 

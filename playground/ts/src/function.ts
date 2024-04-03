@@ -26,6 +26,7 @@ export function testFunctionLink(options: BaseInterface): string {
   return `${options.id} ${options.foo}`
 }
 
+/** @public */
 export function testFunction(a: number, b?: number): number {
   return a + (b ?? 0)
 }

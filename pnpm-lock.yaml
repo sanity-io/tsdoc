@@ -266,6 +266,9 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+      ts:
+        specifier: workspace:*
+        version: link:../ts
     devDependencies:
       '@sanity/tsdoc':
         specifier: workspace:*

@@ -18,7 +18,7 @@ const require = createRequire(import.meta.url)
 // @sanity/tsdoc is currently designed to be used in a CJS process
 const {_printExtractMessages, extract, transform} = require('@sanity/tsdoc')
 
-describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform', () => {
+describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transform', () => {
   vi.setConfig({testTimeout: 60000, hookTimeout: 60000})
 
   const strict = true
@@ -61,7 +61,7 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
-    const symbolDocs = docs.filter((d) => d._type === 'api.symbol')
+    const symbolDocs = docs.filter((d: any) => d._type === 'api.symbol')
 
     expect(symbolDocs.length).toBe(11)
   })
@@ -75,7 +75,7 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
-    const classDoc = docs.find((d) => d._type === 'api.class')
+    const classDoc = docs.find((d: any) => d._type === 'api.class')
 
     expect(classDoc).toMatchSnapshot()
   })
@@ -89,10 +89,10 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
-    const fnDocs = docs.filter((d): d is APIMemberDocument => d._type === 'api.function')
+    const fnDocs = docs.filter((d: any): d is APIMemberDocument => d._type === 'api.function')
 
-    const hookDoc = fnDocs.find((d) => d.name === 'useAnswerToLifeTheUniverseAndEverything')
-    const nonHookDoc = fnDocs.find((d) => d.name === 'userHasTheRightAnswer')
+    const hookDoc = fnDocs.find((d: any) => d.name === 'useAnswerToLifeTheUniverseAndEverything')
+    const nonHookDoc = fnDocs.find((d: any) => d.name === 'userHasTheRightAnswer')
 
     if (!hookDoc) {
       throw new Error('Document for `useAnswerToLifeTheUniverseAndEverything` not found')
@@ -122,7 +122,7 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
-    const interfaceDoc = docs.find((d) => d._type === 'api.interface' && d.name === 'Resolver')
+    const interfaceDoc = docs.find((d: any) => d._type === 'api.interface' && d.name === 'Resolver')
 
     expect(interfaceDoc).toMatchSnapshot()
   })
@@ -143,13 +143,13 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     const docs = transform(results, {package: {version: _pkg.version}})
 
     // Assert package document
-    const pkg = docs.find((d) => d._type === 'api.package') as unknown as APIPackageDocument
+    const pkg = docs.find((d: any) => d._type === 'api.package') as unknown as APIPackageDocument
 
     expect(pkg.name).toBe('multi-export')
 
-    const exports = docs.filter((d) => d._type === 'api.export') as APIExportDocument[]
+    const exports = docs.filter((d: any) => d._type === 'api.export') as APIExportDocument[]
     const variables = docs.filter(
-      (d) => d._type === 'api.variable',
+      (d: any) => d._type === 'api.variable',
     ) as SanityDocumentValue<SerializedAPIVariable>[]
 
     // Assert export documents
@@ -171,7 +171,7 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     const docs = transform(results, {package: {version: pkg.version}})
 
     const doc = docs.find(
-      (d) => d._type === 'api.namespace' && d.name === 'Schema',
+      (d: any) => d._type === 'api.namespace' && d.name === 'Schema',
     ) as SerializedAPINamespace
 
     expect(doc.members.length).toBe(5)
@@ -187,10 +187,10 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     const docs = transform(results, {package: {version: pkg.version}})
 
     const docLinkWithoutName = docs.find(
-      (d) => d._type === 'api.function' && d.name === 'testFunctionLink',
+      (d: any) => d._type === 'api.function' && d.name === 'testFunctionLink',
     )
     const docLinkWithName = docs.find(
-      (d) => d._type === 'api.function' && d.name === 'testFunctionLinkWithName',
+      (d: any) => d._type === 'api.function' && d.name === 'testFunctionLinkWithName',
     )
 
     expect((docLinkWithName as SerializedAPIFunction).parameters[0]).toMatchObject({
@@ -276,7 +276,7 @@ describe.skipIf(process.env.GITHUB_ACTIONS && platform !== 'linux')('transform',
     const docs = transform(results, {package: {version: pkg.version}})
 
     const overloadFunctions = docs.filter(
-      (d) => d._type === 'api.function' && d.name === 'testOverload',
+      (d: any) => d._type === 'api.function' && d.name === 'testOverload',
     )
 
     expect(overloadFunctions.length).toBe(3)

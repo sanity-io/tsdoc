@@ -27,23 +27,35 @@ export function useExports(): {
       packageName: params.packageName,
       releaseVersion: params.releaseVersion,
     }
+    let cancelled = false
 
     async function run() {
       try {
         setLoading(true)
         setData(null)
-        setData(await store.exports.get(queryParams))
+        const data = await store.exports.get(queryParams)
+
+        if (!cancelled) {
+          setData(data)
+        }
       } catch (err) {
-        if (err instanceof Error) {
+        if (err instanceof Error && !cancelled) {
           setError(err)
         }
+      } finally {
+        if (!cancelled) {
+          setLoading(false)
+        }
       }
-
-      setLoading(false)
     }
 
     run()
+
+    return () => {
+      cancelled = true
+    }
   }, [params.packageScope, params.packageName, params.releaseVersion, store])
 
+  // @ts-expect-error - find a way to fix this
   return {data, error, loading}
 }

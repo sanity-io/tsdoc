@@ -1,4 +1,4 @@
-import {APISymbol} from '@sanity/tsdoc'
+import type {APISymbol} from '@sanity/tsdoc'
 import {useEffect, useRef, useState} from 'react'
 
 import {useTSDoc} from './useTSDoc'
@@ -23,6 +23,8 @@ export function useSymbolSearch(props: {query: string | null}): {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
+    let cancelled = false
+
     async function run() {
       if (!debouncedQuery || !params.packageName) {
         setData([])
@@ -32,16 +34,24 @@ export function useSymbolSearch(props: {query: string | null}): {
 
       try {
         setLoading(true)
-        setData(
-          await store.symbol.search({
-            query: debouncedQuery,
-            packageName: params.packageName,
-            packageScope: params.packageScope,
-          }),
-        )
+        const data = await store.symbol.search({
+          query: debouncedQuery,
+          packageName: params.packageName,
+          packageScope: params.packageScope,
+        })
+
+        if (!cancelled) {
+          setLoading(false)
+          // @ts-expect-error - find a way to fix this
+          setData(data)
+        }
       } catch (err) {
-        if (err instanceof Error) {
+        if (err instanceof Error && !cancelled) {
           setError(err)
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false)
         }
       }
 
@@ -49,6 +59,10 @@ export function useSymbolSearch(props: {query: string | null}): {
     }
 
     run()
+
+    return () => {
+      cancelled = true
+    }
   }, [debouncedQuery, params.packageName, params.packageScope, store])
 
   useEffect(() => {

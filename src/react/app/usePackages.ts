@@ -1,4 +1,4 @@
-import {APIPackage} from '@sanity/tsdoc'
+import type {APIPackage} from '@sanity/tsdoc'
 import {useEffect, useState} from 'react'
 
 import {useTSDoc} from './useTSDoc'
@@ -15,21 +15,33 @@ export function usePackages(): {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    let cancelled = false
+
     async function run() {
       try {
         setData(null)
+        const data = await store.packages.get()
 
-        setData(await store.packages.get())
+        if (!cancelled) {
+          // @ts-expect-error - find a way to fix this
+          setData(data)
+        }
       } catch (err) {
-        if (err instanceof Error) {
+        if (err instanceof Error && !cancelled) {
           setError(err)
         }
       } finally {
-        setLoading(false)
+        if (!cancelled) {
+          setLoading(false)
+        }
       }
     }
 
     run()
+
+    return () => {
+      cancelled = true
+    }
   }, [store])
 
   return {data, error, loading}

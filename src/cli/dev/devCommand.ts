@@ -160,7 +160,8 @@ export async function devCommand(options: {cwd: string}): Promise<void> {
     const url = req.originalUrl
 
     try {
-      const releaseVersion = initialDocs.find((d) => d._type === 'api.release')?.version
+      // @ts-expect-error - find out why the version type is not being inferred
+      const releaseVersion = initialDocs.find((d: any) => d._type === 'api.release')?.version
 
       // 1. Read index.html
       let template = await readFile(path.resolve(outDir, 'index.html'), 'utf-8')

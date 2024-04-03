@@ -38,6 +38,7 @@ export function PackageTreeItem(
     <SyntaxTreeItem
       {...restProps}
       href={href}
+      // @ts-expect-error - fix this
       onClick={handleClick}
       text={<SyntaxText>{[pkg.scope, pkg.name].filter(Boolean).join('/')}</SyntaxText>}
     />

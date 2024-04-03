@@ -48,8 +48,8 @@ export async function extract(options: {
     rules,
     strict,
     legacyExports,
-    tsconfig: tsconfigPath,
-    bundledPackages,
+    tsconfig: tsconfigPath = 'tsconfig.json',
+    bundledPackages = [],
   } = options
   const tempDir = await createTempDir()
   const tempDirPath = tempDir.path
@@ -59,6 +59,8 @@ export async function extract(options: {
   const config = await loadConfig({cwd: packagePath})
   const logger = createLogger()
   const pkg = await loadPkgWithReporting({cwd: packagePath, logger, strict, legacyExports})
+
+  logger.info('Using tsconfig: ', path.resolve(packagePath, tsconfigPath))
 
   // const exports = _resolveExports({pkg})
   const exports = parseExports({
@@ -113,9 +115,9 @@ async function _doExtract(options: {
   mainEntryPointFilePath: string
   packagePath: string
   tempDirPath: string
-  tsconfigPath?: string
+  tsconfigPath: string
   packageJsonFullPath: string
-  bundledPackages?: string[]
+  bundledPackages: string[]
 }) {
   const {
     customTags,

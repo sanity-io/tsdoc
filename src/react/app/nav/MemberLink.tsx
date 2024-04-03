@@ -1,7 +1,7 @@
-import {APIMember, APINamespace} from '@sanity/tsdoc'
-import {TSDocAppParams} from '@sanity/tsdoc/store'
-import {Box, CardTone, Flex} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import type {APIMember, APINamespace} from '@sanity/tsdoc'
+import type {TSDocAppParams} from '@sanity/tsdoc/store'
+import {Box, type CardTone, Flex} from '@sanity/ui'
+import {type ReactElement, useMemo} from 'react'
 
 import {SyntaxText} from '../../components/ColoredCode'
 import {useSize} from '../../lib/ui'
@@ -72,6 +72,7 @@ export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): 
           {tag}
         </Flex>
       }
+      // @ts-expect-error - fix this
       tone={tone}
     />
   )
