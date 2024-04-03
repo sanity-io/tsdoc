@@ -20,6 +20,21 @@ describe('cli', () => {
     expect(stdout).toContain('wrote 25 documents to ../../etc/mylib/1.0.0.json')
   })
 
+  test('run `etl` command in `mylib-bundling-ts`', async () => {
+    const project = await _spawnProject('mylib-bundling-ts')
+
+    await project.install()
+    await project.run('build')
+
+    expect(await project.dirs()).toEqual(['dist', 'node_modules', 'src'])
+
+    const {stdout} = await project.run('etl')
+
+    expect(await project.dirs()).toEqual(['dist', 'node_modules', 'src'])
+
+    expect(stdout).toContain('wrote 27 documents to ../../etc/mylib-bundling-ts/1.0.0.json')
+  })
+
   test('run `etl` command in `multi-export`', async () => {
     const project = await _spawnProject('multi-export')
 

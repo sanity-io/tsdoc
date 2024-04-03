@@ -7,6 +7,7 @@ export default defineConfig({
   legacyExports: packageConfig.legacyExports,
   input: {
     type: 'fs',
-    tsconfig: packageConfig.tsconfig,
+    tsconfig: 'tsconfig.tsdoc.json',
+    bundledPackages: ['ts'],
   },
 })

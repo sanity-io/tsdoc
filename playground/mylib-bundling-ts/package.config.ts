@@ -8,6 +8,11 @@ export default defineConfig({
         allowMultiple: true,
         syntaxKind: 'block',
       },
+      {
+        name: 'hidden',
+        syntaxKind: 'modifier',
+        allowMultiple: false,
+      },
     ],
   },
   legacyExports: true,

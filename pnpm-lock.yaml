@@ -278,6 +278,19 @@ importers:
       react:
         specifier: ^18.2.0
         version: 18.2.0
+    devDependencies:
+      '@sanity/tsdoc':
+        specifier: workspace:*
+        version: link:../..
+      rimraf:
+        specifier: ^4.4.1
+        version: 4.4.1
+
+  playground/mylib-bundling-ts:
+    dependencies:
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
       ts:
         specifier: workspace:*
         version: link:../ts
