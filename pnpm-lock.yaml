@@ -280,7 +280,7 @@ importers:
         version: 18.2.0
       ts:
         specifier: workspace:*
-        version: link:../../test/__tmp__/f44fa703-f37a-44f5-af2d-abecb8379c46
+        version: link:../ts
     devDependencies:
       '@sanity/tsdoc':
         specifier: workspace:*
@@ -294,88 +294,6 @@ importers:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
-
-  test/__tmp__/03b72d7d-1a10-4720-a1d0-56745440d4bd:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      ts:
-        specifier: workspace:*
-        version: link:../f44fa703-f37a-44f5-af2d-abecb8379c46
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
-
-  test/__tmp__/2f068bbd-320b-4cc8-be17-42393b663c84:
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
-
-  test/__tmp__/5f3cbeaf-93b4-400e-9033-de3d6a334e2b:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      ts:
-        specifier: workspace:*
-        version: link:../f44fa703-f37a-44f5-af2d-abecb8379c46
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
-
-  test/__tmp__/604e4ac9-95d9-41b6-94b8-072e025bc4c7:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      ts:
-        specifier: workspace:*
-        version: link:../f44fa703-f37a-44f5-af2d-abecb8379c46
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
-
-  test/__tmp__/f41340dd-68ef-4036-95b5-def53ba8a46a:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      ts:
-        specifier: workspace:*
-        version: link:../f44fa703-f37a-44f5-af2d-abecb8379c46
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
-
-  test/__tmp__/f44fa703-f37a-44f5-af2d-abecb8379c46:
-    devDependencies:
-      '@sanity/tsdoc':
-        specifier: workspace:*
-        version: link:../../..
       rimraf:
         specifier: ^4.4.1
         version: 4.4.1
