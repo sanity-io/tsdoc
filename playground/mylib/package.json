@@ -25,7 +25,8 @@
     "ts": "workspace:*"
   },
   "devDependencies": {
-    "@sanity/tsdoc": "workspace:*"
+    "@sanity/tsdoc": "workspace:*",
+    "rimraf": "^4.4.1"
   },
   "peerDependencies": {
     "react": "^18.0"

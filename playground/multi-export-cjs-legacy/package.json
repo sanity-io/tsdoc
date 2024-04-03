@@ -36,6 +36,7 @@
   },
   "browserslist": "extends @sanity/browserslist-config",
   "devDependencies": {
-    "@sanity/tsdoc": "workspace:*"
+    "@sanity/tsdoc": "workspace:*",
+    "rimraf": "^4.4.1"
   }
 }
