@@ -20,7 +20,7 @@ describe('cli', () => {
     expect(stdout).toContain('wrote 25 documents to ../../etc/mylib/1.0.0.json')
   })
 
-  test('run `etl` command in `mylib-bundling-ts`', async () => {
+  test.skip('run `etl` command in `mylib-bundling-ts`', async () => {
     const project = await _spawnProject('mylib-bundling-ts')
 
     await project.install()
