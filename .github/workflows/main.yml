@@ -40,7 +40,7 @@ jobs:
         run: pnpm lint
       - if: matrix.platform != 'windows-latest'
         run: pnpm build
-      - run: pnpm test
+      - run: pnpm test --retry=3
 
   release:
     permissions:

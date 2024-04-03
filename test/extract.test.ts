@@ -7,7 +7,7 @@ import {_spawnProject} from './_spawnProject'
 
 const require = createRequire(import.meta.url)
 // @sanity/tsdoc is currently designed to be used in a CJS process
-const {extract} = require('@sanity/tsdoc')
+const {extract} = require('@sanity/tsdoc') as typeof import('@sanity/tsdoc')
 
 describe('extract', () => {
   vi.setConfig({testTimeout: 60000})
