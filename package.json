@@ -77,7 +77,7 @@
   ],
   "scripts": {
     "build": "run-s clean pkg:build pkg:check",
-    "clean": "rimraf dist react.js store.js studio.js",
+    "clean": "npx rimraf dist react.js store.js studio.js",
     "commit": "cz",
     "dev": "run-p *:dev watch",
     "etl": "node -r dotenv-flow/config -r esbuild-register scripts/etl",

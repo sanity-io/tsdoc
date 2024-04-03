@@ -17,7 +17,7 @@
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rimraf dist && pkg build --strict && pkg --strict",
+    "build": "npx rimraf dist && pkg build --strict && pkg --strict",
     "etl": "sanity-tsdoc etl --outDir ../../etc --strict"
   },
   "browserslist": "extends @sanity/browserslist-config",
