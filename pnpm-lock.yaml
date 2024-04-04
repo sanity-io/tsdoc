@@ -51,7 +51,7 @@ importers:
         version: 1.5.5
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.7)
+        version: 4.2.1(vite@5.2.8)
       cac:
         specifier: ^6.7.14
         version: 6.7.14
@@ -110,8 +110,8 @@ importers:
         specifier: 5.4.2
         version: 5.4.2
       vite:
-        specifier: ^5.2.7
-        version: 5.2.7(@types/node@20.12.3)
+        specifier: ^5.2.8
+        version: 5.2.8(@types/node@20.12.3)
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.2.1
@@ -3285,7 +3285,7 @@ packages:
     dependencies:
       '@sanity/icons': 2.11.6(react@18.2.0)
       '@sanity/ui': 2.0.13(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
-      '@vitejs/plugin-react': 4.2.1(vite@5.2.7)
+      '@vitejs/plugin-react': 4.2.1(vite@5.2.8)
       axe-core: 4.9.0
       cac: 6.7.14
       chokidar: 3.6.0
@@ -3303,7 +3303,7 @@ packages:
       rimraf: 4.4.1
       segmented-property: 4.0.0
       styled-components: 6.1.8(react-dom@18.2.0)(react@18.2.0)
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.8(@types/node@20.12.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3938,7 +3938,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-react@4.2.1(vite@5.2.7):
+  /@vitejs/plugin-react@4.2.1(vite@5.2.8):
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -3949,7 +3949,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.3)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.8(@types/node@20.12.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -12125,7 +12125,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.8(@types/node@20.12.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -12173,8 +12173,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.2.7(@types/node@20.12.3):
-    resolution: {integrity: sha512-k14PWOKLI6pMaSzAuGtT+Cf0YmIx12z9YGon39onaJNy8DLBfBJrzg9FQEmkAM5lpHBZs9wksWAsyF/HkpEwJA==}
+  /vite@5.2.8(@types/node@20.12.3):
+    resolution: {integrity: sha512-OyZR+c1CE8yeHw5V5t59aXsUPPVTHMDjEZz8MgguLL/Q7NblxhZUlTu9xSPqlsUO/y+X7dlU05jdhvyycD55DA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -12262,7 +12262,7 @@ packages:
       strip-literal: 2.1.0
       tinybench: 2.6.0
       tinypool: 0.8.3
-      vite: 5.2.7(@types/node@20.12.3)
+      vite: 5.2.8(@types/node@20.12.3)
       vite-node: 1.4.0(@types/node@20.12.3)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
