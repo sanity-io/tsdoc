@@ -80,8 +80,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       groq:
-        specifier: ^3.36.3
-        version: 3.36.3
+        specifier: ^3.36.4
+        version: 3.36.4
       groq-js:
         specifier: ^1.7.0
         version: 1.7.0
@@ -7212,8 +7212,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /groq@3.36.3:
-    resolution: {integrity: sha512-VNMU9Z2b7Ip6075+C5x0H/54511dQYho1oEeIhL5WTUmboYwUytjlSjW9seWwb29qfAjIazPS6A+PrEfWHgwog==}
+  /groq@3.36.4:
+    resolution: {integrity: sha512-cIADS9riAJbW0II42klP/UckowwZqRuEae3klWrkr/xkkHMBep6pFEq6KjsHoRnrTSZfN/P3T5YARZJtHvO/Zg==}
     engines: {node: '>=18'}
     dev: false
 
