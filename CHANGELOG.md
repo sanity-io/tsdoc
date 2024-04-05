@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.10](https://github.com/sanity-io/tsdoc/compare/v1.0.9...v1.0.10) (2024-04-05)
+
+### Bug Fixes
+
+- **deps:** update dependency @portabletext/toolkit to ^2.0.14 ([#108](https://github.com/sanity-io/tsdoc/issues/108)) ([89c3eaa](https://github.com/sanity-io/tsdoc/commit/89c3eaa0261af575bd8305df090de3aef791626f))
+
 ## [1.0.9](https://github.com/sanity-io/tsdoc/compare/v1.0.8...v1.0.9) (2024-04-05)
 
 ### Bug Fixes
