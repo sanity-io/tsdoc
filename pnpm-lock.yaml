@@ -123,8 +123,8 @@ importers:
         specifier: ^4.1.7
         version: 4.1.7(semantic-release@23.0.7)
       '@sanity/ui-workshop':
-        specifier: ^2.0.10
-        version: 2.0.10(@sanity/icons@2.11.6)(@sanity/ui@2.0.14)(@types/node@20.12.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+        specifier: ^2.0.11
+        version: 2.0.11(@sanity/icons@2.11.6)(@sanity/ui@2.0.14)(@types/node@20.12.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
       '@types/cors':
         specifier: ^2.8.17
         version: 2.8.17
@@ -3273,8 +3273,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sanity/ui-workshop@2.0.10(@sanity/icons@2.11.6)(@sanity/ui@2.0.14)(@types/node@20.12.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
-    resolution: {integrity: sha512-/SuB5eDxE51gI+f8MRQCYvEBL3GGp5+AGa1koG2OhldWozpopCqkPcgby4S/pLk12s+Rmjf+Xz2RFLGcLQH/0Q==}
+  /@sanity/ui-workshop@2.0.11(@sanity/icons@2.11.6)(@sanity/ui@2.0.14)(@types/node@20.12.3)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
+    resolution: {integrity: sha512-YuctLWzRK6lHoujN44YlnD/9eRu+C8tNHGS/wHhAJirXxurVHmOmMyelxmQOn13IgzdyX+Rol46Wa/7fxKm4oA==}
     hasBin: true
     peerDependencies:
       '@sanity/icons': ^2
