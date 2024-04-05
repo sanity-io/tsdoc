@@ -138,7 +138,7 @@
     "@portabletext/toolkit": "^2.0.14",
     "@sanity/client": "^6.15.10",
     "@sanity/color": "^3.0.5",
-    "@sanity/icons": "^2.11.6",
+    "@sanity/icons": "^2.11.7",
     "@sanity/pkg-utils": "5.1.11",
     "@sanity/ui": "^2.0.14",
     "@types/cpx": "^1.5.5",
