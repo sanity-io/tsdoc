@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.9](https://github.com/sanity-io/tsdoc/compare/v1.0.8...v1.0.9) (2024-04-05)
+
+### Bug Fixes
+
+- **deps:** update dependency @portabletext/react to ^3.0.17 ([#107](https://github.com/sanity-io/tsdoc/issues/107)) ([c342d74](https://github.com/sanity-io/tsdoc/commit/c342d7478d747d392e78aa9280650d0170f213e9))
+- **deps:** update dependency @sanity/client to ^6.15.10 ([#109](https://github.com/sanity-io/tsdoc/issues/109)) ([a38f465](https://github.com/sanity-io/tsdoc/commit/a38f465c33f12c5e6c64a20c6c477da83cdd06fb))
+- **deps:** update dependency @sanity/pkg-utils to v5.1.11 ([#106](https://github.com/sanity-io/tsdoc/issues/106)) ([1c2627c](https://github.com/sanity-io/tsdoc/commit/1c2627cb1a39aa92edba298f880df0acb9f5c491))
+
 ## [1.0.8](https://github.com/sanity-io/tsdoc/compare/v1.0.7...v1.0.8) (2024-04-04)
 
 ### Bug Fixes
