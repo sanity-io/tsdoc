@@ -29,7 +29,7 @@ importers:
         specifier: ^3.0.17
         version: 3.0.17(react@18.2.0)
       '@portabletext/toolkit':
-        specifier: ^2.0.13
+        specifier: ^2.0.14
         version: 2.0.14
       '@sanity/client':
         specifier: ^6.15.10
