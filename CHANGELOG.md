@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.19](https://github.com/sanity-io/tsdoc/compare/v1.0.18...v1.0.19) (2024-04-10)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.43.1 ([#131](https://github.com/sanity-io/tsdoc/issues/131)) ([a6e8461](https://github.com/sanity-io/tsdoc/commit/a6e8461f1e5453355395f529045d7af3fe8a6290))
+- **deps:** update dependency @microsoft/api-extractor-model to v7.28.14 ([7c344b2](https://github.com/sanity-io/tsdoc/commit/7c344b2f41953602b8459d3bdd144f2d012589d9))
+- **deps:** update dependency @sanity/pkg-utils to v6.2.0 ([#133](https://github.com/sanity-io/tsdoc/issues/133)) ([d639a45](https://github.com/sanity-io/tsdoc/commit/d639a45064e92ffd671520a0481e4cc830521dfb))
+
 ## [1.0.18](https://github.com/sanity-io/tsdoc/compare/v1.0.17...v1.0.18) (2024-04-10)
 
 ### Bug Fixes
