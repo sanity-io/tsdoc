@@ -38,7 +38,7 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6
       '@sanity/icons':
-        specifier: ^2.11.7
+        specifier: ^2.11.8
         version: 2.11.8(react@18.2.0)
       '@sanity/pkg-utils':
         specifier: 6.1.0
