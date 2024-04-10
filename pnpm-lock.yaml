@@ -121,7 +121,7 @@ importers:
         version: 19.1.0
       '@sanity/semantic-release-preset':
         specifier: ^4.1.7
-        version: 4.1.7(semantic-release@23.0.7)
+        version: 4.1.7(semantic-release@23.0.8)
       '@sanity/ui-workshop':
         specifier: ^2.0.11
         version: 2.0.11(@sanity/icons@2.11.8)(@sanity/ui@2.1.2)(@types/node@20.12.4)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
@@ -219,11 +219,11 @@ importers:
         specifier: ^4.4.1
         version: 4.4.1
       sanity:
-        specifier: ^3.37.0
-        version: 3.37.0(@types/node@20.12.4)(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
+        specifier: ^3.37.2
+        version: 3.37.2(@types/node@20.12.4)(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8)
       semantic-release:
-        specifier: ^23.0.7
-        version: 23.0.7(typescript@5.4.2)
+        specifier: ^23.0.8
+        version: 23.0.8(typescript@5.4.2)
       styled-components:
         specifier: ^6.1.8
         version: 6.1.8(react-dom@18.2.0)(react@18.2.0)
@@ -2974,8 +2974,8 @@ packages:
       rxjs: 7.8.1
     dev: true
 
-  /@sanity/block-tools@3.37.0:
-    resolution: {integrity: sha512-70NkbvzQXvpYQxnG7krP49EuFTdLDqX4C74NHTa3iURLio9rIjMESLDUYB6rk0iEkbqmmWWIaeFggyeXbEzUwQ==}
+  /@sanity/block-tools@3.37.2:
+    resolution: {integrity: sha512-V2/RpsNhAAQb4p7UyV30OLPJO1ry4dZe4G/TxPfy81QVAGrF2GDNJSCYbI0MdUQRcGnJ787kZLwpwfvtEZSfSw==}
     dependencies:
       get-random-values-esm: 1.0.2
       lodash: 4.17.21
@@ -2985,16 +2985,16 @@ packages:
     resolution: {integrity: sha512-UkJuiTyROgPcxbvpHYyXwr+T88Np4eLzu3h05gMgeZ2hv3EM7g/4VMyng5HuA1JdPQPEdq8bmmfQDR+u4KC+TA==}
     dev: false
 
-  /@sanity/cli@3.37.0:
-    resolution: {integrity: sha512-MH9vhwiJr1MucVZs+mt/GhJxBKwBHwtlTR77RkL4YnYCNePGbNM2vl0sjC2uhhrlUDlR0e8049OITZ9TyN0Arw==}
+  /@sanity/cli@3.37.2:
+    resolution: {integrity: sha512-AZnkPp8KvRSHMQEkSmoUcC7SG8EYxqfjhotFOzQba9fINzleYbJVr8Y2liI53KnrmHvv+raVY7MknBmjDfHh9g==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
       '@babel/traverse': 7.24.1
       '@sanity/client': 6.15.11
-      '@sanity/codegen': 3.37.0
+      '@sanity/codegen': 3.37.2
       '@sanity/telemetry': 0.7.7
-      '@sanity/util': 3.37.0
+      '@sanity/util': 3.37.2
       chalk: 4.1.2
       debug: 4.3.4
       decompress: 4.2.1
@@ -3022,8 +3022,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@sanity/codegen@3.37.0:
-    resolution: {integrity: sha512-OW95tCMzCOFfRfwLphA1wv+Y990aBiQEY/mIa4Ppo9TzJ1IqA8HhGBs8IJnDNyasEFQwvJtoVQS1BabhSO8IIw==}
+  /@sanity/codegen@3.37.2:
+    resolution: {integrity: sha512-R/bxe8FiOdgwcp0Nqi0sgmYjjCyhfdEGr/C9rDE+4jRInkPpCBD7rjSRdhZ/h15gITr30agVwmrlzIufB5KyWw==}
     engines: {node: '>=18'}
     dependencies:
       '@babel/core': 7.24.4
@@ -3036,7 +3036,7 @@ packages:
       '@babel/types': 7.24.0
       debug: 4.3.4
       globby: 10.0.2
-      groq: 3.37.0
+      groq: 3.37.2
       groq-js: 1.7.0
       json5: 2.2.3
       tsconfig-paths: 4.2.0
@@ -3054,8 +3054,8 @@ packages:
     engines: {node: '>=14.18'}
     dev: true
 
-  /@sanity/diff@3.37.0:
-    resolution: {integrity: sha512-ri+yJnFLQgJ/3N/DRLRhCXovSByRNgA6Y5pZ6qEfETEPg/92/sbG126eZNuReePW5M/X2XC+sezB+M127QfKzA==}
+  /@sanity/diff@3.37.2:
+    resolution: {integrity: sha512-OdtEgA3W4Nf87CrPxsA4BrsRieungIsuqyU7LnN21KVYARA1kaHuLw0eWg/4Xk9mpkAZ1FrF4O0+v/jKPxgMyA==}
     engines: {node: '>=18'}
     dependencies:
       '@sanity/diff-match-patch': 3.1.1
@@ -3069,11 +3069,11 @@ packages:
       event-source-polyfill: 1.0.31
       eventsource: 2.0.2
 
-  /@sanity/export@3.37.0:
-    resolution: {integrity: sha512-AwB6ke650oQOXaklQvZ5f3ShkFfwtPhUE0XVTaCGFiG2sOye/FujPRp/KlMGQSjWsSN+NZlx3Bc05jPDjOzxOw==}
+  /@sanity/export@3.37.2:
+    resolution: {integrity: sha512-bHMPrNyPx4f64VQYGq+KRRlp/gCxkdF3NNQei8+LQNJ+Ge23znIiItIdHNHZVftG6ilIqfMrzGXIpKEP5ytkxw==}
     engines: {node: '>=18'}
     dependencies:
-      '@sanity/util': 3.37.0
+      '@sanity/util': 3.37.2
       archiver: 7.0.1
       debug: 4.3.4
       get-it: 8.4.18
@@ -3103,13 +3103,13 @@ packages:
     engines: {node: '>=10.0.0'}
     dev: true
 
-  /@sanity/import@3.37.0:
-    resolution: {integrity: sha512-qCrhWzxkl+V+yENy4cxDwvydmGZOLELDJ4jcuw2vE0hI69KwJs4cKpexKGyhN+gIJpkAm294mDuDNzJ0Ph78Rw==}
+  /@sanity/import@3.37.2:
+    resolution: {integrity: sha512-gU+YxBDSWL1rMz6Rj/n2WmMkLIFvvAiiMvxPsgXqO3AurYkjNVNISFKI2ojuemHtuZOVe8/g4TqGImyaliKaLQ==}
     engines: {node: '>=18'}
     dependencies:
       '@sanity/asset-utils': 1.3.0
       '@sanity/generate-help-url': 3.0.0
-      '@sanity/mutator': 3.37.0
+      '@sanity/mutator': 3.37.2
       '@sanity/uuid': 3.0.2
       debug: 4.3.4
       file-url: 2.0.2
@@ -3140,14 +3140,14 @@ packages:
       react: 18.2.0
     dev: true
 
-  /@sanity/migrate@3.37.0:
-    resolution: {integrity: sha512-kelxPWEM7V9vMupB9sfKkK8RYNGthA+s7YOH9uSotXSwDTR4sU3TZmcBBfAjntv2LN6lThUNYMmtFnlgg/4znQ==}
+  /@sanity/migrate@3.37.2:
+    resolution: {integrity: sha512-SsA6ufohkv+bqYbm0Sp0gd8UqXUXNwhoE+187xyP0rWJ6G1A+479PmCIFXlE2dk+T3V8eE9frCn8DmUq2M49VA==}
     engines: {node: '>=18'}
     dependencies:
       '@bjoerge/mutiny': 0.5.3
       '@sanity/client': 6.15.11
-      '@sanity/types': 3.37.0
-      '@sanity/util': 3.37.0
+      '@sanity/types': 3.37.2
+      '@sanity/util': 3.37.2
       arrify: 2.0.1
       debug: 4.3.4
       fast-fifo: 1.3.2
@@ -3157,8 +3157,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sanity/mutator@3.37.0:
-    resolution: {integrity: sha512-PbMbIbZYLjaPzR4dKSa85cwiuGlSLZwufV2z2FrDK03ERYarby0aqVsN5iKOjyjDG5JqP5jNqv9GIo+JuttsuQ==}
+  /@sanity/mutator@3.37.2:
+    resolution: {integrity: sha512-F0MvseVtgPBaPxNZtSidF6BQeygviYThgmhRbjZ89AhlRhWiLODvLakdogFmwD1NEQ0tpKn+8m0pQIOHgt2C3w==}
     dependencies:
       '@sanity/diff-match-patch': 3.1.1
       '@sanity/uuid': 3.0.2
@@ -3221,18 +3221,18 @@ packages:
       - supports-color
     dev: false
 
-  /@sanity/portable-text-editor@3.37.0(react-dom@18.2.0)(react@18.2.0)(rxjs@7.8.1)(styled-components@6.1.8):
-    resolution: {integrity: sha512-SMJERJzFKC9HEjgSSDN5VYOEeVsgjUFrGxuN3rdYglKImEbHNIBGzN6sDW9GZvOj4GLnN3ze9OV3g8sYMTSf4Q==}
+  /@sanity/portable-text-editor@3.37.2(react-dom@18.2.0)(react@18.2.0)(rxjs@7.8.1)(styled-components@6.1.8):
+    resolution: {integrity: sha512-idIqa7Ku/QG2866U4qo0Hlw9NYz3Mf1shcHpe5IVciTc1/WE+bP9foPPqkUaKuEkeG4wnpGeN3mxHJHowm13FA==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18.2.0
       rxjs: ^7
       styled-components: ^6.1
     dependencies:
-      '@sanity/block-tools': 3.37.0
-      '@sanity/schema': 3.37.0
-      '@sanity/types': 3.37.0
-      '@sanity/util': 3.37.0
+      '@sanity/block-tools': 3.37.2
+      '@sanity/schema': 3.37.2
+      '@sanity/types': 3.37.2
+      '@sanity/util': 3.37.2
       debug: 3.2.7
       is-hotkey-esm: 1.0.0
       lodash: 4.17.21
@@ -3282,11 +3282,11 @@ packages:
       '@sanity/uuid': 3.0.2
     dev: true
 
-  /@sanity/schema@3.37.0:
-    resolution: {integrity: sha512-Z9QEzgYjdgLyiEZGTYVsD0fBwmaJvGy2dvEFDxLJrQDtfGdBEOc2uM85P9q3eNEgHwUEvekafg4Hrq5BybozNg==}
+  /@sanity/schema@3.37.2:
+    resolution: {integrity: sha512-VXJbSf2yR63TtbTMdz7FAYgvULsDbq54zhS4SysLbFLIkM9xZo8km/3Er9vtubjZpeGglJKQro3D9DWNxV1tyw==}
     dependencies:
       '@sanity/generate-help-url': 3.0.0
-      '@sanity/types': 3.37.0
+      '@sanity/types': 3.37.2
       arrify: 1.0.1
       groq-js: 1.7.0
       humanize-list: 1.0.1
@@ -3297,17 +3297,17 @@ packages:
       - supports-color
     dev: true
 
-  /@sanity/semantic-release-preset@4.1.7(semantic-release@23.0.7):
+  /@sanity/semantic-release-preset@4.1.7(semantic-release@23.0.8):
     resolution: {integrity: sha512-cj78W8G2Y34V3zivvW5YrPKCtLQ/dd+y62M0Gg9Zl+xH3O+srtzbINrsD5qe+27en05B7gYv5CAjoWoWCq2y9w==}
     engines: {node: '>= 20.8'}
     peerDependencies:
       semantic-release: ^22.0.12 || ^23.0.2
     dependencies:
-      '@semantic-release/changelog': 6.0.3(semantic-release@23.0.7)
-      '@semantic-release/exec': 6.0.3(semantic-release@23.0.7)
-      '@semantic-release/git': 10.0.1(semantic-release@23.0.7)
+      '@semantic-release/changelog': 6.0.3(semantic-release@23.0.8)
+      '@semantic-release/exec': 6.0.3(semantic-release@23.0.8)
+      '@semantic-release/git': 10.0.1(semantic-release@23.0.8)
       conventional-changelog-conventionalcommits: 7.0.2
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
       semantic-release-license: 1.0.3
     transitivePeerDependencies:
       - supports-color
@@ -3324,8 +3324,8 @@ packages:
       typeid-js: 0.3.0
     dev: true
 
-  /@sanity/types@3.37.0:
-    resolution: {integrity: sha512-fEeZbew8pdJWndG8zIqKdcKYuh6Cfr3nGF5BT72SnG1mzk5ouR3dItA7bkmiT9yOM2U5ZK08P/KDifIBK/IydA==}
+  /@sanity/types@3.37.2:
+    resolution: {integrity: sha512-1EfKkNlJ86wIDtc7oFHb79JI8lKDOxKDYrkmwhvuHgJY83GpSABc1kFdbwAtWZfrWVWyqVXUv/KlNwA3b99y/g==}
     dependencies:
       '@sanity/client': 6.15.11
       '@types/react': 18.2.75
@@ -3395,12 +3395,12 @@ packages:
       react-refractor: 2.1.7(react@18.2.0)
       styled-components: 6.1.8(react-dom@18.2.0)(react@18.2.0)
 
-  /@sanity/util@3.37.0:
-    resolution: {integrity: sha512-fMd2S8tAkmHD3rjg2bWqam7iTxQ/L6HFKuhPvJbnX9kigMHZ3byeKJI0H3NFTd+ptoIk72kEc1DwiU5CbqNecA==}
+  /@sanity/util@3.37.2:
+    resolution: {integrity: sha512-hq0eLjyV2iaOm9ivtPw12YTQ4QsE3jnV/Ui0zhclEhu8Go5JiaEhFt2+WM2lLGRH6qcSA414QbsCNCcyhJL6rA==}
     engines: {node: '>=18'}
     dependencies:
       '@sanity/client': 6.15.11
-      '@sanity/types': 3.37.0
+      '@sanity/types': 3.37.2
       get-random-values-esm: 1.0.2
       moment: 2.30.1
       rxjs: 7.8.1
@@ -3415,7 +3415,7 @@ packages:
       uuid: 8.3.2
     dev: true
 
-  /@semantic-release/changelog@6.0.3(semantic-release@23.0.7):
+  /@semantic-release/changelog@6.0.3(semantic-release@23.0.8):
     resolution: {integrity: sha512-dZuR5qByyfe3Y03TpmCvAxCyTnp7r5XwtHRf/8vD9EAn4ZWbavUX8adMtXYzE86EVh0gyLA7lm5yW4IV30XUag==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -3425,10 +3425,10 @@ packages:
       aggregate-error: 3.1.0
       fs-extra: 11.2.0
       lodash: 4.17.21
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
     dev: true
 
-  /@semantic-release/commit-analyzer@12.0.0(semantic-release@23.0.7):
+  /@semantic-release/commit-analyzer@12.0.0(semantic-release@23.0.8):
     resolution: {integrity: sha512-qG+md5gdes+xa8zP7lIo1fWE17zRdO8yMCaxh9lyL65TQleoSv8WHHOqRURfghTytUh+NpkSyBprQ5hrkxOKVQ==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
@@ -3441,7 +3441,7 @@ packages:
       import-from-esm: 1.3.3
       lodash-es: 4.17.21
       micromatch: 4.0.5
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3456,7 +3456,7 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@semantic-release/exec@6.0.3(semantic-release@23.0.7):
+  /@semantic-release/exec@6.0.3(semantic-release@23.0.8):
     resolution: {integrity: sha512-bxAq8vLOw76aV89vxxICecEa8jfaWwYITw6X74zzlO0mc/Bgieqx9kBRz9z96pHectiTAtsCwsQcUyLYWnp3VQ==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -3468,12 +3468,12 @@ packages:
       execa: 5.1.1
       lodash: 4.17.21
       parse-json: 5.2.0
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@semantic-release/git@10.0.1(semantic-release@23.0.7):
+  /@semantic-release/git@10.0.1(semantic-release@23.0.8):
     resolution: {integrity: sha512-eWrx5KguUcU2wUPaO6sfvZI0wPafUKAMNC18aXY4EnNcrZL86dEmpNVnC9uMpGZkmZJ9EfCVJBQx4pV4EMGT1w==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -3487,12 +3487,12 @@ packages:
       lodash: 4.17.21
       micromatch: 4.0.5
       p-reduce: 2.1.0
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@semantic-release/github@10.0.2(semantic-release@23.0.7):
+  /@semantic-release/github@10.0.2(semantic-release@23.0.8):
     resolution: {integrity: sha512-SP5ihhv/uQa8vPuWKmbJrrzfv8lRUkDFC6qwgaWoorrflN1DEW0IGCa9w/PxUp8Ad3dbvXZPmpXdGiP3eyTzhg==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
@@ -3513,13 +3513,13 @@ packages:
       lodash-es: 4.17.21
       mime: 4.0.1
       p-filter: 4.1.0
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
       url-join: 5.0.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@semantic-release/npm@12.0.0(semantic-release@23.0.7):
+  /@semantic-release/npm@12.0.0(semantic-release@23.0.8):
     resolution: {integrity: sha512-72TVYQCH9NvVsO/y13eF8vE4bNnfls518+4KcFwJUKi7AtA/ZXoNgSg9gTTfw5eMZMkiH0izUrpGXgZE/cSQhA==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
@@ -3536,12 +3536,12 @@ packages:
       rc: 1.2.8
       read-pkg: 9.0.1
       registry-auth-token: 5.0.2
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
       semver: 7.6.0
       tempy: 3.1.0
     dev: true
 
-  /@semantic-release/release-notes-generator@13.0.0(semantic-release@23.0.7):
+  /@semantic-release/release-notes-generator@13.0.0(semantic-release@23.0.8):
     resolution: {integrity: sha512-LEeZWb340keMYuREMyxrODPXJJ0JOL8D/mCl74B4LdzbxhtXV2LrPN2QBEcGJrlQhoqLO0RhxQb6masHytKw+A==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
@@ -3557,7 +3557,7 @@ packages:
       into-stream: 7.0.0
       lodash-es: 4.17.21
       read-pkg-up: 11.0.0
-      semantic-release: 23.0.7(typescript@5.4.2)
+      semantic-release: 23.0.8(typescript@5.4.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7249,15 +7249,9 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /groq@3.37.0:
-    resolution: {integrity: sha512-NFPppE5XrQoKW/L0roItGI498V5fyZQ0EB3qSRw26T9bxs1+7z9viZjilzn1ZGOu3gL5YvlWt8hQsptfzTKGgQ==}
-    engines: {node: '>=18'}
-    dev: true
-
   /groq@3.37.2:
     resolution: {integrity: sha512-0cVdTrpLMncdjWACKJGest5TtXdzEydeOhVakVywErj7emZPJKKo8T27rIvqrh/rrqDFukxDDuDXmzdOvhJ9mg==}
     engines: {node: '>=18'}
-    dev: false
 
   /gunzip-maybe@1.4.2:
     resolution: {integrity: sha512-4haO1M4mLO91PW57BMsDFf75UmwoRX0GkdD+Faw+Lr+r/OZrOCS0pIBwOL1xCKQqnQzbNFGgK2V2CpBUPeFNTw==}
@@ -8679,10 +8673,6 @@ packages:
   /media-typer@0.3.0:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
-
-  /memoize-resolver@1.0.0:
-    resolution: {integrity: sha512-mXfNXte0RSWl0rEIsQhXutfM2R2Oa7UyKDD7XoZMEbKeucTRms04y5y41U8gLqPzRx7ViN/QyYnTR2TX/5tawA==}
-    dev: true
 
   /memorystream@0.3.1:
     resolution: {integrity: sha512-S3UwM3yj5mtUSEfP41UZmt/0SCoVYUcU1rkXv+BQ5Ig8ndL4sPoJNBUJERafdPb5jjHJGuMgytgKvKIf58XNBw==}
@@ -10155,6 +10145,15 @@ packages:
     dependencies:
       loose-envify: 1.4.0
 
+  /read-package-up@11.0.0:
+    resolution: {integrity: sha512-MbgfoNPANMdb4oRBNg5eqLbB2t2r+o5Ua1pNt8BqGp4I0FJZhuVSOj3PaBPni4azWuSzEdNn2evevzVmEk1ohQ==}
+    engines: {node: '>=18'}
+    dependencies:
+      find-up-simple: 1.0.0
+      read-pkg: 9.0.1
+      type-fest: 4.15.0
+    dev: true
+
   /read-pkg-up@11.0.0:
     resolution: {integrity: sha512-LOVbvF1Q0SZdjClSefZ0Nz5z8u+tIE7mV5NibzmE9VYmDe9CaBbAVtz1veOSZbofrdsilxuDAYnFenukZVp8/Q==}
     engines: {node: '>=18'}
@@ -10562,15 +10561,6 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
 
-  /rxjs-etc@10.6.2(rxjs@7.8.1):
-    resolution: {integrity: sha512-OmXhrTsEqcIT4PX1TSf+iRsah3sjMEQ27z7aXCc96xwiKr18RWhvtxUyGnvKMBwF8AavwLXELAMKA8ImgKXeoA==}
-    peerDependencies:
-      rxjs: ^6.0.0 || ^7.0.0
-    dependencies:
-      memoize-resolver: 1.0.0
-      rxjs: 7.8.1
-    dev: true
-
   /rxjs-exhaustmap-with-trailing@2.1.1(rxjs@7.8.1):
     resolution: {integrity: sha512-gK7nsKyPFsbjDeJ0NYTcZYGW5TbTFjT3iACa28Pwp3fIf9wT/JUR8vdlKYCjUOZKXYnXEk8eRZ4zcQyEURosIA==}
     peerDependencies:
@@ -10625,8 +10615,8 @@ packages:
       '@sanity/diff-match-patch': 3.1.1
     dev: true
 
-  /sanity@3.37.0(@types/node@20.12.4)(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
-    resolution: {integrity: sha512-B7D5N7g1NAw3lilGBuzG0PQUIbO/QmohIbFPUAVubKyquI3HVi4zvKcJ3BIlSikktwnLXdTQ5hMTOge0p6bzWg==}
+  /sanity@3.37.2(@types/node@20.12.4)(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0)(styled-components@6.1.8):
+    resolution: {integrity: sha512-e1yJTKAfv3AR47HmMCdp+265XyrfZuUzGcBDyC1lTiFjlbrEpgjh2+Zu3nYXM+h97bXpxDcPf8TQFNb/qNEVjw==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -10643,28 +10633,27 @@ packages:
       '@rexxars/react-json-inspector': 8.0.1(react@18.2.0)
       '@sanity/asset-utils': 1.3.0
       '@sanity/bifur-client': 0.3.1
-      '@sanity/block-tools': 3.37.0
-      '@sanity/cli': 3.37.0
+      '@sanity/block-tools': 3.37.2
+      '@sanity/cli': 3.37.2
       '@sanity/client': 6.15.11
       '@sanity/color': 3.0.6
-      '@sanity/diff': 3.37.0
+      '@sanity/diff': 3.37.2
       '@sanity/diff-match-patch': 3.1.1
       '@sanity/eventsource': 5.0.1
-      '@sanity/export': 3.37.0
-      '@sanity/generate-help-url': 3.0.0
+      '@sanity/export': 3.37.2
       '@sanity/icons': 2.11.8(react@18.2.0)
       '@sanity/image-url': 1.0.2
-      '@sanity/import': 3.37.0
+      '@sanity/import': 3.37.2
       '@sanity/logos': 2.1.9(@sanity/color@3.0.6)(react@18.2.0)
-      '@sanity/migrate': 3.37.0
-      '@sanity/mutator': 3.37.0
-      '@sanity/portable-text-editor': 3.37.0(react-dom@18.2.0)(react@18.2.0)(rxjs@7.8.1)(styled-components@6.1.8)
+      '@sanity/migrate': 3.37.2
+      '@sanity/mutator': 3.37.2
+      '@sanity/portable-text-editor': 3.37.2(react-dom@18.2.0)(react@18.2.0)(rxjs@7.8.1)(styled-components@6.1.8)
       '@sanity/presentation': 1.12.3(@sanity/client@6.15.11)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
-      '@sanity/schema': 3.37.0
+      '@sanity/schema': 3.37.2
       '@sanity/telemetry': 0.7.7
-      '@sanity/types': 3.37.0
+      '@sanity/types': 3.37.2
       '@sanity/ui': 2.1.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
-      '@sanity/util': 3.37.0
+      '@sanity/util': 3.37.2
       '@sanity/uuid': 3.0.2
       '@tanstack/react-virtual': 3.0.0-beta.54(react@18.2.0)
       '@types/react-copy-to-clipboard': 5.0.7
@@ -10734,7 +10723,6 @@ packages:
       resolve-from: 5.0.0
       rimraf: 3.0.2
       rxjs: 7.8.1
-      rxjs-etc: 10.6.2(rxjs@7.8.1)
       rxjs-exhaustmap-with-trailing: 2.1.1(rxjs@7.8.1)
       sanity-diff-patch: 3.0.2
       scroll-into-view-if-needed: 3.1.0
@@ -10799,16 +10787,16 @@ packages:
     resolution: {integrity: sha512-d+p1WSCFzIxLNPKXSkRpXWKQDBhRbp7g+w8LPzjVqFsUQ/eNw0KhMnKLoxsgVzZXAhEwpsZUx1VxBT5sjgOkIQ==}
     dev: true
 
-  /semantic-release@23.0.7(typescript@5.4.2):
-    resolution: {integrity: sha512-PFxXQE57zrYiCbWKkdsVUF08s0SifEw3WhDhrN47ZEUWQiLl21FI9Dg/H8g7i/lPx0IkF6u7PjJbgxPceXKBeg==}
+  /semantic-release@23.0.8(typescript@5.4.2):
+    resolution: {integrity: sha512-yZkuWcTTfh5h/DrR4Q4QvJSARJdb6wjwn/sN0qKMYEkvwaVFek8YWfrgtL8oWaRdl0fLte0Y1wWMzLbwoaII1g==}
     engines: {node: '>=20.8.1'}
     hasBin: true
     dependencies:
-      '@semantic-release/commit-analyzer': 12.0.0(semantic-release@23.0.7)
+      '@semantic-release/commit-analyzer': 12.0.0(semantic-release@23.0.8)
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 10.0.2(semantic-release@23.0.7)
-      '@semantic-release/npm': 12.0.0(semantic-release@23.0.7)
-      '@semantic-release/release-notes-generator': 13.0.0(semantic-release@23.0.7)
+      '@semantic-release/github': 10.0.2(semantic-release@23.0.8)
+      '@semantic-release/npm': 12.0.0(semantic-release@23.0.8)
+      '@semantic-release/release-notes-generator': 13.0.0(semantic-release@23.0.8)
       aggregate-error: 5.0.0
       cosmiconfig: 9.0.0(typescript@5.4.2)
       debug: 4.3.4
@@ -10827,7 +10815,7 @@ packages:
       micromatch: 4.0.5
       p-each-series: 3.0.0
       p-reduce: 3.0.0
-      read-pkg-up: 11.0.0
+      read-package-up: 11.0.0
       resolve-from: 5.0.0
       semver: 7.6.0
       semver-diff: 4.0.0
