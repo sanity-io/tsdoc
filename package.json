@@ -51,7 +51,6 @@
   },
   "main": "./dist/exports/index.js",
   "module": "./dist/exports/index.esm.js",
-  "source": "./exports/index.ts",
   "types": "./dist/exports/index.d.ts",
   "typesVersions": {
     "*": {
@@ -131,7 +130,7 @@
   },
   "dependencies": {
     "@microsoft/api-extractor": "7.43.1",
-    "@microsoft/api-extractor-model": "7.28.13",
+    "@microsoft/api-extractor-model": "7.28.14",
     "@microsoft/tsdoc": "0.14.2",
     "@microsoft/tsdoc-config": "0.16.2",
     "@portabletext/react": "^3.0.17",
