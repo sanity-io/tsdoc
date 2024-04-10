@@ -5,8 +5,7 @@
     ":ignoreModulesAndTests",
     "replacements:cpx-to-maintenance-fork",
     "github>sanity-io/renovate-config:typescript",
-    "github>sanity-io/renovate-config:group-non-major",
-    
+    "github>sanity-io/renovate-config:group-non-major"
   ],
   "packageRules": [
     {
