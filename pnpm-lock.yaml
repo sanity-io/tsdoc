@@ -41,8 +41,8 @@ importers:
         specifier: ^2.11.8
         version: 2.11.8(react@18.2.0)
       '@sanity/pkg-utils':
-        specifier: 6.2.1
-        version: 6.2.1(@types/node@20.12.4)(typescript@5.4.5)
+        specifier: 6.4.1
+        version: 6.4.1(@types/node@20.12.4)(typescript@5.4.5)
       '@sanity/ui':
         specifier: ^2.1.2
         version: 2.1.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
@@ -242,36 +242,24 @@ importers:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
 
   playground/multi-export-cjs:
     devDependencies:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
 
   playground/multi-export-cjs-legacy:
     devDependencies:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
 
   playground/multi-export-legacy:
     devDependencies:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
 
   playground/mylib:
     dependencies:
@@ -282,9 +270,6 @@ importers:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
 
   playground/mylib-bundling-ts:
     dependencies:
@@ -298,18 +283,12 @@ importers:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
 
   playground/ts:
     devDependencies:
       '@sanity/tsdoc':
         specifier: workspace:*
         version: link:../..
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
 
 packages:
 
@@ -3168,8 +3147,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sanity/pkg-utils@6.2.1(@types/node@20.12.4)(typescript@5.4.5):
-    resolution: {integrity: sha512-Q3gvPQOWWFvWykV5V7zQ/xcaTHj1iIx7jF7CHIzVbDUKQIgSEtCNOegxpwInoLZpj71ANHWjrexenA0j/XMOkg==}
+  /@sanity/pkg-utils@6.4.1(@types/node@20.12.4)(typescript@5.4.5):
+    resolution: {integrity: sha512-X66IgwDLcv7gVwmxqx0ZMD9BXQeskVivRvhBqAnsbU0zVjSgvLplg5AGdzNdHX9kbeY4DYQEgjZhUyYSJASTFA==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:

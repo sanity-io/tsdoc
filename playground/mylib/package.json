@@ -17,13 +17,12 @@
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "npx rimraf dist && pkg build --strict && pkg --strict",
+    "build": "pkg build --strict --check --clean",
     "etl": "sanity-tsdoc etl --outDir ../../etc --strict"
   },
   "browserslist": "extends @sanity/browserslist-config",
   "devDependencies": {
-    "@sanity/tsdoc": "workspace:*",
-    "rimraf": "^4.4.1"
+    "@sanity/tsdoc": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.0"
