@@ -80,8 +80,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       groq:
-        specifier: ^3.36.4
-        version: 3.37.0
+        specifier: ^3.37.2
+        version: 3.37.2
       groq-js:
         specifier: ^1.7.0
         version: 1.7.0
@@ -7252,6 +7252,12 @@ packages:
   /groq@3.37.0:
     resolution: {integrity: sha512-NFPppE5XrQoKW/L0roItGI498V5fyZQ0EB3qSRw26T9bxs1+7z9viZjilzn1ZGOu3gL5YvlWt8hQsptfzTKGgQ==}
     engines: {node: '>=18'}
+    dev: true
+
+  /groq@3.37.2:
+    resolution: {integrity: sha512-0cVdTrpLMncdjWACKJGest5TtXdzEydeOhVakVywErj7emZPJKKo8T27rIvqrh/rrqDFukxDDuDXmzdOvhJ9mg==}
+    engines: {node: '>=18'}
+    dev: false
 
   /gunzip-maybe@1.4.2:
     resolution: {integrity: sha512-4haO1M4mLO91PW57BMsDFf75UmwoRX0GkdD+Faw+Lr+r/OZrOCS0pIBwOL1xCKQqnQzbNFGgK2V2CpBUPeFNTw==}
