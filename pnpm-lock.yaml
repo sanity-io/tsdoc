@@ -41,8 +41,8 @@ importers:
         specifier: ^2.11.8
         version: 2.11.8(react@18.2.0)
       '@sanity/pkg-utils':
-        specifier: 6.4.1
-        version: 6.4.1(@types/node@20.12.7)(typescript@5.4.5)
+        specifier: 6.5.0
+        version: 6.5.0(@types/node@20.12.7)(typescript@5.4.5)
       '@sanity/ui':
         specifier: ^2.1.2
         version: 2.1.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
@@ -3137,8 +3137,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sanity/pkg-utils@6.4.1(@types/node@20.12.7)(typescript@5.4.5):
-    resolution: {integrity: sha512-X66IgwDLcv7gVwmxqx0ZMD9BXQeskVivRvhBqAnsbU0zVjSgvLplg5AGdzNdHX9kbeY4DYQEgjZhUyYSJASTFA==}
+  /@sanity/pkg-utils@6.5.0(@types/node@20.12.7)(typescript@5.4.5):
+    resolution: {integrity: sha512-2GdK4xzV4xJR5Shd8HmKkxVK8IfLPhTuJtT1MfRK+6RTLFTadM7lpxVt1MBEe97S+Wg8y+btPjCEcKFQq5KywA==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -3184,6 +3184,7 @@ packages:
       typescript: 5.4.5
       uuid: 9.0.1
       zod: 3.22.4
+      zod-validation-error: 3.1.0(zod@3.22.4)
     transitivePeerDependencies:
       - '@types/babel__core'
       - '@types/node'
@@ -12602,6 +12603,15 @@ packages:
       compress-commons: 6.0.2
       readable-stream: 4.5.2
     dev: true
+
+  /zod-validation-error@3.1.0(zod@3.22.4):
+    resolution: {integrity: sha512-zujS6HqJjMZCsvjfbnRs7WI3PXN39ovTcY1n8a+KTm4kOH0ZXYsNiJkH1odZf4xZKMkBDL7M2rmQ913FCS1p9w==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      zod: ^3.18.0
+    dependencies:
+      zod: 3.22.4
+    dev: false
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
