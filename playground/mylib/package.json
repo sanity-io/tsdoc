@@ -16,6 +16,7 @@
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "pkg build --strict --check --clean",
     "etl": "sanity-tsdoc etl --outDir ../../etc --strict"

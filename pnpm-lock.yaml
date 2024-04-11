@@ -41,8 +41,8 @@ importers:
         specifier: ^2.11.8
         version: 2.11.8(react@18.2.0)
       '@sanity/pkg-utils':
-        specifier: 6.5.0
-        version: 6.5.0(@types/node@20.12.7)(typescript@5.4.5)
+        specifier: 6.6.1
+        version: 6.6.1(@types/node@20.12.7)(typescript@5.4.5)
       '@sanity/ui':
         specifier: ^2.1.2
         version: 2.1.2(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@6.1.8)
@@ -3137,8 +3137,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sanity/pkg-utils@6.5.0(@types/node@20.12.7)(typescript@5.4.5):
-    resolution: {integrity: sha512-2GdK4xzV4xJR5Shd8HmKkxVK8IfLPhTuJtT1MfRK+6RTLFTadM7lpxVt1MBEe97S+Wg8y+btPjCEcKFQq5KywA==}
+  /@sanity/pkg-utils@6.6.1(@types/node@20.12.7)(typescript@5.4.5):
+    resolution: {integrity: sha512-23IPa4dr5IiVr/6SuQz3/OH4XhVUyPQHat5c3ZXpFYaPmWGNSGcQ8iOIJKDSDqxq9oM+kv/3oZg18uyYu2y8kg==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
