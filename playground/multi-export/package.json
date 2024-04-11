@@ -22,6 +22,7 @@
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
+  "files": ["dist"],
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {

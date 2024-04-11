@@ -7,6 +7,7 @@ import {
   loadPkgWithReporting,
   type PackageJSON,
   parseExports,
+  parseStrictOptions,
   type PkgConfigOptions,
 } from '@sanity/pkg-utils'
 import path from 'path'
@@ -57,6 +58,7 @@ export async function extract(options: {
 
   // pkg utils
   const config = await loadConfig({cwd: packagePath})
+  const strictOptions = parseStrictOptions(config?.strictOptions ?? {})
   const logger = createLogger()
   const pkg = await loadPkgWithReporting({cwd: packagePath, logger, strict, legacyExports})
 
@@ -67,6 +69,8 @@ export async function extract(options: {
     pkg,
     strict,
     legacyExports,
+    logger,
+    strictOptions,
   })
 
   try {
