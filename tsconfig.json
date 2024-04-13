@@ -19,13 +19,6 @@
     "rootDir": ".",
     "outDir": "./dist",
 
-    "paths": {
-      "@sanity/tsdoc/cli": ["./exports/cli.ts"],
-      "@sanity/tsdoc/react": ["./exports/react.ts"],
-      "@sanity/tsdoc/store": ["./exports/store.ts"],
-      "@sanity/tsdoc": ["./exports/index.ts"]
-    },
-
     "checkJs": true,
     "noEmit": true,
     "resolveJsonModule": true
