@@ -7,10 +7,5 @@
 
     "rootDir": ".",
     "outDir": "./dist",
-
-    "paths": {
-      "multi-export": ["./exports/index.ts"],
-      "multi-export/extra": ["./exports/extra.ts"]
-    }
   }
 }
