@@ -6,11 +6,6 @@
     "composite": true,
 
     "rootDir": ".",
-    "outDir": "./dist",
-
-    "paths": {
-      "multi-export-cjs-legacy": ["./exports/index.ts"],
-      "multi-export-cjs-legacy/extra": ["./exports/extra.ts"]
-    }
+    "outDir": "./dist"
   }
 }

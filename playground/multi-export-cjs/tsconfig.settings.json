@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "paths": {
+      "multi-export-cjs": ["./exports/index.ts"],
+      "multi-export-cjs/extra": ["./exports/extra.ts"]
+    },
+
     "target": "ES2022",
     "sourceMap": true,
     "module": "Preserve",

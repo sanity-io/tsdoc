@@ -2,6 +2,13 @@
   "$schema": "https://json.schemastore.org/tsconfig",
 
   "compilerOptions": {
+    "paths": {
+      "@sanity/tsdoc/cli": ["./exports/cli.ts"],
+      "@sanity/tsdoc/react": ["./exports/react.ts"],
+      "@sanity/tsdoc/store": ["./exports/store.ts"],
+      "@sanity/tsdoc": ["./exports/index.ts"]
+    },
+
     "module": "Preserve",
     "target": "ES2022",
     "jsx": "preserve",

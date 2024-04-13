@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
+    "paths": {
+      "multi-export-legacy": ["./exports/index.ts"],
+      "multi-export-legacy/extra": ["./exports/extra.ts"]
+    },
+
     "target": "ES2022",
     "sourceMap": true,
     "module": "Preserve",
