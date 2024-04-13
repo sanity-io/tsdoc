@@ -5,12 +5,5 @@
     "declaration": true,
     "rootDir": ".",
     "outDir": "./dist"
-
-    // NOTE: Caveat: these need to commented out when building distribution files
-    // This is required for `@sanity/tsdoc` to construct Sanity references between export bundles
-    // "paths": {
-    //   "multi-export-cjs-legacy": ["./exports/index.ts"],
-    //   "multi-export-cjs-legacy/extra": ["./exports/extra.ts"]
-    // }
   }
 }
