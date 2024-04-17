@@ -80,7 +80,7 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       groq:
-        specifier: ^3.37.2
+        specifier: ^3.38.0
         version: 3.38.0
       groq-js:
         specifier: ^1.7.0
