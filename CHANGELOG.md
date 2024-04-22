@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.35](https://github.com/sanity-io/tsdoc/compare/v1.0.34...v1.0.35) (2024-04-22)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/client to ^6.15.19 ([#160](https://github.com/sanity-io/tsdoc/issues/160)) ([a9164c2](https://github.com/sanity-io/tsdoc/commit/a9164c2f3ab44651262ade4bdd002f147520f96d))
+- **deps:** update dependency @sanity/pkg-utils to v6.8.1 ([#161](https://github.com/sanity-io/tsdoc/issues/161)) ([60efe27](https://github.com/sanity-io/tsdoc/commit/60efe27224a4c431328b73c888290af2027d7eac))
+- **deps:** update dependency vite to ^5.2.10 ([#163](https://github.com/sanity-io/tsdoc/issues/163)) ([34df858](https://github.com/sanity-io/tsdoc/commit/34df858fb8cd7cfdddb0daa422c6b0bd18866200))
+
 ## [1.0.34](https://github.com/sanity-io/tsdoc/compare/v1.0.33...v1.0.34) (2024-04-17)
 
 ### Bug Fixes
