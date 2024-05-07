@@ -41,8 +41,8 @@ importers:
         specifier: ^2.11.8
         version: 2.11.8(react@18.2.0)
       '@sanity/pkg-utils':
-        specifier: 6.8.12
-        version: 6.8.12(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)
+        specifier: 6.8.13
+        version: 6.8.13(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)
       '@sanity/ui':
         specifier: ^2.1.6
         version: 2.1.6(react-dom@18.2.0(react@18.2.0))(react-is@18.3.1)(react@18.2.0)(styled-components@6.1.10(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -1958,8 +1958,8 @@ packages:
   '@sanity/mutator@3.41.0':
     resolution: {integrity: sha512-dZqC7q52IMmqbrMU+Dfx0Grsu0KpbO7gg78wbQKXDhVM1CtNEEDaHSBJOr2hunnC7aeVN38ZLMS4TnQsPnA03Q==}
 
-  '@sanity/pkg-utils@6.8.12':
-    resolution: {integrity: sha512-3ueHz8/tgQ8avBcVN6ALP3bTqhIwaOyTMiAxzAakmyfpbxrSTVUwTL/92cbfuTZ4bOw7DIf6ea/ycW580q9FEA==}
+  '@sanity/pkg-utils@6.8.13':
+    resolution: {integrity: sha512-Jh2ISM8kHLWhT6l+3eFsbBY++76dr8O7jktDlqc69DLbZPl+Kvmg9zprx6OrkJULGE+ooM0ac2k5j02aeOL5LQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -7221,8 +7221,8 @@ packages:
     peerDependencies:
       zod: ^3.18.0
 
-  zod@3.23.6:
-    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
+  zod@3.23.7:
+    resolution: {integrity: sha512-NBeIoqbtOiUMomACV/y+V3Qfs9+Okr18vR5c/5pHClPpufWOrsx8TENboDPe265lFdfewX2yBtNTLPvnmCxwog==}
 
 snapshots:
 
@@ -8885,7 +8885,7 @@ snapshots:
       groq-js: 1.8.0
       json5: 2.2.3
       tsconfig-paths: 4.2.0
-      zod: 3.23.6
+      zod: 3.23.7
     transitivePeerDependencies:
       - supports-color
 
@@ -9013,7 +9013,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/pkg-utils@6.8.12(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)':
+  '@sanity/pkg-utils@6.8.13(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)':
     dependencies:
       '@babel/core': 7.24.5
       '@babel/types': 7.24.5
@@ -9054,8 +9054,8 @@ snapshots:
       treeify: 1.1.0
       typescript: 5.4.5
       uuid: 9.0.1
-      zod: 3.23.6
-      zod-validation-error: 3.2.0(zod@3.23.6)
+      zod: 3.23.7
+      zod-validation-error: 3.2.0(zod@3.23.7)
     transitivePeerDependencies:
       - '@types/babel__core'
       - '@types/node'
@@ -15096,8 +15096,8 @@ snapshots:
       compress-commons: 6.0.2
       readable-stream: 4.5.2
 
-  zod-validation-error@3.2.0(zod@3.23.6):
+  zod-validation-error@3.2.0(zod@3.23.7):
     dependencies:
-      zod: 3.23.6
+      zod: 3.23.7
 
-  zod@3.23.6: {}
+  zod@3.23.7: {}
