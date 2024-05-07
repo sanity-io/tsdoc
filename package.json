@@ -138,7 +138,7 @@
     "@sanity/client": "^6.17.2",
     "@sanity/color": "^3.0.6",
     "@sanity/icons": "^2.11.8",
-    "@sanity/pkg-utils": "6.8.11",
+    "@sanity/pkg-utils": "6.8.12",
     "@sanity/ui": "^2.1.6",
     "@types/cpx": "^1.5.5",
     "@vitejs/plugin-react": "^4.2.1",
