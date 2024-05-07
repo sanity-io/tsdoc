@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.48](https://github.com/sanity-io/tsdoc/compare/v1.0.47...v1.0.48) (2024-05-07)
+
+### Bug Fixes
+
+- **deps:** update dependency esbuild to ^0.21.0 ([#195](https://github.com/sanity-io/tsdoc/issues/195)) ([bee3966](https://github.com/sanity-io/tsdoc/commit/bee3966503978189141779f0dd2faa86de0724ec))
+
 ## [1.0.47](https://github.com/sanity-io/tsdoc/compare/v1.0.46...v1.0.47) (2024-05-03)
 
 ### Bug Fixes
