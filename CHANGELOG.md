@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.52](https://github.com/sanity-io/tsdoc/compare/v1.0.51...v1.0.52) (2024-05-13)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.43.4 ([#205](https://github.com/sanity-io/tsdoc/issues/205)) ([65509e2](https://github.com/sanity-io/tsdoc/commit/65509e2546c7d68e85d6b8c33282e67ff7c2c7fc))
+- **deps:** update dependency @microsoft/api-extractor-model to v7.28.16 ([#206](https://github.com/sanity-io/tsdoc/issues/206)) ([dd8636d](https://github.com/sanity-io/tsdoc/commit/dd8636d09b3c2bd613d563752cd19d6016ed23d2))
+- **deps:** update dependency @sanity/ui to ^2.1.7 ([#207](https://github.com/sanity-io/tsdoc/issues/207)) ([cd97dd6](https://github.com/sanity-io/tsdoc/commit/cd97dd68e4da091b2e61f7109c08f1c3a381733f))
+- **deps:** update dependency esbuild to ^0.21.2 ([#208](https://github.com/sanity-io/tsdoc/issues/208)) ([4b19ef8](https://github.com/sanity-io/tsdoc/commit/4b19ef8c8f2c2f9bb31177c21a640c1ea764e702))
+- **deps:** Update sanity monorepo ([#204](https://github.com/sanity-io/tsdoc/issues/204)) ([fff813b](https://github.com/sanity-io/tsdoc/commit/fff813b501f59c405a475cf988388325807596c1))
+
 ## [1.0.51](https://github.com/sanity-io/tsdoc/compare/v1.0.50...v1.0.51) (2024-05-07)
 
 ### Bug Fixes
