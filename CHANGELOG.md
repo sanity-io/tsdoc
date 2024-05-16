@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.56](https://github.com/sanity-io/tsdoc/compare/v1.0.55...v1.0.56) (2024-05-16)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.43.6 ([#218](https://github.com/sanity-io/tsdoc/issues/218)) ([f6cb174](https://github.com/sanity-io/tsdoc/commit/f6cb174634097a483e6d9d4fb202f60191013d74))
+- **deps:** update dependency esbuild to ^0.21.3 ([#222](https://github.com/sanity-io/tsdoc/issues/222)) ([60f17db](https://github.com/sanity-io/tsdoc/commit/60f17dbfcfbacea459fd8e5df49750954a7043c7))
+
 ## [1.0.55](https://github.com/sanity-io/tsdoc/compare/v1.0.54...v1.0.55) (2024-05-14)
 
 ### Bug Fixes
