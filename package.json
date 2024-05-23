@@ -141,7 +141,7 @@
     "@sanity/pkg-utils": "6.8.17",
     "@sanity/ui": "^2.1.11",
     "@types/cpx": "^1.5.5",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.0",
     "cac": "^6.7.14",
     "chalk": "^4.1.2",
     "chokidar": "^3.6.0",
