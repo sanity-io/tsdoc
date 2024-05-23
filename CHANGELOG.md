@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.63](https://github.com/sanity-io/tsdoc/compare/v1.0.62...v1.0.63) (2024-05-23)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.43.8 ([#230](https://github.com/sanity-io/tsdoc/issues/230)) ([1b29d87](https://github.com/sanity-io/tsdoc/commit/1b29d874903f20e575c8b732f0b55d9fe45671c5))
+- **deps:** update dependency @vitejs/plugin-react to ^4.3.0 ([#233](https://github.com/sanity-io/tsdoc/issues/233)) ([5027fb6](https://github.com/sanity-io/tsdoc/commit/5027fb6f1aeebd9afa1b7e5eabf67c0e6f910302))
+
 ## [1.0.62](https://github.com/sanity-io/tsdoc/compare/v1.0.61...v1.0.62) (2024-05-21)
 
 ### Bug Fixes
