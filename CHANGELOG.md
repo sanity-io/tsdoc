@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.66](https://github.com/sanity-io/tsdoc/compare/v1.0.65...v1.0.66) (2024-05-24)
+
+### Bug Fixes
+
+- **deps:** update dependency react-refractor to ^2.2.0 ([#238](https://github.com/sanity-io/tsdoc/issues/238)) ([6a31fae](https://github.com/sanity-io/tsdoc/commit/6a31faeda6ebe74d6f38151953435029e9f0bc24))
+
 ## [1.0.65](https://github.com/sanity-io/tsdoc/compare/v1.0.64...v1.0.65) (2024-05-23)
 
 ### Bug Fixes
