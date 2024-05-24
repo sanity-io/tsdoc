@@ -157,7 +157,7 @@
     "jsonc-parser": "^3.2.1",
     "mkdirp": "^1.0.4",
     "pkg-up": "^3.1.0",
-    "react-refractor": "^2.1.7",
+    "react-refractor": "^2.2.0",
     "slugify": "^1.6.6",
     "tmp": "^0.2.3",
     "typescript": "5.4.5",
