@@ -132,7 +132,7 @@
     "@microsoft/api-extractor": "7.43.8",
     "@microsoft/api-extractor-model": "7.28.18",
     "@microsoft/tsdoc": "0.14.2",
-    "@microsoft/tsdoc-config": "0.16.2",
+    "@microsoft/tsdoc-config": "0.17.0",
     "@portabletext/react": "^3.1.0",
     "@portabletext/toolkit": "^2.0.15",
     "@sanity/client": "^6.19.0",
