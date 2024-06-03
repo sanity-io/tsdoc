@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.70](https://github.com/sanity-io/tsdoc/compare/v1.0.69...v1.0.70) (2024-06-03)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/ui to ^2.1.14 ([#241](https://github.com/sanity-io/tsdoc/issues/241)) ([2b8d7cf](https://github.com/sanity-io/tsdoc/commit/2b8d7cfea0633a6c239eb4afcf90706e2957a06a))
+- **deps:** update dependency esbuild to ^0.21.4 ([#242](https://github.com/sanity-io/tsdoc/issues/242)) ([23831c0](https://github.com/sanity-io/tsdoc/commit/23831c0c12e712a55aa418fd4f29f1217960d047))
+- **deps:** update dependency vite to ^5.2.12 ([#243](https://github.com/sanity-io/tsdoc/issues/243)) ([25a7c3d](https://github.com/sanity-io/tsdoc/commit/25a7c3d61168689f2779c56f2a79edc5d0b5d861))
+
 ## [1.0.69](https://github.com/sanity-io/tsdoc/compare/v1.0.68...v1.0.69) (2024-05-29)
 
 ### Bug Fixes
