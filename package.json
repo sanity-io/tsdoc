@@ -139,7 +139,7 @@
     "@sanity/color": "^3.0.6",
     "@sanity/icons": "^3.0.0",
     "@sanity/pkg-utils": "6.8.19",
-    "@sanity/ui": "^2.1.14",
+    "@sanity/ui": "^2.2.0",
     "@types/cpx": "^1.5.5",
     "@vitejs/plugin-react": "^4.3.0",
     "cac": "^6.7.14",
