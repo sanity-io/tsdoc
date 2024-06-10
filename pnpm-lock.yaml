@@ -120,8 +120,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@sanity/semantic-release-preset':
-        specifier: ^4.1.8
-        version: 4.1.8(semantic-release@24.0.0(typescript@5.4.5))
+        specifier: ^5.0.0
+        version: 5.0.0(semantic-release@24.0.0(typescript@5.4.5))
       '@sanity/ui-workshop':
         specifier: ^2.0.15
         version: 2.0.15(@sanity/icons@3.2.0(react@18.2.0))(@sanity/ui@2.3.1(react-dom@18.2.0(react@18.2.0))(react-is@18.3.1)(react@18.2.0)(styled-components@6.1.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0)))(@types/node@20.12.7)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(styled-components@6.1.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(terser@5.30.3)
@@ -1995,11 +1995,11 @@ packages:
   '@sanity/schema@3.45.0':
     resolution: {integrity: sha512-sovHLpvEydk+570GkFS8elnJVqzpBGaIScEGqTdWCG3r1v+m/kH7sWGXgh1+0NJlfnYUva8q/bHWBHHMHUFKhA==}
 
-  '@sanity/semantic-release-preset@4.1.8':
-    resolution: {integrity: sha512-D9M2R7sDj3cMEIcCdvCMpFqr8yIAkFbpbMSE5m9LrPgnFl12sfaSeMCeFHM5/ArHsJVIcQIVsQFbP+c1m1a8vg==}
+  '@sanity/semantic-release-preset@5.0.0':
+    resolution: {integrity: sha512-2lCuU57OZW6WY7O8d4vjbpghQIc9lnxS9+dLnzrBYh8e6pA467DxlCNum4NgDeDyHxNh9HGXNalXEWJz8tec+A==}
     engines: {node: '>= 20.8'}
     peerDependencies:
-      semantic-release: ^22.0.12 || ^23.0.2 || ^24.0.0
+      semantic-release: ^24
 
   '@sanity/telemetry@0.7.7':
     resolution: {integrity: sha512-YUoAMrl0XEf5C4Jt0n+wmJAR7gDrraic3u7yxog0U2QukgeOn9BDhXF5rF9jMuDllGZmUbBaFq+mh5sW/tACWw==}
@@ -9311,7 +9311,7 @@ snapshots:
       - debug
       - supports-color
 
-  '@sanity/semantic-release-preset@4.1.8(semantic-release@24.0.0(typescript@5.4.5))':
+  '@sanity/semantic-release-preset@5.0.0(semantic-release@24.0.0(typescript@5.4.5))':
     dependencies:
       '@semantic-release/changelog': 6.0.3(semantic-release@24.0.0(typescript@5.4.5))
       '@semantic-release/exec': 6.0.3(semantic-release@24.0.0(typescript@5.4.5))
