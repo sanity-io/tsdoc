@@ -41,8 +41,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(react@18.2.0)
       '@sanity/pkg-utils':
-        specifier: 6.9.2
-        version: 6.9.2(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)
+        specifier: 6.9.3
+        version: 6.9.3(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)
       '@sanity/ui':
         specifier: ^2.3.1
         version: 2.3.1(react-dom@18.2.0(react@18.2.0))(react-is@18.3.1)(react@18.2.0)(styled-components@6.1.11(react-dom@18.2.0(react@18.2.0))(react@18.2.0))
@@ -1965,8 +1965,8 @@ packages:
   '@sanity/mutator@3.45.0':
     resolution: {integrity: sha512-OxGaiXYvuDvdq42wC4uHERViwDNzKwIKJiLcj5TN8QAbTO2ezcqET37o9a0GYrVsYKK4xzXHkDU4JyHvwyrH9A==}
 
-  '@sanity/pkg-utils@6.9.2':
-    resolution: {integrity: sha512-s+7ENBx6NZGo98AvDvLKikUgE42AwPqILBV7gsgJJArX24hNIx5YaTjCBOTAfmiOfQ92lH5/ios80slObfhTNw==}
+  '@sanity/pkg-utils@6.9.3':
+    resolution: {integrity: sha512-AydMp57nHCVA2AYx2czLsdIan7EN1XVI/t/EDLDT6lPJKs4JDQOc7hkc8DcYMikNr6y6ryOfLbWeHjXVddRBKQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -2715,8 +2715,8 @@ packages:
   browserify-zlib@0.1.4:
     resolution: {integrity: sha512-19OEpq7vWgsH6WkvkBJQDFvJS1uPcbFOQ4v9CU839dO+ZZXUZO6XpE6hNCqvlIIj+4fZvRiJ6DsAQ382GwiyTQ==}
 
-  browserslist@4.23.0:
-    resolution: {integrity: sha512-QW8HiM1shhT2GuzkvklfjcKDiWFXHOeFCIA/huJPwHsslwcydgk7X+z2zXpEijP98UCY7HbubZt5J2Zgvf0CaQ==}
+  browserslist@4.23.1:
+    resolution: {integrity: sha512-TUfofFo/KsK/bWZ9TWQ5O26tsWW4Uhmt8IYklbnUa70udB6P2wA7w7o4PY4muaEPBQaAX+CEnmmIA41NVHtPVw==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
@@ -2787,8 +2787,8 @@ packages:
   camelize@1.0.1:
     resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
 
-  caniuse-lite@1.0.30001612:
-    resolution: {integrity: sha512-lFgnZ07UhaCcsSZgWW0K5j4e69dK1u/ltrL9lTUiFOwNHs12S3UMIEYgBV0Z6C6hRDev7iRnMzzYmKabYdXF9g==}
+  caniuse-lite@1.0.30001632:
+    resolution: {integrity: sha512-udx3o7yHJfUxMLkGohMlVHCvFvWmirKh9JAH/d7WOLPetlH+LTL5cocMZ0t7oZx/mdlOWXti97xLZWc8uURRHg==}
 
   chai@4.4.1:
     resolution: {integrity: sha512-13sOfMv2+DWduEU+/xbun3LScLoqN17nBeTLUsmDfKdoiC1fr0n9PU4guu4AhRcOVFk/sW8LyZWHuhWtQZiF+g==}
@@ -3394,8 +3394,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.4.745:
-    resolution: {integrity: sha512-tRbzkaRI5gbUn5DEvF0dV4TQbMZ5CLkWeTAXmpC9IrYT+GE+x76i9p+o3RJ5l9XmdQlI1pPhVtE9uNcJJ0G0EA==}
+  electron-to-chromium@1.4.796:
+    resolution: {integrity: sha512-NglN/xprcM+SHD2XCli4oC6bWe6kHoytcyLKCWXmRL854F0qhPhaYgUswUsglnPxYaNQIg2uMY4BvaomIf3kLA==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -5673,8 +5673,8 @@ packages:
   performance-now@2.1.0:
     resolution: {integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==}
 
-  picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+  picocolors@1.0.1:
+    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -6968,8 +6968,8 @@ packages:
     resolution: {integrity: sha512-PcA2tsuGSF9cnySLHTLSh2qrQiJ70mn+r+Glzxv2TWZblxsxCC52BDlZoPCsz7STd9pN7EZetkWZBAvk4cgZdQ==}
     engines: {node: '>=0.10.0'}
 
-  update-browserslist-db@1.0.13:
-    resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
+  update-browserslist-db@1.0.16:
+    resolution: {integrity: sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
@@ -7351,7 +7351,7 @@ snapshots:
   '@babel/code-frame@7.24.7':
     dependencies:
       '@babel/highlight': 7.24.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   '@babel/compat-data@7.24.7': {}
 
@@ -7402,7 +7402,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.24.7
       '@babel/helper-validator-option': 7.24.7
-      browserslist: 4.23.0
+      browserslist: 4.23.1
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -7539,7 +7539,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   '@babel/parser@7.24.7':
     dependencies:
@@ -9187,7 +9187,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/pkg-utils@6.9.2(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)':
+  '@sanity/pkg-utils@6.9.3(@types/babel__core@7.20.5)(@types/node@20.12.7)(typescript@5.4.5)':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/preset-typescript': 7.24.7(@babel/core@7.24.7)
@@ -9204,7 +9204,7 @@ snapshots:
       '@rollup/plugin-terser': 0.4.4(rollup@4.18.0)
       '@sanity/browserslist-config': 1.0.3
       babel-plugin-react-compiler: 0.0.0-experimental-938cd9a-20240601
-      browserslist: 4.23.0
+      browserslist: 4.23.1
       cac: 6.7.14
       chalk: 4.1.2
       chokidar: 3.6.0
@@ -10281,12 +10281,12 @@ snapshots:
     dependencies:
       pako: 0.2.9
 
-  browserslist@4.23.0:
+  browserslist@4.23.1:
     dependencies:
-      caniuse-lite: 1.0.30001612
-      electron-to-chromium: 1.4.745
+      caniuse-lite: 1.0.30001632
+      electron-to-chromium: 1.4.796
       node-releases: 2.0.14
-      update-browserslist-db: 1.0.13(browserslist@4.23.0)
+      update-browserslist-db: 1.0.16(browserslist@4.23.1)
 
   buffer-alloc-unsafe@1.1.0: {}
 
@@ -10355,7 +10355,7 @@ snapshots:
 
   camelize@1.0.1: {}
 
-  caniuse-lite@1.0.30001612: {}
+  caniuse-lite@1.0.30001632: {}
 
   chai@4.4.1:
     dependencies:
@@ -10660,7 +10660,7 @@ snapshots:
 
   core-js-compat@3.37.0:
     dependencies:
-      browserslist: 4.23.0
+      browserslist: 4.23.1
 
   core-js@2.6.12: {}
 
@@ -11001,7 +11001,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.4.745: {}
+  electron-to-chromium@1.4.796: {}
 
   emoji-regex@8.0.0: {}
 
@@ -13489,7 +13489,7 @@ snapshots:
 
   performance-now@2.1.0: {}
 
-  picocolors@1.0.0: {}
+  picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
 
@@ -13549,7 +13549,7 @@ snapshots:
   postcss@8.4.38:
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       source-map-js: 1.2.0
 
   prelude-ls@1.2.1: {}
@@ -15023,11 +15023,11 @@ snapshots:
       has-value: 0.3.1
       isobject: 3.0.1
 
-  update-browserslist-db@1.0.13(browserslist@4.23.0):
+  update-browserslist-db@1.0.16(browserslist@4.23.1):
     dependencies:
-      browserslist: 4.23.0
+      browserslist: 4.23.1
       escalade: 3.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
 
   uri-js@4.4.1:
     dependencies:
@@ -15101,7 +15101,7 @@ snapshots:
       cac: 6.7.14
       debug: 4.3.4
       pathe: 1.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       vite: 5.2.13(@types/node@20.12.7)(terser@5.30.3)
     transitivePeerDependencies:
       - '@types/node'
@@ -15152,7 +15152,7 @@ snapshots:
       local-pkg: 0.5.0
       magic-string: 0.30.10
       pathe: 1.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       std-env: 3.7.0
       strip-literal: 2.1.0
       tinybench: 2.8.0
