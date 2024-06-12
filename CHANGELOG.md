@@ -5,6 +5,25 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.71](https://github.com/sanity-io/tsdoc/compare/v1.0.70...v1.0.71) (2024-06-12)
+
+### Bug Fixes
+
+- bump `@microsoft/api-extractor` deps ([#255](https://github.com/sanity-io/tsdoc/issues/255)) ([8d6b7cf](https://github.com/sanity-io/tsdoc/commit/8d6b7cf6eb774df9259003dfc593dfdf3253db2d))
+- **deps:** update dependency @microsoft/api-extractor to v7.47.0 ([#237](https://github.com/sanity-io/tsdoc/issues/237)) ([18617fe](https://github.com/sanity-io/tsdoc/commit/18617fe1a657832fa6b61ab0797db173b40d34a6))
+- **deps:** update dependency @sanity/client to ^6.19.2 ([#253](https://github.com/sanity-io/tsdoc/issues/253)) ([aaf2125](https://github.com/sanity-io/tsdoc/commit/aaf21253fd98295def5d860bb6426bee482a7b0d))
+- **deps:** update dependency @sanity/icons to ^3.2.0 ([#261](https://github.com/sanity-io/tsdoc/issues/261)) ([9b4cf94](https://github.com/sanity-io/tsdoc/commit/9b4cf94420e99b50d9cda8958f9126eda678633d))
+- **deps:** update dependency @sanity/pkg-utils to v6.9.0 ([#258](https://github.com/sanity-io/tsdoc/issues/258)) ([85d206c](https://github.com/sanity-io/tsdoc/commit/85d206c3c738476ce2928f14d3908810df942a75))
+- **deps:** update dependency @sanity/pkg-utils to v6.9.2 ([#263](https://github.com/sanity-io/tsdoc/issues/263)) ([bbbc5a2](https://github.com/sanity-io/tsdoc/commit/bbbc5a253fc9ad455b80add5db13226f48eb9aac))
+- **deps:** update dependency @sanity/pkg-utils to v6.9.3 ([#268](https://github.com/sanity-io/tsdoc/issues/268)) ([805f6e1](https://github.com/sanity-io/tsdoc/commit/805f6e13133ac7e264a8788c57e99391b9925f5d))
+- **deps:** update dependency @sanity/ui to ^2.2.0 ([#257](https://github.com/sanity-io/tsdoc/issues/257)) ([e0d0dc2](https://github.com/sanity-io/tsdoc/commit/e0d0dc22e8b2d3baec9de3edb95e3081369f2866))
+- **deps:** update dependency @sanity/ui to ^2.3.1 ([#265](https://github.com/sanity-io/tsdoc/issues/265)) ([b12e3d1](https://github.com/sanity-io/tsdoc/commit/b12e3d1200d657439e5886775d259a9710701cc2))
+- **deps:** update dependency @vitejs/plugin-react to ^4.3.1 ([#266](https://github.com/sanity-io/tsdoc/issues/266)) ([97ed2af](https://github.com/sanity-io/tsdoc/commit/97ed2afb9bb428bb99e2214e3d9fded9116d809f))
+- **deps:** update dependency esbuild to ^0.21.5 ([#267](https://github.com/sanity-io/tsdoc/issues/267)) ([5c77130](https://github.com/sanity-io/tsdoc/commit/5c771300232dfac038f25d71cc11c3bf5c48b478))
+- **deps:** update dependency vite to ^5.2.13 ([#264](https://github.com/sanity-io/tsdoc/issues/264)) ([49f83de](https://github.com/sanity-io/tsdoc/commit/49f83dea3d58b272f515737884d9f3522db01ab2))
+- **deps:** Update sanity monorepo ([#249](https://github.com/sanity-io/tsdoc/issues/249)) ([e45f12a](https://github.com/sanity-io/tsdoc/commit/e45f12a9d4e1f0fa8870d25dbe113039e66de5db))
+- **deps:** Update sanity monorepo ([#260](https://github.com/sanity-io/tsdoc/issues/260)) ([5f35309](https://github.com/sanity-io/tsdoc/commit/5f35309a531ac5fa773c61111aaeb2a74963bda5))
+
 ## [1.0.70](https://github.com/sanity-io/tsdoc/compare/v1.0.69...v1.0.70) (2024-06-03)
 
 ### Bug Fixes
