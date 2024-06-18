@@ -145,7 +145,7 @@
     "esbuild-register": "^3.5.0",
     "express": "^4.19.2",
     "globby": "^11.1.0",
-    "groq": "^3.46.1",
+    "groq": "^3.47.0",
     "groq-js": "^1.9.0",
     "history": "^5.3.0",
     "jsonc-parser": "^3.2.1",
