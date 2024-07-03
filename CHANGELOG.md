@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.81](https://github.com/sanity-io/tsdoc/compare/v1.0.80...v1.0.81) (2024-07-03)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/pkg-utils to v6.10.1 ([#292](https://github.com/sanity-io/tsdoc/issues/292)) ([3a43101](https://github.com/sanity-io/tsdoc/commit/3a431015a40d4910bfd711fcf5c8329103956229))
+- **deps:** update dependency jsonc-parser to ^3.3.1 ([#287](https://github.com/sanity-io/tsdoc/issues/287)) ([3ee22c5](https://github.com/sanity-io/tsdoc/commit/3ee22c5ae8f75e8e616a61cde4ead21c814030b8))
+
 ## [1.0.80](https://github.com/sanity-io/tsdoc/compare/v1.0.79...v1.0.80) (2024-07-03)
 
 ### Bug Fixes
