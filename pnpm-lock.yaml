@@ -41,8 +41,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0(react@18.3.1)
       '@sanity/pkg-utils':
-        specifier: 6.10.0
-        version: 6.10.0(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.4.5)
+        specifier: 6.10.1
+        version: 6.10.1(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.4.5)
       '@sanity/ui':
         specifier: ^2.6.1
         version: 2.6.1(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -1909,12 +1909,12 @@ packages:
   '@sanity/mutator@3.49.0':
     resolution: {integrity: sha512-7tqKa3BALA2IxPk5/uZtiUebrQfWw7vEESy7Xl2fNUTD9moej2MFw2B0rBpNWt0qetBVxMbaymUF9r44MOieag==}
 
-  '@sanity/pkg-utils@6.10.0':
-    resolution: {integrity: sha512-mALy0u8qifr130StGMhYg47fJl+lviKmcMYyb15wGzMFiIODlGne7IiziXdkeYnneeK1nqOVvWPPQMbsdaTr4A==}
+  '@sanity/pkg-utils@6.10.1':
+    resolution: {integrity: sha512-Pizosq/nOJCsfYmmcVEK19t9cmas7b1Zre6Oai5nKLPB4OgiDo/9nTZ827pfqAo1NvT25fHp6JFV0CUZQLr0jw==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
-      typescript: 5.4.x
+      typescript: 5.4.x || 5.5.x
 
   '@sanity/presentation@1.16.0':
     resolution: {integrity: sha512-8nNGPM+r+D8dRe/UVcDEO6Z9gzS5LcOIQMzziOg8nMUGz284pcuEIzvRI9XQ3gbMiv6Zyo+fzuJPktoq+dkqhw==}
@@ -6858,6 +6858,10 @@ packages:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
 
+  uuid@10.0.0:
+    resolution: {integrity: sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==}
+    hasBin: true
+
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
@@ -8922,7 +8926,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/pkg-utils@6.10.0(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.4.5)':
+  '@sanity/pkg-utils@6.10.1(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.4.5)':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/preset-typescript': 7.24.7(@babel/core@7.24.7)
@@ -8943,8 +8947,8 @@ snapshots:
       cac: 6.7.14
       chalk: 4.1.2
       chokidar: 3.6.0
-      esbuild: 0.21.5
-      esbuild-register: 3.5.0(esbuild@0.21.5)
+      esbuild: 0.23.0
+      esbuild-register: 3.5.0(esbuild@0.23.0)
       find-config: 1.0.0
       get-latest-version: 5.1.0
       git-url-parse: 14.0.0
@@ -8960,11 +8964,11 @@ snapshots:
       recast: 0.23.9
       rimraf: 4.4.1
       rollup: 4.18.0
-      rollup-plugin-esbuild: 6.1.1(esbuild@0.21.5)(rollup@4.18.0)
+      rollup-plugin-esbuild: 6.1.1(esbuild@0.23.0)(rollup@4.18.0)
       rxjs: 7.8.1
       treeify: 1.1.0
       typescript: 5.4.5
-      uuid: 9.0.1
+      uuid: 10.0.0
       zod: 3.23.8
       zod-validation-error: 3.3.0(zod@3.23.8)
     transitivePeerDependencies:
@@ -13592,12 +13596,12 @@ snapshots:
     dependencies:
       glob: 10.4.2
 
-  rollup-plugin-esbuild@6.1.1(esbuild@0.21.5)(rollup@4.18.0):
+  rollup-plugin-esbuild@6.1.1(esbuild@0.23.0)(rollup@4.18.0):
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.18.0)
       debug: 4.3.5
       es-module-lexer: 1.5.4
-      esbuild: 0.21.5
+      esbuild: 0.23.0
       get-tsconfig: 4.7.5
       rollup: 4.18.0
     transitivePeerDependencies:
@@ -14680,6 +14684,8 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   utils-merge@1.0.1: {}
+
+  uuid@10.0.0: {}
 
   uuid@8.3.2: {}
 
