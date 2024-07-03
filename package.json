@@ -141,7 +141,7 @@
     "chokidar": "^3.6.0",
     "cors": "^2.8.5",
     "dotenv-flow": "^3.2.0",
-    "esbuild": "^0.21.5",
+    "esbuild": "^0.23.0",
     "esbuild-register": "^3.5.0",
     "express": "^4.19.2",
     "globby": "^11.1.0",
