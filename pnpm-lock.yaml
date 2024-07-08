@@ -41,8 +41,8 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(react@18.3.1)
       '@sanity/pkg-utils':
-        specifier: 6.10.1
-        version: 6.10.1(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.5.3)
+        specifier: 6.10.2
+        version: 6.10.2(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.5.3)
       '@sanity/ui':
         specifier: ^2.6.1
         version: 2.6.1(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -1909,8 +1909,8 @@ packages:
   '@sanity/mutator@3.49.0':
     resolution: {integrity: sha512-7tqKa3BALA2IxPk5/uZtiUebrQfWw7vEESy7Xl2fNUTD9moej2MFw2B0rBpNWt0qetBVxMbaymUF9r44MOieag==}
 
-  '@sanity/pkg-utils@6.10.1':
-    resolution: {integrity: sha512-Pizosq/nOJCsfYmmcVEK19t9cmas7b1Zre6Oai5nKLPB4OgiDo/9nTZ827pfqAo1NvT25fHp6JFV0CUZQLr0jw==}
+  '@sanity/pkg-utils@6.10.2':
+    resolution: {integrity: sha512-Es/rF9Za/RA29aUNDEv+mU0eOnnX/XLRheDxPVezq1S8x4RFt4DuIRBYE4fpVcKj5nVtIrJkfwJCohI7ZCQXyQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -8540,7 +8540,7 @@ snapshots:
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
 
-  '@portabletext/editor@1.0.7(@sanity/block-tools@3.49.0)(@sanity/schema@3.49.0)(@sanity/types@3.49.0)(@sanity/util@3.49.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@portabletext/editor@1.0.7(@sanity/block-tools@3.49.0)(@sanity/schema@3.49.0)(@sanity/types@3.49.0(debug@4.3.5))(@sanity/util@3.49.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@portabletext/patches': 1.0.2
       '@sanity/block-tools': 3.49.0
@@ -8873,7 +8873,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/insert-menu@1.0.6(@sanity/types@3.49.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
+  '@sanity/insert-menu@1.0.6(@sanity/types@3.49.0(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@sanity/icons': 3.3.0(react@18.3.1)
       '@sanity/types': 3.49.0(debug@4.3.5)
@@ -8922,7 +8922,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/pkg-utils@6.10.1(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.5.3)':
+  '@sanity/pkg-utils@6.10.2(@types/babel__core@7.20.5)(@types/node@20.14.9)(typescript@5.5.3)':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/preset-typescript': 7.24.7(@babel/core@7.24.7)
@@ -13677,7 +13677,7 @@ snapshots:
       '@dnd-kit/sortable': 7.0.2(@dnd-kit/core@6.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@dnd-kit/utilities': 3.2.2(react@18.3.1)
       '@juggle/resize-observer': 3.4.0
-      '@portabletext/editor': 1.0.7(@sanity/block-tools@3.49.0)(@sanity/schema@3.49.0)(@sanity/types@3.49.0)(@sanity/util@3.49.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@portabletext/editor': 1.0.7(@sanity/block-tools@3.49.0)(@sanity/schema@3.49.0)(@sanity/types@3.49.0(debug@4.3.5))(@sanity/util@3.49.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@portabletext/react': 3.1.0(react@18.3.1)
       '@rexxars/react-json-inspector': 8.0.1(react@18.3.1)
       '@sanity/asset-utils': 1.3.0
@@ -13693,7 +13693,7 @@ snapshots:
       '@sanity/icons': 3.3.0(react@18.3.1)
       '@sanity/image-url': 1.0.2
       '@sanity/import': 3.37.5
-      '@sanity/insert-menu': 1.0.6(@sanity/types@3.49.0)(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+      '@sanity/insert-menu': 1.0.6(@sanity/types@3.49.0(debug@4.3.5))(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       '@sanity/logos': 2.1.12(@sanity/color@3.0.6)(react@18.3.1)
       '@sanity/migrate': 3.49.0
       '@sanity/mutator': 3.49.0
