@@ -190,7 +190,7 @@
     "rimraf": "^4.4.1",
     "sanity": "^3.49.0",
     "semantic-release": "^24.0.0",
-    "styled-components": "^6.1.11",
+    "styled-components": "^6.1.12",
     "uuid": "^10.0.0",
     "vitest": "^2.0.0",
     "vitest-github-actions-reporter": "^0.11.1"
