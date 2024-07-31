@@ -5,6 +5,17 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.84](https://github.com/sanity-io/tsdoc/compare/v1.0.83...v1.0.84) (2024-07-31)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.47.4 ([#300](https://github.com/sanity-io/tsdoc/issues/300)) ([5e7c42d](https://github.com/sanity-io/tsdoc/commit/5e7c42d2d22ff939b3283f2ee810a04ebbe8d88e))
+- **deps:** update dependency @microsoft/api-extractor-model to v7.29.4 ([#301](https://github.com/sanity-io/tsdoc/issues/301)) ([14b7967](https://github.com/sanity-io/tsdoc/commit/14b7967147c66bc706f8e930edd1ae893dca6a86))
+- **deps:** update dependency @sanity/icons to ^3.3.1 ([#302](https://github.com/sanity-io/tsdoc/issues/302)) ([5fc2b26](https://github.com/sanity-io/tsdoc/commit/5fc2b26eb75c4c0aa58cb3f458873a3921a6a09d))
+- **deps:** update dependency groq-js to ^1.12.0 ([#312](https://github.com/sanity-io/tsdoc/issues/312)) ([3f56e57](https://github.com/sanity-io/tsdoc/commit/3f56e5758ecdb91b9f3ea1e2521a5ab969ab8b78))
+- **deps:** update dependency typescript to v5.5.4 ([#304](https://github.com/sanity-io/tsdoc/issues/304)) ([29858c6](https://github.com/sanity-io/tsdoc/commit/29858c625c41f577ea0ed10fb830c4e89b43b39f))
+- **deps:** update dependency vite to ^5.3.5 ([#305](https://github.com/sanity-io/tsdoc/issues/305)) ([45f3967](https://github.com/sanity-io/tsdoc/commit/45f3967d534f112e7e492fd3b8f6d048e721e541))
+
 ## [1.0.83](https://github.com/sanity-io/tsdoc/compare/v1.0.82...v1.0.83) (2024-07-08)
 
 ### Bug Fixes
