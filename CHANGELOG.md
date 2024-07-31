@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.86](https://github.com/sanity-io/tsdoc/compare/v1.0.85...v1.0.86) (2024-07-31)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/ui to ^2.8.8 ([#309](https://github.com/sanity-io/tsdoc/issues/309)) ([58a8ba8](https://github.com/sanity-io/tsdoc/commit/58a8ba808494ac5bd94244c0071f05414b0379aa))
+- **deps:** update dependency groq to ^3.52.4 ([#311](https://github.com/sanity-io/tsdoc/issues/311)) ([e4aeee5](https://github.com/sanity-io/tsdoc/commit/e4aeee5a804376fd96c685e9564ad185b226075b))
+
 ## [1.0.85](https://github.com/sanity-io/tsdoc/compare/v1.0.84...v1.0.85) (2024-07-31)
 
 ### Bug Fixes
