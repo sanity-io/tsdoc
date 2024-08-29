@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.96](https://github.com/sanity-io/tsdoc/compare/v1.0.95...v1.0.96) (2024-08-29)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.47.7 ([#331](https://github.com/sanity-io/tsdoc/issues/331)) ([9ffcb52](https://github.com/sanity-io/tsdoc/commit/9ffcb52afce6beccda14ce5e378a98d772157e77))
+- **deps:** update dependency @microsoft/api-extractor-model to v7.29.6 ([#332](https://github.com/sanity-io/tsdoc/issues/332)) ([16d61c5](https://github.com/sanity-io/tsdoc/commit/16d61c50ad7fc5e009f548cc4534ac5ccd339257))
+- **deps:** update dependency @sanity/ui to ^2.8.9 ([#333](https://github.com/sanity-io/tsdoc/issues/333)) ([c4f1fd5](https://github.com/sanity-io/tsdoc/commit/c4f1fd5f3f69ec5ec69e2dcbf6015b4dfba38896))
+- **deps:** update dependency groq-js to ^1.13.0 ([#337](https://github.com/sanity-io/tsdoc/issues/337)) ([974c97d](https://github.com/sanity-io/tsdoc/commit/974c97d88cbfb11a6d0d7a208c2021743ac2bdb0))
+- **deps:** Update sanity monorepo ([#335](https://github.com/sanity-io/tsdoc/issues/335)) ([1d9b334](https://github.com/sanity-io/tsdoc/commit/1d9b334133bf3e6f47a61053b06f5c8cc75612fb))
+
 ## [1.0.95](https://github.com/sanity-io/tsdoc/compare/v1.0.94...v1.0.95) (2024-08-19)
 
 ### Bug Fixes
