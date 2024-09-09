@@ -201,7 +201,7 @@
     "sanity": "^3",
     "styled-components": "^5.2 || ^6"
   },
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@9.10.0",
   "engines": {
     "node": ">=14.0.0"
   },
