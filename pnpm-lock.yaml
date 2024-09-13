@@ -17,8 +17,8 @@ importers:
         specifier: 7.47.9
         version: 7.47.9(@types/node@20.14.9)
       '@microsoft/api-extractor-model':
-        specifier: 7.29.6
-        version: 7.29.6(@types/node@20.14.9)
+        specifier: 7.29.8
+        version: 7.29.8(@types/node@20.14.9)
       '@microsoft/tsdoc':
         specifier: 0.15.0
         version: 0.15.0
