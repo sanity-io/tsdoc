@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.108](https://github.com/sanity-io/tsdoc/compare/v1.0.107...v1.0.108) (2024-10-14)
+
+### Bug Fixes
+
+- **deps:** update dependency vite to ^5.4.9 ([#363](https://github.com/sanity-io/tsdoc/issues/363)) ([2509fbd](https://github.com/sanity-io/tsdoc/commit/2509fbd626c047252229d6c48688d3966c9b5a71))
+
 ## [1.0.107](https://github.com/sanity-io/tsdoc/compare/v1.0.106...v1.0.107) (2024-10-14)
 
 ### Bug Fixes
