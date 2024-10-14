@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.106](https://github.com/sanity-io/tsdoc/compare/v1.0.105...v1.0.106) (2024-10-14)
+
+### Bug Fixes
+
+- **deps:** update dependency @vitejs/plugin-react to ^4.3.2 ([#360](https://github.com/sanity-io/tsdoc/issues/360)) ([881e588](https://github.com/sanity-io/tsdoc/commit/881e5881d83fb6ea440f7269af031c4feac43275))
+- **deps:** update dependency typescript to v5.6.3 ([#362](https://github.com/sanity-io/tsdoc/issues/362)) ([2cd51e9](https://github.com/sanity-io/tsdoc/commit/2cd51e985a9509199c68420be208329594a6a689))
+- **deps:** Update sanity monorepo ([#364](https://github.com/sanity-io/tsdoc/issues/364)) ([8ffcb28](https://github.com/sanity-io/tsdoc/commit/8ffcb28fa062f4441b68e10cad810891dc1ea2cf))
+
 ## [1.0.105](https://github.com/sanity-io/tsdoc/compare/v1.0.104...v1.0.105) (2024-09-13)
 
 ### Bug Fixes
