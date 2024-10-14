@@ -41,8 +41,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0(react@18.3.1)
       '@sanity/pkg-utils':
-        specifier: 6.11.2
-        version: 6.11.2(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)
+        specifier: 6.11.3
+        version: 6.11.3(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)
       '@sanity/ui':
         specifier: ^2.8.9
         version: 2.8.9(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -1712,8 +1712,8 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-commonjs@26.0.3':
-    resolution: {integrity: sha512-2BJcolt43MY+y5Tz47djHkodCC3c1VKVrBDKpVqHKpQ9z9S158kCCqB8NF6/gzxLdNlYW9abB3Ibh+kOWLp8KQ==}
+  '@rollup/plugin-commonjs@28.0.0':
+    resolution: {integrity: sha512-BJcu+a+Mpq476DMXG+hevgPSl56bkUoi88dKT8t3RyUp8kGuOh+2bU8Gs7zXDlu+fyZggnJ+iOBGrb/O1SorYg==}
     engines: {node: '>=16.0.0 || 14 >= 14.17'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0||^4.0.0
@@ -1739,8 +1739,8 @@ packages:
       rollup:
         optional: true
 
-  '@rollup/plugin-replace@5.0.7':
-    resolution: {integrity: sha512-PqxSfuorkHz/SPpyngLyg5GCEkOcee9M1bkxiVDr41Pd61mqP1PLOoDPbpl44SB2mQGKwV/In74gqQmGITOhEQ==}
+  '@rollup/plugin-replace@6.0.1':
+    resolution: {integrity: sha512-2sPh9b73dj5IxuMmDAsQWVFT7mR+yoHweBaXG2W/R8vQ+IWZlnaI7BR7J6EguVQUp1hd8Z7XuozpDjEKQAAC2Q==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
@@ -1958,8 +1958,8 @@ packages:
   '@sanity/mutator@3.60.0':
     resolution: {integrity: sha512-WdKCPiaDvE3h92Gg6nqfgKTH48SIdZLo5GahT5Aut2HXN0DuSBanPgQvkqHXKdXmwgCE7Wh/Qqza7AjdPy11qQ==}
 
-  '@sanity/pkg-utils@6.11.2':
-    resolution: {integrity: sha512-QlTb0b37XOpH/T/rDZk9jdqyrXvOlazwhj/CQ+orxHSI+Lytlewb5LaaGfHTyMqyITieFMeMmGVyrWh/GeWS5Q==}
+  '@sanity/pkg-utils@6.11.3':
+    resolution: {integrity: sha512-DABaQ9UlHYcR2BJZ2l8Eo2ckQPrF3nrdcrpVYm9OJdRCoZ80hNvbaA4VwWMRcITaKj4KByITfA0nFSTHOSk9mw==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -7198,8 +7198,8 @@ packages:
     peerDependencies:
       zod: ^3.18.0
 
-  zod-validation-error@3.3.1:
-    resolution: {integrity: sha512-uFzCZz7FQis256dqw4AhPQgD6f3pzNca/Zh62RNELavlumQB3nDIUFbF5JQfFLcMbO1s02Q7Xg/gpcOBlEnYZA==}
+  zod-validation-error@3.4.0:
+    resolution: {integrity: sha512-ZOPR9SVY6Pb2qqO5XHt+MkkTRxGXb4EVtnjc9JpXUOtUB1T9Ru7mZOT361AN3MsetVe7R0a1KZshJDZdgp9miQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.18.0
@@ -8612,14 +8612,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@rollup/plugin-commonjs@26.0.3(rollup@4.24.0)':
+  '@rollup/plugin-commonjs@28.0.0(rollup@4.24.0)':
     dependencies:
       '@rollup/pluginutils': 5.1.2(rollup@4.24.0)
       commondir: 1.0.1
       estree-walker: 2.0.2
-      glob: 10.4.5
+      fdir: 6.4.0(picomatch@2.3.1)
       is-reference: 1.2.1
       magic-string: 0.30.12
+      picomatch: 2.3.1
     optionalDependencies:
       rollup: 4.24.0
 
@@ -8639,7 +8640,7 @@ snapshots:
     optionalDependencies:
       rollup: 4.24.0
 
-  '@rollup/plugin-replace@5.0.7(rollup@4.24.0)':
+  '@rollup/plugin-replace@6.0.1(rollup@4.24.0)':
     dependencies:
       '@rollup/pluginutils': 5.1.2(rollup@4.24.0)
       magic-string: 0.30.12
@@ -8931,7 +8932,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/pkg-utils@6.11.2(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)':
+  '@sanity/pkg-utils@6.11.3(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)':
     dependencies:
       '@babel/core': 7.25.8
       '@babel/preset-typescript': 7.25.7(@babel/core@7.25.8)
@@ -8941,10 +8942,10 @@ snapshots:
       '@optimize-lodash/rollup-plugin': 5.0.0(rollup@4.24.0)
       '@rollup/plugin-alias': 5.1.1(rollup@4.24.0)
       '@rollup/plugin-babel': 6.0.4(@babel/core@7.25.8)(@types/babel__core@7.20.5)(rollup@4.24.0)
-      '@rollup/plugin-commonjs': 26.0.3(rollup@4.24.0)
+      '@rollup/plugin-commonjs': 28.0.0(rollup@4.24.0)
       '@rollup/plugin-json': 6.1.0(rollup@4.24.0)
       '@rollup/plugin-node-resolve': 15.3.0(rollup@4.24.0)
-      '@rollup/plugin-replace': 5.0.7(rollup@4.24.0)
+      '@rollup/plugin-replace': 6.0.1(rollup@4.24.0)
       '@rollup/plugin-terser': 0.4.4(rollup@4.24.0)
       '@sanity/browserslist-config': 1.0.3
       babel-plugin-react-compiler: 0.0.0-experimental-fe484b5-20240912
@@ -8952,8 +8953,8 @@ snapshots:
       cac: 6.7.14
       chalk: 4.1.2
       chokidar: 3.6.0
-      esbuild: 0.23.1
-      esbuild-register: 3.6.0(esbuild@0.23.1)
+      esbuild: 0.24.0
+      esbuild-register: 3.6.0(esbuild@0.24.0)
       find-config: 1.0.0
       get-latest-version: 5.1.0
       git-url-parse: 15.0.0
@@ -8969,13 +8970,13 @@ snapshots:
       recast: 0.23.9
       rimraf: 4.4.1
       rollup: 4.24.0
-      rollup-plugin-esbuild: 6.1.1(esbuild@0.23.1)(rollup@4.24.0)
+      rollup-plugin-esbuild: 6.1.1(esbuild@0.24.0)(rollup@4.24.0)
       rxjs: 7.8.1
       treeify: 1.1.0
       typescript: 5.6.3
       uuid: 10.0.0
       zod: 3.23.8
-      zod-validation-error: 3.3.1(zod@3.23.8)
+      zod-validation-error: 3.4.0(zod@3.23.8)
     transitivePeerDependencies:
       - '@types/babel__core'
       - '@types/node'
@@ -11305,6 +11306,10 @@ snapshots:
     dependencies:
       pend: 1.2.0
 
+  fdir@6.4.0(picomatch@2.3.1):
+    optionalDependencies:
+      picomatch: 2.3.1
+
   fdir@6.4.0(picomatch@4.0.2):
     optionalDependencies:
       picomatch: 4.0.2
@@ -13601,12 +13606,12 @@ snapshots:
     dependencies:
       glob: 10.4.5
 
-  rollup-plugin-esbuild@6.1.1(esbuild@0.23.1)(rollup@4.24.0):
+  rollup-plugin-esbuild@6.1.1(esbuild@0.24.0)(rollup@4.24.0):
     dependencies:
       '@rollup/pluginutils': 5.1.2(rollup@4.24.0)
       debug: 4.3.7
       es-module-lexer: 1.5.4
-      esbuild: 0.23.1
+      esbuild: 0.24.0
       get-tsconfig: 4.8.1
       rollup: 4.24.0
     transitivePeerDependencies:
@@ -14961,7 +14966,7 @@ snapshots:
     dependencies:
       zod: 3.23.8
 
-  zod-validation-error@3.3.1(zod@3.23.8):
+  zod-validation-error@3.4.0(zod@3.23.8):
     dependencies:
       zod: 3.23.8
 
