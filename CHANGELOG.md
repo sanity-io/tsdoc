@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.110](https://github.com/sanity-io/tsdoc/compare/v1.0.109...v1.0.110) (2024-10-17)
+
+### Bug Fixes
+
+- **deps:** update dependency chokidar to v4 ([#372](https://github.com/sanity-io/tsdoc/issues/372)) ([f3d504a](https://github.com/sanity-io/tsdoc/commit/f3d504a6f3007ab81b84240aa081b413c8e019ae))
+
 ## [1.0.109](https://github.com/sanity-io/tsdoc/compare/v1.0.108...v1.0.109) (2024-10-14)
 
 ### Bug Fixes
