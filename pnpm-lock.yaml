@@ -41,8 +41,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0(react@18.3.1)
       '@sanity/pkg-utils':
-        specifier: 6.11.6
-        version: 6.11.6(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)
+        specifier: 6.11.7
+        version: 6.11.7(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)
       '@sanity/ui':
         specifier: ^2.8.13
         version: 2.8.13(react-dom@18.3.1(react@18.3.1))(react-is@18.3.1)(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -1961,8 +1961,8 @@ packages:
   '@sanity/mutator@3.62.3':
     resolution: {integrity: sha512-5KFG+gTe/vvOCr+aTWWVieMxSOfa00Qnzf4f3X45rHGH9uz4104kPKAyV+biuA/GhhB3Cx8/o9ZywY+Cxlgq+Q==}
 
-  '@sanity/pkg-utils@6.11.6':
-    resolution: {integrity: sha512-/tPCwN1wF5Btb8UTXGg2RX1A7Xl2iZmDV/juVy/w9KqhppdE5jP0l72ZmB86AQXUllSdtX3a2S4G3RqJ6CmiRg==}
+  '@sanity/pkg-utils@6.11.7':
+    resolution: {integrity: sha512-MLlQJsMOhKXzcYVwSSM35t8DEfcOodzDkwXURl+MTfRNVhQr0AMilGDgH3WTZUl2ZvbaEBHDkTRBKLeID1zAyQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -8880,7 +8880,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@sanity/pkg-utils@6.11.6(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)':
+  '@sanity/pkg-utils@6.11.7(@types/babel__core@7.20.5)(@types/node@20.16.11)(typescript@5.6.3)':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.0)
