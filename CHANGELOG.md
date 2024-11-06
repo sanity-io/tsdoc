@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.124](https://github.com/sanity-io/tsdoc/compare/v1.0.123...v1.0.124) (2024-11-06)
+
+### Bug Fixes
+
+- **deps:** update dependency groq to ^3.63.0 ([#396](https://github.com/sanity-io/tsdoc/issues/396)) ([044a689](https://github.com/sanity-io/tsdoc/commit/044a68931fa1ec207657fd7051d9a8bdcdb64af5))
+
 ## [1.0.123](https://github.com/sanity-io/tsdoc/compare/v1.0.122...v1.0.123) (2024-11-06)
 
 ### Bug Fixes
