@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.123](https://github.com/sanity-io/tsdoc/compare/v1.0.122...v1.0.123) (2024-11-06)
+
+### Bug Fixes
+
+- **deps:** update dependency @portabletext/toolkit to ^2.0.16 ([#393](https://github.com/sanity-io/tsdoc/issues/393)) ([174597d](https://github.com/sanity-io/tsdoc/commit/174597d7ba918521577426af39d0650e07ea461e))
+- **deps:** update dependency @sanity/ui to ^2.8.19 ([#394](https://github.com/sanity-io/tsdoc/issues/394)) ([240ee7c](https://github.com/sanity-io/tsdoc/commit/240ee7cecaa48ea376ea2b52fb9ba26b95c55344))
+- **deps:** update dependency groq-js to ^1.14.0 ([#397](https://github.com/sanity-io/tsdoc/issues/397)) ([98b0570](https://github.com/sanity-io/tsdoc/commit/98b05700f4a218184ef1a411d73bb4615686e8a0))
+
 ## [1.0.122](https://github.com/sanity-io/tsdoc/compare/v1.0.121...v1.0.122) (2024-10-31)
 
 ### Bug Fixes
