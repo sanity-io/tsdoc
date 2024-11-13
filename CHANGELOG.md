@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.130](https://github.com/sanity-io/tsdoc/compare/v1.0.129...v1.0.130) (2024-11-13)
+
+### Bug Fixes
+
+- **deps:** Update sanity monorepo ([#405](https://github.com/sanity-io/tsdoc/issues/405)) ([83eefc5](https://github.com/sanity-io/tsdoc/commit/83eefc5b6bae084acf5b7a97ef371d15f043c3cb))
+
 ## [1.0.129](https://github.com/sanity-io/tsdoc/compare/v1.0.128...v1.0.129) (2024-11-11)
 
 ### Bug Fixes
