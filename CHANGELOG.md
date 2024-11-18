@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.133](https://github.com/sanity-io/tsdoc/compare/v1.0.132...v1.0.133) (2024-11-18)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/client to ^6.22.5 ([#408](https://github.com/sanity-io/tsdoc/issues/408)) ([fa23e0c](https://github.com/sanity-io/tsdoc/commit/fa23e0ca274e722b3fc2fe796747f96adcadc695))
+
 ## [1.0.132](https://github.com/sanity-io/tsdoc/compare/v1.0.131...v1.0.132) (2024-11-18)
 
 ### Bug Fixes
