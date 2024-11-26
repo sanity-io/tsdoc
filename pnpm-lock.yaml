@@ -20,8 +20,8 @@ importers:
         specifier: 7.29.8
         version: 7.29.8(@types/node@20.16.11)
       '@microsoft/tsdoc':
-        specifier: 0.15.0
-        version: 0.15.0
+        specifier: 0.15.1
+        version: 0.15.1
       '@microsoft/tsdoc-config':
         specifier: 0.17.0
         version: 0.17.0
@@ -1554,6 +1554,9 @@ packages:
 
   '@microsoft/tsdoc@0.15.0':
     resolution: {integrity: sha512-HZpPoABogPvjeJOdzCOSJsXeL/SMCBgBZMVC3X3d7YYp2gf31MfxhUoYUNwf1ERPJOnQc0wkFn9trqI6ZEdZuA==}
+
+  '@microsoft/tsdoc@0.15.1':
+    resolution: {integrity: sha512-4aErSrCR/On/e5G2hDP0wjooqDdauzEbIq8hIkIe5pXV0rtWJZvdCEKL0ykZxex+IxIwBp0eGeV48hQN07dXtw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -8390,7 +8393,7 @@ snapshots:
 
   '@microsoft/api-extractor-model@7.29.8(@types/node@20.16.11)':
     dependencies:
-      '@microsoft/tsdoc': 0.15.0
+      '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.0
       '@rushstack/node-core-library': 5.9.0(@types/node@20.16.11)
     transitivePeerDependencies:
@@ -8399,7 +8402,7 @@ snapshots:
   '@microsoft/api-extractor@7.47.11(@types/node@20.16.11)':
     dependencies:
       '@microsoft/api-extractor-model': 7.29.8(@types/node@20.16.11)
-      '@microsoft/tsdoc': 0.15.0
+      '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.0
       '@rushstack/node-core-library': 5.9.0(@types/node@20.16.11)
       '@rushstack/rig-package': 0.5.3
@@ -8422,6 +8425,8 @@ snapshots:
       resolve: 1.22.8
 
   '@microsoft/tsdoc@0.15.0': {}
+
+  '@microsoft/tsdoc@0.15.1': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
