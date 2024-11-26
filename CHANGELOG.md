@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.138](https://github.com/sanity-io/tsdoc/compare/v1.0.137...v1.0.138) (2024-11-26)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor-model to v7.30.0 ([#414](https://github.com/sanity-io/tsdoc/issues/414)) ([9d21a29](https://github.com/sanity-io/tsdoc/commit/9d21a294032b2ec0d610831df8f34769f99fef69))
+- **deps:** update dependency @microsoft/tsdoc-config to v0.17.1 ([#417](https://github.com/sanity-io/tsdoc/issues/417)) ([1c623a4](https://github.com/sanity-io/tsdoc/commit/1c623a4b7132d85d8005e7946b2207be8b19b310))
+- **deps:** update dependency vite to v6 ([#422](https://github.com/sanity-io/tsdoc/issues/422)) ([d712b4d](https://github.com/sanity-io/tsdoc/commit/d712b4de8556dcc15b658bad5db62d89b71393b5))
+
 ## [1.0.137](https://github.com/sanity-io/tsdoc/compare/v1.0.136...v1.0.137) (2024-11-26)
 
 ### Bug Fixes
