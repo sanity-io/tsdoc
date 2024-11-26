@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.140](https://github.com/sanity-io/tsdoc/compare/v1.0.139...v1.0.140) (2024-11-26)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/pkg-utils to v6.11.13 ([#424](https://github.com/sanity-io/tsdoc/issues/424)) ([7622226](https://github.com/sanity-io/tsdoc/commit/762222655cf74418240fd3c4d25c868a33800fd0))
+- **deps:** update dependency @vitejs/plugin-react to ^4.3.4 ([#425](https://github.com/sanity-io/tsdoc/issues/425)) ([e881fc2](https://github.com/sanity-io/tsdoc/commit/e881fc233c47bdf7a859f7dab0395298acaa9064))
+
 ## [1.0.139](https://github.com/sanity-io/tsdoc/compare/v1.0.138...v1.0.139) (2024-11-26)
 
 ### Bug Fixes
