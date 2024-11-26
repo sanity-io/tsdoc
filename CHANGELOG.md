@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.136](https://github.com/sanity-io/tsdoc/compare/v1.0.135...v1.0.136) (2024-11-26)
+
+### Bug Fixes
+
+- **deps:** update dependency typescript to v5.7.2 ([#415](https://github.com/sanity-io/tsdoc/issues/415)) ([02977d3](https://github.com/sanity-io/tsdoc/commit/02977d3c2dbafa6dc03be1fd808803f9f1ce5d28))
+
 ## [1.0.135](https://github.com/sanity-io/tsdoc/compare/v1.0.134...v1.0.135) (2024-11-26)
 
 ### Bug Fixes
