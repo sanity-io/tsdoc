@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.137](https://github.com/sanity-io/tsdoc/compare/v1.0.136...v1.0.137) (2024-11-26)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/tsdoc to v0.15.1 ([#416](https://github.com/sanity-io/tsdoc/issues/416)) ([4a1af38](https://github.com/sanity-io/tsdoc/commit/4a1af388334c462227ddb1b00431fa075059adb6))
+- **deps:** update dependency @sanity/ui to ^2.8.25 ([#418](https://github.com/sanity-io/tsdoc/issues/418)) ([aea1ae5](https://github.com/sanity-io/tsdoc/commit/aea1ae5064a9d4aee39bba7fbae25028e8695cd1))
+
 ## [1.0.136](https://github.com/sanity-io/tsdoc/compare/v1.0.135...v1.0.136) (2024-11-26)
 
 ### Bug Fixes
