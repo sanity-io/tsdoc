@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.149](https://github.com/sanity-io/tsdoc/compare/v1.0.148...v1.0.149) (2024-12-09)
+
+### Bug Fixes
+
+- support react 19 ([#452](https://github.com/sanity-io/tsdoc/issues/452)) ([c4f1586](https://github.com/sanity-io/tsdoc/commit/c4f15867cc788ee0b89577446c185489c83a56c8))
+
 ## [1.0.148](https://github.com/sanity-io/tsdoc/compare/v1.0.147...v1.0.148) (2024-12-09)
 
 ### Bug Fixes
