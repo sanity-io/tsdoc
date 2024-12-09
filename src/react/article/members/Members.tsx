@@ -1,6 +1,5 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Card, Stack, Text} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {useSpace, useTextSize} from '../../lib/ui'
 import {APIMemberWithInheritance} from './_types'
@@ -17,7 +16,7 @@ import {TSPropertySignatureMember} from './TSPropertySignatureMember'
 export function Members(props: {
   data: APIMemberWithInheritance[]
   member: APIMember
-}): ReactElement {
+}): React.ReactNode {
   const {data, member} = props
 
   return (

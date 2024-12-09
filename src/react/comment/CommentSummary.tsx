@@ -1,9 +1,8 @@
 import {TSDocComment} from '@sanity/tsdoc'
-import {ReactElement} from 'react'
 
 import {PortableText} from './PortableText'
 
-export function CommentSummary(props: {data: TSDocComment}): ReactElement {
+export function CommentSummary(props: {data: TSDocComment}): React.ReactNode {
   const {summary} = props.data
 
   if (!summary) return <></>

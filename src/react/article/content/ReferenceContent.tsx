@@ -1,6 +1,5 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Code} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {useTextSize} from '../../lib/ui'
 import {ClassContent} from './ClassContent'
@@ -10,7 +9,7 @@ import {NamespaceContent} from './NamespaceContent'
 import {TypeAliasContent} from './TypeAliasContent'
 import {VariableContent} from './VariableContent'
 
-export function ReferenceContent(props: {data: APIMember}): ReactElement {
+export function ReferenceContent(props: {data: APIMember}): React.ReactNode {
   const {data} = props
   const textSize = useTextSize([1, 1, 2])
 

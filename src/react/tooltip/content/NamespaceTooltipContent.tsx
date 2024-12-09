@@ -1,11 +1,10 @@
 import {APINamespace} from '@sanity/tsdoc'
 import {Box, Code} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {CommentBox, CommentSummary} from '../../comment'
 import {useTextSize} from '../../lib/ui'
 
-export function NamespaceTooltipContent(props: {data: APINamespace}): ReactElement {
+export function NamespaceTooltipContent(props: {data: APINamespace}): React.ReactNode {
   const {data} = props
 
   return (

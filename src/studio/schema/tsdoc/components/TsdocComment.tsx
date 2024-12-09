@@ -1,11 +1,10 @@
 import {TSDocComment as TSDocCommentType} from '@sanity/tsdoc'
 import {Card, Stack, Text} from '@sanity/ui'
-import {ReactElement} from 'react'
 import {ObjectInputProps} from 'sanity'
 
 import {Blocks} from './Blocks'
 
-export function TsdocComment(props: ObjectInputProps<TSDocCommentType>): ReactElement {
+export function TsdocComment(props: ObjectInputProps<TSDocCommentType>): React.ReactNode {
   const {
     customBlocks,
     deprecated,

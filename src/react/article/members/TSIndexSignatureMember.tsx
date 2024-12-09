@@ -1,6 +1,5 @@
 import {APIIndexSignature} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {APIMemberWithInheritance} from './_types'
 import {MemberInheritedFrom} from './MemberInheritedFrom'
@@ -10,7 +9,7 @@ export function TSIndexSignatureMember(props: {
   data: APIMemberWithInheritance<APIIndexSignature>
   fontSize?: number
   level?: number
-}): ReactElement {
+}): React.ReactNode {
   const {data} = props
   const {comment, releaseTag} = data
 

@@ -1,12 +1,11 @@
 import {APIVariable} from '@sanity/tsdoc'
 import {Box, Code} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {_compileVariableDefinition} from '../../app/lib/_compile'
 import {CommentBox, CommentSummary} from '../../comment'
 import {useTextSize} from '../../lib/ui'
 
-export function VariableTooltipContent(props: {data: APIVariable}): ReactElement {
+export function VariableTooltipContent(props: {data: APIVariable}): React.ReactNode {
   const {data} = props
 
   return (

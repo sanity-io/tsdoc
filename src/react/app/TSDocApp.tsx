@@ -1,6 +1,6 @@
 import {TSDocAppParams, TSDocStore} from '@sanity/tsdoc/store'
 import {Card, Flex} from '@sanity/ui'
-import {ReactElement, useCallback, useMemo} from 'react'
+import {useCallback, useMemo} from 'react'
 import {styled} from 'styled-components'
 
 import {parsePath} from './helpers'
@@ -35,7 +35,7 @@ const Root = styled(Card)({
  *
  * @beta
  * */
-export function TSDocApp(props: TSDocAppProps): ReactElement {
+export function TSDocApp(props: TSDocAppProps): React.ReactNode {
   const {basePath = '', onPathChange, path, store, releaseVersion = ''} = props
 
   const params: TSDocAppParams | undefined = useMemo(

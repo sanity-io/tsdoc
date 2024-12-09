@@ -1,5 +1,5 @@
 import {Box, Heading, HeadingProps} from '@sanity/ui'
-import {HTMLProps, ReactElement} from 'react'
+import {HTMLProps} from 'react'
 
 import {useHeadingSize} from './useHeadingSize'
 import {useLevel} from './useLevel'
@@ -7,7 +7,7 @@ import {useSpace} from './useSpace'
 
 export function H(
   props: Omit<HeadingProps, 'as'> & Omit<HTMLProps<HTMLDivElement>, 'as' | 'ref' | 'size'>,
-): ReactElement {
+): React.ReactNode {
   const {size: sizeProp = 0, ...restProps} = props
   const level = useLevel()
 

@@ -1,6 +1,5 @@
 import {APIToken, SanityArrayItem} from '@sanity/tsdoc'
 import {Box, Code} from '@sanity/ui'
-import {ReactElement} from 'react'
 import {styled} from 'styled-components'
 
 import {useTextSize} from '../lib/ui'
@@ -34,7 +33,7 @@ export function TSDocCode(props: {
   prefix?: string
   suffix?: string
   tokens: SanityArrayItem<APIToken>[]
-}): ReactElement {
+}): React.ReactNode {
   const {deindent, prefix = '', suffix = '', tokens} = props
 
   const code = (prefix + tokens.map((t) => t.text).join('') + suffix)
@@ -48,7 +47,6 @@ export function TSDocCode(props: {
       <Code size={useTextSize([-1, -1, 0])}>
         <CodeSnippet data={tokens} deindent={deindent} prefix={prefix} suffix={suffix} />
       </Code>
-
       <Code language="typescript" size={useTextSize([-1, -1, 0])}>
         {deindent ? code.replace(/\n\s\s/g, '\n') : code}
       </Code>

@@ -9,7 +9,7 @@ import {
 } from '@sanity/tsdoc'
 import {TSDocExportData} from '@sanity/tsdoc/store'
 import {Box, Card, Flex, Layer, Spinner, Stack, Text, Tree} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {SyntaxText} from '../../components/ColoredCode'
 import {Size, useSize} from '../../lib/ui'
@@ -52,7 +52,7 @@ export function TSDocNav(props: {
   showVersionMenu?: boolean
   expandPackages?: boolean
   expandSubPackages?: boolean
-}): ReactElement {
+}): React.ReactNode {
   return (
     <Size delta={-1}>
       <TSDocNavView {...props} />
@@ -71,7 +71,7 @@ function TSDocNavView(props: {
   showVersionMenu?: boolean
   expandPackages?: boolean
   expandSubPackages?: boolean
-}): ReactElement {
+}): React.ReactNode {
   const {params} = useTSDoc()
   const _exports = useExports()
   const packages = usePackages()

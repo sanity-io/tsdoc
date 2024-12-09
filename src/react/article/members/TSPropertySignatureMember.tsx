@@ -1,6 +1,5 @@
 import {APIPropertySignature} from '@sanity/tsdoc'
 import {Box, Card, Flex} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {CommentBox, CommentSummary} from '../../comment'
 import {Size} from '../../lib/ui'
@@ -11,7 +10,7 @@ import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSPropertySignatureMember(props: {
   data: APIMemberWithInheritance<APIPropertySignature>
-}): ReactElement {
+}): React.ReactNode {
   const {data} = props
   const {comment, inheritedFrom, isOptional, name, type, releaseTag} = data
 

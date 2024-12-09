@@ -1,6 +1,6 @@
 import {APIMember, APIMethod} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {CommentBox, CommentReturnType, CommentSummary} from '../../comment'
 import {PortableText} from '../../comment/PortableText'
@@ -12,7 +12,7 @@ import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 export function TSMethodMember(props: {
   data: APIMemberWithInheritance<APIMethod>
   member: APIMember
-}): ReactElement {
+}): React.ReactNode {
   const {data, member} = props
   const {comment, releaseTag} = data
 

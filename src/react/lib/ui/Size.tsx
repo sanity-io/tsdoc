@@ -1,8 +1,8 @@
-import {ReactElement, ReactNode, useContext} from 'react'
+import {useContext} from 'react'
 
 import {SizeContext} from './SizeContext'
 
-export function Size(props: {delta: number; children?: ReactNode}): ReactElement {
+export function Size(props: {delta: number; children?: React.ReactNode}): React.ReactNode {
   const {delta, children} = props
   const parentSize = useContext(SizeContext)
   const size = parentSize + delta

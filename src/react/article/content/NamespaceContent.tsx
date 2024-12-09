@@ -1,6 +1,5 @@
 import {APINamespace} from '@sanity/tsdoc'
 import {Stack} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H} from '../../lib/ui'
@@ -10,7 +9,7 @@ export function NamespaceContent(props: {
   data: APINamespace
   fontSize?: number
   level?: number
-}): ReactElement {
+}): React.ReactNode {
   const {data} = props
   const {comment, members} = data
 

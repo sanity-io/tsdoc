@@ -8,7 +8,7 @@ import {
   SanityArrayItem,
 } from '@sanity/tsdoc'
 import {Card, Code} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {_compileInterfaceDefinition} from '../../app/lib/_compile'
 import {CommentExampleBlocks, CommentRemarks} from '../../comment'
@@ -55,7 +55,7 @@ function useMembers(data: APIInterface) {
   }, [data])
 }
 
-export function InterfaceContent(props: {data: APIInterface}): ReactElement {
+export function InterfaceContent(props: {data: APIInterface}): React.ReactNode {
   const {data} = props
   const {comment} = data
 

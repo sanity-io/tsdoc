@@ -1,6 +1,5 @@
 import {APIMember, APIPackage, APIRelease} from '@sanity/tsdoc'
 import {Box, Container} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {APIMemberWithInheritance} from '../_types'
 import {Members} from '../Members'
@@ -129,7 +128,7 @@ const members: APIMemberWithInheritance[] = [
   },
 ]
 
-export default function AllStory(): ReactElement {
+export default function AllStory(): React.ReactNode {
   return (
     <Container width={1}>
       <Box padding={4}>

@@ -37,7 +37,7 @@ export interface ButtonProps extends ResponsiveMarginProps {
  */
 export function Button(
   props: ButtonProps & Omit<React.HTMLProps<HTMLButtonElement>, 'type'>,
-): React.ReactElement {
+): React.ReactNode {
   const {children, margin = 0, tone, type = 'button', ...restProps} = props
 
   return (

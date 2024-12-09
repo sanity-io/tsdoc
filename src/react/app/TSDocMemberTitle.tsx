@@ -1,11 +1,10 @@
 import {APIMember} from '@sanity/tsdoc'
-import {ReactElement} from 'react'
 
 import {SyntaxText} from '../components/ColoredCode'
 import {UnformattedCode} from '../components/UnformattedCode'
 
 /** @beta */
-export function TSDocMemberTitle(props: {data: APIMember}): ReactElement {
+export function TSDocMemberTitle(props: {data: APIMember}): React.ReactNode {
   const {data} = props
   const isDeprecated = Boolean(data.comment?.deprecated)
 

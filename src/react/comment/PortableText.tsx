@@ -5,7 +5,7 @@ import {
 } from '@portabletext/react'
 import {PortableTextNode} from '@sanity/tsdoc'
 import {Box, Card, Code} from '@sanity/ui'
-import {MouseEvent, ReactElement, useCallback} from 'react'
+import {MouseEvent, useCallback} from 'react'
 
 import {useTSDoc} from '../app'
 import {H, Level, P, useSpace, useTextSize} from '../lib/ui'
@@ -16,7 +16,7 @@ const CODE_LANGUAGES: Record<string, string> = {
   ts: 'typescript',
 }
 
-export function PortableText(props: {blocks: PortableTextNode[]}): ReactElement {
+export function PortableText(props: {blocks: PortableTextNode[]}): React.ReactNode {
   const {blocks} = props
 
   return <BasePortableText components={components} value={blocks} />

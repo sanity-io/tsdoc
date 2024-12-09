@@ -1,9 +1,8 @@
 import {Box, Container} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {TSDocSearch} from '../nav/TSDocSearch'
 
-export default function SearchStory(): ReactElement {
+export default function SearchStory(): React.ReactNode {
   return (
     <Box padding={[4, 5, 6]}>
       <Container width={0}>

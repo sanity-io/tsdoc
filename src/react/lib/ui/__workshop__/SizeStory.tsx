@@ -1,12 +1,11 @@
 import {Box} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {H} from '../H'
 import {Level} from '../Level'
 import {P} from '../P'
 import {Size} from '../Size'
 
-export default function SizeStory(): ReactElement {
+export default function SizeStory(): React.ReactNode {
   return (
     <Box padding={4}>
       <Size delta={0}>

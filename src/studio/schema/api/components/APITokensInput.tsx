@@ -1,6 +1,5 @@
 import {SanityArrayItem, SerializedAPIToken} from '@sanity/tsdoc'
 import {Card, Code as UICode} from '@sanity/ui'
-import {ReactElement} from 'react'
 import {ArrayOfObjectsInputProps} from 'sanity'
 import {IntentLink} from 'sanity/router'
 import {styled} from 'styled-components'
@@ -17,7 +16,7 @@ const Code = styled(UICode)`
 
 export function APITokensInput(
   props: ArrayOfObjectsInputProps<SanityArrayItem<SerializedAPIToken>>,
-): ReactElement {
+): React.ReactNode {
   const {value = []} = props
 
   return (

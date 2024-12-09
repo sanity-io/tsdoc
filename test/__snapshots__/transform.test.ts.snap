@@ -322,7 +322,7 @@ exports[`transform > should result in a "api.release" document 1`] = `
       {
         "_key": "token0",
         "_type": "api.token",
-        "text": "React_2.ReactElement",
+        "text": "React_2.ReactNode",
       },
     ],
     "slug": {

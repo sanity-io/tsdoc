@@ -1,6 +1,6 @@
 import {APIClass, APIConstructor, APIMethod, APIProperty, SanityArrayItem} from '@sanity/tsdoc'
 import {Box} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {CommentRemarks} from '../../comment'
 import {H} from '../../lib/ui'
@@ -44,7 +44,7 @@ function useMembers(data: APIClass) {
   }, [data])
 }
 
-export function ClassContent(props: {data: APIClass}): ReactElement {
+export function ClassContent(props: {data: APIClass}): React.ReactNode {
   const {data} = props
   const {comment} = data
   const {constructors, methods, properties, staticMethods} = useMembers(data)

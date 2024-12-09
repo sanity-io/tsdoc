@@ -1,13 +1,12 @@
 import {APITypeAlias} from '@sanity/tsdoc'
 import {Card} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {_compileTypeParameters} from '../../app/lib/_compile'
 import {CommentExampleBlocks, CommentRemarks} from '../../comment'
 import {H} from '../../lib/ui'
 import {TSDocCode} from '../TSDocCode'
 
-export function TypeAliasContent(props: {data: APITypeAlias}): ReactElement {
+export function TypeAliasContent(props: {data: APITypeAlias}): React.ReactNode {
   const {data} = props
   const {comment, name, type, typeParameters = []} = data
 

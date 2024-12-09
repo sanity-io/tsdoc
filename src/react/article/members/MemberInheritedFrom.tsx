@@ -1,12 +1,11 @@
 import {Text} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {_fontSize} from '../../helpers'
 
 export function MemberInheritedFrom(props: {
   data: {name: string; slug?: string}
   fontSize?: number
-}): ReactElement {
+}): React.ReactNode {
   const {data, fontSize = 2} = props
 
   return (

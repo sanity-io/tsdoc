@@ -1,10 +1,9 @@
 import {TSDocComment} from '@sanity/tsdoc'
-import {ReactElement} from 'react'
 
 import {H} from '../lib/ui'
 import {PortableText} from './PortableText'
 
-export function CommentRemarks(props: {data: TSDocComment}): ReactElement {
+export function CommentRemarks(props: {data: TSDocComment}): React.ReactNode {
   const {data} = props
   const {remarks} = data
 

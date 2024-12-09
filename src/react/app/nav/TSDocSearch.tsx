@@ -11,7 +11,7 @@ import {
   Stack,
   Text,
 } from '@sanity/ui'
-import {ForwardedRef, forwardRef, ReactElement, useCallback, useMemo, useRef, useState} from 'react'
+import {ForwardedRef, forwardRef, useCallback, useMemo, useRef, useState} from 'react'
 
 import {UnformattedCode} from '../../components/UnformattedCode'
 import {useMemberLink} from '../useMemberLink'
@@ -22,7 +22,7 @@ interface TSDocSearchOption extends BaseAutocompleteOption {
 }
 
 /** @beta */
-export function TSDocSearch(): ReactElement {
+export function TSDocSearch(): React.ReactNode {
   const [query, setQuery] = useState<string | null>(null)
   const {data, loading} = useSymbolSearch({query})
   const [value, setValue] = useState<string | undefined>()
@@ -48,7 +48,7 @@ export function TSDocSearch(): ReactElement {
   const renderValue = useCallback(() => '', [])
 
   const renderPopover = useCallback(
-    ({content, hidden}: {content: ReactElement | null; hidden: boolean}) => {
+    ({content, hidden}: {content: React.ReactNode | null; hidden: boolean}) => {
       return query ? (
         <Popover
           arrow={false}

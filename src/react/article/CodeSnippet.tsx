@@ -1,5 +1,4 @@
 import {APIToken, SanityArrayItem} from '@sanity/tsdoc'
-import {ReactElement} from 'react'
 
 import {ApiToken} from './ApiToken'
 
@@ -8,7 +7,7 @@ export function CodeSnippet(props: {
   deindent?: boolean
   prefix?: string
   suffix?: string
-}): ReactElement {
+}): React.ReactNode {
   const {data, deindent, prefix, suffix} = props
 
   return (
