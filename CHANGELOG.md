@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.145](https://github.com/sanity-io/tsdoc/compare/v1.0.144...v1.0.145) (2024-12-09)
+
+### Bug Fixes
+
+- **deps:** update dependency @portabletext/react to ^3.2.0 ([#441](https://github.com/sanity-io/tsdoc/issues/441)) ([27210c1](https://github.com/sanity-io/tsdoc/commit/27210c1ef1ebe19c6be0c255afd344bc02ab245a))
+- **deps:** Update sanity monorepo ([#440](https://github.com/sanity-io/tsdoc/issues/440)) ([b6d0964](https://github.com/sanity-io/tsdoc/commit/b6d09648b74a1159053bb3afa4855012dd0b4534))
+
 ## [1.0.144](https://github.com/sanity-io/tsdoc/compare/v1.0.143...v1.0.144) (2024-12-09)
 
 ### Bug Fixes
