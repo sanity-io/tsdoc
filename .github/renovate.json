@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>sanity-io/renovate-config"],
+  "extends": ["github>sanity-io/renovate-config", "github>sanity-io/renovate-config:automerge"],
   "ignorePresets": [
     ":ignoreModulesAndTests",
     "replacements:cpx-to-maintenance-fork",
