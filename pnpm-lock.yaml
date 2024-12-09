@@ -26,8 +26,8 @@ importers:
         specifier: 0.17.1
         version: 0.17.1
       '@portabletext/react':
-        specifier: ^3.1.0
-        version: 3.1.0(react@18.3.1)
+        specifier: ^3.2.0
+        version: 3.2.0(react@18.3.1)
       '@portabletext/toolkit':
         specifier: ^2.0.16
         version: 2.0.16
@@ -1682,8 +1682,8 @@ packages:
   '@portabletext/patches@1.1.0':
     resolution: {integrity: sha512-2qn4WaRc23m5qRwclT3sAyuHwTyjxCb4Lg0BQyhp7CABd83HtnPPYoP6hycREs6HRdWA48H3sU5gqUVPoxJxdg==}
 
-  '@portabletext/react@3.1.0':
-    resolution: {integrity: sha512-ZGHlvS+NvId9RSqnflN8xF2KVZgAgD399dK1GaycurnGNZGZYTd5nZmc8by1yL76Ar8n/dbVtouUDJIkO4Tupw==}
+  '@portabletext/react@3.2.0':
+    resolution: {integrity: sha512-BA216Z8yhb/eP24bfb09uiT0SVnQHTVZMPXf4MRBEZ+G8cMzZM/ab3tcp8owyp91+3kTKR0qSIpzYSKdm1Pakw==}
     engines: {node: ^14.13.1 || >=16.0.0}
     peerDependencies:
       react: ^18.2.0
@@ -8629,7 +8629,7 @@ snapshots:
       '@sanity/diff-match-patch': 3.1.1
       lodash: 4.17.21
 
-  '@portabletext/react@3.1.0(react@18.3.1)':
+  '@portabletext/react@3.2.0(react@18.3.1)':
     dependencies:
       '@portabletext/toolkit': 2.0.16
       '@portabletext/types': 2.0.13
@@ -13696,7 +13696,7 @@ snapshots:
       '@dnd-kit/utilities': 3.2.2(react@18.3.1)
       '@juggle/resize-observer': 3.4.0
       '@portabletext/editor': 1.12.0(@sanity/block-tools@3.65.1(debug@4.3.7))(@sanity/schema@3.65.1(debug@4.3.7))(@sanity/types@3.65.1(debug@4.3.7))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rxjs@7.8.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
-      '@portabletext/react': 3.1.0(react@18.3.1)
+      '@portabletext/react': 3.2.0(react@18.3.1)
       '@rexxars/react-json-inspector': 8.0.1(react@18.3.1)
       '@sanity/asset-utils': 2.0.6
       '@sanity/bifur-client': 0.4.1
