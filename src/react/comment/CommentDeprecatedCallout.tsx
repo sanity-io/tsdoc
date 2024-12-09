@@ -1,13 +1,12 @@
 import {WarningOutlineIcon} from '@sanity/icons'
 import {TSDocComment} from '@sanity/tsdoc'
 import {Box, Card, Flex, Stack, Text} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {Size, useTextSize} from '../lib/ui'
 import {CommentBox} from './CommentBox'
 import {PortableText} from './PortableText'
 
-export function CommentDeprecatedCallout(props: {data: TSDocComment}): ReactElement {
+export function CommentDeprecatedCallout(props: {data: TSDocComment}): React.ReactNode {
   const {data} = props
   const {deprecated} = data
   const textSize = useTextSize([0, 0, 1])

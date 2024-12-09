@@ -1,10 +1,9 @@
 import {Box, Container, Flex} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {TSDocSymbol} from '../TSDocSymbol'
 import {useTSDoc} from '../useTSDoc'
 
-export default function SymbolStory(): ReactElement {
+export default function SymbolStory(): React.ReactNode {
   const {params} = useTSDoc()
 
   return (

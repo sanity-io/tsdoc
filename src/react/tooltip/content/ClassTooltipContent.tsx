@@ -1,12 +1,11 @@
 import {APIClass} from '@sanity/tsdoc'
 import {Box, Card, Code} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {_compileClassDefinition} from '../../app/lib/_compile'
 import {CommentBox, CommentSummary} from '../../comment'
 import {useTextSize} from '../../lib/ui'
 
-export function ClassTooltipContent(props: {data: APIClass}): ReactElement {
+export function ClassTooltipContent(props: {data: APIClass}): React.ReactNode {
   const {data} = props
 
   return (

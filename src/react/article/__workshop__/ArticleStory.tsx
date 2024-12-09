@@ -1,9 +1,7 @@
-import {ReactElement} from 'react'
-
 import {useMember, useTSDoc} from '../../app'
 import {TSDocArticle} from '../TSDocArticle'
 
-export default function SymbolStory(): ReactElement {
+export default function SymbolStory(): React.ReactNode {
   const tsdoc = useTSDoc()
   const member = useMember({params: tsdoc.params})
 

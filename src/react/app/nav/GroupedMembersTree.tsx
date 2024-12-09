@@ -1,5 +1,3 @@
-import {ReactElement} from 'react'
-
 import {useSize} from '../../lib/ui'
 import {useTSDoc} from '../useTSDoc'
 import {MemberLink} from './MemberLink'
@@ -9,7 +7,7 @@ import {TSDocNavExportData} from './TSDocNav'
 export function GroupedMembersTree(props: {
   exp: TSDocNavExportData
   expandSubPackages?: boolean
-}): ReactElement {
+}): React.ReactNode {
   const {exp, expandSubPackages} = props
   const {params} = useTSDoc()
   const fontSize = useSize()

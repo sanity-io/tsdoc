@@ -1,7 +1,7 @@
 import type {APIMember, APINamespace} from '@sanity/tsdoc'
 import type {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Box, type CardTone, Flex} from '@sanity/ui'
-import {type ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {SyntaxText} from '../../components/ColoredCode'
 import {useSize} from '../../lib/ui'
@@ -10,7 +10,7 @@ import {useMemberLink} from '../useMemberLink'
 import {useTSDoc} from '../useTSDoc'
 import {SyntaxTreeItem} from './SyntaxTreeItem'
 
-export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): ReactElement {
+export function MemberLink(props: {data: APIMember; namespace?: APINamespace}): React.ReactNode {
   const {data, namespace} = props
   const {basePath, path} = useTSDoc()
   const fontSize = useSize()

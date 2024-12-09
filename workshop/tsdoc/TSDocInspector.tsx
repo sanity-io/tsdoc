@@ -1,11 +1,11 @@
 import {useExports, usePackages, useTSDoc} from '@sanity/tsdoc/react'
 import {Box, Code, Select, Stack, Text} from '@sanity/ui'
 import {useWorkshop} from '@sanity/ui-workshop'
-import {ChangeEvent, ReactElement, useCallback, useMemo} from 'react'
+import {ChangeEvent, useCallback, useMemo} from 'react'
 
 import {TSDocMsg} from './types'
 
-export function TSDocInspector(): ReactElement {
+export function TSDocInspector(): React.ReactNode {
   const {broadcast} = useWorkshop<TSDocMsg>()
   const {params} = useTSDoc()
   const packages = usePackages()

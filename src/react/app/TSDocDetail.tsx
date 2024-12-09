@@ -1,5 +1,4 @@
 import {Box, Flex, Spinner, Text} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {TSDocArticle} from '../article'
 import {useSpace} from '../lib/ui'
@@ -8,7 +7,7 @@ import {usePackage} from './usePackage'
 import {useTSDoc} from './useTSDoc'
 
 /** @beta */
-export function TSDocDetail(): ReactElement {
+export function TSDocDetail(): React.ReactNode {
   const {params} = useTSDoc()
   const member = useMember({params})
   const pkg = usePackage({params})

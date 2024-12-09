@@ -1,12 +1,12 @@
 import {APIToken} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {useMemberLink} from '../app'
 import {Size} from '../lib/ui'
 import {ReferenceTooltip} from '../tooltip'
 
-export function ApiToken(props: {deindent?: boolean; token: APIToken}): ReactElement {
+export function ApiToken(props: {deindent?: boolean; token: APIToken}): React.ReactNode {
   const {deindent, token} = props
   const text = token.text.replace(/History_2/g, 'History').replace(/React_2/g, 'React')
 

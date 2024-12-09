@@ -1,12 +1,12 @@
 import {Box, Text, TextProps} from '@sanity/ui'
-import {HTMLProps, ReactElement} from 'react'
+import {HTMLProps} from 'react'
 
 import {useSpace} from './useSpace'
 import {useTextSize} from './useTextSize'
 
 export function P(
   props: Omit<TextProps, 'as'> & Omit<HTMLProps<HTMLDivElement>, 'as' | 'ref' | 'size'>,
-): ReactElement {
+): React.ReactNode {
   const {size: sizeProp = 0, ...restProps} = props
 
   return (

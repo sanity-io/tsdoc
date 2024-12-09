@@ -1,6 +1,6 @@
 import {APIPackage} from '@sanity/tsdoc'
 import {TreeItemProps} from '@sanity/ui'
-import {ReactElement, useCallback} from 'react'
+import {useCallback} from 'react'
 
 import {SyntaxText} from '../../components/ColoredCode'
 import {compilePath} from '../lib/compilePath'
@@ -9,7 +9,7 @@ import {SyntaxTreeItem} from './SyntaxTreeItem'
 
 export function PackageTreeItem(
   props: {pkg: APIPackage} & Omit<TreeItemProps, 'href' | 'onClick' | 'text'>,
-): ReactElement {
+): React.ReactNode {
   const {pkg, ...restProps} = props
   const {params, updateParams} = useTSDoc()
 

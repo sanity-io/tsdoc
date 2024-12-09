@@ -8,11 +8,11 @@ import {
 import {createTSDocMemoryStore} from '@sanity/tsdoc/store'
 import {useWorkshop} from '@sanity/ui-workshop'
 import {useMemo} from 'react'
-import {ReactElement, ReactNode, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 
 import {TSDocMsg} from './types'
 
-export function TSDocProvider(props: {children?: ReactNode}): ReactElement {
+export function TSDocProvider(props: {children?: React.ReactNode}): React.ReactNode {
   const {children} = props
   const [path, setPath] = useState('/')
   const [docs, setDocs] = useState([])

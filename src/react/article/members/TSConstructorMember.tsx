@@ -1,6 +1,5 @@
 import {APIConstructor, APIMember} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {CommentBox, CommentSummary} from '../../comment'
 // import {useSize} from '../../lib/ui'
@@ -12,7 +11,7 @@ import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 export function TSContructorMember(props: {
   data: APIMemberWithInheritance<APIConstructor>
   member: APIMember
-}): ReactElement {
+}): React.ReactNode {
   const {data, member} = props
   const {comment, parameters, releaseTag} = data
   // const fontSize = useSize()

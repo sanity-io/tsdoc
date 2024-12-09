@@ -1,5 +1,5 @@
 import {TSDocAppParams, TSDocStore} from '@sanity/tsdoc/store'
-import {ReactElement, ReactNode, useCallback, useEffect, useMemo, useRef} from 'react'
+import {useCallback, useEffect, useMemo, useRef} from 'react'
 import Refractor from 'react-refractor'
 import bash from 'refractor/lang/bash'
 import javascript from 'refractor/lang/javascript'
@@ -27,7 +27,7 @@ const EMPTY_PARAMS: TSDocAppParams = {
 /** @beta */
 export interface TSDocProviderProps {
   basePath?: string
-  children: ReactNode
+  children: React.ReactNode
   onPathChange: (nextPath: string, replace?: boolean) => void
   params?: TSDocAppParams
   path: string
@@ -35,7 +35,7 @@ export interface TSDocProviderProps {
 }
 
 /** @beta */
-export function TSDocProvider(props: TSDocProviderProps): ReactElement {
+export function TSDocProvider(props: TSDocProviderProps): React.ReactNode {
   const {
     basePath = '',
     children,

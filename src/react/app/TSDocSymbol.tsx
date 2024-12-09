@@ -1,7 +1,7 @@
 import {APIMember} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Card, CardProps, Text, Tooltip, TooltipProps} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 import {styled} from 'styled-components'
 
 import {UnformattedCode} from '../components/UnformattedCode'
@@ -32,7 +32,7 @@ export function TSDocSymbol(
     packageName?: string | null
     tooltip?: Omit<TooltipProps, 'content'>
   },
-): ReactElement {
+): React.ReactNode {
   const {member, fontSize = 2, name, packageScope, packageName, tooltip, ...restProps} = props
 
   const {data} = useSymbol({

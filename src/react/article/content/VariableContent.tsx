@@ -1,6 +1,6 @@
 import {APIVariable} from '@sanity/tsdoc'
 import {Box, Card, Label, Text} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {TSDocSymbol} from '../../app'
 import {CommentDeprecatedCallout, CommentExampleBlocks, CommentRemarks} from '../../comment'
@@ -11,7 +11,7 @@ import {_getMembers} from '../members/helpers'
 import {TSVariableParamMember} from '../members/TSVariableParamMember'
 import {TSDocCode} from '../TSDocCode'
 
-export function VariableContent(props: {data: APIVariable}): ReactElement {
+export function VariableContent(props: {data: APIVariable}): React.ReactNode {
   const {data} = props
   const {comment, isReactComponentType, propsType, type} = data
   const {parameters = []} = comment || {}

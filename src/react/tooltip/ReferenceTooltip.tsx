@@ -1,6 +1,5 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Box, Text, Tooltip} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {Level, Size, useTextSize} from '../lib/ui'
 import {ClassTooltipContent} from './content/ClassTooltipContent'
@@ -12,9 +11,9 @@ import {VariableTooltipContent} from './content/VariableTooltipContent'
 
 /** @alpha */
 export function ReferenceTooltip(props: {
-  children?: React.ReactElement
+  children: React.ReactElement<any>
   member: APIMember
-}): ReactElement {
+}): React.ReactNode {
   const {children, member} = props
 
   return (
@@ -35,7 +34,7 @@ export function ReferenceTooltip(props: {
 }
 
 /** @alpha */
-export function ReferenceTooltipContent(props: {data: APIMember}): ReactElement {
+export function ReferenceTooltipContent(props: {data: APIMember}): React.ReactNode {
   const {data} = props
   const textSize = useTextSize([-1, 0, 1])
 

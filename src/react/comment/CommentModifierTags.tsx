@@ -1,12 +1,11 @@
 import {TSDocComment} from '@sanity/tsdoc'
 import {Inline, Text} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {ReleaseTag} from '../components/ReleaseTag'
 
 export function CommentModifierTags(props: {
   modifierTags: TSDocComment['modifierTags']
-}): ReactElement {
+}): React.ReactNode {
   const {modifierTags = []} = props
 
   return (

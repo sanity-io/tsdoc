@@ -1,6 +1,5 @@
 import {APIEnumMember} from '@sanity/tsdoc'
 import {Box, Card, Code, Flex} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {ReleaseBadge} from '../../components/ReleaseBadge'
 import {APIMemberWithInheritance} from './_types'
@@ -9,7 +8,7 @@ import {MemberInheritedFrom} from './MemberInheritedFrom'
 export function TSEnumMember(props: {
   data: APIMemberWithInheritance<APIEnumMember>
   level?: number
-}): ReactElement {
+}): React.ReactNode {
   const {data} = props
 
   return (

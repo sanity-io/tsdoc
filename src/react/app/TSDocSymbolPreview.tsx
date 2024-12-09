@@ -1,6 +1,6 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Box, Card, CardProps, Text} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {TSDocAppParams} from '../../store'
 import {UnformattedCode} from '../components/UnformattedCode'
@@ -19,7 +19,7 @@ export function TSDocSymbolPreview(
     packageName?: string
     packageScope?: string | null
   },
-): ReactElement {
+): React.ReactNode {
   const {fontSize = 2, member, name, packageName, packageScope, ...restProps} = props
 
   const {data} = useSymbol({

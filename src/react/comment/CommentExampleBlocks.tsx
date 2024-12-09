@@ -1,10 +1,9 @@
 import {TSDocComment, TSDocExampleBlock} from '@sanity/tsdoc'
-import {ReactElement} from 'react'
 
 import {H, Level} from '../lib/ui'
 import {PortableText} from './PortableText'
 
-export function CommentExampleBlocks(props: {data: TSDocComment}): ReactElement {
+export function CommentExampleBlocks(props: {data: TSDocComment}): React.ReactNode {
   const {data} = props
   const {exampleBlocks} = data
 
@@ -28,7 +27,7 @@ export function CommentExampleBlock(props: {
   data: TSDocExampleBlock
   index: number
   showHeader: boolean
-}): ReactElement {
+}): React.ReactNode {
   const {data, index, showHeader} = props
 
   if (!data.content) return <></>

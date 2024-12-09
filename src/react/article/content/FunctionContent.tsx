@@ -1,7 +1,7 @@
 import {APIFunction} from '@sanity/tsdoc'
 import {TSDocAppParams} from '@sanity/tsdoc/store'
 import {Box, Card, Stack} from '@sanity/ui'
-import {ReactElement, useMemo} from 'react'
+import {useMemo} from 'react'
 
 import {TSDocSymbol, TSDocSymbolPreview} from '../../app'
 import {CommentExampleBlocks, CommentRemarks, CommentReturnType} from '../../comment'
@@ -10,7 +10,7 @@ import {Members} from '../members'
 import {_getMembers} from '../members/helpers'
 import {TSDocCode} from '../TSDocCode'
 
-export function FunctionContent(props: {data: APIFunction}): ReactElement {
+export function FunctionContent(props: {data: APIFunction}): React.ReactNode {
   const {data} = props
 
   const {comment, name, parameters, propsType, returnType, typeParameters} = data

@@ -1,5 +1,4 @@
 import {Box, Card, Code, Flex, Label, Stack} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {APICallSignature} from '../../../core'
 import {CommentBox, CommentSummary} from '../../comment'
@@ -12,7 +11,7 @@ export function TSCallSignatureMember(props: {
   data: APIMemberWithInheritance<APICallSignature>
   // fontSize?: number
   // level?: number
-}): ReactElement {
+}): React.ReactNode {
   const {
     data,
     // fontSize = 2, level = 1

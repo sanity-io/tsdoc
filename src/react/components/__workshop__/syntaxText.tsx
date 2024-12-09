@@ -1,9 +1,8 @@
 import {Box, Text} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {SyntaxText} from '../ColoredCode'
 
-export default function SyntaxTextStory(): ReactElement {
+export default function SyntaxTextStory(): React.ReactNode {
   return (
     <Box padding={4}>
       <Text>

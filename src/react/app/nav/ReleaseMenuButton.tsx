@@ -1,7 +1,6 @@
 import {SelectIcon} from '@sanity/icons'
 import {APIPackage, APIRelease} from '@sanity/tsdoc'
 import {Button, Menu, MenuButton} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {SyntaxText} from '../../components/ColoredCode'
 import {useSize} from '../../lib/ui'
@@ -11,7 +10,7 @@ import {SyntaxMenuItem} from './SyntaxMenuItem'
 export function ReleaseMenuButton(props: {
   currentPkg: APIPackage
   currentRelease: APIRelease
-}): ReactElement {
+}): React.ReactNode {
   const {currentPkg, currentRelease} = props
   const {updateParams} = useTSDoc()
   const fontSize = useSize()

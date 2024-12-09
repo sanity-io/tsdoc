@@ -1,12 +1,11 @@
 import {Box, Card, Stack, Text} from '@sanity/ui'
-import type {ReactElement} from 'react'
 
 import type {TSDocParamBlock} from '../../../core'
 import {CommentBox} from '../../comment'
 import {PortableText} from '../../comment/PortableText'
 import {useSpace, useTextSize} from '../../lib/ui'
 
-export function TSVariableParamMember(props: {data: TSDocParamBlock}): ReactElement {
+export function TSVariableParamMember(props: {data: TSDocParamBlock}): React.ReactNode {
   const {data} = props
   const {content, name} = data
 

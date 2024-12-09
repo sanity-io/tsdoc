@@ -1,9 +1,7 @@
-import {ReactElement, ReactNode} from 'react'
-
 import {LevelContext} from './LevelContext'
 import {useLevel} from './useLevel'
 
-export function Level(props: {children?: ReactNode}): ReactElement {
+export function Level(props: {children?: React.ReactNode}): React.ReactNode {
   const {children} = props
   const level = useLevel()
 

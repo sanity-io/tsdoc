@@ -1,6 +1,5 @@
 import {APIProperty} from '@sanity/tsdoc'
 import {Box, Card, Flex} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {CommentBox, CommentSummary} from '../../comment'
 import {TSDocCode} from '../TSDocCode'
@@ -10,7 +9,7 @@ import {TSMemberReleaseTag} from './TSMemberReleaseTag'
 
 export function TSPropertyMember(props: {
   data: APIMemberWithInheritance<APIProperty>
-}): ReactElement {
+}): React.ReactNode {
   const {data} = props
   const {
     comment,

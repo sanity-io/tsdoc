@@ -1,6 +1,5 @@
 import {APIMember} from '@sanity/tsdoc'
 import {Box, Card, Code, Container, Flex, Text, ThemeColorSyntax} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {TSDocMemberTitle} from '../app'
 import {CommentDeprecatedCallout, CommentSummary} from '../comment'
@@ -44,7 +43,7 @@ function _getTypeName(data: APIMember) {
 }
 
 /** @beta */
-export function TSDocArticle(props: {data: APIMember & {versions: string[]}}): ReactElement {
+export function TSDocArticle(props: {data: APIMember & {versions: string[]}}): React.ReactNode {
   const {data} = props
   const isType = ['api.interface', 'api.namespace', 'api.typeAlias'].includes(data._type)
   const typeName = _getTypeName(data)

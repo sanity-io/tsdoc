@@ -1,9 +1,8 @@
 import {Box, Inline} from '@sanity/ui'
-import {ReactElement} from 'react'
 
 import {ReleaseBadge} from '../ReleaseBadge'
 
-export default function ReleaseBadgeStory(): ReactElement {
+export default function ReleaseBadgeStory(): React.ReactNode {
   return (
     <Box padding={4}>
       <Inline space={1}>
