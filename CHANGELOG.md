@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.147](https://github.com/sanity-io/tsdoc/compare/v1.0.146...v1.0.147) (2024-12-09)
+
+### Bug Fixes
+
+- **deps:** Update react monorepo to v19 ([#445](https://github.com/sanity-io/tsdoc/issues/445)) ([bdb04a6](https://github.com/sanity-io/tsdoc/commit/bdb04a61630f843d5c54fcc9eb70c4857830dfe7))
+
 ## [1.0.146](https://github.com/sanity-io/tsdoc/compare/v1.0.145...v1.0.146) (2024-12-09)
 
 ### Bug Fixes
