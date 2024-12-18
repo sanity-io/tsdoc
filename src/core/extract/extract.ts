@@ -57,15 +57,17 @@ export async function extract(options: {
   const packageJsonFullPath = path.resolve(packagePath, 'package.json')
 
   // pkg utils
-  const config = await loadConfig({cwd: packagePath})
+  const cwd = packagePath
+  const config = await loadConfig({cwd})
   const strictOptions = parseStrictOptions(config?.strictOptions ?? {})
   const logger = createLogger()
-  const pkg = await loadPkgWithReporting({cwd: packagePath, logger, strict, legacyExports})
+  const pkg = await loadPkgWithReporting({cwd, logger, strict, legacyExports})
 
   logger.info('Using tsconfig: ', path.resolve(packagePath, tsconfigPath))
 
   // const exports = _resolveExports({pkg})
   const exports = parseExports({
+    cwd,
     pkg,
     strict,
     legacyExports,
