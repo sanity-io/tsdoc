@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.152](https://github.com/sanity-io/tsdoc/compare/v1.0.151...v1.0.152) (2024-12-19)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/pkg-utils to 6.12.2 ([6e66f20](https://github.com/sanity-io/tsdoc/commit/6e66f20dec3a055c5daa115ed1cae0773bdf50cc))
+- **deps:** update dependency chokidar to ^4.0.3 ([55a6344](https://github.com/sanity-io/tsdoc/commit/55a6344a6e1280006fb40949195d80de5dbbcf8a))
+
 ## [1.0.151](https://github.com/sanity-io/tsdoc/compare/v1.0.150...v1.0.151) (2024-12-18)
 
 ### Bug Fixes
