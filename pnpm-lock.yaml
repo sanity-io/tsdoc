@@ -44,8 +44,8 @@ importers:
         specifier: ^3.5.7
         version: 3.5.7(react@19.0.0)
       '@sanity/pkg-utils':
-        specifier: 6.12.3
-        version: 6.12.3(@types/babel__core@7.20.5)(@types/node@20.17.10)(babel-plugin-react-compiler@19.0.0-beta-55955c9-20241229)(debug@4.4.0)(typescript@5.7.2)
+        specifier: 6.13.0
+        version: 6.13.0(@types/babel__core@7.20.5)(@types/node@20.17.10)(babel-plugin-react-compiler@19.0.0-beta-55955c9-20241229)(debug@4.4.0)(typescript@5.7.2)
       '@sanity/ui':
         specifier: ^2.10.17
         version: 2.10.17(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react-is@19.0.0)(react@19.0.0)(styled-components@6.1.13(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -1774,8 +1774,8 @@ packages:
   '@sanity/mutator@3.68.3':
     resolution: {integrity: sha512-s8ltUQAMde+fTgJw5fl5DRXSQyYxIV90GtPcYANY5Rqb4o53lAHeGZAvDotFQbsXgDNqMIrrUjuIW2/uxkWPQQ==}
 
-  '@sanity/pkg-utils@6.12.3':
-    resolution: {integrity: sha512-8vxnk0RNG5+VYbi7ooMW28i8PlkMp8BJcCe258pWd+OYctjmA/L4cdIwXr2hr+NxTYmO8KUJqxHZ84z1nFv7ZQ==}
+  '@sanity/pkg-utils@6.13.0':
+    resolution: {integrity: sha512-RxKMKh0pm4rvRumdul97JcQE+q55VobpaYU8YemV0MPHfD47+O2khVhcxe99CHzlhtYI0ru18s6QMLn3GBOEMg==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -8739,7 +8739,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@sanity/pkg-utils@6.12.3(@types/babel__core@7.20.5)(@types/node@20.17.10)(babel-plugin-react-compiler@19.0.0-beta-55955c9-20241229)(debug@4.4.0)(typescript@5.7.2)':
+  '@sanity/pkg-utils@6.13.0(@types/babel__core@7.20.5)(@types/node@20.17.10)(babel-plugin-react-compiler@19.0.0-beta-55955c9-20241229)(debug@4.4.0)(typescript@5.7.2)':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.0)
@@ -8861,7 +8861,7 @@ snapshots:
     dependencies:
       '@actions/core': 1.11.1
       '@actions/github': 6.0.0
-      '@sanity/pkg-utils': 6.12.3(@types/babel__core@7.20.5)(@types/node@20.17.10)(babel-plugin-react-compiler@19.0.0-beta-55955c9-20241229)(debug@4.4.0)(typescript@5.7.2)
+      '@sanity/pkg-utils': 6.13.0(@types/babel__core@7.20.5)(@types/node@20.17.10)(babel-plugin-react-compiler@19.0.0-beta-55955c9-20241229)(debug@4.4.0)(typescript@5.7.2)
       typescript: 5.7.2
       yaml: 2.6.1
     transitivePeerDependencies:
