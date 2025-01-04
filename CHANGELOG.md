@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.159](https://github.com/sanity-io/tsdoc/compare/v1.0.158...v1.0.159) (2025-01-04)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/icons to ^3.5.7 ([#471](https://github.com/sanity-io/tsdoc/issues/471)) ([aeebaf4](https://github.com/sanity-io/tsdoc/commit/aeebaf417defe28bd04927e0dbb7143758743e57))
+
 ## [1.0.158](https://github.com/sanity-io/tsdoc/compare/v1.0.157...v1.0.158) (2025-01-03)
 
 ### Bug Fixes
