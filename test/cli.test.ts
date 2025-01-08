@@ -50,21 +50,6 @@ describe('cli', () => {
     expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export/1.0.0.json')
   })
 
-  test('run `etl` command in `multi-export-legacy`', async () => {
-    const project = await _spawnProject('multi-export-legacy')
-
-    await project.install()
-    await project.run('build')
-
-    expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-
-    const {stdout} = await project.run('etl')
-
-    expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-
-    expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export-legacy/1.0.0.json')
-  })
-
   test('run `etl` command in `multi-export-cjs`', async () => {
     const project = await _spawnProject('multi-export-cjs')
 
@@ -78,20 +63,5 @@ describe('cli', () => {
     expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
 
     expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export-cjs/1.0.0.json')
-  })
-
-  test('run `etl` command in `multi-export-cjs-legacy`', async () => {
-    const project = await _spawnProject('multi-export-cjs-legacy')
-
-    await project.install()
-    await project.run('build')
-
-    expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-
-    const {stdout} = await project.run('etl')
-
-    expect(await project.dirs()).toEqual(['dist', 'exports', 'node_modules', 'src'])
-
-    expect(stdout).toContain('wrote 10 documents to ../../etc/multi-export-cjs-legacy/1.0.0.json')
   })
 })

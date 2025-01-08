@@ -21,7 +21,6 @@ describe('load', () => {
     const {pkg, results} = await extract({
       packagePath: project.cwd,
       strict: true,
-      legacyExports: true,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})

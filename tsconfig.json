@@ -25,9 +25,7 @@
   },
   "references": [
     {"path": "./playground/multi-export"},
-    {"path": "./playground/multi-export-legacy"},
     {"path": "./playground/multi-export-cjs"},
-    {"path": "./playground/multi-export-cjs-legacy"},
     {"path": "./playground/mylib"},
     {"path": "./playground/ts"}
   ]

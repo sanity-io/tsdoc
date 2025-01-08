@@ -22,7 +22,6 @@ describe('extract', () => {
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
       strict: true,
-      legacyExports: true,
       tsconfig: 'tsconfig.dist.json',
     })
 
@@ -43,7 +42,6 @@ describe('extract', () => {
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: project.cwd,
       strict: true,
-      legacyExports: false,
       tsconfig: 'tsconfig.dist.json',
     })
 

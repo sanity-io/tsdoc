@@ -1,5 +1,4 @@
 import {defineConfig} from 'vitest/config'
-import GithubActionsReporter from 'vitest-github-actions-reporter'
 
 export default defineConfig({
   test: {
@@ -10,7 +9,7 @@ export default defineConfig({
       }
     },
     // Enable rich PR failed test annotation on the CI
-    reporters: process.env.GITHUB_ACTIONS ? ['default', new GithubActionsReporter()] : 'default',
+    reporters: process.env.GITHUB_ACTIONS ? ['default', 'github-actions'] : 'default',
     watchExclude: [
       '**/.tsdoc/**',
       '**/node_modules/**',

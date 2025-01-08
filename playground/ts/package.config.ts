@@ -14,5 +14,4 @@ export default defineConfig({
       'ae-missing-release-tag': 'warn',
     },
   },
-  legacyExports: true,
 })
