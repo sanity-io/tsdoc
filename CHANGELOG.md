@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/sanity-io/tsdoc/compare/v1.0.169...v2.0.0) (2025-01-08)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** the `legacyExports` and `ae-forgotten-export` options are removed
+
+### Features
+
+- **deps:** update dependency @sanity/pkg-utils to v7 ([#490](https://github.com/sanity-io/tsdoc/issues/490)) ([0228a2d](https://github.com/sanity-io/tsdoc/commit/0228a2d96bf50837dbef1a7e538465e7e507c3d8))
+
 ## [1.0.169](https://github.com/sanity-io/tsdoc/compare/v1.0.168...v1.0.169) (2025-01-08)
 
 ### Bug Fixes
