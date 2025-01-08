@@ -129,7 +129,7 @@
     "@microsoft/tsdoc-config": "0.17.1",
     "@portabletext/react": "^3.2.0",
     "@portabletext/toolkit": "^2.0.16",
-    "@sanity/client": "^6.24.1",
+    "@sanity/client": "^6.24.2",
     "@sanity/color": "^3.0.6",
     "@sanity/icons": "^3.5.7",
     "@sanity/pkg-utils": "6.13.3",
