@@ -22,7 +22,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
   vi.setConfig({testTimeout: 60000, hookTimeout: 60000})
 
   const strict = true
-  const legacyExports = true
   let tsProject: _SpawnedProject
   let myLibProject: _SpawnedProject
   let multiExportProject: _SpawnedProject
@@ -44,7 +43,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
       strict,
-      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -57,7 +55,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
       strict,
-      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -71,7 +68,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
       strict,
-      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -85,7 +81,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
       strict,
-      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -118,7 +113,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
       customTags: [{name: 'sampleCustomBlockTag', syntaxKind: 'block', allowMultiple: true}],
       packagePath: myLibProject.cwd,
       strict,
-      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -133,7 +127,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
       packagePath: multiExportProject.cwd,
       tsconfig: 'tsconfig.dist.json',
       strict,
-      legacyExports: false,
     })
 
     for (const result of results) {
@@ -166,7 +159,7 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
   })
 
   test('should transform package with namespace exports', async () => {
-    const {pkg, results} = await extract({packagePath: tsProject.cwd, strict, legacyExports})
+    const {pkg, results} = await extract({packagePath: tsProject.cwd, strict})
 
     const docs = transform(results, {package: {version: pkg.version}})
 
@@ -181,7 +174,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
     const {pkg, results} = await extract({
       packagePath: tsProject.cwd,
       strict,
-      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})
@@ -270,7 +262,6 @@ describe.skipIf(process.env['GITHUB_ACTIONS'] && platform !== 'linux')('transfor
     const {pkg, results} = await extract({
       packagePath: tsProject.cwd,
       strict,
-      legacyExports,
     })
 
     const docs = transform(results, {package: {version: pkg.version}})

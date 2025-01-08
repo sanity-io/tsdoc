@@ -22,6 +22,7 @@
   "license": "MIT",
   "author": "Sanity.io <hello@sanity.io>",
   "sideEffects": false,
+  "type": "commonjs",
   "exports": {
     ".": {
       "source": "./exports/index.ts",
@@ -50,7 +51,7 @@
     "./package.json": "./package.json"
   },
   "main": "./dist/exports/index.js",
-  "module": "./dist/exports/index.esm.js",
+  "module": "./dist/exports/index.mjs",
   "types": "./dist/exports/index.d.ts",
   "typesVersions": {
     "*": {
@@ -86,7 +87,7 @@
     "pkg:check": "pkg --strict",
     "prepublishOnly": "run-s build",
     "release": "semantic-release",
-    "test": "vitest",
+    "test": "vitest run",
     "tsdoc:dev": "node -r dotenv-flow/config -r esbuild-register scripts/dev",
     "type-check": "tsc --build",
     "watch": "pkg watch",
@@ -132,7 +133,7 @@
     "@sanity/client": "^6.24.2",
     "@sanity/color": "^3.0.6",
     "@sanity/icons": "^3.5.7",
-    "@sanity/pkg-utils": "6.13.4",
+    "@sanity/pkg-utils": "7.0.0",
     "@sanity/ui": "^2.11.1",
     "@types/cpx": "^1.5.5",
     "@vitejs/plugin-react": "^4.3.4",
@@ -195,8 +196,7 @@
     "semantic-release": "^24.2.1",
     "styled-components": "^6.1.14",
     "uuid": "^11.0.4",
-    "vitest": "^2.1.8",
-    "vitest-github-actions-reporter": "^0.11.1"
+    "vitest": "^2.1.8"
   },
   "peerDependencies": {
     "react": "^18 || ^19",

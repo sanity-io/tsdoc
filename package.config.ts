@@ -20,14 +20,11 @@ export default defineConfig({
       },
     ],
     rules: {
-      'ae-forgotten-export': 'warn',
       'ae-incompatible-release-tags': 'error',
       'ae-internal-missing-underscore': 'off',
       'ae-missing-release-tag': 'error',
     },
   },
-
-  legacyExports: true,
 
   tsconfig: 'tsconfig.dist.json',
 })

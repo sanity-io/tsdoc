@@ -59,7 +59,6 @@ export async function etlCommand(options: {
     strict,
     tsconfig: config?.input?.tsconfig ?? tsconfigPath,
     bundledPackages: config?.input?.bundledPackages,
-    legacyExports: config?.legacyExports ?? false,
   })
 
   const jsonPath = path.resolve(packagePath, outDir, `${pkg.name}/${pkg.version}.json`)

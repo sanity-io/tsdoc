@@ -7,7 +7,6 @@ export interface SanityTSDocConfigOptions {
     port?: number
   }
   extract?: PkgConfigOptions['extract']
-  legacyExports?: PkgConfigOptions['legacyExports']
   input?: {
     type: 'fs'
     pattern?: string | string[]

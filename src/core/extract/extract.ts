@@ -39,7 +39,6 @@ export async function extract(options: {
   packagePath: string
   rules?: NonNullable<PkgConfigOptions['extract']>['rules']
   strict: boolean
-  legacyExports: boolean
   tsconfig?: string
   bundledPackages?: string[]
 }): Promise<{pkg: PackageJSON; results: ExtractResult[]}> {
@@ -48,7 +47,6 @@ export async function extract(options: {
     packagePath,
     rules,
     strict,
-    legacyExports,
     tsconfig: tsconfigPath = 'tsconfig.json',
     bundledPackages = [],
   } = options
@@ -61,7 +59,7 @@ export async function extract(options: {
   const config = await loadConfig({cwd})
   const strictOptions = parseStrictOptions(config?.strictOptions ?? {})
   const logger = createLogger()
-  const pkg = await loadPkgWithReporting({cwd, logger, strict, legacyExports})
+  const pkg = await loadPkgWithReporting({cwd, logger, strict})
 
   logger.info('Using tsconfig: ', path.resolve(packagePath, tsconfigPath))
 
@@ -70,7 +68,6 @@ export async function extract(options: {
     cwd,
     pkg,
     strict,
-    legacyExports,
     logger,
     strictOptions,
   })
