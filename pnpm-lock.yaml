@@ -44,8 +44,8 @@ importers:
         specifier: ^3.5.7
         version: 3.5.7(react@19.0.0)
       '@sanity/pkg-utils':
-        specifier: 7.0.0
-        version: 7.0.0(@types/babel__core@7.20.5)(@types/node@20.17.12)(babel-plugin-react-compiler@19.0.0-beta-63e3235-20250105)(typescript@5.7.3)
+        specifier: 7.0.1
+        version: 7.0.1(@types/babel__core@7.20.5)(@types/node@20.17.12)(babel-plugin-react-compiler@19.0.0-beta-63e3235-20250105)(typescript@5.7.3)
       '@sanity/ui':
         specifier: ^2.11.1
         version: 2.11.1(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react-is@19.0.0)(react@19.0.0)(styled-components@6.1.14(react-dom@19.0.0(react@19.0.0))(react@19.0.0))
@@ -1304,10 +1304,6 @@ packages:
     resolution: {integrity: sha512-HN9Osa1WxqLM66RaqB5nPAadx+nTIQmY/XtkFdaJvusjG8Tus++QqZtD7KPZDSkhEMGHsYeSyeU8qUzCDUXPjg==}
     hasBin: true
 
-  '@microsoft/api-extractor@7.49.0':
-    resolution: {integrity: sha512-X5b462k0/yl8qWdGx3siq5vyI8fTDU9fRnwqTMlGHqFhLxpASmLWA2EU6nft+ZG8cQM2HRZlr4HSo62UqiAnug==}
-    hasBin: true
-
   '@microsoft/api-extractor@7.49.1':
     resolution: {integrity: sha512-jRTR/XbQF2kb+dYn8hfYSicOGA99+Fo00GrsdMwdfE3eIgLtKdH6Qa2M3wZV9S2XmbgCaGX1OdPtYctbfu5jQg==}
     hasBin: true
@@ -1801,8 +1797,8 @@ packages:
       babel-plugin-react-compiler:
         optional: true
 
-  '@sanity/pkg-utils@7.0.0':
-    resolution: {integrity: sha512-Dc58XR08E/6v9ZyWxbsHaIhsA4WR1OxgF6ZBR6BgKqdJQrf7qyGUBR+opsOZPY1aTF8hM5iM9pAkVldYP92pwA==}
+  '@sanity/pkg-utils@7.0.1':
+    resolution: {integrity: sha512-c65oXA0st+tGVsywu1Lwf7qXHWJgFQnsSe5lFL8pi6xiMi1sX357Ztchj0Bq2RaiehX108BSdK/trSaCmw0xSQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -8217,24 +8213,6 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.49.0(@types/node@20.17.12)':
-    dependencies:
-      '@microsoft/api-extractor-model': 7.30.1(@types/node@20.17.12)
-      '@microsoft/tsdoc': 0.15.1
-      '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.10.1(@types/node@20.17.12)
-      '@rushstack/rig-package': 0.5.3
-      '@rushstack/terminal': 0.14.4(@types/node@20.17.12)
-      '@rushstack/ts-command-line': 4.23.2(@types/node@20.17.12)
-      lodash: 4.17.21
-      minimatch: 3.0.8
-      resolve: 1.22.10
-      semver: 7.5.4
-      source-map: 0.6.1
-      typescript: 5.7.2
-    transitivePeerDependencies:
-      - '@types/node'
-
   '@microsoft/api-extractor@7.49.1(@types/node@20.17.12)':
     dependencies:
       '@microsoft/api-extractor-model': 7.30.2(@types/node@20.17.12)
@@ -8903,12 +8881,12 @@ snapshots:
       - debug
       - supports-color
 
-  '@sanity/pkg-utils@7.0.0(@types/babel__core@7.20.5)(@types/node@20.17.12)(babel-plugin-react-compiler@19.0.0-beta-63e3235-20250105)(typescript@5.7.3)':
+  '@sanity/pkg-utils@7.0.1(@types/babel__core@7.20.5)(@types/node@20.17.12)(babel-plugin-react-compiler@19.0.0-beta-63e3235-20250105)(typescript@5.7.3)':
     dependencies:
       '@babel/core': 7.26.0
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.0)
       '@babel/types': 7.26.3
-      '@microsoft/api-extractor': 7.49.0(@types/node@20.17.12)
+      '@microsoft/api-extractor': 7.49.1(@types/node@20.17.12)
       '@microsoft/tsdoc-config': 0.17.1
       '@optimize-lodash/rollup-plugin': 5.0.0(rollup@4.30.1)
       '@rollup/plugin-alias': 5.1.1(rollup@4.30.1)
