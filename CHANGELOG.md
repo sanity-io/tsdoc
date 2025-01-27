@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/sanity-io/tsdoc/compare/v2.0.2...v2.0.3) (2025-01-27)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/client to ^6.27.1 ([#503](https://github.com/sanity-io/tsdoc/issues/503)) ([3f3fb85](https://github.com/sanity-io/tsdoc/commit/3f3fb8579d78b085a8dfc39d4203b31d4c8fe075))
+- **lockfile:** update dependency vite to v6.0.9 [security] ([#499](https://github.com/sanity-io/tsdoc/issues/499)) ([2bfdcdd](https://github.com/sanity-io/tsdoc/commit/2bfdcdd1af249f51bdfea94b512e1068d04cf092))
+
 ## [2.0.2](https://github.com/sanity-io/tsdoc/compare/v2.0.1...v2.0.2) (2025-01-09)
 
 ### Bug Fixes
