@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7](https://github.com/sanity-io/tsdoc/compare/v2.0.6...v2.0.7) (2025-01-30)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor-model to v7.30.3 ([#512](https://github.com/sanity-io/tsdoc/issues/512)) ([e5e38e1](https://github.com/sanity-io/tsdoc/commit/e5e38e182b0f45b943aafef359ee9025065f0378))
+
 ## [2.0.6](https://github.com/sanity-io/tsdoc/compare/v2.0.5...v2.0.6) (2025-01-30)
 
 ### Bug Fixes
