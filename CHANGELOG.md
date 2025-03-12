@@ -5,6 +5,15 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.11](https://github.com/sanity-io/tsdoc/compare/v2.0.10...v2.0.11) (2025-03-12)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor-model to v7.30.4 ([#525](https://github.com/sanity-io/tsdoc/issues/525)) ([08a8c4e](https://github.com/sanity-io/tsdoc/commit/08a8c4e56c34c8352e4ddd53e843d652b3139f57))
+- **deps:** update dependency @portabletext/react to ^3.2.1 ([#526](https://github.com/sanity-io/tsdoc/issues/526)) ([7206ba4](https://github.com/sanity-io/tsdoc/commit/7206ba49d1dfe39276726cab01f6d074d462d04d))
+- **deps:** update dependency @sanity/icons to ^3.7.0 ([#532](https://github.com/sanity-io/tsdoc/issues/532)) ([4d4fd4b](https://github.com/sanity-io/tsdoc/commit/4d4fd4b8dc659bccfa11c9d4214602f64013ec6c))
+- **deps:** update dependency groq-js to ^1.16.1 ([#534](https://github.com/sanity-io/tsdoc/issues/534)) ([ab71052](https://github.com/sanity-io/tsdoc/commit/ab710525c897247786455d8f140903ee38bd2a0a))
+
 ## [2.0.10](https://github.com/sanity-io/tsdoc/compare/v2.0.9...v2.0.10) (2025-03-12)
 
 ### Bug Fixes
