@@ -86,8 +86,8 @@ importers:
         specifier: ^3.72.1
         version: 3.72.1
       groq-js:
-        specifier: ^1.14.2
-        version: 1.14.2
+        specifier: ^1.16.1
+        version: 1.16.1
       history:
         specifier: ^5.3.0
         version: 5.3.0
@@ -4123,8 +4123,8 @@ packages:
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
 
-  groq-js@1.14.2:
-    resolution: {integrity: sha512-1CtOqgATOhmB6jRKL6zvojb2Vt8aP2y6m/7ZN4JlpFhyB/d8WRW3/kZgapIUHys6/Vrkk1oTbjjDbxNL8QxHSQ==}
+  groq-js@1.16.1:
+    resolution: {integrity: sha512-n22UJPBYE8CLAlTOwXTZVjFH1a5+x2hORDv13zi1gwbR23CpvSLPioNtzVovotuAciLLH/pVJe9PyKOR5MykGg==}
     engines: {node: '>= 14'}
 
   groq@3.72.1:
@@ -9056,7 +9056,7 @@ snapshots:
       esbuild: 0.21.5
       esbuild-register: 3.6.0(esbuild@0.21.5)
       get-it: 8.6.7(debug@4.4.0)
-      groq-js: 1.14.2
+      groq-js: 1.16.1
       pkg-dir: 5.0.0
       prettier: 3.4.2
       semver: 7.7.0
@@ -9091,7 +9091,7 @@ snapshots:
       debug: 4.4.0
       globby: 11.1.0
       groq: 3.72.1
-      groq-js: 1.14.2
+      groq-js: 1.16.1
       json5: 2.2.3
       tsconfig-paths: 4.2.0
       zod: 3.24.1
@@ -9200,7 +9200,7 @@ snapshots:
       arrify: 2.0.1
       debug: 4.4.0
       fast-fifo: 1.3.2
-      groq-js: 1.14.2
+      groq-js: 1.16.1
       p-map: 7.0.3
     transitivePeerDependencies:
       - '@types/react'
@@ -9352,7 +9352,7 @@ snapshots:
       '@sanity/generate-help-url': 3.0.0
       '@sanity/types': 3.72.1(@types/react@19.0.8)(debug@4.4.0)
       arrify: 2.0.1
-      groq-js: 1.14.2
+      groq-js: 1.16.1
       humanize-list: 1.0.1
       leven: 3.1.0
       lodash: 4.17.21
@@ -12021,7 +12021,7 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  groq-js@1.14.2:
+  groq-js@1.16.1:
     dependencies:
       debug: 4.4.0
     transitivePeerDependencies:
@@ -14136,7 +14136,7 @@ snapshots:
       framer-motion: 11.18.2(@emotion/is-prop-valid@1.2.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       get-it: 8.6.7(debug@4.4.0)
       get-random-values-esm: 1.0.2
-      groq-js: 1.14.2
+      groq-js: 1.16.1
       history: 5.3.0
       i18next: 23.16.8
       import-fresh: 3.3.0
