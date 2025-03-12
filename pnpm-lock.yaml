@@ -222,7 +222,7 @@ importers:
         specifier: ^24.2.1
         version: 24.2.3(typescript@5.8.2)
       styled-components:
-        specifier: ^6.1.14
+        specifier: ^6.1.15
         version: 6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       uuid:
         specifier: ^11.1.0
