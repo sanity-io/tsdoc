@@ -17,8 +17,8 @@ importers:
   .:
     dependencies:
       '@microsoft/api-extractor':
-        specifier: 7.49.2
-        version: 7.49.2(@types/node@20.17.16)
+        specifier: 7.52.1
+        version: 7.52.1(@types/node@20.17.16)
       '@microsoft/api-extractor-model':
         specifier: 7.30.4
         version: 7.30.4(@types/node@20.17.16)
@@ -1492,6 +1492,10 @@ packages:
     resolution: {integrity: sha512-DI/WnvhbkHcucxxc4ys00ejCiViFls5EKPrEfe4NV3GGpVkoM5ZXF61HZNSGA8IG0oEV4KfTqIa59Rc3wdMopw==}
     hasBin: true
 
+  '@microsoft/api-extractor@7.52.1':
+    resolution: {integrity: sha512-m3I5uAwE05orsu3D1AGyisX5KxsgVXB+U4bWOOaX/Z7Ftp/2Cy41qsNhO6LPvSxHBaapyser5dVorF1t5M6tig==}
+    hasBin: true
+
   '@microsoft/tsdoc-config@0.17.1':
     resolution: {integrity: sha512-UtjIFe0C6oYgTnad4q1QP4qXwLhe6tIpNTRStJ2RZEPIkqQPREAwE5spzVxsdn9UaEMUqhh0AqSx3X4nWAKXWw==}
 
@@ -1895,11 +1899,22 @@ packages:
       '@types/node':
         optional: true
 
+  '@rushstack/terminal@0.15.1':
+    resolution: {integrity: sha512-3vgJYwumcjoDOXU3IxZfd616lqOdmr8Ezj4OWgJZfhmiBK4Nh7eWcv8sU8N/HdzXcuHDXCRGn/6O2Q75QvaZMA==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
   '@rushstack/ts-command-line@4.23.2':
     resolution: {integrity: sha512-JJ7XZX5K3ThBBva38aomgsPv1L7FV6XmSOcR6HtM7HDFZJkepqT65imw26h9ggGqMjsY0R9jcl30tzKcVj9aOQ==}
 
   '@rushstack/ts-command-line@4.23.4':
     resolution: {integrity: sha512-pqmzDJCm0TS8VyeqnzcJ7ncwXgiLDQ6LVmXXfqv2nPL6VIz+UpyTpNVfZRJpyyJ+UDxqob1vIj2liaUfBjv8/A==}
+
+  '@rushstack/ts-command-line@4.23.6':
+    resolution: {integrity: sha512-7WepygaF3YPEoToh4MAL/mmHkiIImQq3/uAkQX46kVoKTNOOlCtFGyNnze6OYuWw2o9rxsyrHVfIBKxq/am2RA==}
 
   '@sanity/asset-utils@2.2.1':
     resolution: {integrity: sha512-dBsZWH5X6ANcvclFRnQT9Y+NNvoWTJZIMKR5HT6hzoRpRb48p7+vWn+wi1V1wPvqgZg2ScsOQQcGXWXskbPbQQ==}
@@ -6891,6 +6906,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typescript@5.8.2:
+    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   uglify-js@3.19.3:
     resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
     engines: {node: '>=0.8.0'}
@@ -8608,6 +8628,24 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
+  '@microsoft/api-extractor@7.52.1(@types/node@20.17.16)':
+    dependencies:
+      '@microsoft/api-extractor-model': 7.30.4(@types/node@20.17.16)
+      '@microsoft/tsdoc': 0.15.1
+      '@microsoft/tsdoc-config': 0.17.1
+      '@rushstack/node-core-library': 5.12.0(@types/node@20.17.16)
+      '@rushstack/rig-package': 0.5.3
+      '@rushstack/terminal': 0.15.1(@types/node@20.17.16)
+      '@rushstack/ts-command-line': 4.23.6(@types/node@20.17.16)
+      lodash: 4.17.21
+      minimatch: 3.0.8
+      resolve: 1.22.10
+      semver: 7.5.4
+      source-map: 0.6.1
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - '@types/node'
+
   '@microsoft/tsdoc-config@0.17.1':
     dependencies:
       '@microsoft/tsdoc': 0.15.1
@@ -9020,6 +9058,13 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.17.16
 
+  '@rushstack/terminal@0.15.1(@types/node@20.17.16)':
+    dependencies:
+      '@rushstack/node-core-library': 5.12.0(@types/node@20.17.16)
+      supports-color: 8.1.1
+    optionalDependencies:
+      '@types/node': 20.17.16
+
   '@rushstack/ts-command-line@4.23.2(@types/node@20.17.16)':
     dependencies:
       '@rushstack/terminal': 0.14.4(@types/node@20.17.16)
@@ -9032,6 +9077,15 @@ snapshots:
   '@rushstack/ts-command-line@4.23.4(@types/node@20.17.16)':
     dependencies:
       '@rushstack/terminal': 0.14.6(@types/node@20.17.16)
+      '@types/argparse': 1.0.38
+      argparse: 1.0.10
+      string-argv: 0.3.2
+    transitivePeerDependencies:
+      - '@types/node'
+
+  '@rushstack/ts-command-line@4.23.6(@types/node@20.17.16)':
+    dependencies:
+      '@rushstack/terminal': 0.15.1(@types/node@20.17.16)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -15008,6 +15062,8 @@ snapshots:
   typescript@5.7.2: {}
 
   typescript@5.7.3: {}
+
+  typescript@5.8.2: {}
 
   uglify-js@3.19.3:
     optional: true
