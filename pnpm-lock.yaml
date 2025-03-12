@@ -6,8 +6,8 @@ settings:
 
 overrides:
   '@sanity/tsdoc': workspace:*
-  '@types/react': ^19.0.8
-  '@types/react-dom': ^19.0.3
+  '@types/react': ^19.0.10
+  '@types/react-dom': ^19.0.4
   react: ^19.0.0
   react-dom: ^19.0.0
   react-is: ^19.0.0
@@ -135,10 +135,10 @@ importers:
         specifier: ^20.17.10
         version: 20.17.24
       '@types/react':
-        specifier: ^19.0.8
+        specifier: ^19.0.10
         version: 19.0.10
       '@types/react-dom':
-        specifier: ^19.0.3
+        specifier: ^19.0.4
         version: 19.0.4(@types/react@19.0.10)
       '@types/tmp':
         specifier: ^0.2.6
@@ -150,10 +150,10 @@ importers:
         specifier: ^17.0.33
         version: 17.0.33
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.22.0
+        specifier: ^8.26.1
         version: 8.26.1(@typescript-eslint/parser@8.26.1(eslint@9.22.0)(typescript@5.8.2))(eslint@9.22.0)(typescript@5.8.2)
       '@typescript-eslint/parser':
-        specifier: ^8.22.0
+        specifier: ^8.26.1
         version: 8.26.1(eslint@9.22.0)(typescript@5.8.2)
       babel-plugin-react-compiler:
         specifier: beta
@@ -162,10 +162,10 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0
       eslint:
-        specifier: ^9.19.0
+        specifier: ^9.22.0
         version: 9.22.0
       eslint-config-prettier:
-        specifier: ^10.0.1
+        specifier: ^10.1.1
         version: 10.1.1(eslint@9.22.0)
       eslint-plugin-jsx-a11y:
         specifier: ^6.10.2
@@ -180,7 +180,7 @@ importers:
         specifier: beta
         version: 19.0.0-beta-bafa41b-20250307(eslint@9.22.0)
       eslint-plugin-react-hooks:
-        specifier: ^5.1.0
+        specifier: ^5.2.0
         version: 5.2.0(eslint@9.22.0)
       eslint-plugin-simple-import-sort:
         specifier: 12.1.1
@@ -192,7 +192,7 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
       prettier:
-        specifier: ^3.4.2
+        specifier: ^3.5.3
         version: 3.5.3
       prettier-plugin-packagejson:
         specifier: ^2.5.10
@@ -210,16 +210,16 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0
       refractor:
-        specifier: ^4.8.1
+        specifier: ^4.9.0
         version: 4.9.0
       rimraf:
         specifier: ^4.4.1
         version: 4.4.1
       sanity:
-        specifier: ^3.72.1
+        specifier: ^3.79.0
         version: 3.79.0(@emotion/is-prop-valid@1.2.2)(@types/babel__core@7.20.5)(@types/node@20.17.24)(@types/react@19.0.10)(babel-plugin-react-compiler@19.0.0-beta-bafa41b-20250307)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(styled-components@6.1.15(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(terser@5.39.0)(typescript@5.8.2)(yaml@2.7.0)
       semantic-release:
-        specifier: ^24.2.1
+        specifier: ^24.2.3
         version: 24.2.3(typescript@5.8.2)
       styled-components:
         specifier: ^6.1.15
@@ -228,7 +228,7 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       vitest:
-        specifier: ^3.0.4
+        specifier: ^3.0.8
         version: 3.0.8(@types/node@20.17.24)(jsdom@23.2.0)(terser@5.39.0)(yaml@2.7.0)
 
   playground/multi-export:
@@ -1664,7 +1664,7 @@ packages:
     resolution: {integrity: sha512-TpcKlOpzKC/DNlyMAfsZjkgekzrcRTmQHmtYt5FlXSC4vmJWEYSZgE4e9VMJG7FMM2j1yNMz4MadUkx6n5/M8A==}
     peerDependencies:
       '@sanity/types': ^3.79.0
-      '@types/react': ^19.0.8
+      '@types/react': ^19.0.10
 
   '@portabletext/editor@1.39.0':
     resolution: {integrity: sha512-SadS2bZTdHURpLPK8PXmAfedIwcAuFryJpGTytpsIpjTLj8yk7HyyXEYBMkkmuTxYk5JoXux4XiZ1S1RKKliIg==}
@@ -2089,12 +2089,12 @@ packages:
   '@sanity/types@3.68.3':
     resolution: {integrity: sha512-JemibQXC08rHIXgjUH/p2TCiiD9wq6+dDkCvVHOooCvaYZNhAe2S9FAEkaA6qwWtPzyY2r6/tj1eDgNeLgXN1Q==}
     peerDependencies:
-      '@types/react': ^19.0.8
+      '@types/react': ^19.0.10
 
   '@sanity/types@3.79.0':
     resolution: {integrity: sha512-b3DkhaO11fo7OL8yulImstIu5QmGC166ENYJG8dtYBUkEbmRGgPtTnhPrfsNi57UWJ5bDef1ieDMUjB/heugsg==}
     peerDependencies:
-      '@types/react': ^19.0.8
+      '@types/react': ^19.0.10
 
   '@sanity/ui-workshop@2.0.31':
     resolution: {integrity: sha512-Xz3Bw9azfHz7NCvkRH/GmtFJH5I+xOxH4Mnpq/JBonvCBBsvL86O9aj5TIw2TpsQ9l044SR0Sw1XT9ptOzb2dQ==}
@@ -2338,7 +2338,7 @@ packages:
   '@types/react-dom@19.0.4':
     resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
     peerDependencies:
-      '@types/react': ^19.0.8
+      '@types/react': ^19.0.10
 
   '@types/react-is@19.0.0':
     resolution: {integrity: sha512-71dSZeeJ0t3aoPyY9x6i+JNSvg5m9EF2i2OlSZI5QoJuI8Ocgor610i+4A10TQmURR+0vLwcVCEYFpXdzM1Biw==}
@@ -5992,7 +5992,7 @@ packages:
   react-focus-lock@2.13.6:
     resolution: {integrity: sha512-ehylFFWyYtBKXjAO9+3v8d0i+cnc1trGS0vlTGhzFW1vbFXVUTmR8s2tt/ZQG8x5hElg6rhENlLG1H3EZK0Llg==}
     peerDependencies:
-      '@types/react': ^19.0.8
+      '@types/react': ^19.0.10
       react: ^19.0.0
     peerDependenciesMeta:
       '@types/react':
@@ -7101,7 +7101,7 @@ packages:
     resolution: {integrity: sha512-jQL3lRnocaFtu3V00JToYz/4QkNWswxijDaCVNZRiRTO3HQDLsdu1ZtmIUvV4yPp+rvWm5j0y0TG/S61cuijTg==}
     engines: {node: '>=10'}
     peerDependencies:
-      '@types/react': ^19.0.8
+      '@types/react': ^19.0.10
       react: ^19.0.0
     peerDependenciesMeta:
       '@types/react':
@@ -7135,7 +7135,7 @@ packages:
     resolution: {integrity: sha512-Fedw0aZvkhynoPYlA5WXrMCAMm+nSWdZt6lzJQ7Ok8S6Q+VsHmHpRWndVRJ8Be0ZbkfPc5LRYH+5XrzXcEeLRQ==}
     engines: {node: '>=10'}
     peerDependencies:
-      '@types/react': ^19.0.8
+      '@types/react': ^19.0.10
       react: ^19.0.0
     peerDependenciesMeta:
       '@types/react':
