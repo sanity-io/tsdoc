@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.12](https://github.com/sanity-io/tsdoc/compare/v2.0.11...v2.0.12) (2025-03-12)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.52.1 ([#530](https://github.com/sanity-io/tsdoc/issues/530)) ([18ce240](https://github.com/sanity-io/tsdoc/commit/18ce24024404ff597d1cdf4fc818e6d31d1dbfb7))
+- **deps:** update dependency @portabletext/toolkit to ^2.0.17 ([#527](https://github.com/sanity-io/tsdoc/issues/527)) ([b4554cf](https://github.com/sanity-io/tsdoc/commit/b4554cff31dea6f0ea581267b07c290785c14497))
+- **deps:** update dependency typescript to v5.8.2 ([#535](https://github.com/sanity-io/tsdoc/issues/535)) ([2b79e2d](https://github.com/sanity-io/tsdoc/commit/2b79e2d39b8e87407abe530d1e655b9318f1e037))
+
 ## [2.0.11](https://github.com/sanity-io/tsdoc/compare/v2.0.10...v2.0.11) (2025-03-12)
 
 ### Bug Fixes
