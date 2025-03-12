@@ -134,7 +134,7 @@
     "@sanity/color": "^3.0.6",
     "@sanity/icons": "^3.7.0",
     "@sanity/pkg-utils": "7.0.4",
-    "@sanity/ui": "^2.11.7",
+    "@sanity/ui": "^2.15.5",
     "@types/cpx": "^1.5.5",
     "@vitejs/plugin-react": "^4.3.4",
     "cac": "^6.7.14",
