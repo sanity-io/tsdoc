@@ -5,6 +5,15 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.13](https://github.com/sanity-io/tsdoc/compare/v2.0.12...v2.0.13) (2025-03-12)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/client to ^6.28.3 ([#531](https://github.com/sanity-io/tsdoc/issues/531)) ([da32f48](https://github.com/sanity-io/tsdoc/commit/da32f483e0ad282e2f42541e8de85589d8a9979a))
+- **deps:** update dependency @sanity/ui to ^2.15.5 ([#533](https://github.com/sanity-io/tsdoc/issues/533)) ([7849d0d](https://github.com/sanity-io/tsdoc/commit/7849d0d870ee3e54d6a7757658c4f506ba57d424))
+- **deps:** update dependency esbuild to ^0.25.1 ([#541](https://github.com/sanity-io/tsdoc/issues/541)) ([73968f3](https://github.com/sanity-io/tsdoc/commit/73968f374b6abc9be41514517d6eeabea662c97d))
+- **deps:** update dependency vite to ^6.2.1 ([#536](https://github.com/sanity-io/tsdoc/issues/536)) ([7e308eb](https://github.com/sanity-io/tsdoc/commit/7e308eb9c3fb819e23a382da17680d7fc0804b1b))
+
 ## [2.0.12](https://github.com/sanity-io/tsdoc/compare/v2.0.11...v2.0.12) (2025-03-12)
 
 ### Bug Fixes
