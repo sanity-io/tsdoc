@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.18](https://github.com/sanity-io/tsdoc/compare/v2.0.17...v2.0.18) (2025-03-25)
+
+### Bug Fixes
+
+- **deps:** update dependency vite to ^6.2.3 ([#554](https://github.com/sanity-io/tsdoc/issues/554)) ([cb25950](https://github.com/sanity-io/tsdoc/commit/cb259505683d6413815aeaf28d009f0fb713c59d))
+
 ## [2.0.17](https://github.com/sanity-io/tsdoc/compare/v2.0.16...v2.0.17) (2025-03-18)
 
 ### Bug Fixes
