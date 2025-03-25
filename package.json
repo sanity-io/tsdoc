@@ -160,7 +160,7 @@
   },
   "devDependencies": {
     "@sanity/semantic-release-preset": "^5.0.0",
-    "@sanity/ui-workshop": "^2.0.32",
+    "@sanity/ui-workshop": "^2.0.33",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/mkdirp": "^1.0.2",
