@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.22](https://github.com/sanity-io/tsdoc/compare/v2.0.21...v2.0.22) (2025-03-26)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.52.2 ([#558](https://github.com/sanity-io/tsdoc/issues/558)) ([57b6180](https://github.com/sanity-io/tsdoc/commit/57b61809bee2135a204f25d71071cda639af9d68))
+- **deps:** update dependency groq to ^3.81.0 ([#560](https://github.com/sanity-io/tsdoc/issues/560)) ([99fdb30](https://github.com/sanity-io/tsdoc/commit/99fdb30eba667eb0ba6894d6a8d96154ad28b634))
+
 ## [2.0.21](https://github.com/sanity-io/tsdoc/compare/v2.0.20...v2.0.21) (2025-03-26)
 
 ### Bug Fixes
