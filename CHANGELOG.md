@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.25](https://github.com/sanity-io/tsdoc/compare/v2.0.24...v2.0.25) (2025-04-07)
+
+### Bug Fixes
+
+- **lockfile:** update dependency vite to v6.2.5 [security] ([#563](https://github.com/sanity-io/tsdoc/issues/563)) ([c83ed99](https://github.com/sanity-io/tsdoc/commit/c83ed994a7a985a1ee14336867bc44808a798faf))
+
 ## [2.0.24](https://github.com/sanity-io/tsdoc/compare/v2.0.23...v2.0.24) (2025-03-26)
 
 ### Bug Fixes
