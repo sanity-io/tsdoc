@@ -194,7 +194,7 @@
     "rimraf": "^4.4.1",
     "sanity": "^3.81.0",
     "semantic-release": "^24.2.3",
-    "styled-components": "^6.1.16",
+    "styled-components": "^6.1.18",
     "uuid": "^11.1.0",
     "vitest": "^3.0.9"
   },
