@@ -124,7 +124,7 @@
     "extends": "@sanity/semantic-release-preset"
   },
   "dependencies": {
-    "@microsoft/api-extractor": "7.52.2",
+    "@microsoft/api-extractor": "7.52.8",
     "@microsoft/api-extractor-model": "7.30.5",
     "@microsoft/tsdoc": "0.15.1",
     "@microsoft/tsdoc-config": "0.17.1",
