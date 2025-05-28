@@ -5,6 +5,23 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.26](https://github.com/sanity-io/tsdoc/compare/v2.0.25...v2.0.26) (2025-05-28)
+
+### Bug Fixes
+
+- **deps:** update dependency @microsoft/api-extractor to v7.52.8 ([#567](https://github.com/sanity-io/tsdoc/issues/567)) ([f363f80](https://github.com/sanity-io/tsdoc/commit/f363f80229430d4dc2eaa67573989764c1b800d3))
+- **deps:** update dependency @microsoft/api-extractor-model to v7.30.6 ([065e0de](https://github.com/sanity-io/tsdoc/commit/065e0de69eaab7061a6dd6072f3750efea5d7bc8))
+- **deps:** update dependency @sanity/client to v7 ([a0cf100](https://github.com/sanity-io/tsdoc/commit/a0cf1006d837910c8c231d53551a929ecd39421c))
+- **deps:** update dependency @sanity/pkg-utils to v7.2.3 ([#569](https://github.com/sanity-io/tsdoc/issues/569)) ([67c558b](https://github.com/sanity-io/tsdoc/commit/67c558b8640b9cae026e5e1045e8104758695a1c))
+- **deps:** update dependency @sanity/ui to ^2.15.18 ([#570](https://github.com/sanity-io/tsdoc/issues/570)) ([aef024b](https://github.com/sanity-io/tsdoc/commit/aef024b24686bd0df5c4d7fb077e72ff24c29fd2))
+- **deps:** update dependency @vitejs/plugin-react to ^4.5.0 ([f58e97f](https://github.com/sanity-io/tsdoc/commit/f58e97f924ad3ca5d60270b59c96e38862c25e29))
+- **deps:** update dependency esbuild to ^0.25.5 ([#571](https://github.com/sanity-io/tsdoc/issues/571)) ([04118a6](https://github.com/sanity-io/tsdoc/commit/04118a6dbb1cbeff79d63a3817e69668d1a6d4be))
+- **deps:** update dependency express to v5 ([#576](https://github.com/sanity-io/tsdoc/issues/576)) ([5acd330](https://github.com/sanity-io/tsdoc/commit/5acd3301ce6834f3aeac67fdd1b3f54753d80a66))
+- **deps:** update dependency groq to ^3.90.0 ([#575](https://github.com/sanity-io/tsdoc/issues/575)) ([fced688](https://github.com/sanity-io/tsdoc/commit/fced688478d98caafa5a114cd80fb355d6438f6f))
+- **deps:** update dependency groq-js to ^1.17.0 ([634a8f3](https://github.com/sanity-io/tsdoc/commit/634a8f3b93d43dc84a9dd7491be366c237ff9437))
+- **deps:** update dependency typescript to v5.8.3 ([#572](https://github.com/sanity-io/tsdoc/issues/572)) ([dbe8973](https://github.com/sanity-io/tsdoc/commit/dbe8973f4b7908628d85e9e20709379e579dd666))
+- **lockfile:** update dependency vite to v6.2.7 [security] ([#578](https://github.com/sanity-io/tsdoc/issues/578)) ([4cb35ef](https://github.com/sanity-io/tsdoc/commit/4cb35ef13d7b83573ebb4c27542e7cb2e51aed6d))
+
 ## [2.0.25](https://github.com/sanity-io/tsdoc/compare/v2.0.24...v2.0.25) (2025-04-07)
 
 ### Bug Fixes
