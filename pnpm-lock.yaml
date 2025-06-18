@@ -44,8 +44,8 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0(react@19.1.0)
       '@sanity/pkg-utils':
-        specifier: 7.2.6
-        version: 7.2.6(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)
+        specifier: 7.2.7
+        version: 7.2.7(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)
       '@sanity/ui':
         specifier: ^2.16.1
         version: 2.16.1(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@19.1.0)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
@@ -1842,8 +1842,8 @@ packages:
   '@sanity/mutator@3.93.0':
     resolution: {integrity: sha512-RZIQ9ZZCnEyOfaLSGGhGTMciYD2dddWv1qwdh9kAmnSoW4QKhInW67ql9/MHRu7y+i5M59pGf4qYnRrU6S+jLw==}
 
-  '@sanity/pkg-utils@7.2.6':
-    resolution: {integrity: sha512-9ZiRbjeYWgPenI2E709foCOpx0dZL/ffHrs82951cR1iZk83gsS4/ypd6FQ/9s8HcFzNAlaT855TIxIi8kfEJw==}
+  '@sanity/pkg-utils@7.2.7':
+    resolution: {integrity: sha512-rFfA1/JrDzYmpodRVNYp5mRuTEqy28Gxc4pqcAqiL5aPGZE3DjRFbgrPp1KBXUuNy/+YhFwxgDuU/HsQvo217w==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -7408,20 +7408,11 @@ packages:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
     engines: {node: '>= 14'}
 
-  zod-validation-error@3.5.0:
-    resolution: {integrity: sha512-IWK6O51sRkq0YsnYD2oLDuK2BNsIjYUlR0+1YSd4JyBzm6/892IWroUnLc7oW4FU+b0f6948BHi6H8MDcqpOGw==}
-    engines: {node: '>=18.0.0'}
-    peerDependencies:
-      zod: ^3.25.0
-
   zod-validation-error@3.5.2:
     resolution: {integrity: sha512-mdi7YOLtram5dzJ5aDtm1AG9+mxRma1iaMrZdYIpFO7epdKBUwLHIxTF8CPDeCQ828zAXYtizrKlEJAtzgfgrw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.25.0
-
-  zod@3.25.64:
-    resolution: {integrity: sha512-hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g==}
 
   zod@3.25.67:
     resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
@@ -9284,7 +9275,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@sanity/pkg-utils@7.2.6(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)':
+  '@sanity/pkg-utils@7.2.7(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)':
     dependencies:
       '@babel/core': 7.27.4
       '@babel/preset-typescript': 7.27.1(@babel/core@7.27.4)
@@ -9325,8 +9316,8 @@ snapshots:
       treeify: 1.1.0
       typescript: 5.8.3
       uuid: 11.1.0
-      zod: 3.25.64
-      zod-validation-error: 3.5.0(zod@3.25.64)
+      zod: 3.25.67
+      zod-validation-error: 3.5.2(zod@3.25.67)
     optionalDependencies:
       babel-plugin-react-compiler: 19.0.0-beta-af1b7da-20250417
     transitivePeerDependencies:
@@ -15633,15 +15624,9 @@ snapshots:
       compress-commons: 6.0.2
       readable-stream: 4.7.0
 
-  zod-validation-error@3.5.0(zod@3.25.64):
-    dependencies:
-      zod: 3.25.64
-
   zod-validation-error@3.5.2(zod@3.25.67):
     dependencies:
       zod: 3.25.67
-
-  zod@3.25.64: {}
 
   zod@3.25.67: {}
 
