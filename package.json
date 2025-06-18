@@ -177,7 +177,7 @@
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-compiler": "beta",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -192,11 +192,11 @@
     "react-is": "^19.1.0",
     "refractor": "^4.9.0",
     "rimraf": "^4.4.1",
-    "sanity": "^3.92.0",
+    "sanity": "^3.93.0",
     "semantic-release": "^24.2.5",
     "styled-components": "^6.1.19",
     "uuid": "^11.1.0",
-    "vitest": "^3.2.3"
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
