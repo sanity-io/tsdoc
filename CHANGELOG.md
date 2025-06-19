@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.41](https://github.com/sanity-io/tsdoc/compare/v2.0.40...v2.0.41) (2025-06-19)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/pkg-utils to v7.6.0 ([#616](https://github.com/sanity-io/tsdoc/issues/616)) ([12b4cfc](https://github.com/sanity-io/tsdoc/commit/12b4cfc0e62f97d53e24893dbc65b1d2b4ed1438))
+
 ## [2.0.40](https://github.com/sanity-io/tsdoc/compare/v2.0.39...v2.0.40) (2025-06-19)
 
 ### Bug Fixes
