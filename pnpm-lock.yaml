@@ -44,8 +44,8 @@ importers:
         specifier: ^3.7.0
         version: 3.7.0(react@19.1.0)
       '@sanity/pkg-utils':
-        specifier: 7.5.0
-        version: 7.5.0(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)
+        specifier: 7.6.0
+        version: 7.6.0(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)
       '@sanity/ui':
         specifier: ^2.16.2
         version: 2.16.2(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@19.1.0)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
@@ -1924,8 +1924,8 @@ packages:
   '@sanity/mutator@3.93.0':
     resolution: {integrity: sha512-RZIQ9ZZCnEyOfaLSGGhGTMciYD2dddWv1qwdh9kAmnSoW4QKhInW67ql9/MHRu7y+i5M59pGf4qYnRrU6S+jLw==}
 
-  '@sanity/pkg-utils@7.5.0':
-    resolution: {integrity: sha512-ceCrQEZ2etQsCMyiobacI+8Y7cnzk8YKOQihVu8l80atQVEj09bH2CrrBzy+C3fHTsTZ4UIlrZFN4jC6m5EO9Q==}
+  '@sanity/pkg-utils@7.6.0':
+    resolution: {integrity: sha512-XnHezHyimUg8BzuAGjMZzF6RY+g+r7ZV6ooF19QnbePiMGtqTuiwc6LjJmjv/sOwogYlalLveZfCUxFXPRBbew==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -9462,7 +9462,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@sanity/pkg-utils@7.5.0(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)':
+  '@sanity/pkg-utils@7.6.0(@types/babel__core@7.20.5)(@types/node@20.19.1)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)':
     dependencies:
       '@babel/core': 7.27.4
       '@babel/preset-typescript': 7.27.1(@babel/core@7.27.4)
