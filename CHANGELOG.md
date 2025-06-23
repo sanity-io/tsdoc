@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.50](https://github.com/sanity-io/tsdoc/compare/v2.0.49...v2.0.50) (2025-06-23)
+
+### Bug Fixes
+
+- **deps:** update dependency @vitejs/plugin-react to ^4.6.0 ([#630](https://github.com/sanity-io/tsdoc/issues/630)) ([2ebb192](https://github.com/sanity-io/tsdoc/commit/2ebb192aec35317af4fc9b53076f0bbc4b493dea))
+- **deps:** update dependency groq-js to ^1.17.1 ([#628](https://github.com/sanity-io/tsdoc/issues/628)) ([84930b6](https://github.com/sanity-io/tsdoc/commit/84930b64a0f2698ff283bd74ebdad25e9e60d8cf))
+
 ## [2.0.49](https://github.com/sanity-io/tsdoc/compare/v2.0.48...v2.0.49) (2025-06-20)
 
 ### Bug Fixes
