@@ -83,8 +83,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       groq:
-        specifier: ^3.93.0
-        version: 3.94.2
+        specifier: ^3.95.0
+        version: 3.95.0
       groq-js:
         specifier: ^1.17.1
         version: 1.17.1
@@ -4141,6 +4141,10 @@ packages:
 
   groq@3.94.2:
     resolution: {integrity: sha512-4xb/cfGRydcQjxZloP42Rqgx5U6437MBgqm7ISBrZZ0PU7kL/8wSMzWxFPrOv30dAhuFTYwmSn1A4rhEsuS5Fg==}
+    engines: {node: '>=18'}
+
+  groq@3.95.0:
+    resolution: {integrity: sha512-Jjf98DlXR3ZfYvm2qVFKm/qG2l2c2VKqGK9lgBdA+yaZOQqGGQGwLP42bzQ4v7aeCjDP+LcSv8WtNS3Ii1l7gA==}
     engines: {node: '>=18'}
 
   gunzip-maybe@1.4.2:
@@ -12269,6 +12273,8 @@ snapshots:
       - supports-color
 
   groq@3.94.2: {}
+
+  groq@3.95.0: {}
 
   gunzip-maybe@1.4.2:
     dependencies:
