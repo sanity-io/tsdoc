@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.52](https://github.com/sanity-io/tsdoc/compare/v2.0.51...v2.0.52) (2025-06-25)
+
+### Bug Fixes
+
+- **deps:** update dependency groq to ^3.95.0 ([#635](https://github.com/sanity-io/tsdoc/issues/635)) ([0818326](https://github.com/sanity-io/tsdoc/commit/081832605ce523b4d1964e251f5e62fc62019419))
+
 ## [2.0.51](https://github.com/sanity-io/tsdoc/compare/v2.0.50...v2.0.51) (2025-06-23)
 
 ### Bug Fixes
