@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.63](https://github.com/sanity-io/tsdoc/compare/v2.0.62...v2.0.63) (2025-07-10)
+
+### Bug Fixes
+
+- **deps:** allow studio v4 in peer dep ranges ([#658](https://github.com/sanity-io/tsdoc/issues/658)) ([02e685e](https://github.com/sanity-io/tsdoc/commit/02e685eded1d0ab56818631c52bec1d2c78c9d00))
+
 ## [2.0.62](https://github.com/sanity-io/tsdoc/compare/v2.0.61...v2.0.62) (2025-07-09)
 
 ### Bug Fixes
