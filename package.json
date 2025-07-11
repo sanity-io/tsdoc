@@ -192,7 +192,7 @@
     "react-is": "^19.1.0",
     "refractor": "^4.9.0",
     "rimraf": "^4.4.1",
-    "sanity": "^3.98.0",
+    "sanity": "^3.98.1",
     "semantic-release": "^24.2.6",
     "styled-components": "^6.1.19",
     "uuid": "^11.1.0",
