@@ -44,8 +44,8 @@ importers:
         specifier: ^3.7.4
         version: 3.7.4(react@19.1.0)
       '@sanity/pkg-utils':
-        specifier: 7.9.2
-        version: 7.9.2(@types/babel__core@7.20.5)(@types/node@20.19.6)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)
+        specifier: 7.9.3
+        version: 7.9.3(@types/babel__core@7.20.5)(@types/node@20.19.6)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)
       '@sanity/ui':
         specifier: ^2.16.4
         version: 2.16.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@19.1.0)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
@@ -2014,8 +2014,8 @@ packages:
   '@sanity/mutator@3.98.1':
     resolution: {integrity: sha512-AGl93PZCYNAX2yXFzT/U2jq9LNBY3G2jVGDuubfgLXQjDAc8GQataXX+DmKH7cp5FHpFqUabSJGqReUVSPtWiQ==}
 
-  '@sanity/pkg-utils@7.9.2':
-    resolution: {integrity: sha512-yBk9br60Tkr9nzt3YVSuZPv2j0xTJrP0e7RdbxgaZpjQfedyZfFgReyCY+1+cA/3TGvk8zN+Xfc+CRDl5dJpRA==}
+  '@sanity/pkg-utils@7.9.3':
+    resolution: {integrity: sha512-RIfvtVUqq82W6ZEn5bALRJb4iIu57qPaDxlfXfLLZhih4/U537/Azt9WBLqj5DGlAom86uDO5vIce1/u8IR7tg==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -7654,9 +7654,6 @@ packages:
     peerDependencies:
       zod: ^3.25.0
 
-  zod@3.25.75:
-    resolution: {integrity: sha512-OhpzAmVzabPOL6C3A3gpAifqr9MqihV/Msx3gor2b2kviCgcb+HM9SEOpMWwwNp9MRunWnhtAKUoo0AHhjyPPg==}
-
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
@@ -9678,7 +9675,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@sanity/pkg-utils@7.9.2(@types/babel__core@7.20.5)(@types/node@20.19.6)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)':
+  '@sanity/pkg-utils@7.9.3(@types/babel__core@7.20.5)(@types/node@20.19.6)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)':
     dependencies:
       '@babel/core': 7.28.0
       '@babel/preset-typescript': 7.27.1(@babel/core@7.28.0)
@@ -9721,8 +9718,8 @@ snapshots:
       treeify: 1.1.0
       typescript: 5.8.3
       uuid: 11.1.0
-      zod: 3.25.75
-      zod-validation-error: 3.5.2(zod@3.25.75)
+      zod: 3.25.76
+      zod-validation-error: 3.5.2(zod@3.25.76)
     optionalDependencies:
       babel-plugin-react-compiler: 19.0.0-beta-af1b7da-20250417
     transitivePeerDependencies:
@@ -16126,15 +16123,9 @@ snapshots:
       compress-commons: 6.0.2
       readable-stream: 4.7.0
 
-  zod-validation-error@3.5.2(zod@3.25.75):
-    dependencies:
-      zod: 3.25.75
-
   zod-validation-error@3.5.2(zod@3.25.76):
     dependencies:
       zod: 3.25.76
-
-  zod@3.25.75: {}
 
   zod@3.25.76: {}
 
