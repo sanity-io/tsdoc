@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.69](https://github.com/sanity-io/tsdoc/compare/v2.0.68...v2.0.69) (2025-07-11)
+
+### Bug Fixes
+
+- **deps:** update dependency @sanity/ui to ^2.16.7 ([#666](https://github.com/sanity-io/tsdoc/issues/666)) ([66c9e52](https://github.com/sanity-io/tsdoc/commit/66c9e52ad8345cc501ab5d9b23cae23e6e9aefd2))
+
 ## [2.0.68](https://github.com/sanity-io/tsdoc/compare/v2.0.67...v2.0.68) (2025-07-11)
 
 ### Bug Fixes
