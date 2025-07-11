@@ -47,7 +47,7 @@ importers:
         specifier: 7.9.2
         version: 7.9.2(@types/babel__core@7.20.5)(@types/node@20.19.6)(babel-plugin-react-compiler@19.0.0-beta-af1b7da-20250417)(typescript@5.8.3)
       '@sanity/ui':
-        specifier: ^2.16.2
+        specifier: ^2.16.4
         version: 2.16.4(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react-is@19.1.0)(react@19.1.0)(styled-components@6.1.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       '@types/cpx':
         specifier: ^1.5.5
