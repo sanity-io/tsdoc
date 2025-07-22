@@ -5,6 +5,28 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/sanity-io/tsdoc/compare/v2.0.79...v3.0.0) (2025-07-22)
+
+### ⚠ BREAKING CHANGES
+
+- require react 19
+- require modern styled-components
+- require node 20.19 or newer
+
+### Bug Fixes
+
+- enable react compiler ([b833480](https://github.com/sanity-io/tsdoc/commit/b833480707fbf5e6e12bf77b02e99e7156b2461d))
+- make typescript a peer dependency ([8857f41](https://github.com/sanity-io/tsdoc/commit/8857f41b2065728d73e06e57f892fb8394443bda))
+- remove groq dependency ([19efc23](https://github.com/sanity-io/tsdoc/commit/19efc23c7aa2b40ce6a785ba32a15b6b9e218045))
+- require modern styled-components ([b43a35e](https://github.com/sanity-io/tsdoc/commit/b43a35e3f67df586144a7ca91beab95bb680c7ca))
+- require react 19 ([52898bf](https://github.com/sanity-io/tsdoc/commit/52898bffb1eb9eebf29c266a34a9ecda5f1c6523))
+- require studio v4 ([648e57e](https://github.com/sanity-io/tsdoc/commit/648e57e664cce2198be02323ecf0ced2b8c5d67f))
+- upgrade refractor to v5 ([9f31066](https://github.com/sanity-io/tsdoc/commit/9f31066b0768f39b49d016cb44ef25082331e5fa))
+
+### Miscellaneous Chores
+
+- require node 20.19 or newer ([0d7deb9](https://github.com/sanity-io/tsdoc/commit/0d7deb98af4cd5aa4839f1a7f03d64a00dd0ad9b))
+
 ## [2.0.79](https://github.com/sanity-io/tsdoc/compare/v2.0.78...v2.0.79) (2025-07-22)
 
 ### Bug Fixes
