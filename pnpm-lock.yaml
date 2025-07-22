@@ -90,8 +90,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       mkdirp:
-        specifier: ^1.0.4
-        version: 1.0.4
+        specifier: ^2.1.6
+        version: 2.1.6
       pkg-up:
         specifier: ^3.1.0
         version: 3.1.0
@@ -124,8 +124,8 @@ importers:
         specifier: ^5.0.3
         version: 5.0.3
       '@types/mkdirp':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^2.0.0
+        version: 2.0.0
       '@types/node':
         specifier: ^20.17.10
         version: 20.19.9
@@ -2307,8 +2307,9 @@ packages:
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
 
-  '@types/mkdirp@1.0.2':
-    resolution: {integrity: sha512-o0K1tSO0Dx5X6xlU5F1D6625FawhC3dU3iqr25lluNv/+/QIVH8RLNEiVokgIZo+mz+87w/3Mkg/VvQS+J51fQ==}
+  '@types/mkdirp@2.0.0':
+    resolution: {integrity: sha512-c/iUqMymAlxLAyIK3u5SzrwkrkyOdv1XDc91T+b5FsY7Jr6ERhUD19jJHOhPW4GD6tmN6mFEorfSdks525pwdQ==}
+    deprecated: This is a stub types definition. mkdirp provides its own type definitions, so you do not need this installed.
 
   '@types/node@20.19.9':
     resolution: {integrity: sha512-cuVNgarYWZqxRJDQHEB58GEONhOK79QVR/qYx4S7kcUObQvUwvFnYxJuuHUKm2aieN9X3yZB4LZsuYNU1Qphsw==}
@@ -5397,11 +5398,6 @@ packages:
 
   mkdirp@0.5.6:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
-    hasBin: true
-
-  mkdirp@1.0.4:
-    resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
-    engines: {node: '>=10'}
     hasBin: true
 
   mkdirp@2.1.6:
@@ -10378,9 +10374,9 @@ snapshots:
 
   '@types/minimist@1.2.5': {}
 
-  '@types/mkdirp@1.0.2':
+  '@types/mkdirp@2.0.0':
     dependencies:
-      '@types/node': 20.19.9
+      mkdirp: 2.1.6
 
   '@types/node@20.19.9':
     dependencies:
@@ -13849,8 +13845,6 @@ snapshots:
   mkdirp@0.5.6:
     dependencies:
       minimist: 1.2.8
-
-  mkdirp@1.0.4: {}
 
   mkdirp@2.1.6: {}
 
