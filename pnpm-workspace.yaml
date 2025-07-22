@@ -1,3 +1,10 @@
 packages:
   - playground/**
   - test/__tmp__/**
+
+publicHoistPattern:
+  - '*prettier*'
+  - '*eslint*'
+
+preferWorkspacePackages: true
+linkWorkspacePackages: deep
