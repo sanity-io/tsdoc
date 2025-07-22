@@ -17,3 +17,4 @@ node_modules
 /studio.js
 .vercel
 .env*.local
+.env
