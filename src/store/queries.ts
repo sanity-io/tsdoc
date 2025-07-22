@@ -1,7 +1,5 @@
-import groq from 'groq'
-
 /** @internal */
-export const API_EXPORTS_QUERY = groq`
+export const API_EXPORTS_QUERY = /* groq */ `
 *[
   _type == 'api.export'
   && package->scope == $packageScope
