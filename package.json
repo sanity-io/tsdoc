@@ -149,6 +149,7 @@
     "mkdirp": "^1.0.4",
     "pkg-up": "^3.1.0",
     "react-refractor": "^2.2.0",
+    "refractor": "^5.0.0",
     "slugify": "^1.6.6",
     "tmp": "^0.2.3",
     "vite": "^6.3.5"
@@ -183,7 +184,6 @@
     "prettier-plugin-packagejson": "^2.5.19",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "refractor": "^4.9.0",
     "rimraf": "^4.4.1",
     "sanity": "^4.1.0",
     "semantic-release": "^24.2.7",
