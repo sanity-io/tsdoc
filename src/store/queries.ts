@@ -40,7 +40,7 @@ export const API_EXPORTS_QUERY = /* groq */ `
 `
 
 /** @internal */
-const API_TOKEN_MEMBER_PROJECTION = groq`
+const API_TOKEN_MEMBER_PROJECTION = /* groq */ `
 ...,
 export->{name, path},
 package->{name, scope},
@@ -48,7 +48,7 @@ release->{version}
 `
 
 /** @internal */
-const API_CLASS_PROJECTION = groq`
+const API_CLASS_PROJECTION = /* groq */ `
 _id,
 _type,
 _updatedAt,
@@ -118,7 +118,7 @@ typeParameters
 `
 
 // TODO
-const API_ENUM_PROJECTION = groq`
+const API_ENUM_PROJECTION = /* groq */ `
 ...,
 export->{name,path},
 package->{scope,name},
@@ -126,7 +126,7 @@ release->{version}
 `
 
 /** @internal */
-const API_INTERFACE_PROJECTION = groq`
+const API_INTERFACE_PROJECTION = /* groq */ `
 _id,
 _type,
 _updatedAt,
@@ -231,7 +231,7 @@ typeParameters
 `
 
 /** @internal */
-const API_FUNCTION_PROJECTION = groq`
+const API_FUNCTION_PROJECTION = /* groq */ `
 _id,
 _type,
 _updatedAt,
@@ -273,7 +273,7 @@ typeParameters
 `
 
 /** @internal */
-const API_NAMESPACE_PROJECTION = groq`
+const API_NAMESPACE_PROJECTION = /* groq */ `
 _id,
 _type,
 _updatedAt,
@@ -289,7 +289,7 @@ releaseTag
 `
 
 /** @internal */
-const API_TYPE_ALIAS_PROJECTION = groq`
+const API_TYPE_ALIAS_PROJECTION = /* groq */ `
 _id,
 _type,
 _updatedAt,
@@ -307,7 +307,7 @@ typeParameters
 `
 
 /** @internal */
-const API_VARIABLE_PROJECTION = groq`
+const API_VARIABLE_PROJECTION = /* groq */ `
 _id,
 _type,
 comment,
@@ -343,7 +343,7 @@ type[]{
 `
 
 /** @internal */
-export const API_MEMBER_PROJECTION = groq`
+export const API_MEMBER_PROJECTION = /* groq */ `
 _type == 'api.class' => {
   ${API_CLASS_PROJECTION}
 },
@@ -374,7 +374,7 @@ _type == 'api.variable' => {
 `
 
 /** @internal */
-export const API_MEMBER_QUERY = groq`
+export const API_MEMBER_QUERY = /* groq */ `
 *[
   _type in $memberTypes
   && export->path == $exportPath
@@ -396,7 +396,7 @@ export const API_MEMBER_QUERY = groq`
 
 /** @internal */
 
-const NON_HIDDEN_MEMBER_TYPES_ARRAY = groq`*[
+const NON_HIDDEN_MEMBER_TYPES_ARRAY = /* groq */ `*[
   _type in $memberTypes
   && name == ^.name
   && package->scope == $packageScope
@@ -405,7 +405,7 @@ const NON_HIDDEN_MEMBER_TYPES_ARRAY = groq`*[
 ]`
 
 /** @internal */
-export const API_SYMBOL_SEARCH_QUERY = groq`
+export const API_SYMBOL_SEARCH_QUERY = /* groq */ `
 *[
   _type == 'api.symbol'
   && name match $query
@@ -428,7 +428,7 @@ export const API_SYMBOL_SEARCH_QUERY = groq`
 `
 
 /** @internal */
-export const API_PACKAGES_QUERY = groq`
+export const API_PACKAGES_QUERY = /* groq */ `
 *[_type == 'api.package']{
   _id,
   name,
@@ -439,7 +439,7 @@ export const API_PACKAGES_QUERY = groq`
 `
 
 /** @internal */
-export const API_PACKAGE_QUERY = groq`
+export const API_PACKAGE_QUERY = /* groq */ `
 *[
   _type == 'api.package'
   && scope == $packageScope
@@ -448,7 +448,7 @@ export const API_PACKAGE_QUERY = groq`
 `
 
 /** @internal */
-export const API_SYMBOL_QUERY = groq`
+export const API_SYMBOL_QUERY = /* groq */ `
 *[
   _type == 'api.symbol'
   && package->scope == $packageScope
