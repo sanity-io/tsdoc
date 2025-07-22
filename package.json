@@ -183,7 +183,6 @@
     "prettier-plugin-packagejson": "^2.5.19",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-is": "^19.1.0",
     "refractor": "^4.9.0",
     "rimraf": "^4.4.1",
     "sanity": "^4.1.0",
@@ -194,8 +193,8 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "react": "^18 || ^19",
-    "react-dom": "^18 || ^19",
+    "react": "^19",
+    "react-dom": "^19",
     "sanity": "^4.0.0",
     "styled-components": "^6.1",
     "typescript": "5.8.x"
@@ -209,12 +208,10 @@
   },
   "pnpm": {
     "overrides": {
-      "@sanity/tsdoc": "workspace:*",
       "@types/react": "$@types/react",
       "@types/react-dom": "$@types/react-dom",
       "react": "$react",
-      "react-dom": "$react-dom",
-      "react-is": "$react-is"
+      "react-dom": "$react-dom"
     }
   }
 }
