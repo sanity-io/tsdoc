@@ -105,7 +105,7 @@ export async function devCommand(options: {cwd: string}): Promise<void> {
   })
 
   const viteConfig = defineConfig({
-    plugins: [react()],
+    plugins: [react({babel: {plugins: [['babel-plugin-react-compiler', {target: '19'}]]}})],
     resolve: {alias},
   })
 
