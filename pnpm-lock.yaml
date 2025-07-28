@@ -15,11 +15,11 @@ importers:
   .:
     dependencies:
       '@microsoft/api-extractor':
-        specifier: 7.52.8
-        version: 7.52.8(@types/node@20.19.9)
+        specifier: 7.52.9
+        version: 7.52.9(@types/node@20.19.9)
       '@microsoft/api-extractor-model':
-        specifier: 7.30.6
-        version: 7.30.6(@types/node@20.19.9)
+        specifier: 7.30.7
+        version: 7.30.7(@types/node@20.19.9)
       '@microsoft/tsdoc':
         specifier: 0.15.1
         version: 0.15.1
@@ -33,8 +33,8 @@ importers:
         specifier: ^2.0.17
         version: 2.0.17
       '@sanity/client':
-        specifier: ^7.8.0
-        version: 7.8.0(debug@4.4.1)
+        specifier: ^7.8.1
+        version: 7.8.1(debug@4.4.1)
       '@sanity/color':
         specifier: ^3.0.6
         version: 3.0.6
@@ -42,8 +42,8 @@ importers:
         specifier: ^3.7.4
         version: 3.7.4(react@19.1.1)
       '@sanity/pkg-utils':
-        specifier: ^7.9.9
-        version: 7.9.9(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.2)(typescript@5.8.3)
+        specifier: ^7.9.12
+        version: 7.9.12(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.2)(typescript@5.8.3)
       '@sanity/ui':
         specifier: ^3.0.1
         version: 3.0.1(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.1(react@19.1.1))(react-is@18.3.1)(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
@@ -891,8 +891,8 @@ packages:
     resolution: {integrity: sha512-mGe7UK5wWyh0bKRfupsUchrQGqvDbZDbKJw+kcRGSmdHVYrv+ltd0pnpDTVpiTqnaBru9iEvA8pz8W46v0Amwg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.28.1':
-    resolution: {integrity: sha512-x0LvFTekgSX+83TI28Y9wYPUfzrnl2aT5+5QLnO6v7mSJYtEEevuDRN0F0uSHRk1G1IWZC43o00Y0xDDrpBGPQ==}
+  '@babel/types@7.28.2':
+    resolution: {integrity: sha512-ruv7Ae4J5dUYULmeXw1gmb7rYRz57OWCPM57pHojnLq/3Z1CK2lNSLTCVjxVk1F/TZHwOZZrOWi0ur95BbLxNQ==}
     engines: {node: '>=6.9.0'}
 
   '@colors/colors@1.5.0':
@@ -1368,11 +1368,11 @@ packages:
   '@juggle/resize-observer@3.4.0':
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
 
-  '@microsoft/api-extractor-model@7.30.6':
-    resolution: {integrity: sha512-znmFn69wf/AIrwHya3fxX6uB5etSIn6vg4Q4RB/tb5VDDs1rqREc+AvMC/p19MUN13CZ7+V/8pkYPTj7q8tftg==}
+  '@microsoft/api-extractor-model@7.30.7':
+    resolution: {integrity: sha512-TBbmSI2/BHpfR9YhQA7nH0nqVmGgJ0xH0Ex4D99/qBDAUpnhA2oikGmdXanbw9AWWY/ExBYIpkmY8dBHdla3YQ==}
 
-  '@microsoft/api-extractor@7.52.8':
-    resolution: {integrity: sha512-cszYIcjiNscDoMB1CIKZ3My61+JOhpERGlGr54i6bocvGLrcL/wo9o+RNXMBrb7XgLtKaizZWUpqRduQuHQLdg==}
+  '@microsoft/api-extractor@7.52.9':
+    resolution: {integrity: sha512-313nyhc6DSSMVKD43jZK6Yp5XbliGw5vjN7QOw1FHzR1V6DQ67k4dzkd3BSxMtWcm+cEs1Ux8rmDqots6EABFA==}
     hasBin: true
 
   '@microsoft/tsdoc-config@0.17.1':
@@ -1858,8 +1858,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@rushstack/node-core-library@5.13.1':
-    resolution: {integrity: sha512-5yXhzPFGEkVc9Fu92wsNJ9jlvdwz4RNb2bMso+/+TH0nMm1jDDDsOIf4l8GAkPxGuwPw5DH24RliWVfSPhlW/Q==}
+  '@rushstack/node-core-library@5.14.0':
+    resolution: {integrity: sha512-eRong84/rwQUlATGFW3TMTYVyqL1vfW9Lf10PH+mVGfIb9HzU3h5AASNIw+axnBLjnD0n3rT5uQBwu9fvzATrg==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -1869,16 +1869,16 @@ packages:
   '@rushstack/rig-package@0.5.3':
     resolution: {integrity: sha512-olzSSjYrvCNxUFZowevC3uz8gvKr3WTpHQ7BkpjtRpA3wK+T0ybep/SRUMfr195gBzJm5gaXw0ZMgjIyHqJUow==}
 
-  '@rushstack/terminal@0.15.3':
-    resolution: {integrity: sha512-DGJ0B2Vm69468kZCJkPj3AH5nN+nR9SPmC0rFHtzsS4lBQ7/dgOwtwVxYP7W9JPDMuRBkJ4KHmWKr036eJsj9g==}
+  '@rushstack/terminal@0.15.4':
+    resolution: {integrity: sha512-OQSThV0itlwVNHV6thoXiAYZlQh4Fgvie2CzxFABsbO2MWQsI4zOh3LRNigYSTrmS+ba2j0B3EObakPzf/x6Zg==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
       '@types/node':
         optional: true
 
-  '@rushstack/ts-command-line@5.0.1':
-    resolution: {integrity: sha512-bsbUucn41UXrQK7wgM8CNM/jagBytEyJqXw/umtI8d68vFm1Jwxh1OtLrlW7uGZgjCWiiPH6ooUNa1aVsuVr3Q==}
+  '@rushstack/ts-command-line@5.0.2':
+    resolution: {integrity: sha512-+AkJDbu1GFMPIU8Sb7TLVXDv/Q7Mkvx+wAjEl8XiXVVq+p1FmWW6M3LYpJMmoHNckSofeMecgWg5lfMwNAAsEQ==}
 
   '@sanity/asset-utils@2.2.1':
     resolution: {integrity: sha512-dBsZWH5X6ANcvclFRnQT9Y+NNvoWTJZIMKR5HT6hzoRpRb48p7+vWn+wi1V1wPvqgZg2ScsOQQcGXWXskbPbQQ==}
@@ -1899,8 +1899,8 @@ packages:
     resolution: {integrity: sha512-BQRCMeDlBxwnMbFtB61HUxFf9aSb4HNVrpfrC7IFVqFf4cwcc3o5H8/nlrL9U3cDFedbe4W0AXt1mQzwbY/ljw==}
     engines: {node: '>=14.18'}
 
-  '@sanity/client@7.8.0':
-    resolution: {integrity: sha512-DSa/CqRFtK/GdTG4w9rN3QeYEraZI9hKEhKZcoyJBUJEZLPOiGk69LemfNM/I1I9D64+/NlkvVSAHHKuwV0wOQ==}
+  '@sanity/client@7.8.1':
+    resolution: {integrity: sha512-jz/IizNHGrss7BG+wFzhI2l2f2avayM4dsBcxKRW4T3HSP4MP7T3oA6vgSDRX1N6KfQfFVILNq6bBE0ut8cHUA==}
     engines: {node: '>=20'}
 
   '@sanity/codegen@4.1.1':
@@ -2013,8 +2013,8 @@ packages:
   '@sanity/mutator@4.1.1':
     resolution: {integrity: sha512-mphpu87HVsbPCq6WigUrx3NpJvCF0UoGTxBcy0g331iDFY4iLuFrBut0kQbJtiWJtGusECURF3CWFB/X3Xy/ww==}
 
-  '@sanity/pkg-utils@7.9.9':
-    resolution: {integrity: sha512-O4J890oojP0B0j2vnzvn2TT6ARp4a5XK+Hj6/LI/7QpGZBxDQHgPiI7/pzEnrhXmq6HyRJPHRx0+FonuEiB0QQ==}
+  '@sanity/pkg-utils@7.9.12':
+    resolution: {integrity: sha512-1KDRrC3fBmyyYEl0JMPnLE6q8TQS/z4rtpEFcZsEAwxTDGnZmdRi9uDhqpDz754KQXCcDlFCI9rluD4y9BR5Ow==}
     engines: {node: '>=18.17.0'}
     hasBin: true
     peerDependencies:
@@ -7973,7 +7973,7 @@ snapshots:
       '@babel/parser': 7.28.0
       '@babel/template': 7.27.2
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       convert-source-map: 2.0.0
       debug: 4.4.1(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
@@ -7985,14 +7985,14 @@ snapshots:
   '@babel/generator@7.28.0':
     dependencies:
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       '@jridgewell/gen-mapping': 0.3.12
       '@jridgewell/trace-mapping': 0.3.29
       jsesc: 3.1.0
 
   '@babel/helper-annotate-as-pure@7.27.3':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@babel/helper-compilation-targets@7.27.2':
     dependencies:
@@ -8038,14 +8038,14 @@ snapshots:
   '@babel/helper-member-expression-to-functions@7.27.1':
     dependencies:
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
     transitivePeerDependencies:
       - supports-color
 
   '@babel/helper-module-imports@7.27.1':
     dependencies:
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
     transitivePeerDependencies:
       - supports-color
 
@@ -8060,7 +8060,7 @@ snapshots:
 
   '@babel/helper-optimise-call-expression@7.27.1':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@babel/helper-plugin-utils@7.27.1': {}
 
@@ -8085,7 +8085,7 @@ snapshots:
   '@babel/helper-skip-transparent-expression-wrappers@7.27.1':
     dependencies:
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
     transitivePeerDependencies:
       - supports-color
 
@@ -8099,18 +8099,18 @@ snapshots:
     dependencies:
       '@babel/template': 7.27.2
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
     transitivePeerDependencies:
       - supports-color
 
   '@babel/helpers@7.27.6':
     dependencies:
       '@babel/template': 7.27.2
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@babel/parser@7.28.0':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@babel/plugin-bugfix-firefox-class-in-computed-class-key@7.27.1(@babel/core@7.28.0)':
     dependencies:
@@ -8480,7 +8480,7 @@ snapshots:
       '@babel/helper-module-imports': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.28.0)
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
     transitivePeerDependencies:
       - supports-color
 
@@ -8648,7 +8648,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.28.0
       '@babel/helper-plugin-utils': 7.27.1
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       esutils: 2.0.3
 
   '@babel/preset-react@7.27.1(@babel/core@7.28.0)':
@@ -8689,7 +8689,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.27.1
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@babel/traverse@7.28.0':
     dependencies:
@@ -8698,12 +8698,12 @@ snapshots:
       '@babel/helper-globals': 7.28.0
       '@babel/parser': 7.28.0
       '@babel/template': 7.27.2
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       debug: 4.4.1(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/types@7.28.1':
+  '@babel/types@7.28.2':
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
@@ -9101,23 +9101,23 @@ snapshots:
 
   '@juggle/resize-observer@3.4.0': {}
 
-  '@microsoft/api-extractor-model@7.30.6(@types/node@20.19.9)':
+  '@microsoft/api-extractor-model@7.30.7(@types/node@20.19.9)':
     dependencies:
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.13.1(@types/node@20.19.9)
+      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.9)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.52.8(@types/node@20.19.9)':
+  '@microsoft/api-extractor@7.52.9(@types/node@20.19.9)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.30.6(@types/node@20.19.9)
+      '@microsoft/api-extractor-model': 7.30.7(@types/node@20.19.9)
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.13.1(@types/node@20.19.9)
+      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.9)
       '@rushstack/rig-package': 0.5.3
-      '@rushstack/terminal': 0.15.3(@types/node@20.19.9)
-      '@rushstack/ts-command-line': 5.0.1(@types/node@20.19.9)
+      '@rushstack/terminal': 0.15.4(@types/node@20.19.9)
+      '@rushstack/ts-command-line': 5.0.2(@types/node@20.19.9)
       lodash: 4.17.21
       minimatch: 3.0.8
       resolve: 1.22.10
@@ -9604,7 +9604,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.46.1':
     optional: true
 
-  '@rushstack/node-core-library@5.13.1(@types/node@20.19.9)':
+  '@rushstack/node-core-library@5.14.0(@types/node@20.19.9)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -9622,16 +9622,16 @@ snapshots:
       resolve: 1.22.10
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.15.3(@types/node@20.19.9)':
+  '@rushstack/terminal@0.15.4(@types/node@20.19.9)':
     dependencies:
-      '@rushstack/node-core-library': 5.13.1(@types/node@20.19.9)
+      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.9)
       supports-color: 8.1.1
     optionalDependencies:
       '@types/node': 20.19.9
 
-  '@rushstack/ts-command-line@5.0.1(@types/node@20.19.9)':
+  '@rushstack/ts-command-line@5.0.2(@types/node@20.19.9)':
     dependencies:
-      '@rushstack/terminal': 0.15.3(@types/node@20.19.9)
+      '@rushstack/terminal': 0.15.4(@types/node@20.19.9)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -9650,7 +9650,7 @@ snapshots:
   '@sanity/cli@4.1.1(@types/node@20.19.9)(@types/react@19.1.8)(react@19.1.1)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)':
     dependencies:
       '@babel/traverse': 7.28.0
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/codegen': 4.1.1
       '@sanity/runtime-cli': 10.0.1(@types/node@20.19.9)(debug@4.4.1)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
       '@sanity/telemetry': 0.8.1(react@19.1.1)
@@ -9693,7 +9693,7 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@sanity/client@7.8.0(debug@4.4.1)':
+  '@sanity/client@7.8.1(debug@4.4.1)':
     dependencies:
       '@sanity/eventsource': 5.0.2
       get-it: 8.6.10(debug@4.4.1)
@@ -9711,7 +9711,7 @@ snapshots:
       '@babel/preset-typescript': 7.27.1(@babel/core@7.28.0)
       '@babel/register': 7.27.1(@babel/core@7.28.0)
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       debug: 4.4.1(supports-color@8.1.1)
       globby: 11.1.0
       groq: 4.1.1
@@ -9854,7 +9854,7 @@ snapshots:
 
   '@sanity/migrate@4.1.1(@types/react@19.1.8)':
     dependencies:
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/mutate': 0.12.4(debug@4.4.1)
       '@sanity/types': 4.1.1(@types/react@19.1.8)(debug@4.4.1)
       '@sanity/util': 4.1.1(@types/react@19.1.8)(debug@4.4.1)
@@ -9902,12 +9902,12 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@sanity/pkg-utils@7.9.9(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.2)(typescript@5.8.3)':
+  '@sanity/pkg-utils@7.9.12(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.2)(typescript@5.8.3)':
     dependencies:
       '@babel/core': 7.28.0
       '@babel/preset-typescript': 7.27.1(@babel/core@7.28.0)
-      '@babel/types': 7.28.1
-      '@microsoft/api-extractor': 7.52.8(@types/node@20.19.9)
+      '@babel/types': 7.28.2
+      '@microsoft/api-extractor': 7.52.9(@types/node@20.19.9)
       '@microsoft/tsdoc-config': 0.17.1
       '@optimize-lodash/rollup-plugin': 5.0.2(rollup@4.46.1)
       '@rollup/plugin-alias': 5.1.1(rollup@4.46.1)
@@ -9958,17 +9958,17 @@ snapshots:
       - supports-color
       - vue-tsc
 
-  '@sanity/presentation-comlink@1.0.25(@sanity/client@7.8.0)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))':
+  '@sanity/presentation-comlink@1.0.25(@sanity/client@7.8.1)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))':
     dependencies:
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/comlink': 3.0.8
-      '@sanity/visual-editing-types': 1.1.3(@sanity/client@7.8.0)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))
+      '@sanity/visual-editing-types': 1.1.3(@sanity/client@7.8.1)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))
     transitivePeerDependencies:
       - '@sanity/types'
 
-  '@sanity/preview-url-secret@2.1.14(@sanity/client@7.8.0)':
+  '@sanity/preview-url-secret@2.1.14(@sanity/client@7.8.1)':
     dependencies:
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/uuid': 3.0.2
 
   '@sanity/runtime-cli@10.0.1(@types/node@20.19.9)(debug@4.4.1)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)':
@@ -9977,7 +9977,7 @@ snapshots:
       '@architect/inventory': 4.0.9
       '@oclif/core': 4.5.1
       '@oclif/plugin-help': 6.2.31
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       adm-zip: 0.5.16
       array-treeify: 0.1.5
       cardinal: 2.1.1
@@ -10030,7 +10030,7 @@ snapshots:
 
   '@sanity/sdk@2.1.0(@types/react@19.1.8)(debug@4.4.1)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))':
     dependencies:
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/comlink': 3.0.8
       '@sanity/diff-match-patch': 3.2.0
       '@sanity/diff-patch': 6.0.0
@@ -10083,7 +10083,7 @@ snapshots:
 
   '@sanity/types@3.99.0(@types/react@19.1.8)(debug@4.4.1)':
     dependencies:
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/media-library-types': 1.0.0
       '@types/react': 19.1.8
     transitivePeerDependencies:
@@ -10091,7 +10091,7 @@ snapshots:
 
   '@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1)':
     dependencies:
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/media-library-types': 1.0.0
       '@types/react': 19.1.8
     transitivePeerDependencies:
@@ -10185,7 +10185,7 @@ snapshots:
     dependencies:
       '@date-fns/tz': 1.2.0
       '@date-fns/utc': 2.1.0
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/types': 4.1.1(@types/react@19.1.8)(debug@4.4.1)
       date-fns: 4.1.0
       get-random-values-esm: 1.0.2
@@ -10199,9 +10199,9 @@ snapshots:
       '@types/uuid': 8.3.4
       uuid: 8.3.2
 
-  '@sanity/visual-editing-types@1.1.3(@sanity/client@7.8.0)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))':
+  '@sanity/visual-editing-types@1.1.3(@sanity/client@7.8.1)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))':
     dependencies:
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
     optionalDependencies:
       '@sanity/types': 4.1.1(@types/react@19.1.8)(debug@4.4.1)
 
@@ -10381,23 +10381,23 @@ snapshots:
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       '@types/babel__generator': 7.27.0
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.7
 
   '@types/babel__generator@7.27.0':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@types/babel__template@7.4.4':
     dependencies:
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@types/babel__traverse@7.20.7':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@types/body-parser@1.19.6':
     dependencies:
@@ -11001,7 +11001,7 @@ snapshots:
 
   babel-plugin-react-compiler@19.1.0-rc.2:
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   babel-runtime@6.26.0:
     dependencies:
@@ -14962,7 +14962,7 @@ snapshots:
     dependencies:
       '@babel/generator': 7.28.0
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       ast-kit: 2.1.1
       birpc: 2.5.0
       debug: 4.4.1(supports-color@8.1.1)
@@ -15115,7 +15115,7 @@ snapshots:
       '@sanity/asset-utils': 2.2.1
       '@sanity/bifur-client': 0.4.1
       '@sanity/cli': 4.1.1(@types/node@20.19.9)(@types/react@19.1.8)(react@19.1.1)(terser@5.43.1)(typescript@5.8.3)(yaml@2.8.0)
-      '@sanity/client': 7.8.0(debug@4.4.1)
+      '@sanity/client': 7.8.1(debug@4.4.1)
       '@sanity/color': 3.0.6
       '@sanity/comlink': 3.0.8
       '@sanity/diff': 4.1.1
@@ -15133,8 +15133,8 @@ snapshots:
       '@sanity/message-protocol': 0.15.1
       '@sanity/migrate': 4.1.1(@types/react@19.1.8)
       '@sanity/mutator': 4.1.1(@types/react@19.1.8)
-      '@sanity/presentation-comlink': 1.0.25(@sanity/client@7.8.0)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))
-      '@sanity/preview-url-secret': 2.1.14(@sanity/client@7.8.0)
+      '@sanity/presentation-comlink': 1.0.25(@sanity/client@7.8.1)(@sanity/types@4.1.1(@types/react@19.1.8)(debug@4.4.1))
+      '@sanity/preview-url-secret': 2.1.14(@sanity/client@7.8.1)
       '@sanity/schema': 4.1.1(@types/react@19.1.8)(debug@4.4.1)
       '@sanity/sdk': 2.1.0(@types/react@19.1.8)(debug@4.4.1)(immer@10.1.1)(react@19.1.1)(use-sync-external-store@1.5.0(react@19.1.1))
       '@sanity/telemetry': 0.8.1(react@19.1.1)
