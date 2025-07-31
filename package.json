@@ -130,7 +130,7 @@
     "@sanity/client": "^7.8.1",
     "@sanity/color": "^3.0.6",
     "@sanity/icons": "^3.7.4",
-    "@sanity/pkg-utils": "^7.9.12",
+    "@sanity/pkg-utils": "^7.9.19",
     "@sanity/ui": "^3.0.5",
     "@types/cpx": "^1.5.5",
     "@vitejs/plugin-react": "^4.7.0",
@@ -188,7 +188,7 @@
     "sanity": "^4.1.1",
     "semantic-release": "^24.2.7",
     "styled-components": "^6.1.19",
-    "typescript": "5.8.3",
+    "typescript": "5.9.2",
     "uuid": "^11.1.0",
     "vitest": "^3.2.4"
   },
@@ -197,7 +197,7 @@
     "react-dom": "^19",
     "sanity": "^4.0.0",
     "styled-components": "^6.1",
-    "typescript": "5.8.x"
+    "typescript": "5.8.x || 5.9.x"
   },
   "packageManager": "pnpm@10.13.1",
   "engines": {
