@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.5](https://github.com/sanity-io/tsdoc/compare/v3.0.4...v3.0.5) (2025-07-31)
+
+### Bug Fixes
+
+- **deps:** expand typescript peer to allow v5.9.2 ([62b1bbe](https://github.com/sanity-io/tsdoc/commit/62b1bbeccca99bdb68a728cf366dfce6d2573924))
+
 ## [3.0.4](https://github.com/sanity-io/tsdoc/compare/v3.0.3...v3.0.4) (2025-07-31)
 
 ### Bug Fixes
