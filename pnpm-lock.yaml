@@ -184,7 +184,7 @@ importers:
         specifier: ^13.2.2
         version: 13.3.0
       npm-run-all2:
-        specifier: ^5.0.0
+        specifier: ^5.0.2
         version: 5.0.2
       prettier:
         specifier: ^3.6.2
