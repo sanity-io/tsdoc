@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.7](https://github.com/sanity-io/tsdoc/compare/v3.0.6...v3.0.7) (2025-08-06)
+
+### Bug Fixes
+
+- **lockfile:** update dependency tmp to v0.2.4 [security] ([#712](https://github.com/sanity-io/tsdoc/issues/712)) ([c6ef106](https://github.com/sanity-io/tsdoc/commit/c6ef106a4e686147fce0132776d59850c541722e))
+
 ## [3.0.6](https://github.com/sanity-io/tsdoc/compare/v3.0.5...v3.0.6) (2025-08-06)
 
 ### Bug Fixes
