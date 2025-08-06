@@ -121,13 +121,13 @@
     "extends": "@sanity/semantic-release-preset"
   },
   "dependencies": {
-    "@microsoft/api-extractor": "7.52.9",
+    "@microsoft/api-extractor": "7.52.10",
     "@microsoft/api-extractor-model": "7.30.7",
     "@microsoft/tsdoc": "0.15.1",
     "@microsoft/tsdoc-config": "0.17.1",
     "@portabletext/react": "^3.2.1",
     "@portabletext/toolkit": "^2.0.17",
-    "@sanity/client": "^7.8.1",
+    "@sanity/client": "^7.8.2",
     "@sanity/color": "^3.0.6",
     "@sanity/icons": "^3.7.4",
     "@sanity/pkg-utils": "^7.11.3",
@@ -156,7 +156,7 @@
   },
   "devDependencies": {
     "@sanity/semantic-release-preset": "^5.0.0",
-    "@sanity/ui-workshop": "^3.1.2",
+    "@sanity/ui-workshop": "^3.3.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/mkdirp": "^1.0.2",
@@ -199,7 +199,7 @@
     "styled-components": "^6.1",
     "typescript": "5.8.x || 5.9.x"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "engines": {
     "node": ">=20.19"
   },
