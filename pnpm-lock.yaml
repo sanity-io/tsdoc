@@ -43,7 +43,7 @@ importers:
         version: 3.7.4(react@19.1.1)
       '@sanity/pkg-utils':
         specifier: ^7.11.4
-        version: 7.11.4(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.2)(typescript@5.9.2)
+        version: 7.11.4(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.3)(typescript@5.9.2)
       '@sanity/ui':
         specifier: ^3.0.5
         version: 3.0.5(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.1(react@19.1.1))(react-is@19.1.1)(react@19.1.1)(styled-components@6.1.19(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
@@ -152,7 +152,7 @@ importers:
         version: 8.39.0(eslint@9.32.0(jiti@2.4.2))(typescript@5.9.2)
       babel-plugin-react-compiler:
         specifier: rc
-        version: 19.1.0-rc.2
+        version: 19.1.0-rc.3
       cpx:
         specifier: ^1.5.0
         version: 1.5.0
@@ -184,7 +184,7 @@ importers:
         specifier: ^13.2.2
         version: 13.3.0
       npm-run-all2:
-        specifier: ^5.0.0
+        specifier: ^5.0.2
         version: 5.0.2
       prettier:
         specifier: ^3.6.2
@@ -2817,8 +2817,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-  babel-plugin-react-compiler@19.1.0-rc.2:
-    resolution: {integrity: sha512-kSNA//p5fMO6ypG8EkEVPIqAjwIXm5tMjfD1XRPL/sRjYSbJ6UsvORfaeolNWnZ9n310aM0xJP7peW26BuCVzA==}
+  babel-plugin-react-compiler@19.1.0-rc.3:
+    resolution: {integrity: sha512-mjRn69WuTz4adL0bXGx8Rsyk1086zFJeKmes6aK0xPuK3aaXmDJdLHqwKKMrpm6KAI1MCoUK72d2VeqQbu8YIA==}
 
   babel-runtime@6.26.0:
     resolution: {integrity: sha512-ITKNuq2wKlW1fJg9sSW52eepoYgZBggvOAHC0u/CYu/qxQ9EVzThCgR69BnSXLHjy2f7SY5zaQ4yt7H9ZVxY2g==}
@@ -9945,7 +9945,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@sanity/pkg-utils@7.11.4(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.2)(typescript@5.9.2)':
+  '@sanity/pkg-utils@7.11.4(@types/babel__core@7.20.5)(@types/node@20.19.9)(babel-plugin-react-compiler@19.1.0-rc.3)(typescript@5.9.2)':
     dependencies:
       '@babel/core': 7.28.0
       '@babel/preset-typescript': 7.27.1(@babel/core@7.28.0)
@@ -9993,7 +9993,7 @@ snapshots:
       zod: 3.25.76
       zod-validation-error: 3.5.3(zod@3.25.76)
     optionalDependencies:
-      babel-plugin-react-compiler: 19.1.0-rc.2
+      babel-plugin-react-compiler: 19.1.0-rc.3
     transitivePeerDependencies:
       - '@types/babel__core'
       - '@types/node'
@@ -11127,7 +11127,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-react-compiler@19.1.0-rc.2:
+  babel-plugin-react-compiler@19.1.0-rc.3:
     dependencies:
       '@babel/types': 7.28.2
 
