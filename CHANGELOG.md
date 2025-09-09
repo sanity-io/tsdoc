@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0](https://github.com/sanity-io/tsdoc/compare/v3.0.9...v4.0.0) (2025-09-09)
+
+### ⚠ BREAKING CHANGES
+
+- upgrade `@sanity/pkg-utils` to v8
+
+### Features
+
+- upgrade `@sanity/pkg-utils` to v8 ([e4eb151](https://github.com/sanity-io/tsdoc/commit/e4eb151253619f94c91131f2fbb92ded016d1910))
+
 ## [3.0.9](https://github.com/sanity-io/tsdoc/compare/v3.0.8...v3.0.9) (2025-08-08)
 
 ### Bug Fixes
